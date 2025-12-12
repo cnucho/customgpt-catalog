@@ -9,10 +9,25 @@
     .meta { color: #555; font-size: 14px; }
     h1 { margin-bottom: 6px; }
     h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
   </style>
 </head>
 <body>
-  <p class="meta"><a href="../index.html">← Back to index</a></p>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    // 티스토리 목록에서 넘어올 때 ?back=... 이 있으면 그쪽으로 돌아가게 함
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
   <h1>SurveyPersona Meaning Engine – 퍼소나 의미 해석 엔진</h1>
   <p>여러 퍼소나가 설문 문항을 어떻게 이해하는지 의미·감정·인지 관점에서 분석하는 엔진.</p>
 

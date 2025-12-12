@@ -6,4 +6,13 @@
    C:\Users\skcho\Dropbox
 
  d:\Dropbox\
- 
+
+
+
+
+
+python build_catalog_5.py
+python build_tistory_catalog.py
+git add .
+git commit -m "update catalog"
+git push

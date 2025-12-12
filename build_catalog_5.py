@@ -11,15 +11,18 @@ DETAILS_KO_DIR = os.path.join(SITE_DIR, "details")
 EN_DIR = os.path.join(SITE_DIR, "en")
 DETAILS_EN_DIR = os.path.join(EN_DIR, "details")
 
+# 기본 티스토리 목록 URL (back 파라미터 없을 때 사용)
+DEFAULT_TISTORY_LIST_URL = "https://skcho.tistory.com/129"
+
 HANGUL_RE = re.compile(r"[가-힣]")
+
+def esc(s) -> str:
+    return html.escape(str(s)) if s is not None else ""
 
 def slugify(text: str) -> str:
     t = (text or "").lower()
     t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
     return t or "item"
-
-def esc(s) -> str:
-    return html.escape(str(s)) if s is not None else ""
 
 def load_yaml_safe(path: str):
     try:
@@ -31,7 +34,6 @@ def load_yaml_safe(path: str):
         return None
 
 def normalize_entry(data: dict) -> dict:
-    # catalog_entry: {...} 로 감싼 형식 지원
     if not isinstance(data, dict):
         return {}
     if "catalog_entry" in data and isinstance(data["catalog_entry"], dict):
@@ -57,7 +59,6 @@ def guess_lang(entry: dict, filename: str) -> str:
     if lang in ("en", "eng", "english"):
         return "en"
 
-    # 둘 다 없으면 이름 보고 추정
     name = entry.get("name_ko") or entry.get("name") or entry.get("name_en") or ""
     if HANGUL_RE.search(str(name)):
         return "ko"
@@ -79,28 +80,41 @@ def render_detail_page(entry: dict, lang: str) -> str:
     def ul(items):
         if not items:
             return "<p>-</p>"
-        lis = "\n".join(f"<li>{esc(x)}</li>" for x in items)
-        return f"<ul>{lis}</ul>"
+        return "<ul>" + "\n".join(f"<li>{esc(x)}</li>" for x in items) + "</ul>"
 
     url_html = f"<a href='{esc(url)}' target='_blank' rel='noopener noreferrer'>{esc(url)}</a>" if url else "-"
 
-    title = esc(name)
     return f"""<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title}</title>
+  <title>{esc(name)}</title>
   <style>
     body {{ font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }}
     .meta {{ color: #555; font-size: 14px; }}
     h1 {{ margin-bottom: 6px; }}
     h2 {{ margin-top: 22px; }}
+    a {{ text-decoration: none; }}
+    a:hover {{ text-decoration: underline; }}
+    .topnav {{ margin-bottom: 12px; }}
   </style>
 </head>
 <body>
-  <p class="meta"><a href="../index.html">← Back to index</a></p>
-  <h1>{title}</h1>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="{esc(DEFAULT_TISTORY_LIST_URL)}">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    // 티스토리 목록에서 넘어올 때 ?back=... 이 있으면 그쪽으로 돌아가게 함
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>{esc(name)}</h1>
   <p>{esc(one_line)}</p>
 
   <h2>URL</h2>
@@ -179,7 +193,6 @@ def render_index(entries, lang: str, title: str, details_prefix: str, extra_link
   const q = document.getElementById('q');
   const list = document.getElementById('list');
   const items = Array.from(list.querySelectorAll('li'));
-
   function apply() {{
     const s = (q.value || '').toLowerCase().trim();
     for (const li of items) {{
@@ -199,6 +212,10 @@ def build():
     os.makedirs(EN_DIR, exist_ok=True)
 
     all_entries = []
+    if not os.path.isdir(CATALOG_DIR):
+        print(f"[WARN] catalog 폴더가 없음: {CATALOG_DIR}")
+        return
+
     for fn in sorted(os.listdir(CATALOG_DIR)):
         if not fn.lower().endswith(".yaml"):
             continue
@@ -216,7 +233,6 @@ def build():
         entry["_slug"] = slugify(base_name)
         all_entries.append(entry)
 
-    # 파일/필드 기반으로 KO/EN 분리
     ko_entries = [e for e in all_entries if e["_lang"] == "ko" or e.get("name_ko")]
     en_entries = [e for e in all_entries if e["_lang"] == "en" or e.get("name_en")]
 

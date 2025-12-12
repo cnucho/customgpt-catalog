@@ -32,7 +32,6 @@
   const q = document.getElementById('q');
   const list = document.getElementById('list');
   const items = Array.from(list.querySelectorAll('li'));
-
   function apply() {
     const s = (q.value || '').toLowerCase().trim();
     for (const li of items) {

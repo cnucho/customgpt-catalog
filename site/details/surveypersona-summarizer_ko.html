@@ -9,10 +9,25 @@
     .meta { color: #555; font-size: 14px; }
     h1 { margin-bottom: 6px; }
     h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
   </style>
 </head>
 <body>
-  <p class="meta"><a href="../index.html">← Back to index</a></p>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    // 티스토리 목록에서 넘어올 때 ?back=... 이 있으면 그쪽으로 돌아가게 함
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
   <h1>SurveyPersona Summarizer – 설문 메타 요약·개선 엔진</h1>
   <p>퍼소나 해석·응답 결과를 종합해 설문 문항의 문제점과 개선 방향을 제안하는 메타 요약 엔진.</p>
 
