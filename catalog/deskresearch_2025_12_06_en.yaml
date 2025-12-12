@@ -1,0 +1,30 @@
+gpt_id: "g-692430bf6b888191a8180fc6170597c7"
+name: "deskresearch – Market Research Desk Analyst"
+url: "https://chatgpt.com/g/g-692430bf6b888191a8180fc6170597c7-deskresearch"
+version: "v1.0.0"
+created_at: "2025-12-06"
+last_updated: "2025-12-06"
+one_line: "A fact-based market and industry desk research GPT that analyzes markets using credible public sources."
+functions:
+  - "Collects and summarizes market size, growth, segmentation, key players, and trends from credible sources."
+  - "Cross-verifies government statistics, reports, and news to deliver structured insights."
+alias:
+  - "deskresearch"
+  - "market-research-gpt"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "Consultants, corporate strategy teams, VC analysts"
+  - "Startup founders, PMs, business development teams"
+ideal_use_cases:
+  - "Initial market and competitive landscape research for new business ideas"
+  - "Structured reports on market metrics and regulations"
+limitations:
+  - "Does not access paid databases; relies solely on public data"
+example_commands:
+  - "Provide a table of the last 5 years of global B2B SaaS market metrics."
+  - "Explain Korea’s e-commerce fulfillment market structure."
+additional_features:
+  - "Modular rule sets for policy, tech, and consumer insights"

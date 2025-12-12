@@ -1,0 +1,243 @@
+- gpt_id: g-692d72d34b6c8191aec3dac13d5053d1
+  name: ChartArtist – ChartFlow GPT 2.0
+  url: https://chatgpt.com/g/g-692d72d34b6c8191aec3dac13d5053d1-chartartist
+  version: v1.0.0
+  created_at: '2025-12-06'
+  last_updated: '2025-12-06'
+  one_line: 데이터 표만 주면 차트 유형 선택부터 색상·레이아웃까지 자동으로 렌더링해 주는 시각화 전용 GPT
+  functions:
+  - 표·CSV·엑셀 등 구조화된 데이터를 해석해 적절한 차트 유형을 자동으로 선택
+  - 축, 범례, 값 라벨, 제목 등 시각 요소를 시각화 가이드라인에 맞게 자동 배치하고 렌더링 파라미터를 생성
+  alias:
+  - chartartist
+  - chartflow-gpt
+  tags:
+  - policy
+  - statistics
+  - research-assistant
+  target_users:
+  - 데이터 분석가와 BI 담당자
+  - 경영 기획·마케팅 등 차트 기반 보고서를 자주 만드는 실무자
+  ideal_use_cases:
+  - 경영 보고서·IR 자료용 차트를 표 데이터로부터 빠르게 초안으로 만들 때
+  - 색각 이상 친화적이고 프레젠테이션용으로 깔끔한 차트를 자동으로 구성할 때
+  limitations:
+  - 통계적 해석·인사이트 도출·정책 제안 등은 수행하지 않고, 데이터 시각화와 차트 렌더링에만 초점을 둔다
+  example_commands:
+  - 아래 표 데이터를 막대그래프로 시각화해 줘. 축·범례·값 라벨을 자동으로 설정해 줘.
+  - 이 CSV를 바탕으로 월별 매출 추이 선형 차트를 만들고, 웹에 임베드 가능한 HTML 코드로 출력해 줘.
+  additional_features:
+  - color_palettes.json과 chart_validation_rules.json을 활용해 색각 이상 대비비와 라벨 겹침 등을 자동으로 점검하고 경고를 제공
+- gpt_id: g-692430bf6b888191a8180fc6170597c7
+  name: deskresearch – 시장조사 데스크 리서처
+  url: https://chatgpt.com/g/g-692430bf6b888191a8180fc6170597c7-deskresearch
+  version: v1.0.0
+  created_at: '2025-12-06'
+  last_updated: '2025-12-06'
+  one_line: 시장·산업·경쟁 환경을 공개 데이터와 리포트를 기반으로 분석·요약해 주는 전문 데스크 리서치 GPT.
+  functions:
+  - 시장 규모·성장률·세분화·주요 플레이어·트렌드를 다수의 신뢰 가능한 출처에서 수집·비교·요약
+  - 정부·공공 통계, 리서치 리포트, 뉴스 등을 교차 검증하여 근거 기반 시장 인사이트와 구조화된 요약 제공
+  alias:
+  - deskresearch
+  - 시장조사-gpt
+  tags:
+  - policy
+  - statistics
+  - research-assistant
+  target_users:
+  - 컨설팅사·대기업 전략/신사업·VC 애널리스트 등 전문 리서처
+  - 스타트업 창업자·PM·사업개발 등 시장조사가 필요한 실무자
+  ideal_use_cases:
+  - 신규 사업/서비스 아이디어에 대한 1차 시장·경쟁 환경 데스크 리서치
+  - 특정 국가·산업의 시장 규모, 성장률, 주요 기업, 규제 동향을 한 번에 구조화해 정리
+  limitations:
+  - 유료 DB에 접근 불가, 공개 자료 기반 분석으로 일부 수치 보수성 존재
+  example_commands:
+  - 글로벌 B2B SaaS 시장의 최근 5년간 시장 규모와 성장률, 주요 세그먼트, 상위 플레이어를 표로 정리해줘.
+  - 한국 전자상거래 물류 시장의 정의와 가치사슬을 설명해줘.
+  additional_features:
+  - 정책·기술·소비자 모듈형 규칙으로 구조화 분석 강화
+- gpt_id: g-687f73f347308191b739e047ca0fa1ab
+  name: litsearch GPT 학술검색
+  url: https://chatgpt.com/g/g-687f73f347308191b739e047ca0fa1ab-litsearch-gpt-hagsulgeomsaeg
+  version: v1.0.0
+  created_at: '2025-12-06'
+  last_updated: '2025-12-06'
+  one_line: 신뢰 기반 학술·정책 문헌을 안전한 출처 위주로 탐색·구조화해 주는 전문 리서치 보조 GPT입니다.
+  functions:
+  - 사용자가 제시한 주제·키워드를 기반으로 학술·정책 관련 문헌을 신뢰도 기준에 따라 탐색·필터링합니다.
+  - 검색된 문헌을 주제, 출처 유형, 신뢰도 정보와 함께 구조화·요약하여 연구·정책 분석에 활용하기 쉽게 정리합니다.
+  alias:
+  - litsearch-gpt-hagsulgeomsaeg
+  - 학술검색-GPT
+  tags:
+  - policy
+  - statistics
+  - research-assistant
+  target_users:
+  - 학술 논문·보고서 작성을 수행하는 연구자와 대학원생
+  - 정책분석가·공공기관 연구원 등 근거 기반 정책연구를 수행하는 실무자
+  ideal_use_cases:
+  - 특정 연구 주제에 대한 선행연구와 핵심 학술·기관 문헌을 체계적으로 탐색·정리할 때
+  - 정책·연구 보고서 작성을 위해 신뢰할 수 있는 학술 논문과 국제·국내 기관 보고서를 근거로 수집·요약할 때
+  limitations:
+  - 유료 데이터베이스나 개별 원문 PDF에는 직접 접근하지 못하며, 공개적으로 확인 가능한 정보와 요약을 기반으로만 문헌을 정리합니다.
+  example_commands:
+  - ‘한국의 탄소중립 정책’과 관련된 학술 논문과 국제기구 보고서를 safe 모드로 찾아서, 연구주제·방법·핵심결과 중심으로 정리해줘.
+  - ‘디지털 전환과 노동시장 불평등’ 주제로 지난 5~10년간 주요 학술·기관 문헌을 찾아, 학문 분야별(경제학·사회학 등)로 구분해 개괄을 작성해줘.
+  additional_features:
+  - safe·flexible·exploratory·institutional_scan 등 검색 모드에 따라 출처 유형과 신뢰도 기준을 달리 적용하는 스마트 문헌 검색 프로토콜을 제공합니다.
+- gpt_id: g-68849e3b74808191a687cf13c0b093b1
+  name: PolicyScope (폴리시스코프)
+  url: https://chatgpt.com/g/g-68849e3b74808191a687cf13c0b093b1-policyscope
+  version: v1.0.0
+  created_at: '2025-12-06'
+  last_updated: '2025-12-06'
+  language: ko
+  one_line: 정책·예산·제도·법령·통계 자료를 정확하고 신뢰성 있게 탐색·검증·정리하고, 필요 시 정책 의제까지 생성하는 고정밀 분석 GPT.
+  functions:
+  - 국내·국제 정책, 법령, 예산, 통계 자료를 A급 공식 출처 위주로 탐색하고 정리합니다.
+  - 법령·예산·통계·조사자료 간의 구조적 맵을 만들어 정책 근거 체계를 시각화합니다.
+  - 자료의 발행일·개정일·법령번호·DOI·통계표 번호 등 메타데이터를 명시하며 인용합니다.
+  - 제도·예산·통계의 공백을 찾아 정책 의제와 개선 아이디어를 제안합니다.
+  - 국내 자료와 OECD·World Bank·Eur-Lex 등 해외 공식 자료를 비교·벤치마킹합니다.
+  alias:
+  - policyscope
+  - 정책스코프
+  - 정책분석-gpt
+  tags:
+  - policy-analysis
+  - budget
+  - statistics
+  - law
+  - evidence
+  target_users:
+  - 정책 분석가
+  - 국회·정부 조사·입법 지원 인력
+  - 연구기관·싱크탱크 연구자
+  ideal_use_cases:
+  - 특정 정책·사업에 대한 법령·예산·통계 근거를 한 번에 정리할 때
+  - 새 정책 과제의 문제 정의와 정책 공백(gap)을 파악할 때
+  - 해외 제도·예산·통계와 국내 상황을 비교·벤치마킹할 때
+  limitations:
+  - 비공개·내부 전산망 자료에는 직접 접근할 수 없으며, 사용자가 제공한 범위 내에서만 분석합니다.
+  - 법률 해석·회계 자문 등은 참고용이며, 최종 판단은 반드시 인간 전문가의 검토가 필요합니다.
+  example_commands:
+  - 산업재해 예방 정책과 관련된 법령·예산·통계를 한 번에 정리해줘.
+  - 이 주제에 대해 국내 정책 공백과 해외 사례를 비교해서 정책 아이디어를 제안해줘.
+  additional_features:
+  - SLSP 프로토콜에 따라 검색–검증–정리–정책 의제화 단계를 구조적으로 수행합니다.
+  - 법령·예산·통계·조사방법론 문서를 연계한 매핑표 구조를 제안합니다.
+- gpt_id: g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
+  name: 보고서교열검수기 – 표본조사 기반 실태조사 보고서 검토
+  url: https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
+  version: v1.0.0
+  created_at: '2025-12-06'
+  last_updated: '2025-12-06'
+  one_line: 표본조사 기반 실태조사에서 생성되는 표본설계보고서·실사보고서·결과분석보고서·이용자가이드·코드북 등을 교열·검토하여 표현, 구조, 통계설계의 타당성과 재현 가능성을 점검하는 전문 검수 GPT입니다.
+  functions:
+  - 표본조사 기반 실태조사와 관련된 표본설계보고서, 실사(조사관리)보고서, 결과분석보고서, 이용자가이드, 코드북 등의 문장을 교열하고, 용어·정의·지표 설명을 일관되고 명료하게 정리합니다.
+  - 모집단·표본틀·층화·표본배분·표본추출·가중치·추정식·표본오차(RSE 등) 등 핵심 통계 설계 요소의 누락·비논리·통계학적 타당성·재현 가능성을 점검하고 개선 방향을 제안합니다.
+  alias:
+  - bogoseo-gyoyeol-gumsugi
+  - sample-survey-report-gpt
+  tags:
+  - policy
+  - statistics
+  - research-assistant
+  target_users:
+  - 산업안전 등 표본조사 기반 실태조사 결과를 생산·공표하는 공공기관 통계 담당자와 연구용역 수행기관의 보고서 작성자
+  - 표본조사 기반 실태조사·현황조사 보고서(표본설계보고서, 결과분석보고서, 이용자가이드, 코드북 등)를 체계적으로 검토·개선하려는 통계·조사 방법론 연구자
+  ideal_use_cases:
+  - 표본설계보고서 초안에서 모집단·표본틀·층화·표본크기·표본배분·가중치·추정식 설명이 누락되거나 통계학적으로 부자연스러운 부분을 사전 점검할 때
+  - 외부 공개용 조사결과보고서의 요약·본문·표 해설에서 통계지표 정의와 해석이 일반 국민 기준으로 이해 가능하고, 지표·수치 간 모순이 없는지 검토할 때
+  limitations:
+  - 제공된 텍스트와 표를 기반으로 한 교열·검토 도구로서, 실제 통계 생산·조사 설계 및 법적·행정적 의사결정에 대한 최종 책임은 작성 기관 및 담당자에게 있으며 이를 대체할 수 없습니다.
+  example_commands:
+  - 산업안전 실태조사 표본설계보고서의 2. 모집단과 3. 표본틀 부분을 붙이겠습니다. 정의가 모호하거나 통계학적으로 타당하지 않은 설명, 재현이 어려운 부분을 지적해 주세요.
+  - 다음은 표본조사 기반 실태조사 결과분석보고서의 요약본입니다. 일반 국민이 이해하기 어렵거나 전문용어가 과도한 문장을 다듬고, 지표 정의가 모호한 곳을 표시해 주세요.
+  - 실사보고서(조사관리보고서)의 조사원 교육, 현장 품질관리, 콜백·재조사 절차 부분을 검토해서 누락된 단계나 비논리적이거나 애매한 표현을 수정 제안 형태로 정리해 주세요.
+  - 이용자가이드에서 제시한 가중치 사용법과 표본오차(RSE) 설명이 제3자가 동일 분석을 재현할 수 있을 정도로 충분한지 평가하고, 필요한 보완 설명을 문장 예시로 제안해 주세요.
+  - 코드북의 주요 변수 10개에 대한 변수명·레이블·값 정의를 붙일 테니, 값 범주와 설명이 일관되는지, 특수값 처리(-9, 97 등)가 명확한지, 서로 상충되는 설명이 없는지 점검해 주세요.
+  additional_features:
+  - 표본조사 기반 실태조사의 생애주기(표본설계–실사–분석–공개)별로 체크해야 할 핵심 항목(모집단·표본틀·표본배분·가중치·지표 정의·오차 해석 등)을 내재화한 점검 리스트를 활용하여, 각 보고서 유형(표본설계보고서,
+    실사보고서, 결과분석보고서, 이용자가이드, 코드북 등)에 맞는 교열·검토 관점을 자동으로 적용합니다.
+- gpt_id: g-692926ff1bb881919f6db364e703e390
+  url: https://chatgpt.com/g/g-692926ff1bb881919f6db364e703e390-spi-gpt-survey-policy-insight
+  version: v1.0.0
+  created_at: '2025-12-06'
+  last_updated: '2025-12-06'
+  tags:
+  - policy
+  - statistics
+  - research-assistant
+  - survey
+  - public-opinion
+  functions:
+  - 조사방법론(Sampling·대표성·편향·측정오차) 진단
+  - 여러 조사·언론보도를 통합한 Evidence Summary 작성
+  alias:
+  - SPI-GPT
+  - Survey-Policy Insight GPT
+  - 여론조사 정책분석 GPT
+  target_users:
+  - 정부·지자체 정책담당 공무원
+  - 국회 보좌관·입법조사관
+  - 여론조사 기관·리서치 회사 연구원
+  - 정책연구소·싱크탱크 연구자
+  - 데이터 저널리스트 및 언론사 정책 담당 기자
+  ideal_use_cases:
+  - 여론조사·설문조사 결과를 정책 관점에서 해석하고 싶을 때
+  - 같은 이슈에 대한 여러 여론조사를 비교해 일관성과 편향을 점검하고 싶을 때
+  limitations:
+  - 실시간 여론조사 데이터 수집 기능은 없으며, 사용자가 제공한 자료와 공개 정보에 기반해 분석함.
+  example_commands:
+  - “이 여론조사 결과를 정책결정자가 볼 수 있도록 ‘조사품질 진단 + 정책적 함의 + 정책옵션’ 구조로 정리해줘.”
+  - “이 이슈에 대한 서로 다른 3개 여론조사 결과와 최근 언론 프레이밍을 비교해, 어떤 정책 대응 옵션이 가능한지 정리해줘.”
+  additional_features:
+  - Survey-to-Policy 보고서 템플릿에 맞춘 구조화된 분석 초안 자동 생성
+  name: SPI GPT (survey-policy_insight)
+  one_line: 여론·설문조사와 언론담론을 통합 분석해 Evidence-based Policy Insight를 제공하는 정책분석 GPT.
+- gpt_id: g-693b7b5196648191bb672f07b23d1259
+  name: TableBuilder Pro
+  url: https://chatgpt.com/g/g-693b7b5196648191bb672f07b23d1259-tablebuilder-pro
+  version: v1.0.0
+  created_at: '2025-12-12'
+  last_updated: '2025-12-12'
+  one_line: 통계·텍스트 입력을 표 전용 DSL로 구조화하고, 보고서용 표를 설계·정규화·렌더링해 주는 전문 TableBuilder GPT.
+  functions:
+  - 정규화된 table_input·text_table_input 스키마를 기반으로 통계표·텍스트표 구조를 정의한다.
+  - 표 목적에 맞게 행·열·셀 구성과 정렬·강조 규칙을 설계하고 DSL 템플릿으로 고정한다.
+  - 여러 개의 유사한 표를 batch_production_mode로 일괄 생성할 수 있도록 표 템플릿을 재사용한다.
+  - 마크다운·엑셀 등 최종 산출물 렌더링 규칙을 제공하고, 필요한 경우 파이썬 코드 스니펫을 생성한다.
+  - SPSS·엑셀·Python 출력 결과를 표 전용 입력 형식으로 정규화하는 절차를 안내한다.
+  alias:
+  - tablebuilder-pro
+  - table-dsl-gpt
+  tags:
+  - policy
+  - statistics
+  - research-assistant
+  target_users:
+  - 정책·연구 보고서에서 복잡한 표를 반복 생산해야 하는 분석가·연구자
+  - 조사·통계 결과를 표 형식으로 일관되게 정리해야 하는 데이터·리서치 팀
+  ideal_use_cases:
+  - 설문·통계 분석 결과를 table_input 스키마에 맞춘 표 구조와 DSL 템플릿으로 정의할 때
+  - 장단점·특성 비교 등 텍스트 기반 내용을 체계적인 비교표·요약표로 설계할 때
+  - 연령·지역·소득 등 동일한 축을 갖는 분포표를 여러 개 batch로 자동 생성할 때
+  - SPSS·엑셀 출력 결과를 보고서용 마크다운/엑셀 표로 일관성 있게 변환할 때
+  limitations:
+  - 원자료(raw data)를 직접 분석하거나 통계치를 계산하지 않고, 이미 계산된 결과·구조화된 입력만을 표 형식으로 정리한다.
+  - 내용을 임의로 추정·창작하지 않고, 사용자가 제공한 입력 내 범위에서만 표를 설계·정규화한다.
+  - 민감한 개인정보가 포함된 원자료는 직접 업로드하지 않고, 이미 익명화·집계된 형태로만 다루는 것을 전제로 한다.
+  example_commands:
+  - 이 교차분석 결과를 table_input 스키마에 맞게 정리하고, 연령×성별 분포표 DSL을 설계해 줘.
+  - 아래 장단점 텍스트를 기반으로 3열 비교표(text_to_table_mode)를 설계하고 마크다운으로 미리보기를 보여줘.
+  - SPSS 빈도분석 출력에서 필요한 항목만 추려 표 3개(연령, 지역, 학력) 배치 생산용 DSL 템플릿을 만들어 줘.
+  - 이 엑셀 시트 구조를 table_input으로 어떻게 정규화해야 할지 단계별로 설명하고 예시 JSON을 만들어 줘.
+  - 보고서 본문에 들어갈 정책대안 비교표를 행·열·강조 규칙까지 포함한 DSL로 정의해 줘.
+  - 지금까지 만든 표 템플릿을 기준으로, 2차 조사 데이터에 그대로 재사용할 수 있는 batch_production_mode 워크플로를 정리해 줘.
+  additional_features:
+  - interactive_report_mode, batch_production_mode, text_to_table_mode 등 세 가지 모드를 통해 상황에 맞는 표 설계 방식을 선택할 수 있다.
+  - tablebuilder_dsl_core.yaml, tablebuilder_io_data.yaml 등 보조 스펙을 기반으로 일관된 DSL·입력 스키마를 유지한다.

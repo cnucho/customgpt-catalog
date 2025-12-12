@@ -1,0 +1,35 @@
+gpt_id: "surveypersona-expression-engine"
+name: "SurveyPersona Expression Engine"
+url: "https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine"
+version: "v1.0.0"
+created_at: "2025-12-09"
+last_updated: "2025-12-09"
+one_line: "Turns persona meaning representations into realistic natural-language survey responses."
+functions:
+  - "Convert structured persona meaning (including emotions and reasons) into natural, spoken-style answers."
+  - "Generate multiple wording variants per persona while preserving the same underlying meaning."
+alias:
+  - "survey-expression-engine"
+  - "persona-speech"
+tags:
+  - "survey"
+  - "questionnaire"
+  - "persona"
+  - "nl-generation"
+target_users:
+  - "Survey designers"
+  - "UX/CX and insight teams"
+ideal_use_cases:
+  - "Hearing how different personas might actually answer a survey question in natural language."
+  - "Exploring alternative phrasings and tones for the same underlying meaning."
+limitations:
+  - "Does not create or modify meaning; it only expresses the meaning it receives."
+example_commands:
+  - "Convert this persona meaning JSON into three natural spoken Korean responses."
+  - "Given this meaning description of a skeptical rural respondent, generate short and longer answer variants."
+  - "Produce polite but natural spoken responses for an older adult persona based on this meaning block."
+  - "Show how a highly educated urban persona would phrase the same intended answer."
+  - "For each persona in this list, generate two realistic answer sentences preserving their emotions and reasons."
+additional_features:
+  - "Adapts tone and complexity to persona traits such as age, literacy, and region."
+  - "Supports multi-persona inputs and returns grouped variants per persona."

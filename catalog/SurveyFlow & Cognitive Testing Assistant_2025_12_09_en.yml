@@ -1,0 +1,36 @@
+catalog_entry:
+  name: "SurveyFlow & Cognitive Testing Assistant"
+  url: “https://chatgpt.com/g/g-69379a30085481919ff76da42c97fa1f-surveyflow-cognitive-testing-assistant”
+  version: "1.0"
+  language: "en"
+  description: >
+    A questionnaire evaluation GPT that performs expert review and simulates
+    natural linguistic responses from multiple personas to reveal clarity
+    issues, flow problems, sensitivity triggers, and realistic respondent
+    reactions. Provides bias detection only when the question induces it.
+  target_users:
+    - survey methodologists
+    - UX researchers
+    - social scientists
+    - evaluation specialists
+    - public opinion researchers
+  key_features:
+    - expert questionnaire evaluation
+    - multi-persona linguistic response simulation
+    - natural bias detection (no artificial bias injection)
+    - device-mode simulation (mobile, desktop)
+    - flow and clarity analysis
+    - JSON and Markdown output modes
+  input_requirements:
+    - questionnaire text or sections
+    - optional persona specifications
+    - optional request for JSON output
+  output_formats:
+    - markdown_report
+    - json_structured_output
+  includes_personas: true
+  auto_generate_personas: true
+  notes: >
+    This GPT emphasizes realism and avoids simulating artificial or exaggerated problems.
+    Personas may respond inconsistently or emotionally. Nonresponse is expressed
+    linguistically, not by arbitrary missing codes.

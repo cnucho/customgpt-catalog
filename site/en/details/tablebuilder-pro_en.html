@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TableBuilder Pro</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+  </style>
+</head>
+<body>
+  <p class="meta"><a href="../index.html">← Back to index</a></p>
+  <h1>TableBuilder Pro</h1>
+  <p>A specialized TableBuilder GPT that structures statistical and text inputs into a table-focused DSL and designs, normalizes, and renders tables for reports.</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-693b7b5196648191bb672f07b23d1259-tablebuilder-pro' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-693b7b5196648191bb672f07b23d1259-tablebuilder-pro</a></p>
+
+  <h2>Tags</h2>
+  <ul><li>policy</li>
+<li>statistics</li>
+<li>research-assistant</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Defines table structures for statistical and text-based tables using normalized table_input and text_table_input schemas.</li>
+<li>Designs rows, columns, and cell layouts plus alignment and highlighting rules, and fixes them as reusable DSL templates.</li>
+<li>Supports batch_production_mode to mass-produce multiple similar tables from a single template.</li>
+<li>Provides rendering rules for final outputs such as Markdown and Excel, and generates Python code snippets when needed.</li>
+<li>Guides how to normalize SPSS, Excel, and Python outputs into dedicated table input formats.</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Analysts and researchers who must repeatedly produce complex tables for policy and research reports.</li>
+<li>Data and research teams that need to organize survey and statistical results into consistent table formats.</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>Defining table structures and DSL templates for survey and statistical analysis results based on the table_input schema.</li>
+<li>Designing structured comparison or summary tables from text-based descriptions such as pros/cons and key features.</li>
+<li>Batch-generating multiple distribution tables (e.g., by age, region, income) that share the same axes.</li>
+<li>Converting SPSS or Excel outputs into consistent Markdown/Excel tables for inclusion in reports.</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>Does not analyze raw data or compute statistics; it only structures already-computed results and normalized inputs into tables.</li>
+<li>Does not invent or guess content; it designs and normalizes tables strictly within the scope of user-provided inputs.</li>
+<li>Assumes that any sensitive personal data is already anonymized and aggregated before being converted into table inputs.</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>Normalize this crosstab output into the table_input schema and design an age-by-gender distribution table DSL.</li>
+<li>From the following pros/cons text, design a 3-column comparison table (text_to_table_mode) and show a Markdown preview.</li>
+<li>From this SPSS frequency output, create batch-production DSL templates for three tables (age, region, education).</li>
+<li>Explain step by step how to normalize this Excel sheet into table_input and provide an example JSON.</li>
+<li>Define a DSL template for a policy-options comparison table, including row/column structure and highlighting rules.</li>
+<li>Using the templates we have created so far, outline a batch_production_mode workflow for reusing them with a second-wave survey dataset.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>Offers three operation modes—interactive_report_mode, batch_production_mode, and text_to_table_mode—to match different table design scenarios.</li>
+<li>Relies on auxiliary specs such as tablebuilder_dsl_core.yaml and tablebuilder_io_data.yaml to keep DSL and input schemas consistent.</li></ul>
+</body>
+</html>

@@ -1,0 +1,60 @@
+gpt_block:
+  gpt_name: "LGMeta"
+  display_name: "LGMeta (Logical Governance Metadata)"
+  language: "kor"
+  url: "https://chatgpt.com/g/g-692c1c0e69388191af46f23674c5a103-lgmeta"
+  category:
+    primary: "Data Governance"
+    secondary: "Data Quality"
+  short_description: "LGMeta는 다변수 논리 규칙을 정의·관리하여 데이터 정합성, 일관성, 존재성을 검증하는 메타데이터 GPT이다."
+  full_description: >
+    LGMeta는 설문·행정·비즈니스 데이터에서 발생하는
+    다변수 논리 오류를 구조적으로 정의하고 관리하기 위한
+    Logical Governance Metadata GPT이다.
+    QCMeta가 단일 변수 제약을 다룬다면,
+    LGMeta는 부분-전체 관계, 조건부 존재/부재,
+    범위 및 서열 관계, 비율 합계,
+    논리적 모순 패턴, 반복 구조 간 일치,
+    중복 금지, 필수 존재성 규칙을 다룬다.
+    LGMeta는 survey JSON과 qcmeta.json을 기반으로
+    규칙 후보를 자동 제안하되,
+    모든 규칙은 기본적으로 enabled=false 상태로 생성되어
+    인간 검토 기반 데이터 거버넌스를 전제로 한다.
+  target_users:
+    - "데이터 품질 관리자"
+    - "설문·통계 데이터 엔지니어"
+    - "공공·금융 데이터 거버넌스 담당자"
+    - "ETL/클렌징 시스템 설계자"
+  use_cases:
+    - "설문 데이터 논리 검증 규칙 정의"
+    - "가구-개인 반복 구조 교차 검증"
+    - "총계·비율·서열 값 정합성 검사"
+    - "데이터 수집 오류 사전 탐지"
+  core_features:
+    - "다변수 논리 규칙(LGMeta) 자동 제안"
+    - "QCMeta required_if / skip_if 기반 conditional_presence 생성"
+    - "부분-전체·비율·서열·범위 관계 검증"
+    - "모순·중복·존재성 규칙 정의"
+    - "CSV/JSON 기반 규칙 관리"
+  limitations:
+    - "규칙 활성화는 반드시 사람의 검토 필요"
+    - "데이터 값을 직접 수정하지 않음"
+  alias:
+    - "Logical Meta"
+    - "Data Logic Validator"
+    - "LG Metadata"
+  example_commands:
+    - "survey JSON과 qcmeta.json으로 LGMeta 규칙을 생성하라"
+    - "전화번호 변수에 대한 uniqueness 규칙을 제안하라"
+    - "총계/남/여 변수를 part_whole 규칙으로 변환하라"
+    - "가구-개인 구조의 필수 존재 규칙을 생성하라"
+    - "required_if 조건을 conditional_presence 규칙으로 정의하라"
+  previous_names: []
+  replaced_by: ""
+  release_status: "active"
+  maintainer: "User-defined GPT"
+  tags:
+    - "LGMeta"
+    - "DataQuality"
+    - "LogicalRules"
+    - "Metadata"

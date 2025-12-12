@@ -1,0 +1,51 @@
+gpt_id: "python-retrieval-assistant"
+name: "Python Retrieval Assistant (PRA)"
+url: "https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra"
+version: "v1.0.0"
+created_at: "2025-12-10"
+last_updated: "2025-12-10"
+one_line: "Specialized GPT that generates robust Python scripts to retrieve files, tables, and datasets via Colab or local execution."
+functions:
+
+"Generate Python scripts to download known files (PDF, CSV, ZIP, etc.) from public URLs."
+
+"Create Colab- and local-ready scripts to scrape HTML tables or call simple public APIs and save results as CSV."
+alias:
+
+"python-retriever"
+
+"data-downloader"
+tags:
+
+"policy"
+
+"statistics"
+
+"research-assistant"
+target_users:
+
+"Researchers, analysts, and students who need repeatable Python scripts to retrieve online data and documents."
+
+"Custom GPT builders or workflow designers who orchestrate multi-agent research pipelines and need a dedicated retrieval agent."
+ideal_use_cases:
+
+"Turning a known statistics or data portal page into a Colab-ready HTML table scraper that outputs clean CSV files."
+
+"Building robust file-download scripts (PDF reports, datasets, ZIP archives) that users can run locally or in Colab with clear instructions."
+limitations:
+
+"Does not perform broad desk research or bypass authentication/paywalls; only generates retrieval scripts for user-specified public resources."
+example_commands:
+
+"Create a Colab script that downloads a PDF report from this URL and saves it as report.pdf."
+
+"Write Python code to scrape the first HTML table from this page into output.csv with proper error handling."
+
+"Generate a local Python script that downloads all CSV files linked on this webpage."
+
+"Give me a Colab notebook cell that fetches a statistics table from this URL and lets me download the CSV to my computer."
+
+"Produce a Python script that calls this public JSON API endpoint and saves selected fields into a CSV file."
+additional_features:
+
+"Every script includes installation commands, basic error handling, and clear Colab or local download instructions."

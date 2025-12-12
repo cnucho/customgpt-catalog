@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPT Catalog (EN)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    input { width: 100%; padding: 10px; font-size: 16px; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 10px 0; border-bottom: 1px solid #eee; }
+    .meta { color: #555; font-size: 13px; margin-top: 4px; }
+    .topbar { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+    .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="pill">Total: 12</div>
+    <a class='pill' href='../index.html'>Korean</a>
+  </div>
+
+  <h1>GPT Catalog (EN)</h1>
+  <p>Search by name / tags / description</p>
+  <input id="q" placeholder="type to filter..." />
+
+  <ul id="list">
+    <li data-name='DataPrepCodeGen – SPSS/R Data Preparation Code Generator' data-tags='policy statistics research-assistant' data-one='A GPT specialized in generating SPSS and R (tidyverse) code for official statistics and survey data preparation.'><a href='details/dataprepcodegen-spss-r-data-preparation-code-generator_en.html'>DataPrepCodeGen – SPSS/R Data Preparation Code Generator</a><div class='meta'>A GPT specialized in generating SPSS and R (tidyverse) code for official statistics and survey data preparation.</div></li><li data-name='lgmeta-2025-12-12-eng-yaml' data-tags='' data-one=''><a href='details/lgmeta-2025-12-12-eng-yaml_en.html'>lgmeta-2025-12-12-eng-yaml</a><div class='meta'></div></li><li data-name='lgmeta-2025-12-12-kor-yaml' data-tags='' data-one=''><a href='details/lgmeta-2025-12-12-kor-yaml_en.html'>lgmeta-2025-12-12-kor-yaml</a><div class='meta'></div></li><li data-name='SurveyPersona Summarizer ' data-tags='survey questionnaire evaluation design' data-one='Summarizes persona outputs and suggests improvements to survey questions.'><a href='details/surveypersona-summarizer_en.html'>SurveyPersona Summarizer </a><div class='meta'>Summarizes persona outputs and suggests improvements to survey questions.</div></li><li data-name='ChartArtist – ChartFlow GPT 2.0' data-tags='policy statistics research-assistant' data-one='A visualization-focused GPT that takes tabular data and automatically renders well-designed charts with the right type, layout, and colors.'><a href='details/chartartist-chartflow-gpt-2-0_en.html'>ChartArtist – ChartFlow GPT 2.0</a><div class='meta'>A visualization-focused GPT that takes tabular data and automatically renders well-designed charts with the right type, layout, and colors.</div></li><li data-name='ChartArtist – ChartFlow GPT 2.0' data-tags='policy statistics research-assistant' data-one='데이터 표만 주면 차트 유형 선택부터 색상·레이아웃까지 자동으로 렌더링해 주는 시각화 전용 GPT'><a href='details/chartartist-chartflow-gpt-2-0_en.html'>ChartArtist – ChartFlow GPT 2.0</a><div class='meta'>데이터 표만 주면 차트 유형 선택부터 색상·레이아웃까지 자동으로 렌더링해 주는 시각화 전용 GPT</div></li><li data-name='deskresearch – Market Research Desk Analyst' data-tags='policy statistics research-assistant' data-one='A fact-based market and industry desk research GPT that analyzes markets using credible public sources.'><a href='details/deskresearch-market-research-desk-analyst_en.html'>deskresearch – Market Research Desk Analyst</a><div class='meta'>A fact-based market and industry desk research GPT that analyzes markets using credible public sources.</div></li><li data-name='litsearch GPT – Scholarly Search' data-tags='policy statistics research-assistant' data-one='A research-focused GPT that safely searches, filters, and structures scholarly and policy literature based on trusted sources.'><a href='details/litsearch-gpt-scholarly-search_en.html'>litsearch GPT – Scholarly Search</a><div class='meta'>A research-focused GPT that safely searches, filters, and structures scholarly and policy literature based on trusted sources.</div></li><li data-name='PolicyScope' data-tags='policy-analysis budget statistics law evidence' data-one='A high-precision GPT for searching, validating, and structuring policy, budget, legal, and statistical information, and for generating policy agendas.'><a href='details/policyscope_en.html'>PolicyScope</a><div class='meta'>A high-precision GPT for searching, validating, and structuring policy, budget, legal, and statistical information, and for generating policy agendas.</div></li><li data-name='Report Proofreading &amp; Validation GPT – Survey-Based Reporting' data-tags='policy statistics research-assistant' data-one='A specialized GPT for reviewing and validating survey-based reports such as sample design reports, fieldwork reports, analytical reports, user guides, and codebooks, ensuring clarity, coherence, and statistical soundness.'><a href='details/report-proofreading-validation-gpt-survey-based-reporting_en.html'>Report Proofreading &amp; Validation GPT – Survey-Based Reporting</a><div class='meta'>A specialized GPT for reviewing and validating survey-based reports such as sample design reports, fieldwork reports, analytical reports, user guides, and codebooks, ensuring clarity, coherence, and statistical soundness.</div></li><li data-name='SPI GPT (survey-policy_insight)' data-tags='policy statistics research-assistant survey public-opinion' data-one='An AI policy-analysis GPT that integrates surveys, polls, and media discourse into evidence-based policy insights.'><a href='details/spi-gpt-survey-policy-insight_en.html'>SPI GPT (survey-policy_insight)</a><div class='meta'>An AI policy-analysis GPT that integrates surveys, polls, and media discourse into evidence-based policy insights.</div></li><li data-name='TableBuilder Pro' data-tags='policy statistics research-assistant' data-one='A specialized TableBuilder GPT that structures statistical and text inputs into a table-focused DSL and designs, normalizes, and renders tables for reports.'><a href='details/tablebuilder-pro_en.html'>TableBuilder Pro</a><div class='meta'>A specialized TableBuilder GPT that structures statistical and text inputs into a table-focused DSL and designs, normalizes, and renders tables for reports.</div></li>
+  </ul>
+
+<script>
+  const q = document.getElementById('q');
+  const list = document.getElementById('list');
+  const items = Array.from(list.querySelectorAll('li'));
+
+  function apply() {
+    const s = (q.value || '').toLowerCase().trim();
+    for (const li of items) {
+      const hay = (li.dataset.name + " " + li.dataset.tags + " " + li.dataset.one).toLowerCase();
+      li.style.display = hay.includes(s) ? '' : 'none';
+    }
+  }
+  q.addEventListener('input', apply);
+</script>
+</body>
+</html>

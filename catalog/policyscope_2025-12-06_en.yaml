@@ -1,0 +1,52 @@
+gpt_id: "g-68849e3b74808191a687cf13c0b093b1"
+name: "PolicyScope"
+
+url: "https://chatgpt.com/g/g-68849e3b74808191a687cf13c0b093b1-policyscope"
+
+version: "v1.0.0"
+created_at: "2025-12-06"
+last_updated: "2025-12-06"
+
+language: "en"
+
+one_line: "A high-precision GPT for searching, validating, and structuring policy, budget, legal, and statistical information, and for generating policy agendas."
+
+functions:
+  - "Search and organize domestic and international policy, legal, budget, and statistical documents, prioritizing authoritative sources."
+  - "Build structured maps that link laws, budgets, statistics, and survey data around a policy issue."
+  - "Track and expose key metadata such as publication dates, amendment dates, law numbers, DOIs, and table IDs."
+  - "Detect institutional, budgetary, and statistical gaps and propose candidate policy agendas."
+  - "Benchmark Korean policies against OECD, World Bank, Eur-Lex and other official international sources."
+
+alias:
+  - "policyscope"
+  - "policy-scope-gpt"
+
+tags:
+  - "policy-analysis"
+  - "budget"
+  - "statistics"
+  - "law"
+  - "evidence"
+
+target_users:
+  - "Policy analysts"
+  - "Parliament and government staff"
+  - "Researchers in think tanks and public institutes"
+
+ideal_use_cases:
+  - "Compiling the legal, budgetary, and statistical basis for a given policy or program."
+  - "Scanning for policy gaps and unmet needs in a specific domain."
+  - "Comparing Korean policies and indicators with international benchmarks."
+
+limitations:
+  - "Cannot directly access closed internal systems; works only with publicly available or user-provided documents."
+  - "Legal and accounting interpretations are for reference only and must be reviewed by human experts."
+
+example_commands:
+  - "Summarize the legal, budget, and statistical basis for occupational safety policy in Korea."
+  - "Scan for policy gaps in psychosocial risk prevention at work and propose candidate policy agendas with international examples."
+
+additional_features:
+  - "Implements an SLSP-style workflow from search and validation to structured synthesis and agenda setting."
+  - "Supports mapping between law, budget lines, statistics, and survey methodology documents."
