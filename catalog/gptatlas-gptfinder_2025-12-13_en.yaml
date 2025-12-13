@@ -1,0 +1,33 @@
+gpt_id: "gptatlas-gptfinder"
+name: "GPT Atlas"
+url: "https://chatgpt.com/g/g-692581c303f0819181fe33297f419cea-gptatlas-jipiticajgi"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "A catalog-based assistant that finds real, existing custom GPTs without speculation."
+functions:
+  - "Searches a verified GPT catalog to identify matching custom GPTs"
+  - "Prevents hallucination by returning only catalog-registered GPTs"
+alias:
+  - "gptfinder"
+  - "gptcatalog"
+tags:
+  - "catalog"
+  - "search"
+  - "custom-gpt"
+target_users:
+  - "Researchers looking for verified custom GPTs"
+  - "Users who want to avoid hallucinated GPT recommendations"
+ideal_use_cases:
+  - "Finding an exact custom GPT by name or alias"
+  - "Checking whether a described GPT actually exists"
+limitations:
+  - "Cannot suggest GPTs that are not registered in the catalog"
+example_commands:
+  - "Find a GPT called DeskResearch"
+  - "Is there a GPT for survey persona analysis?"
+  - "Show me GPTs related to policy research"
+  - "Does a GPT named StatHelper exist?"
+  - "Search for GPTs that analyze academic papers"
+additional_features:
+  - "Strict no-hallucination policy using a single authoritative catalog"

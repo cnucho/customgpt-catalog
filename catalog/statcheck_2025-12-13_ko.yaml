@@ -1,0 +1,33 @@
+gpt_id: "g-692a335daa7c819187da88fad4df24e0"
+name: "StatCheck 분석체크"
+url: "https://chatgpt.com/g/g-692a335daa7c819187da88fad4df24e0-statcheck-bunseogcekeu"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "통계 분석 코드·결과·해석의 정합성과 신뢰도를 점검하는 통합 QA 시스템."
+functions:
+  - "통계 분석 코드, 결과표, 해석 간 일관성과 타당성 검토"
+  - "가정 위반, 방법론 오류, 조작 가능성 신호 탐지"
+alias:
+  - "통계검증"
+  - "분석점검"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "학술 연구자"
+  - "데이터 분석가 및 통계 전문가"
+ideal_use_cases:
+  - "논문 제출 전 회귀·SEM·머신러닝 분석 품질 점검"
+  - "결과표와 해석의 오류 및 과잉해석 여부 검토"
+limitations:
+  - "제공되지 않은 데이터로 새로운 통계량을 계산할 수 없음"
+example_commands:
+  - "이 회귀분석 결과표에서 논리적 오류가 있는지 점검해줘."
+  - "SEM 결과 해석이 방법론적으로 타당한지 검토해줘."
+  - "이 분석에 p-hacking이나 조작 의심 신호가 있는지 봐줘."
+  - "코드–결과표–해석 간 불일치 여부를 교차검증해줘."
+  - "이 분석이 논문에 실릴 수 있는 수준인지 평가해줘."
+additional_features:
+  - "신뢰도 등급 부여 및 구체적 수정·보완 권고안 제공"

@@ -1,0 +1,33 @@
+gpt_id: "g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor"
+name: "SamplingPlanExecutor"
+url: "https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "구조화된 설계 요약을 기반으로 표본추출·가중치·정밀도 지표를 재현 가능하게 계산하고, 보고서용 표를 생성합니다."
+functions:
+  - "SamplingPlanner 설계 요약(JSON/YAML)과 선택적 SDM을 스키마 기준으로 검증하고, 재설계 없이 누락/충돌 입력을 식별합니다."
+  - "업로드된 데이터에 대해 Python으로 표본추출·가중치·CV/분산 산출을 실행하고, 결과를 Markdown/Excel의 보고서용 구조로 출력합니다."
+alias:
+  - "표본설계 실행기"
+  - "가중치·CV 계산"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "사전 정의된 표본설계를 실제 데이터에 적용해 실행해야 하는 조사통계 담당자 및 방법론 연구자."
+  - "SamplingPlanner 산출물을 바탕으로 공식 보고서형 통계표를 생성하는 정책·연구 실무팀."
+ideal_use_cases:
+  - "SamplingPlanner 설계 요약에 정의된 층화·다단계 추출 절차를 데이터에 적용하고 선택·가중치 변수를 생성."
+  - "기본가중치, 무응답 보정, 사후층화/레이킹을 수행하고 핵심 추정치의 CV/SE/DEFF 표를 산출."
+limitations:
+  - "표본설계를 재구성하지 않으며 설계 요약과 적절한 프레임/표본 데이터가 필요합니다(모집단 수·MOS 임의 생성 금지)."
+example_commands:
+  - "SamplingPlanner design_summary.json과 sample.csv를 사용해 설계대로 실행하고 기본가중치를 만들어 주세요."
+  - "이 설계 요약과 benchmarks.xlsx로 최종가중치를 계산해 주세요(무응답 보정과 레이킹 포함)."
+  - "STRATA, PSU, final_weight를 사용해 지역별 평균의 CV/SE/DEFF를 계산하고 Excel로 출력해 주세요."
+  - "SDM.yaml을 템플릿과 비교해 실행을 막는 누락·충돌 항목을 정리해 주세요."
+  - "보고서용 구조(YAML/Markdown)로 본문 요약표와 부록 Excel 표를 생성해 주세요."
+additional_features:
+  - "재현 가능한 Python 코드와 진단 플래그(입력 누락, 불안정 가중치, 고CV 도메인) 제공."

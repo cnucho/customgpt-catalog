@@ -1,0 +1,33 @@
+gpt_id: "corecritic-weonyopyeong"
+name: "코어크리틱 (원요평)"
+url: "https://chatgpt.com/g/g-68777722ae9c8191aef591f56e192c26-corecritic-weonyopyeong"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "논문을 구조적으로 요약하고 논리·방법론적 약점을 비판적으로 진단하는 연구 분석 GPT."
+functions:
+  - "논문 구조 기반 사실 요약"
+  - "논리적 결함 및 방법론 평가"
+alias:
+  - "논문비평"
+  - "연구감사"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "학술 연구자"
+  - "대학원생"
+ideal_use_cases:
+  - "해석 없이 논문 내용을 재진술하는 요약"
+  - "연구 설계와 논증의 취약점 점검"
+limitations:
+  - "원문에 명시되지 않은 해석이나 추론은 제공하지 않음"
+example_commands:
+  - "이 논문을 1단계 내용 요약만 수행하라."
+  - "이 연구에서 누락된 이론적 배경을 분석하라."
+  - "가설과 분석 간의 정합성을 점검하라."
+  - "결과에 근거한 정책적 시사점을 도출하라."
+  - "저널 심사용으로 이 논문을 평가하라."
+additional_features:
+  - "저널 심사용 평가 및 가이드라인 검증 지원"

@@ -1,0 +1,33 @@
+gpt_id: "table-narrator"
+name: "Table Narrator"
+url: "https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "Automatically interprets statistical tables into clear, report-ready narrative text."
+functions:
+  - "Analyze table structure and identify interpretation basis"
+  - "Generate neutral, policy-ready narrative interpretations"
+alias:
+  - "table-interpreter"
+  - "stat-narrator"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "policy researchers"
+  - "data analysts"
+ideal_use_cases:
+  - "Interpreting survey result tables for reports"
+  - "Converting statistical tables into narrative summaries"
+limitations:
+  - "Does not infer causality beyond table values"
+example_commands:
+  - "Interpret the following survey frequency table into report-style text."
+  - "Summarize this cross-tabulation with neutral policy language."
+  - "Generate item-by-item interpretations for this statistics table."
+  - "Explain trends shown in this time-series table."
+  - "Rewrite this table as an academic-style results paragraph."
+additional_features:
+  - "Automatic detection of percentage bases and table types"

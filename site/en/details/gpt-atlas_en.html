@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPT Atlas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    // 티스토리 목록에서 넘어올 때 ?back=... 이 있으면 그쪽으로 돌아가게 함
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>GPT Atlas</h1>
+  <p>A catalog-based assistant that finds real, existing custom GPTs without speculation.</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-692581c303f0819181fe33297f419cea-gptatlas-jipiticajgi' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-692581c303f0819181fe33297f419cea-gptatlas-jipiticajgi</a></p>
+
+  <h2>Tags</h2>
+  <ul><li>catalog</li>
+<li>search</li>
+<li>custom-gpt</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Searches a verified GPT catalog to identify matching custom GPTs</li>
+<li>Prevents hallucination by returning only catalog-registered GPTs</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Researchers looking for verified custom GPTs</li>
+<li>Users who want to avoid hallucinated GPT recommendations</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>Finding an exact custom GPT by name or alias</li>
+<li>Checking whether a described GPT actually exists</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>Cannot suggest GPTs that are not registered in the catalog</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>Find a GPT called DeskResearch</li>
+<li>Is there a GPT for survey persona analysis?</li>
+<li>Show me GPTs related to policy research</li>
+<li>Does a GPT named StatHelper exist?</li>
+<li>Search for GPTs that analyze academic papers</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>Strict no-hallucination policy using a single authoritative catalog</li></ul>
+</body>
+</html>
