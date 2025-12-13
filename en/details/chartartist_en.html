@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChartArtist</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    // 티스토리 목록에서 넘어올 때 ?back=... 이 있으면 그쪽으로 돌아가게 함
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>ChartArtist</h1>
+  <p>A precision-focused GPT for automatically rendering accurate and visually polished data charts.</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-692d72d34b6c8191aec3dac13d5053d1-chartartist' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-692d72d34b6c8191aec3dac13d5053d1-chartartist</a></p>
+
+  <h2>Tags</h2>
+  <ul><li>policy</li>
+<li>statistics</li>
+<li>research-assistant</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Automatic chart type selection based on data structure</li>
+<li>High-quality visual rendering with strict design validation</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Data analysts and researchers</li>
+<li>Product managers and consultants</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>Creating publication-ready charts from raw tabular data</li>
+<li>Generating consistent visualizations for reports and presentations</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>Does not provide statistical interpretation or analytical insights</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>Render a bar chart from this CSV data with value labels inside the bars.</li>
+<li>Create a line chart for this time-series dataset using a colorblind-safe palette.</li>
+<li>Generate a pie chart showing percentage distribution, limited to 8 categories.</li>
+<li>Visualize this dataset as a scatter plot with a trendline.</li>
+<li>Export the rendered chart as an HTML report using the default template.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>Built-in accessibility validation including contrast ratio checks</li></ul>
+</body>
+</html>
