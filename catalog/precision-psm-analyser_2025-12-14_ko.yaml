@@ -1,0 +1,39 @@
+gpt_id: "g-683aa5aba5dc81919d5b077a128aa55a"
+name: "Precision PSM Analyser – 정밀 성향점수 매칭 분석기"
+url: "https://chatgpt.com/g/g-683aa5aba5dc81919d5b077a128aa55a-precision-psm-analyser"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "ATT, ATE 분석을 위한 정밀 PSM 도우미 – 정책효과 분석 및 논문작성에 최적화됨"
+
+functions:
+  - "성향점수 추정 및 매칭 방식 자동 선택"
+  - "사전 진단부터 회귀해석까지 전 과정 지원"
+
+alias:
+  - "psm-analyser"
+  - "psm-gpt"
+
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+
+target_users:
+  - "정책 연구자"
+  - "사회과학 데이터 분석가"
+
+ideal_use_cases:
+  - "ATT 기반 정책효과 분석"
+  - "ATE 중심 집단 비교 연구"
+
+limitations:
+  - "설명력을 위한 매칭 품질 진단 필수 – 자동 결과만 맹신 금지"
+
+example_commands:
+  - "ATT 기반 성향점수 매칭 분석을 수행해줘"
+  - "이 결과의 ATE 해석과 회귀 요약을 알려줘"
+
+additional_features:
+  - "APA, AJPOR, ANPOR 스타일 결과 요약 자동 생성"

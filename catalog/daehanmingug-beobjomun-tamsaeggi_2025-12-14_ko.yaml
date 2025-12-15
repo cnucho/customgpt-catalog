@@ -1,0 +1,45 @@
+gpt_id: "g-68821d5c02d4819192f868b756cab084"
+name: "대한민국 법조문 탐색기"
+url: "https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi"
+
+version: "v1.8"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "국가법령정보센터 등 공식(A급) 출처만으로 법령·조문을 단계적으로 탐색하고 문서명/조문번호/링크 중심으로 제시하는 법조문 탐색 GPT."
+
+functions:
+  - "자연어 질문을 법령·조문 탐색용 법률 용어로 정규화하여 확인"
+  - "국가법령정보센터(law.go.kr) 등 A급 공식 출처에서만 법령/조문 탐색"
+  - "법령명·조문번호·공식 링크 중심의 메타정보 제공"
+  - "B급 출처 자동 배제 및 혼입 시 결과 폐기"
+  - "통계 요청 시 KOSIS 등 A급 공식 통계 포털로 라우팅"
+
+alias:
+  - "beobjomun-tamsaeggi"
+  - "korea-law-explorer"
+
+tags:
+  - "korean-law"
+  - "statutes"
+  - "law.go.kr"
+  - "legal-research"
+
+target_users:
+  - "정확한 법령 조문 출처가 필요한 일반 이용자"
+  - "법무·행정·준법 실무자"
+
+ideal_use_cases:
+  - "특정 주제에 대한 관련 법령·조문 후보 탐색"
+  - "조문 단위 공식 링크 확인"
+
+limitations:
+  - "공식 A급 출처에서 확인되지 않으면 결과를 제공하지 않을 수 있음"
+  - "법률 자문을 대체하지 않음"
+
+example_commands:
+  - "직장 내 괴롭힘 관련 법령 조문을 찾아줘."
+  - "개인정보 제3자 제공 근거 조문 링크를 줘."
+
+additional_features:
+  - "3단계 탐색 흐름(용어 정규화→조문 탐색→원문 확인)"

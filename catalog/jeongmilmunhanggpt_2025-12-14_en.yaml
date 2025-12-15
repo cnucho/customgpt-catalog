@@ -1,0 +1,59 @@
+gpt_id: "g-6890c67bf6f08191b7f90d970eafa11f"
+name: "JeongmilmunhangGPT (Precision Survey Item GPT)"
+url: "https://chatgpt.com/g/g-6890c67bf6f08191b7f90d970eafa11f-jeongmilmunhanggpt"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A survey design assistant that audits and improves questionnaire items for concept clarity, validity, wording, and response stability."
+
+functions:
+  - "Derives the intended construct from each item and checks construct validity through a concept/dimension lens."
+  - "Detects wording risks (double-barreled items, complex clauses, double negation, ambiguous conditions) and proposes rewrites."
+  - "Reviews response options/scales (mutual exclusivity, exhaustiveness, neutral option, cognitive load, directional consistency) and improves them."
+  - "Determines when information provision is needed (jargon, policy names, missing decision criteria, time/stat claims) and designs brief neutral explanations."
+  - "Suggests strategies for complex items (explain-then-ask, filter-then-ask, include 'don’t know', etc.)."
+  - "Supports survey flow/logic design (screeners, conditional follow-ups, routing based on response types)."
+  - "Flags potentially sensitive or biased language (political bias, moral pressure, discriminatory phrasing) and offers neutral alternatives."
+  - "Guides end-to-end scale/index development (itemization → measurement choice → reliability/validity checks → interpretation rules)."
+
+alias:
+  - "jeongmilmunhanggpt"
+  - "precision-item-gpt"
+
+tags:
+  - "survey-design"
+  - "questionnaire"
+  - "measurement"
+  - "validity"
+  - "response-quality"
+  - "web-survey"
+
+target_users:
+  - "Survey and research practitioners (marketing, policy, academic)"
+  - "Scale/index developers and thesis/dissertation survey designers"
+  - "Questionnaire reviewers (QC) and data quality owners"
+
+ideal_use_cases:
+  - "Audit and rewrite existing questionnaire items to reduce wording/interpretation risks"
+  - "Organize items via concept–dimension mapping to remove redundancy and cover missing facets"
+  - "Design information-provision items and decide whether to add a 'don’t know' option"
+  - "Optimize for web/mobile surveys: item length, screen splitting, and response-quality logic"
+  - "Neutralize sensitive questions using indirect questions or scenario framing"
+
+limitations:
+  - "Advanced simulations (virtual respondents, reliability prediction, etc.) are not triggered unless the user explicitly requests them."
+  - "Statistical reliability/validity testing (e.g., Cronbach’s alpha, factor analysis) requires real data and external analysis; this GPT mainly supports process and recommendations."
+  - "Theory/model suggestions prioritize user-provided sources; unsupported theories are treated only as general GPT knowledge."
+  - "Web-survey logic/quality-control suggestions may depend on what your survey platform can implement."
+
+example_commands:
+  - "Classify these 12 items into constructs/dimensions, detect double-barreled or leading wording, and provide a before/after revision table."
+  - "Respondents may not know this topic well. Convert this into an information-provision item and recommend whether to include a 'don’t know' option."
+  - "We’ll run this as a mobile web survey. Propose screen splitting, routing logic, and a simple attention-check plan."
+  - "Check for sensitive or politically biased phrasing and rewrite using indirect or scenario-based questions."
+
+additional_features:
+  - "Context inference module: extracts survey purpose/target/topic and proposes core research questions and priority constructs."
+  - "Theory-driven concept suggester: proposes candidate theories, key constructs, and alternative models."
+  - "Virtual-question support: criteria for when scenario-based questions are needed and a basic scenario template."

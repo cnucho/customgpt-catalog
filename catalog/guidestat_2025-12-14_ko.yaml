@@ -1,0 +1,40 @@
+gpt_id: "guidestat"
+name: "GuideStat – 통합 분석 설계 GPT"
+url: "https://chatgpt.com/g/g-689b6c7baf94819193c095eb95b7ebf0-guidestat"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "질문지와 코드북 기반으로 분석 설계를 제안하고 자동화된 분석 시나리오를 제공합니다."
+
+functions:
+  - "코드북/질문지에서 변수와 분석 분야 자동 추론"
+  - "전처리, 기법 선택, 진단, 리포트 생성을 통합 수행"
+
+alias:
+  - "guidestat"
+  - "가이드스탯"
+
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+
+target_users:
+  - "사회과학·보건·교육 분야 연구자"
+  - "정책 분석가 및 데이터 기반 평가 담당자"
+
+ideal_use_cases:
+  - "질문지 기반 조사자료에 대한 분석 설계"
+  - "정책영향평가 설계 비교 및 자동 실행"
+
+limitations:
+  - "설계 불일치 또는 전처리 오류 시 사용자 확인이 필요함"
+
+example_commands:
+  - "이 코드북으로 분석 가능한 시나리오를 보여줘"
+  - "이 자료에서 정책효과를 추정할 수 있는 방법은?"
+
+additional_features:
+  - "도메인 기반 진단·가정검정 내장"
+  - "문헌 앵커 자동 추천 및 검증 파이프라인"

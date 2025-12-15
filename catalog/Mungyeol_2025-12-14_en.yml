@@ -1,0 +1,58 @@
+gpt_id: "g-685ccc566ff48191a25daae6ce47f0c1"
+name: "Mungyeol"
+url: "https://chatgpt.com/g/g-685ccc566ff48191a25daae6ce47f0c1-mungyeol"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+one_line: "GPT for editing Korean text with natural flow, consistency, and grammatical accuracy"
+
+functions:
+
+  - "Correct Korean spelling and spacing in long text"
+  - "Improve natural phrasing and sentence flow"
+  - "Maintain consistent writing style across sections"
+  - "Detect and suggest fixes for ambiguous or unclear expressions"
+
+alias:
+
+  - "mungyeol"
+  - "KoreanTextEditor"
+  - "KoreanStyleGPT"
+
+tags:
+
+  - "Korean editing"
+  - "style refinement"
+  - "language assistant"
+  - "text editor"
+
+target_users:
+
+  - "students"
+  - "writers"
+  - "researchers"
+  - "content creators"
+
+ideal_use_cases:
+
+  - "Polishing drafts of academic papers or reports"
+  - "Refining blog posts and articles"
+  - "Ensuring consistent style in long-form writing"
+  - "Replacing vague referents with precise terms"
+
+limitations:
+
+  - "May require review for highly specialized terminology"
+  - "Artistic judgement for literary content has natural limits"
+
+example_commands:
+
+  - "Polish this long report for grammar and flow."
+  - "Fix spelling, spacing, and redundancy in the text below."
+  - "Improve the logic and flow of the introduction section of this paper."
+
+additional_features:
+
+  - "Paragraph connectivity assessment and suggestions"
+  - "Automatic detection of ambiguous terms with concrete alternatives"
+    ans

@@ -16,3 +16,10 @@ python build_tistory_catalog.py
 git add .
 git commit -m "update catalog"
 git push
+
+  
+
+tistory/tistory_catalog.html  올리기  (수동)
+tistory/atlas.yaml  올리기(수동)
+
+ 

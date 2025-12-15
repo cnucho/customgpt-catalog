@@ -2,6 +2,7 @@ import os
 import yaml
 import re
 import html
+from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CATALOG_DIR = os.path.join(BASE_DIR, "catalog")
@@ -11,10 +12,15 @@ DETAILS_KO_DIR = os.path.join(SITE_DIR, "details")
 EN_DIR = os.path.join(SITE_DIR, "en")
 DETAILS_EN_DIR = os.path.join(EN_DIR, "details")
 
+# (Optional) If you keep a tistory output folder, atlas.yaml will also be written there.
+TISTORY_DIR = os.path.join(BASE_DIR, "tistory")
+
 # 기본 티스토리 목록 URL (back 파라미터 없을 때 사용)
 DEFAULT_TISTORY_LIST_URL = "https://skcho.tistory.com/129"
 
 HANGUL_RE = re.compile(r"[가-힣]")
+ASCII_LETTERS_RE = re.compile(r"[A-Za-z]")
+SAFE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*$", re.IGNORECASE)
 
 def esc(s) -> str:
     return html.escape(str(s)) if s is not None else ""
@@ -23,6 +29,13 @@ def slugify(text: str) -> str:
     t = (text or "").lower()
     t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
     return t or "item"
+
+def sanitize_id(raw_id: str) -> str:
+    """파일/URL에 안전한 id를 보장한다. 이미 안전하면 그대로, 아니면 slugify."""
+    if not raw_id:
+        return "item"
+    s = str(raw_id).strip()
+    return s if SAFE_ID_RE.match(s) else slugify(s)
 
 def load_yaml_safe(path: str):
     try:
@@ -64,9 +77,91 @@ def guess_lang(entry: dict, filename: str) -> str:
         return "ko"
     return "en"
 
+def is_probably_english_name(name: str) -> bool:
+    if not name:
+        return False
+    s = str(name).strip()
+    # If it contains Hangul, treat as not English canonical
+    if HANGUL_RE.search(s):
+        return False
+    return bool(ASCII_LETTERS_RE.search(s))
+
+def auto_translate_name_ko(name_en: str) -> str:
+    """가벼운 오프라인 자동번역(단어 치환)"""
+    if not name_en:
+        return ""
+    s = str(name_en)
+
+    # Normalize separators
+    s = re.sub(r"[-_/]+", " ", s)
+    s = re.sub(r"\s+", " ", s).strip()
+
+    mapping = {
+        "assistant": "어시스턴트",
+        "analyzer": "분석기",
+        "analysis": "분석",
+        "research": "리서치",
+        "desk": "데스크",
+        "data": "데이터",
+        "report": "리포트",
+        "writer": "작성기",
+        "builder": "빌더",
+        "catalog": "카탈로그",
+        "atlas": "아틀라스",
+        "survey": "설문",
+        "weighting": "가중치",
+        "pro": "프로",
+        "plus": "플러스",
+        "qa": "QA",
+        "qc": "QC",
+        "meta": "메타",
+        "guide": "가이드",
+        "coach": "코치",
+        "planner": "플래너",
+        "translator": "번역기",
+        "summarizer": "요약기",
+        "summarize": "요약",
+        "extractor": "추출기",
+        "validator": "검증기",
+        "checker": "체커",
+        "stats": "통계",
+        "statistics": "통계",
+        "code": "코드",
+    }
+
+    out_tokens = []
+    for tok in s.split(" "):
+        key = tok.lower()
+        if re.fullmatch(r"[A-Z0-9]{2,}", tok):
+            out_tokens.append(tok)
+            continue
+        out_tokens.append(mapping.get(key, tok))
+    return " ".join(out_tokens).strip()
+
 def render_detail_page(entry: dict, lang: str) -> str:
-    name = entry.get(f"name_{lang}") or entry.get("name") or entry.get("name_en") or entry.get("name_ko") or ""
-    one_line = entry.get(f"one_line_{lang}") or entry.get("one_line") or entry.get(f"description_{lang}") or entry.get("description") or ""
+    name_en = entry.get("name_en") or entry.get("name") or ""
+    name_ko = entry.get("name_ko") or ""
+    ko_policy = (entry.get("name_ko_policy") or "none").lower()
+
+    if lang == "ko":
+        if name_ko:
+            if ko_policy == "auto":
+                name = f"{name_en} · (자동번역) {name_ko}" if name_en else name_ko
+            else:
+                name = f"{name_en} · {name_ko}" if name_en else name_ko
+        else:
+            name = name_en or entry.get("name") or ""
+        one_line = entry.get("one_line_ko") or entry.get("one_line") or entry.get("description_ko") or entry.get("description") or entry.get("one_line_en") or ""
+    else:
+        if name_ko:
+            if ko_policy == "auto":
+                name = f"{name_en} · (자동번역) {name_ko}"
+            else:
+                name = f"{name_en} · {name_ko}"
+        else:
+            name = name_en or entry.get("name") or ""
+        one_line = entry.get("one_line_en") or entry.get("one_line") or entry.get("description_en") or entry.get("description") or entry.get("one_line_ko") or ""
+
     url = entry.get("url") or ""
 
     tags = get_list(entry, "tags")
@@ -83,6 +178,17 @@ def render_detail_page(entry: dict, lang: str) -> str:
         return "<ul>" + "\n".join(f"<li>{esc(x)}</li>" for x in items) + "</ul>"
 
     url_html = f"<a href='{esc(url)}' target='_blank' rel='noopener noreferrer'>{esc(url)}</a>" if url else "-"
+
+    tistory_url = entry.get("tistory_url") or ""
+    github_url = entry.get("github_url") or ""
+
+    extra_links = []
+    if tistory_url:
+        extra_links.append(f"<a href='{esc(tistory_url)}' target='_blank' rel='noopener noreferrer'>티스토리 안내</a>")
+    if github_url:
+        extra_links.append(f"<a href='{esc(github_url)}' target='_blank' rel='noopener noreferrer'>GitHub 안내</a>")
+
+    extra_links_html = " &nbsp;|&nbsp; ".join(extra_links) if extra_links else "-"
 
     return f"""<!doctype html>
 <html>
@@ -108,7 +214,6 @@ def render_detail_page(entry: dict, lang: str) -> str:
   </div>
 
   <script>
-    // 티스토리 목록에서 넘어올 때 ?back=... 이 있으면 그쪽으로 돌아가게 함
     const p = new URLSearchParams(location.search);
     const back = p.get('back');
     if (back) document.getElementById('backToTistory').href = back;
@@ -119,6 +224,9 @@ def render_detail_page(entry: dict, lang: str) -> str:
 
   <h2>URL</h2>
   <p>{url_html}</p>
+
+  <h2>External guides</h2>
+  <p>{extra_links_html}</p>
 
   <h2>Tags</h2>
   {ul(tags)}
@@ -146,15 +254,27 @@ def render_detail_page(entry: dict, lang: str) -> str:
 
 def render_index(entries, lang: str, title: str, details_prefix: str, extra_link_html: str) -> str:
     li = []
-    for e in entries:
-        slug = e["_slug"]
-        name = e.get(f"name_{lang}") or e.get("name") or e.get("name_en") or e.get("name_ko") or slug
-        one = e.get(f"one_line_{lang}") or e.get("one_line") or ""
+    for idx, e in enumerate(entries, start=1):
+        item_id = e["_id"]
+        name_en = e.get("name_en") or e.get("name") or item_id
+        name_ko = e.get("name_ko") or ""
+        ko_policy = (e.get("name_ko_policy") or "none").lower()
+
+        if name_ko:
+            if ko_policy == "auto":
+                display_name = f"{name_en} · (자동번역) {name_ko}"
+            else:
+                display_name = f"{name_en} · {name_ko}"
+        else:
+            display_name = name_en
+
+        one = e.get(f"one_line_{lang}") or e.get("one_line") or e.get("one_line_ko") or e.get("one_line_en") or ""
         tags = " ".join(get_list(e, "tags"))
-        href = f"{details_prefix}/{slug}_{lang}.html"
+        href = f"{details_prefix}/{item_id}_{lang}.html"
+
         li.append(
-            f"<li data-name='{esc(name)}' data-tags='{esc(tags)}' data-one='{esc(one)}'>"
-            f"<a href='{href}'>{esc(name)}</a>"
+            f"<li data-name='{esc(display_name)}' data-tags='{esc(tags)}' data-one='{esc(one)}'>"
+            f"<a href='{href}'><strong>{idx}. {esc(display_name)}</strong></a>"
             f"<div class='meta'>{esc(one)}</div>"
             f"</li>"
         )
@@ -206,6 +326,68 @@ def render_index(entries, lang: str, title: str, details_prefix: str, extra_link
 </html>
 """
 
+def write_atlas_yaml(entries: list, out_path: str):
+    items = []
+    for e in entries:
+        gpt_id = e.get("gpt_id") or e["_id"]
+        name_en = e.get("name_en") or e.get("name") or ""
+        if not gpt_id or not name_en or not e.get("url"):
+            continue
+
+        obj = {
+            "gpt_id": gpt_id,
+            "names": {"en": name_en},
+            "url": e.get("url"),
+        }
+
+        name_ko = e.get("name_ko")
+        ko_policy = (e.get("name_ko_policy") or "none").lower()
+        if name_ko:
+            obj["names"]["ko"] = name_ko
+            obj["names"]["ko_policy"] = ko_policy
+
+        summary = {}
+        if e.get("one_line_en"):
+            summary["en"] = e.get("one_line_en")
+        if e.get("one_line_ko"):
+            summary["ko"] = e.get("one_line_ko")
+        if summary:
+            obj["summary"] = summary
+
+        tags = get_list(e, "tags")
+        if tags:
+            obj["tags"] = tags
+
+        suitable_for = get_list(e, "target_users")
+        if suitable_for:
+            obj["suitable_for"] = suitable_for
+
+        limitations = get_list(e, "limitations")
+        if limitations:
+            obj["limitations"] = limitations
+
+        detail_pages = {}
+        if e.get("tistory_url"):
+            detail_pages["tistory"] = e.get("tistory_url")
+        if e.get("github_url"):
+            detail_pages["github"] = e.get("github_url")
+        if detail_pages:
+            obj["detail_pages"] = detail_pages
+
+        items.append(obj)
+
+    atlas = {
+        "gpt_atlas": {
+            "version": "1.0",
+            "generated_at": datetime.utcnow().isoformat(),
+            "items": items,
+        }
+    }
+
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        yaml.dump(atlas, f, allow_unicode=True, sort_keys=False)
+
 def build():
     os.makedirs(DETAILS_KO_DIR, exist_ok=True)
     os.makedirs(DETAILS_EN_DIR, exist_ok=True)
@@ -216,6 +398,7 @@ def build():
         print(f"[WARN] catalog 폴더가 없음: {CATALOG_DIR}")
         return
 
+    # Pass 1: load all
     for fn in sorted(os.listdir(CATALOG_DIR)):
         if not fn.lower().endswith(".yaml"):
             continue
@@ -229,25 +412,75 @@ def build():
         entry["_src_fn"] = fn
         entry["_lang"] = guess_lang(entry, fn)
 
+        gpt_id = entry.get("gpt_id")
         base_name = entry.get("name_en") or entry.get("name") or entry.get("name_ko") or fn
+
+        # id 후보: gpt_id(가능하면 유지) -> slug(name...)
+        raw_id = gpt_id if gpt_id else slugify(base_name)
         entry["_slug"] = slugify(base_name)
+        entry["_id"] = sanitize_id(raw_id)
+
         all_entries.append(entry)
 
+    # 충돌 방지: 동일 _id가 있으면 -2, -3... suffix 부여
+    seen = {}
+    for e in all_entries:
+        base = e["_id"]
+        n = seen.get(base, 0) + 1
+        seen[base] = n
+        if n > 1:
+            e["_id"] = f"{base}-{n}"
+
+    # URL -> canonical English name map (prefer true English name)
+    url_to_en = {}
+    for e in all_entries:
+        url = (e.get("url") or "").strip()
+        en = (e.get("name_en") or "").strip()
+        if url and is_probably_english_name(en):
+            url_to_en.setdefault(url, en)
+
+    # Pass 2: restore name_en when it's been (incorrectly) Korean-translated
+    for e in all_entries:
+        url = (e.get("url") or "").strip()
+        en = (e.get("name_en") or "").strip()
+        if url and (not is_probably_english_name(en)) and (url in url_to_en):
+            e["name_en"] = url_to_en[url]
+
+    # Pass 3: ensure name_ko exists (auto translate if missing)
+    for e in all_entries:
+        if not e.get("name_ko"):
+            en = e.get("name_en") or e.get("name") or ""
+            ko = auto_translate_name_ko(en)
+            if ko:
+                e["name_ko"] = ko
+                e["name_ko_policy"] = "auto"
+        else:
+            if not e.get("name_ko_policy"):
+                e["name_ko_policy"] = "human"
+
+    # Split
     ko_entries = [e for e in all_entries if e["_lang"] == "ko" or e.get("name_ko")]
     en_entries = [e for e in all_entries if e["_lang"] == "en" or e.get("name_en")]
 
-    # 상세 생성
+    def sort_key(e):
+        return (str(e.get("name_en") or e.get("name") or e["_id"]).lower(),
+                str(e.get("name_ko") or "").lower())
+
+    ko_entries.sort(key=sort_key)
+    en_entries.sort(key=sort_key)
+
+    # Details
     for e in ko_entries:
-        slug = e["_slug"]
-        with open(os.path.join(DETAILS_KO_DIR, f"{slug}_ko.html"), "w", encoding="utf-8") as f:
+        item_id = e["_id"]
+        with open(os.path.join(DETAILS_KO_DIR, f"{item_id}_ko.html"), "w", encoding="utf-8") as f:
             f.write(render_detail_page(e, "ko"))
 
     for e in en_entries:
-        slug = e["_slug"]
-        with open(os.path.join(DETAILS_EN_DIR, f"{slug}_en.html"), "w", encoding="utf-8") as f:
+        item_id = e["_id"]
+        with open(os.path.join(DETAILS_EN_DIR, f"{item_id}_en.html"), "w", encoding="utf-8") as f:
             f.write(render_detail_page(e, "en"))
 
-    # 인덱스 생성
+    # Index
     ko_extra = "<a class='pill' href='en/index.html'>English</a>"
     en_extra = "<a class='pill' href='../index.html'>Korean</a>"
 
@@ -257,9 +490,22 @@ def build():
     with open(os.path.join(EN_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(render_index(en_entries, "en", "GPT Catalog (EN)", "details", en_extra))
 
+    # Atlas
+    atlas_site_path = os.path.join(SITE_DIR, "atlas.yaml")
+    write_atlas_yaml(all_entries, atlas_site_path)
+
+    atlas_tistory_path = os.path.join(TISTORY_DIR, "atlas.yaml")
+    try:
+        write_atlas_yaml(all_entries, atlas_tistory_path)
+    except Exception:
+        pass
+
     print(f"Loaded total: {len(all_entries)}")
     print(f"KO entries : {len(ko_entries)} -> {os.path.join(SITE_DIR,'index.html')}")
     print(f"EN entries : {len(en_entries)} -> {os.path.join(EN_DIR,'index.html')}")
+    print(f"Atlas      : {atlas_site_path}")
+    if os.path.isdir(TISTORY_DIR):
+        print(f"Atlas copy : {atlas_tistory_path}")
 
 if __name__ == "__main__":
     build()

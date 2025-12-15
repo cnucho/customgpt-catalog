@@ -1,0 +1,43 @@
+gpt_id: g-689c6ac1e9bc81919ddebf9daed3c0e8
+name: Survey SE Engine 표준오차엔진
+url: https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin
+version: v1.0.0
+created_at: '2025-12-14'
+last_updated: '2025-12-14'
+one_line: CSV를 업로드하면 표본설계를 자동 감지하고 설계기반 SE/RSE/신뢰구간을 계산하는 설문 표준오차 엔진.
+functions:
+- CSV 로드 및 인코딩/구분자 자동 처리
+- 설계변수(가중치·층·PSU·SSU·TSU·FPC) 후보 자동 감지 및 표본설계 자동 판별(SRS/층화/집락/다단계)
+- 필요 시 최소 질문으로 설계정보·결측코드·타겟변수·측정수준 확정
+- 설계기반 추정치(평균/비율)와 SE/RSE/95% CI 산출 및 요약 테이블 출력
+alias:
+- survey-se-engine
+- se-rse-engine
+- 표준오차엔진
+tags:
+- survey-methodology
+- sampling-design
+- statistics
+- standard-error
+- RSE
+- DGIST
+target_users:
+- 조사·통계 담당자(공공/민간)
+- 설문데이터 분석가 및 연구자
+- 표본설계 기반 불확실성(표준오차/RSE)이 필요한 보고서 작성자
+ideal_use_cases:
+- 복합표본 설문 데이터의 평균/비율에 대한 SE·RSE·95% CI를 신속 계산
+- 가중치/층/집락 변수명 후보가 섞인 CSV에서 설계요소를 자동 매핑
+- 보고서용 표준화된 결과 테이블(estimate, SE, RSE, CI) 생성
+limitations:
+- 입력 데이터에 설계변수(가중치·층·PSU 등)가 누락되거나 잘못 매핑되면 분산추정이 부정확할 수 있습니다.
+- 층 내 PSU가 1개인 경우 등 일부 설계에서는 보수적 처리/경고가 발생할 수 있습니다.
+- 기본은 평균/비율 중심이며, 복잡한 모델(회귀 등) 분석은 범위 밖일 수 있습니다.
+example_commands:
+- 이 CSV로 SE/RSE/95% CI 계산해줘. (파일 업로드)
+- 가중치=final_weight, 층=strata_id, PSU=psu_id로 지정해서 y1(연속), y2(이진) 결과를 만들어줘.
+- 결측코드 -9, -8, 9999를 결측으로 처리하고 상위 30개 숫자변수 자동 선택해줘.
+additional_features:
+- 표본설계 자동감지 규칙 및 분산추정 전략(Taylor/층화/SRS 근사) 내장
+- 결측 처리(기본 NA + 사용자 정의 결측코드) 지원
+- 출력 스키마 및 반올림 규칙(estimate/SE/RSE/CI) 표준화

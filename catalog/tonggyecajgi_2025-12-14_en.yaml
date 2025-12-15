@@ -1,0 +1,48 @@
+# filename: tonggyecajgi_2025-12-14_en.yaml
+gpt_id: "g-6881e2700cb48191b9290c00a3a20484"
+name: "Tonggyechajgi"
+url: "https://chatgpt.com/g/g-6881e2700cb48191b9290c00a3a20484-tonggyecajgi"
+
+version: "v1.8"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A source-first assistant that finds statistics and legal references step-by-step with reliability grades and citations."
+
+functions:
+  - "Route requests to Statistics (default) or Law mode based on intent"
+  - "Collect and organize official statistics from trusted institutions"
+  - "Retrieve relevant legal articles with metadata and verification paths"
+  - "Provide staged outputs from overview to details"
+  - "Prevent hallucinations by excluding uncited claims"
+
+alias:
+  - "tonggyecajgi"
+  - "statfinder"
+  - "law-stat-search"
+
+tags:
+  - "statistics"
+  - "law"
+  - "policy"
+  - "research-assistant"
+  - "korea"
+
+target_users:
+  - "Policy and research report writers"
+  - "Practitioners needing legal verification"
+
+ideal_use_cases:
+  - "Finding official statistics with citations"
+  - "Locating legal grounds and statutes"
+
+limitations:
+  - "Cannot replace professional legal advice"
+
+example_commands:
+  - "Find official youth unemployment statistics in Korea."
+  - "Show the legal basis for appointing a safety manager."
+
+additional_features:
+  - "Automatic statistics/law routing"
+  - "Reliability grading (A/B)"

@@ -1,0 +1,52 @@
+gpt_id: g-689c6ac1e9bc81919ddebf9daed3c0e8
+name: Survey SE Engine – Standard Error & RSE
+url: https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin
+version: v1.0.0
+created_at: '2025-12-14'
+last_updated: '2025-12-14'
+one_line: Upload a CSV to auto-detect the sampling design and compute design-based
+  SE/RSE and confidence intervals for survey estimates.
+functions:
+- Load CSV with automatic delimiter and encoding handling
+- Auto-detect design columns (weight/strata/PSU/SSU/TSU/FPC) and infer sampling design
+  (SRS/stratified/cluster/multistage)
+- Ask only minimal follow-up questions to confirm design inputs, missing codes, target
+  variables, and measurement levels
+- Produce design-based estimates (means/proportions) with SE, RSE, and 95% confidence
+  intervals in a standardized results table
+alias:
+- survey-se-engine
+- se-rse-engine
+- standard-error-engine
+tags:
+- survey-methodology
+- sampling-design
+- statistics
+- standard-error
+- RSE
+- DGIST
+target_users:
+- Survey/statistics practitioners (public or private sector)
+- Data analysts and academic researchers working with complex survey data
+- Report authors who need design-based uncertainty (SE/RSE) for survey estimates
+ideal_use_cases:
+- Quickly compute SE, RSE, and 95% CIs for means/proportions from complex sample surveys
+- Automatically map design elements from messy CSVs with ambiguous column names
+- Generate report-ready, standardized output tables (estimate, SE, RSE, CI)
+limitations:
+- Variance estimates can be inaccurate if design variables (weights/strata/PSU, etc.)
+  are missing or mapped incorrectly.
+- Some designs may trigger conservative handling/warnings (e.g., only one PSU within
+  a stratum).
+- Primarily focused on means/proportions; advanced modeling (e.g., regression) may
+  be out of scope.
+example_commands:
+- Compute SE/RSE/95% CIs for this CSV. (upload file)
+- Use weight=final_weight, strata=strata_id, PSU=psu_id; treat y1 as continuous and
+  y2 as binary.
+- Treat -9, -8, and 9999 as missing; auto-select the top 30 numeric variables.
+additional_features:
+- Built-in sampling-design detection rules and variance strategies (Taylor/stratified/SRS
+  approximation)
+- Missing-data handling (default NA + user-defined missing codes)
+- Standardized output schema and rounding rules for estimates/SE/RSE/CIs

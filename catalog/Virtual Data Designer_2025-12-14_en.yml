@@ -1,0 +1,66 @@
+gpt_id: "g-68734c99ac908191a0886bc3f8239c2d"
+name: "Virtual Data Designer (가상데이터 설계기)"
+url: "https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi"
+
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "Generates realistic multi-dimensional synthetic data and exports cross-tab tables with metadata as ChartGPT-ready JSON."
+
+functions:
+
+  - "Interpret a topic prompt and auto-map relevant indicators/variables"
+  - "Generate realistic simulated values (rule-based mean/std generation)"
+  - "Design multi-dimensional cross-tab structures with 2+ conditioning variables"
+  - "Attach interpretable metadata (unit, time range, source notes, etc.)"
+  - "Output ChartGPT-compatible JSON in a table_state + data structure"
+
+alias:
+
+  - "gasangdeiteo-seolgyegi"
+  - "virtual-data-designer"
+
+tags:
+
+  - "synthetic-data"
+  - "statistics"
+  - "table-design"
+  - "cross-table"
+  - "chart-ready"
+  - "chartgpt"
+  - "kpi"
+
+target_users:
+
+  - "Data visualization and research practitioners"
+  - "Policy / social-indicator analysts and planners"
+  - "Dashboard and reporting builders"
+  - "Instructors and students needing practice datasets"
+
+ideal_use_cases:
+
+  - "Create synthetic social-indicator datasets with conditioning variables (region/age/gender, etc.)"
+  - "Rapidly design analysis-ready cross-tabs and export them as JSON"
+  - "Prototype dashboards when real data is missing or incomplete"
+  - "Prepare data aligned to chart intents (comparison/trend/composition/distribution/relationship)"
+
+limitations:
+
+  - "Generated outputs are simulated and may differ from official statistics; validate against primary sources for decisions."
+  - "For sensitive domains (medical/legal/financial), cross-check with up-to-date and authoritative references."
+
+example_commands:
+
+  - "Create 2020–2025 synthetic data for Happiness and Life Satisfaction across Seoul/Busan/Daegu, cross-tabbed by age group × gender, as JSON."
+  - "Build a grouped-bar-ready table comparing remote-work productivity by role × work mode, including unit/source/time metadata."
+  - "Output only table_state and data so I can visualize it directly in ChartGPT."
+
+additional_features:
+
+  - "Chart-type guidance by analytical intent (comparison/trend/composition/distribution/relationship)"
+  - "Follows a standard cross-table template (merge/sort/style/metadata)"
+  - "Applies a consistent color palette rule set for visualization coherence"
+
+
+ 

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GroupCompare AI · (자동번역) GroupCompare AI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>GroupCompare AI · (자동번역) GroupCompare AI</h1>
+  <p>Automatically designs and runs group-difference, equivalence (TOST), and non-inferiority tests on uploaded data, and reports multiplicity-adjusted results with effect sizes, CIs, and power/MDE in APA style.</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>statistics</li>
+<li>ab-testing</li>
+<li>equivalence-testing</li>
+<li>tost</li>
+<li>non-inferiority</li>
+<li>multiple-testing</li>
+<li>effect-size</li>
+<li>power-analysis</li>
+<li>apa-reporting</li>
+<li>research-assistant</li>
+<li>i18n</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Data preprocessing &amp; diagnostics (missingness/outliers/skewness/cluster-panel detection) with actionable recommendations</li>
+<li>Automatic test selection &amp; execution for group comparisons (t/Welch/Mann–Whitney, ANOVA/Welch ANOVA, chi-square/exact tests, etc.)</li>
+<li>Covariate adjustment (ANCOVA) and clustered/panel data handling recommendations (cluster-robust SE, mixed-effects models)</li>
+<li>Multiple-testing correction (Holm default; Bonferroni/BH options) with controlled correction scope</li>
+<li>Effect sizes with confidence intervals (Cohen d/Hedges g, η²/ω², risk difference/RR/OR, etc.) and interpretation templates</li>
+<li>Equivalence &amp; non-inferiority testing (TOST with 90% CI) using configurable equivalence margins (Δ)</li>
+<li>Power &amp; sample planning (a priori/post hoc power, MDE) with automatic low-power warnings</li>
+<li>Subgroup analysis &amp; interaction checks (interaction p-values, concise heterogeneity summary; forest-plot recommendations)</li>
+<li>Report generation with summary cards, detailed tables/figures, and appendix (code/logs) in APA statistical reporting style</li>
+<li>Multilingual reporting support (Korean/English and major SEA languages) via i18n resources</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Researchers and data analysts running group comparisons on experiments/surveys/observational data</li>
+<li>Product and growth teams (A/B testing, multiple metrics, standardized reporting)</li>
+<li>Academic/policy analysts who need effect sizes, power/MDE, and equivalence claims</li>
+<li>Consultants/analytics owners who want consistent statistical reporting pipelines</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>End-to-end A/B testing reports (significance + effect size + multiplicity correction) for multiple KPIs</li>
+<li>Make an equivalence claim (not just ‘non-significant’) via TOST with a justified margin Δ</li>
+<li>Compute MDE and recommend re-testing when power is insufficient</li>
+<li>Compare effects across countries/segments and assess interactions</li>
+<li>Estimate adjusted group differences using ANCOVA (e.g., baseline-controlled outcomes)</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>Equivalence/non-inferiority conclusions are highly sensitive to the chosen margin Δ; unjustified margins can undermine interpretability.</li>
+<li>Causal interpretation is limited for observational data due to potential confounding; additional design/estimation strategies may be required.</li>
+<li>Small samples, rare events, or complex clustering may require exact tests or advanced mixed-model specifications beyond simple defaults.</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>Compare CTR and CVR between variants A and B in my uploaded data, apply Holm correction, and report effect sizes, 95% CIs, and MDE.</li>
+<li>Test the mean difference in influencer_credibility between male and female; switch to Welch if variances differ.</li>
+<li>Run ANOVA across 5 countries with post-hoc tests; propose robust alternatives if normality is severely violated.</li>
+<li>Check whether A and B are equivalent using TOST (Δ: Cohen d=0.2) and report the decision clearly.</li>
+<li>Run subgroup analysis by age group × country and report interaction p-values and a heterogeneity summary.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>Default settings: alpha=0.05, CI=95%, TOST CI=90%, power target=0.80, Holm correction by default</li>
+<li>UI toggles: plain-language vs technical summary, equivalence margin (Δ) on/off, correction method, subgroup analysis, language switch</li>
+<li>Outputs: summary card (decision/effect size/MDE/recommendations) + detailed tables/figures + appendix (code/logs)</li></ul>
+</body>
+</html>

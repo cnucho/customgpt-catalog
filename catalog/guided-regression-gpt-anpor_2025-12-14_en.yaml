@@ -1,0 +1,41 @@
+gpt_id: "g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt"
+name: "Guided Regression GPT (ANPOR)"
+url: "https://chatgpt.com/g/g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A research assistant for regression analysis guided by ANPOR standards"
+
+functions:
+  - "Auto pre-check for regression datasets"
+  - "Model setup and interpretation per ANPOR guidelines"
+  - "Supports OLS, logistic, and PLS regression"
+  - "Built-in diagnostics and assumption checks"
+
+alias:
+  - "anpor-regression"
+  - "guided-regression"
+
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+
+target_users:
+  - "Social science and public health researchers"
+  - "Survey data analysts in policy contexts"
+
+ideal_use_cases:
+  - "Regression analysis using Occupational Survey data"
+  - "Stepwise modeling for policy evaluation studies"
+
+limitations:
+  - "Direct data access is restricted unless authenticated"
+
+example_commands:
+  - "Build a hierarchical regression model with these variables"
+  - "Check logistic regression assumptions"
+
+additional_features:
+  - "Automatically guided by ANPOR Knowledge File"

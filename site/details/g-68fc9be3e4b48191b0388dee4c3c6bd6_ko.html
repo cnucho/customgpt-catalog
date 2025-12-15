@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Essence Diagram Builder GPT · (자동번역) Essence Diagram 빌더 GPT</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>Essence Diagram Builder GPT · (자동번역) Essence Diagram 빌더 GPT</h1>
+  <p>A semantic-structure diagram GPT that extracts and simplifies meaning into a title, diagram, and legend—and can run back-translation plus an Audit for fidelity when needed.</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>semantic-structure</li>
+<li>diagram</li>
+<li>mermaid</li>
+<li>plantuml</li>
+<li>typora</li>
+<li>audit</li>
+<li>knowledge-structuring</li>
+<li>documentation</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Extract core concepts, relations, and flows from text (requirements/policies/explanations) into a simplified semantic structure</li>
+<li>Generate diagrams primarily in Mermaid (and suggest PlantUML/Plotly Sankey alternatives when appropriate)</li>
+<li>Always output a title and a legend (term definitions and relation types) alongside the diagram</li>
+<li>Mark unclear concepts as (assumption) nodes, provide one-sentence definitions, and include brief guidance on what to clarify</li>
+<li>Perform diagram → local-language back-interpretation → Audit against the source, with metrics (coverage/precision/fidelity)</li>
+<li>Support Typora-compatibility mode by automatically downgrading/cleaning diagram expressions for safer rendering</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Product/Program Managers (PM/PO): need fast diagramming from requirements, specs, or policy text</li>
+<li>Researchers/Students/Educators: organize conceptual relationships into learning-friendly diagrams</li>
+<li>Consultants/Analysts: simplify complex narratives into shareable structures</li>
+<li>Technical writers: standardize explanations/design notes into consistent diagrams with legends</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>Convert requirements/policies/meeting notes into concept–relation Mermaid diagrams</li>
+<li>Design multi-level (split) diagrams when a single view becomes too dense</li>
+<li>Auto-generate a legend to define domain terms, acronyms, and relation types</li>
+<li>Produce Typora-safe Mermaid (or downgraded graph) ready to paste into Markdown</li>
+<li>Validate whether the diagram preserved the source meaning via Audit tables and metrics</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>If the input is ambiguous or lacks definitions, the model may introduce more (assumption) nodes and depend on user-provided clarifications</li>
+<li>Rendering quality depends on the viewer (e.g., Typora/Markdown engines) and their Mermaid feature support</li>
+<li>Designed to avoid asserting facts not present in the source, so out-of-context extrapolation is intentionally limited</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>mode: build+audit / compat: typora — Diagram and audit the following text: (paste text)</li>
+<li>Summarize this document into &lt;=7 core concepts and output a Mermaid LR diagram. Mark unclear terms as (assumption).</li>
+<li>Decompose this policy paragraph into conditions–exceptions–responsibilities–flow, and add a legend with definitions.</li>
+<li>If a Plotly Sankey is more suitable, propose it as an alternative (but keep Mermaid as the default).</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>Suggest splitting into sub-diagrams when density is high</li>
+<li>Standardize relation types (e.g., facilitates/inhibits/mediates/moderates) in the legend when useful</li>
+<li>Prefer Mermaid code that can render directly in HTML environments</li></ul>
+</body>
+</html>

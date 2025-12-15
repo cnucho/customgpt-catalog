@@ -1,0 +1,40 @@
+gpt_id: "guidestat"
+name: "GuideStat – Integrated Analysis Designer"
+url: "https://chatgpt.com/g/g-689b6c7baf94819193c095eb95b7ebf0-guidestat"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "Automatically generates analysis plans and diagnostics from codebooks and survey instruments."
+
+functions:
+  - "Infers analysis domains and variable roles from questionnaires"
+  - "Executes preprocessing, method selection, diagnostics, and reporting in a single run"
+
+alias:
+  - "guidestat"
+  - "guide-stat"
+
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+
+target_users:
+  - "Researchers in social science, public health, and education"
+  - "Policy analysts and data-driven evaluation teams"
+
+ideal_use_cases:
+  - "Designing analysis plans for survey-based studies"
+  - "Comparing methods for policy impact estimation"
+
+limitations:
+  - "May require user confirmation if design inference fails or data preprocessing issues arise"
+
+example_commands:
+  - "Show me the analysis options for this codebook"
+  - "How can I estimate policy effects using this dataset?"
+
+additional_features:
+  - "Built-in domain-specific diagnostics and assumption checks"
+  - "Automatic literature anchor recommendation and verification"

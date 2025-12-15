@@ -1,0 +1,59 @@
+# filename: model-akitegteu_2025-12-14_en.yaml
+
+gpt_id: "g-689d3ec41d948191977d021c5b410fe9"
+name: "Model Architect"
+url: "https://chatgpt.com/g/g-689d3ec41d948191977d021c5b410fe9-model-akitegteu"
+
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "Starts with 2–3 candidate conceptual/theoretical models, iteratively updates fit through guided questions, and refines the final choice (single/modified/hybrid) into Mermaid + schema-based JSON outputs."
+
+functions:
+  - "Phase A: Present 2–3 candidate models with balanced pros/cons"
+  - "Phase B: Adaptive inquiry across data, goals, constraints, use context, and ethics/quality to update fit scores"
+  - "Phase C: Decide on single/modified/hybrid and generate one Mermaid block (Korean labels) plus final JSON aligned to the schema"
+  - "Provide evidence using a source priority order (peer-reviewed → government reports → official statistics) and enforce source quality gates"
+  - "Run an internal review loop (definitions → missing subdimensions → consistency → recency → actionable suggestions)"
+
+alias:
+  - "model-architect"
+  - "framework-selector"
+
+tags:
+  - "research-framework"
+  - "conceptual-models"
+  - "strategy-planning"
+  - "evidence-based"
+  - "mermaid"
+  - "json-schema"
+
+target_users:
+  - "Academic researchers designing conceptual/theoretical frameworks"
+  - "Policy/public-sector analysts needing explainable frameworks"
+  - "Business strategy/planning teams for problem structuring"
+  - "Consultants/PMs formalizing requirements into models"
+
+ideal_use_cases:
+  - "Compare and shortlist theory models (e.g., TAM/TPB/UTAUT) for a study design"
+  - "Structure a policy/strategy project using frameworks (e.g., SWOT/PESTEL/Logic Model)"
+  - "Define components and subdimensions for mixed-method designs and detect omissions"
+  - "Produce report-ready outputs as Mermaid diagrams and structured JSON"
+
+limitations:
+  - "Phase A restricts deep dives into a single model and discourages early selection"
+  - "Analytical ‘methods’ (stats/ML) are generally excluded as candidate models; they may be mentioned only as validation tools when relevant"
+  - "Without sufficient user inputs (data type/scale, goals, constraints, use context, ethics/quality), Phase C decisions cannot be fully grounded"
+  - "Certain sources (e.g., Wikipedia, personal blogs, unverified media) are filtered out by policy"
+
+example_commands:
+  - "My study uses Likert-scale surveys and aims to explain behavioral intention. Give only 3 Phase A candidates."
+  - "This is a policy evaluation with stakeholder interviews. Use Phase B questions to fill the axes."
+  - "Based on what we discussed, enter Phase C and output a modified or hybrid model with Mermaid + JSON."
+  - "Audit my component definitions using the review module and list concrete improvement suggestions."
+
+additional_features:
+  - "Built-in evidence priority policy and prohibited source filters"
+  - "Final output conforms to the JSON schema (components/justification/mermaid_code/review_suggestions)"
+  - "Automatic improvement suggestions via an internal review module"

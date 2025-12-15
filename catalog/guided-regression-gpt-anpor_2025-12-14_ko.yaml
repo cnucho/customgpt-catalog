@@ -1,0 +1,41 @@
+gpt_id: "g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt"
+name: "Guided Regression GPT (ANPOR)"
+url: "https://chatgpt.com/g/g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "ANPOR 기준에 따라 회귀분석을 단계별로 안내하는 리서치 어시스턴트"
+
+functions:
+  - "회귀 분석 전처리 자동 점검"
+  - "ANPOR 기준의 모형 구성 및 해석"
+  - "OLS, 로지스틱, PLS 회귀 전반 지원"
+  - "가정 검토 및 진단 절차 내장"
+
+alias:
+  - "anpor-회귀"
+  - "guided-regression"
+
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+
+target_users:
+  - "사회과학·보건 분야 연구자"
+  - "공공조사 데이터 분석가"
+
+ideal_use_cases:
+  - "작업환경실태조사 기반 회귀 분석"
+  - "정책영향 분석을 위한 단계별 모형 설정"
+
+limitations:
+  - "원자료 직접 출력은 제한되며 인증이 필요함"
+
+example_commands:
+  - "이 변수로 위계적 회귀모형 만들어줘"
+  - "로지스틱 회귀 가정 진단해줘"
+
+additional_features:
+  - "ANPOR Knowledge File 기반 자동 가이드"
