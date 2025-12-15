@@ -2,7 +2,7 @@ import os
 import yaml
 import re
 import html
-from datetime import datetime
+from datetime import datetime, timezone
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CATALOG_DIR = os.path.join(BASE_DIR, "catalog")
@@ -37,6 +37,15 @@ def sanitize_id(raw_id: str) -> str:
     s = str(raw_id).strip()
     return s if SAFE_ID_RE.match(s) else slugify(s)
 
+def sanitize_filename(name: str) -> str:
+    """Windows-safe filename sanitizer (keeps meaning; ensures filesystem legality)."""
+    s = str(name or "").strip()
+    # Replace Windows-illegal filename characters
+    s = re.sub(r'[<>:"/\\|?*]', "_", s)
+    # Collapse whitespace
+    s = re.sub(r"\s+", "_", s).strip("._ ")
+    return s or "item"
+
 def load_yaml_safe(path: str):
     try:
         with open(path, "r", encoding="utf-8") as f:
@@ -61,9 +70,16 @@ def get_list(entry: dict, key: str):
 
 def guess_lang(entry: dict, filename: str) -> str:
     fn = filename.lower()
-    if fn.endswith("_en.yaml") or fn.endswith("-en.yaml") or "_en_" in fn:
+    # filename suffix / infix based language detection (supports .yml/.yaml, ko/kr/kor/en)
+    if fn.endswith(("_en.yaml", "_en.yml")) or fn.endswith(("-en.yaml", "-en.yml")) or "_en_" in fn:
         return "en"
-    if fn.endswith("_ko.yaml") or fn.endswith("_kr.yaml") or fn.endswith("-ko.yaml") or fn.endswith("-kr.yaml") or "_ko_" in fn or "_kr_" in fn:
+    if (
+        fn.endswith(("_ko.yaml", "_ko.yml", "_kr.yaml", "_kr.yml", "_kor.yaml", "_kor.yml"))
+        or fn.endswith(("-ko.yaml", "-ko.yml", "-kr.yaml", "-kr.yml", "-kor.yaml", "-kor.yml"))
+        or "_ko_" in fn
+        or "_kr_" in fn
+        or "_kor_" in fn
+    ):
         return "ko"
 
     lang = (entry.get("language") or entry.get("lang") or "").lower().strip()
@@ -270,7 +286,8 @@ def render_index(entries, lang: str, title: str, details_prefix: str, extra_link
 
         one = e.get(f"one_line_{lang}") or e.get("one_line") or e.get("one_line_ko") or e.get("one_line_en") or ""
         tags = " ".join(get_list(e, "tags"))
-        href = f"{details_prefix}/{item_id}_{lang}.html"
+        detail_basename = sanitize_filename(f"{item_id}_{lang}.html")
+        href = f"{details_prefix}/{detail_basename}"
 
         li.append(
             f"<li data-name='{esc(display_name)}' data-tags='{esc(tags)}' data-one='{esc(one)}'>"
@@ -379,7 +396,7 @@ def write_atlas_yaml(entries: list, out_path: str):
     atlas = {
         "gpt_atlas": {
             "version": "1.0",
-            "generated_at": datetime.utcnow().isoformat(),
+            "generated_at": datetime.now(timezone.utc).isoformat(),
             "items": items,
         }
     }
@@ -400,7 +417,7 @@ def build():
 
     # Pass 1: load all
     for fn in sorted(os.listdir(CATALOG_DIR)):
-        if not fn.lower().endswith(".yaml"):
+        if not (fn.lower().endswith(".yaml") or fn.lower().endswith(".yml")):
             continue
         raw = load_yaml_safe(os.path.join(CATALOG_DIR, fn))
         if raw is None:
@@ -458,9 +475,9 @@ def build():
             if not e.get("name_ko_policy"):
                 e["name_ko_policy"] = "human"
 
-    # Split
-    ko_entries = [e for e in all_entries if e["_lang"] == "ko" or e.get("name_ko")]
-    en_entries = [e for e in all_entries if e["_lang"] == "en" or e.get("name_en")]
+    # Split (language strictly by filename-derived _lang)
+    ko_entries = [e for e in all_entries if e["_lang"] == "ko"]
+    en_entries = [e for e in all_entries if e["_lang"] == "en"]
 
     def sort_key(e):
         return (str(e.get("name_en") or e.get("name") or e["_id"]).lower(),
@@ -472,12 +489,14 @@ def build():
     # Details
     for e in ko_entries:
         item_id = e["_id"]
-        with open(os.path.join(DETAILS_KO_DIR, f"{item_id}_ko.html"), "w", encoding="utf-8") as f:
+        detail_basename = sanitize_filename(f"{item_id}_ko.html")
+        with open(os.path.join(DETAILS_KO_DIR, detail_basename), "w", encoding="utf-8") as f:
             f.write(render_detail_page(e, "ko"))
 
     for e in en_entries:
         item_id = e["_id"]
-        with open(os.path.join(DETAILS_EN_DIR, f"{item_id}_en.html"), "w", encoding="utf-8") as f:
+        detail_basename = sanitize_filename(f"{item_id}_en.html")
+        with open(os.path.join(DETAILS_EN_DIR, detail_basename), "w", encoding="utf-8") as f:
             f.write(render_detail_page(e, "en"))
 
     # Index

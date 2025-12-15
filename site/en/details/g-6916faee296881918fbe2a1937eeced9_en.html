@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source Finder · (자동번역) Source Finder</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>Source Finder · (자동번역) Source Finder</h1>
+  <p>Finds credible desktop-research sources on the web and returns a structured YAML-ready source list.</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-6916faee296881918fbe2a1937eeced9-source-finder' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6916faee296881918fbe2a1937eeced9-source-finder</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>desktop-research</li>
+<li>literature-search</li>
+<li>bibliography</li>
+<li>source-discovery</li>
+<li>yaml</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Searches for and selects credible primary/secondary sources aligned to objectives, scope, and key questions</li>
+<li>Outputs only structured source metadata (title, link, type, year, short note) and fills the sources field only</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Policy, market, and technical researchers</li>
+<li>Professionals and students who need references and evidence for reports or papers</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>Collecting authoritative references (official docs, statistics, reports, papers) for a research question</li>
+<li>Quickly populating only the sources section in a YAML-based desktop-research workflow</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>Does not summarize content, extract insights, or write reports (sources only)</li>
+<li>Does not modify objectives/scope/key_questions and does not fill source_extracts</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>Read the YAML below and populate only the sources field with S1, S2... entries.</li>
+<li>Topic: &#x27;AI regulation trends&#x27;. Provide 12 sources since 2020, prioritizing primary government/IGO documents and major research reports, and output only the sources field.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>Supports bilingual (Korean/English) queries and can balance sources across languages when relevant</li></ul>
+</body>
+</html>
