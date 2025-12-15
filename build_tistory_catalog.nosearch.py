@@ -6,11 +6,16 @@ import html
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CATALOG_DIR = os.path.join(BASE_DIR, "catalog")
 TISTORY_DIR = os.path.join(BASE_DIR, "tistory")
+SITE_DIR = os.path.join(BASE_DIR, "site")
+SITE_TISTORY_DIR = os.path.join(SITE_DIR, "tistory")
 
 OUT_KO = os.path.join(TISTORY_DIR, "index_ko.html")
 OUT_EN = os.path.join(TISTORY_DIR, "index_en.html")
+OUT_KO_SITE = os.path.join(SITE_TISTORY_DIR, "index_ko.html")
+OUT_EN_SITE = os.path.join(SITE_TISTORY_DIR, "index_en.html")
 
 os.makedirs(TISTORY_DIR, exist_ok=True)
+os.makedirs(SITE_TISTORY_DIR, exist_ok=True)
 
 # === Configure this to your GitHub Pages base (NO trailing slash) ===
 GITHUB_PAGES_BASE = "https://cnucho.github.io/customgpt-catalog"
@@ -57,18 +62,29 @@ def normalize_entry(data: dict) -> dict:
     return data
 
 def guess_lang(entry: dict, filename: str) -> str:
-    """Decide language ONLY by filename markers.
-    - EN if token 'en' appears as a filename part (e.g., _en, -en, .en.)
-    - KO if token 'ko', 'kr', or 'kor' appears as a filename part
-    If no marker is found, defaults to 'en'.
+    """
+    Language is decided ONLY by:
+      1) filename marker: _ko/_kr/_kor/_en (also -ko/-kr/-kor/-en), anywhere
+      2) entry.language / entry.lang value: ko/kr/kor/en/eng/english/korean
+    Otherwise defaults to 'en' (prevents EN leaking into KO index).
     """
     fn = (filename or "").lower()
 
-    if re.search(r"(^|[_\-.])(en)([_\-.]|$)", fn):
+    # filename markers (strongest)
+    if any(m in fn for m in ("_en", "-en")):
         return "en"
-    if re.search(r"(^|[_\-.])(ko|kr|kor)([_\-.]|$)", fn):
+    if any(m in fn for m in ("_ko", "_kr", "_kor", "-ko", "-kr", "-kor")):
         return "ko"
+
+    lang = (entry.get("language") or entry.get("lang") or "").lower().strip()
+    if lang in ("ko", "kr", "kor", "korean"):
+        return "ko"
+    if lang in ("en", "eng", "english"):
+        return "en"
+
+    # default EN (important)
     return "en"
+
 def display_name(e):
     name_en = e.get("name_en") or e.get("name") or ""
     name_ko = e.get("name_ko") or ""
@@ -231,11 +247,19 @@ def sort_key(e):
 ko_entries.sort(key=sort_key)
 en_entries.sort(key=sort_key)
 
-with open(OUT_KO, "w", encoding="utf-8") as f:
-    f.write(render("GPT Catalog (KO)", ko_entries, "ko"))
+ko_html = render("GPT Catalog (KO)", ko_entries, "ko")
+en_html = render("GPT Catalog (EN)", en_entries, "en")
 
+with open(OUT_KO, "w", encoding="utf-8") as f:
+    f.write(ko_html)
 with open(OUT_EN, "w", encoding="utf-8") as f:
-    f.write(render("GPT Catalog (EN)", en_entries, "en"))
+    f.write(en_html)
+
+# Also copy into GitHub Pages published folder (site/tistory) if Pages source is /site
+with open(OUT_KO_SITE, "w", encoding="utf-8") as f:
+    f.write(ko_html)
+with open(OUT_EN_SITE, "w", encoding="utf-8") as f:
+    f.write(en_html)
 
 print("[OK] Tistory KO:", len(ko_entries))
 print("[OK] Tistory EN:", len(en_entries))
