@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Munseongpyeong (文成評) · (자동번역) Munseongpyeong (文成評)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>Munseongpyeong (文成評) · (자동번역) Munseongpyeong (文成評)</h1>
+  <p>A strict evidence-only GPT that evaluates policy, survey, research, and marketing reports using a 6-axis quality framework.</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>policy</li>
+<li>survey-research</li>
+<li>research-methodology</li>
+<li>statistics</li>
+<li>AAPOR</li>
+<li>sampling</li>
+<li>weighting</li>
+<li>variance-estimation</li>
+<li>DEFF</li>
+<li>measurement-equivalence</li>
+<li>scale-validity</li>
+<li>reproducibility</li>
+<li>story-flow</li>
+<li>report-quality-evaluation</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Summarize overall report structure and analyze problem framing (policy/research framing)</li>
+<li>Conduct 6-axis evaluation: completeness, validity (data and logic consistency), feasibility, story coherence, clarity/fitness of problem setting, and methodology quality</li>
+<li>Perform in-depth methodology audits: AAPOR RR/CR/COOP/REF, sampling design, weighting (design → nonresponse → post-stratification), variance estimation (Taylor/BRR/JK), design effects (DEFF), replicate weights, missingness/imputation flags</li>
+<li>Assess measurement quality: measurement equivalence, time-series and subgroup comparability, scale reliability, factor analysis, and measurement invariance checks</li>
+<li>Review reproducibility: availability of data, codebooks, questionnaires, and analytical procedures</li>
+<li>Audit visualizations for uncertainty communication (confidence intervals, error bars, DEFF disclosure)</li>
+<li>Provide concrete improvements in a source → revision → rationale format</li>
+<li>Generate Story Mode outputs: Narrative_Spine, Coherence_Score (P1–P5), Breakpoints, Bridge_Texts, Story_Map</li>
+<li>Assign axis-level grades and an overall weighted grade with explicit evidence</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Policy and research report quality assurance owners</li>
+<li>Survey research practitioners (design, fielding, analysis)</li>
+<li>Authors and reviewers of public, private, or academic research reports</li>
+<li>Editors, peer reviewers, and internal audit teams</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>Audit survey reports for response rates (AAPOR), sampling, weighting, variance estimation, and DEFF compliance</li>
+<li>Identify logical gaps between results, interpretation, and recommendations and repair narrative flow</li>
+<li>Detect risks in time-series or subgroup comparisons due to definition changes or measurement non-equivalence</li>
+<li>Ensure uncertainty is properly communicated in tables and figures (CIs, error bars, DEFF)</li>
+<li>Generate a final pre-submission quality evaluation and revision guide</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>All judgments are strictly based on the provided source text and attachments (Strict Factual Mode)</li>
+<li>No speculation or inference beyond the evidence (zero-inference rule)</li>
+<li>Does not answer general user questions; only produces evaluation outputs</li>
+<li>Will not invent, adjust, or retrofit numbers, definitions, or methods absent from the source</li>
+<li>Marks items as &#x27;insufficient evidence&#x27; when documentation is lacking</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>Evaluate the attached report using the 6-axis framework. Include a full methodology audit (AAPOR, weighting, variance estimation, DEFF, missingness/imputation, scale validity, reproducibility).</li>
+<li>Run a representative-chapter review and include Story Mode outputs (Narrative_Spine, Breakpoints, Bridge_Texts).</li>
+<li>Identify where the narrative breaks between tables and interpretations, list Breakpoints, and draft Bridge_Texts in the original tone.</li>
+<li>Check whether time-series indicators are comparable across years and propose &#x27;not comparable&#x27; labeling and bridging/adjustment options in a source-to-revision format.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>Strict Factual Mode (evidence-only; strict numerical and terminology fidelity)</li>
+<li>StoryFlow evaluation module (narrative spine, coherence scoring, breakpoints, bridge text generation)</li>
+<li>Checklist-driven methodology audit engine (AAPOR, weighting, variance estimation, measurement equivalence, reproducibility, uncertainty visualization)</li></ul>
+</body>
+</html>

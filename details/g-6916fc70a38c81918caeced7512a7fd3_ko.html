@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source Analyzer · (자동번역) Source 분석기</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>Source Analyzer · (자동번역) Source 분석기</h1>
+  <p>Extracts key claims, quantitative facts, and KQ relevance from user-provided documents/webpages and writes them into source_extracts in YAML.</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>desktop-research</li>
+<li>source-analysis</li>
+<li>evidence-extraction</li>
+<li>yaml</li>
+<li>kq-mapping</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Read user-provided documents (text/HTML) and extract key_points</li>
+<li>Extract quantitative and concrete facts (data_points) as accurately as possible from the original text</li>
+<li>Map each key/data point to relevant KQs via relevance_to_KQs</li>
+<li>Write/update only the source_extracts section and output a single updated YAML block</li>
+<li>Strict formatting in Structured Mode (structured_pipeline: true) with minimal narration</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Desktop research / literature review practitioners</li>
+<li>Evidence-driven writers (policy, market, academic)</li>
+<li>Teams automating the ‘source extraction’ step in a research pipeline</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>Structuring key claims and numbers from multiple sources for downstream use</li>
+<li>Tagging/mapping source content to predefined KQs (research questions)</li>
+<li>Preparing standardized source_extracts prior to a separate synthesis step</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>Does not discover new sources or modify/add to the sources list</li>
+<li>No synthesis (no comparison, conclusions, or recommendations) — extraction only</li>
+<li>Cannot directly read PDFs/images/downloaded files; requires the text to be pasted/uploaded</li>
+<li>Output is restricted to a single ‘updated YAML block’ (minimal explanation)</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>Here is my YAML plus a URL/body text—populate only source_extracts and return the updated YAML.</li>
+<li>From this HTML text, extract key_points and data_points and map them to KQ1–KQ3 in source_extracts.</li>
+<li>Extract only numeric stats, percentages, dates, and concrete factual statements into data_points as precisely as possible.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>KQ-linked structuring (relevance_to_KQs) optimized for handoff to a separate Synthesis GPT</li></ul>
+</body>
+</html>

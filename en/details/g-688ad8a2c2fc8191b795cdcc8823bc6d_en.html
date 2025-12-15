@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CogiGPT · (자동번역) CogiGPT</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>CogiGPT · (자동번역) CogiGPT</h1>
+  <p>A discussion-based cognitive interview moderator for validating survey item interpretation and delivering concise summaries and revision suggestions</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-688ad8a2c2fc8191b795cdcc8823bc6d-cogigpt' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-688ad8a2c2fc8191b795cdcc8823bc6d-cogigpt</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>cognitive-interview</li>
+<li>survey-methodology</li>
+<li>questionnaire-design</li>
+<li>qualitative-research</li>
+<li>facilitation</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>Present the item and elicit free responses (Round 1)</li>
+<li>Facilitate cross-reactions and re-interpretation (Round 2)</li>
+<li>Guide final positions and extract agreements/disputes (Round 3)</li>
+<li>Ask clarification questions for ambiguous terms or phrasing</li>
+<li>Provide mid-session summaries and flag potential risks</li>
+<li>Propose revisions (alternative wording, instruction/scale improvements)</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>Researchers and practitioners developing or refining survey/assessment items</li>
+<li>UX/insights teams validating question comprehension in qualitative studies</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>Explore misunderstandings and interpretation variance (item stem, instructions, response scales)</li>
+<li>Diagnose item issues (ambiguity, assumptions, missing categories, double-barreled questions)</li>
+<li>Surface segment differences (novice vs. expert, etc.) via structured discussion</li>
+<li>Draft revision candidates and prioritize fixes</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>It cannot replace recruiting real respondents or running field cognitive interviews; use outputs as hypothesis-driven diagnostics.</li>
+<li>High-stakes domains (legal/medical, etc.) still require expert review.</li>
+<li>If context is underspecified (target population, setting, scale definitions), recommendations may be less accurate.</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>Run a 3-round cognitive interview on this item: &#x27;In the past 2 weeks, how often have you felt stressed?&#x27;</li>
+<li>Check how respondents might interpret the word &#x27;regularly&#x27; using a discussion-based cognitive interview.</li>
+<li>Summarize this item with a focus on risk_flags and revision_suggestions.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>Round-based facilitation templates (present→react→finalize)</li>
+<li>Meta-summarizer output structure: key_points / conflict_map / risk_flags / revision_suggestions / meta_comment</li></ul>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CogiGPT · (자동번역) CogiGPT</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>CogiGPT · (자동번역) CogiGPT</h1>
+  <p>설문·평가 문항의 이해·판단 과정을 점검하기 위한 토론형 인지면접 진행 및 요약/개선안 제시 GPT</p>
+
+  <h2>URL</h2>
+  <p><a href='https://chatgpt.com/g/g-688ad8a2c2fc8191b795cdcc8823bc6d-cogigpt' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-688ad8a2c2fc8191b795cdcc8823bc6d-cogigpt</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>cognitive-interview</li>
+<li>survey-methodology</li>
+<li>questionnaire-design</li>
+<li>qualitative-research</li>
+<li>facilitation</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>문항 제시 후 자율 발화 유도(라운드 1)</li>
+<li>참여자 간 상호 반응 유도 및 재해석 촉진(라운드 2)</li>
+<li>최종 입장 정리와 합의/쟁점 도출(라운드 3)</li>
+<li>모호한 표현·용어에 대한 명료화 질문</li>
+<li>중간 요약과 위험 신호(risk) 플래그</li>
+<li>개선안 제안(대체 문구, 지시문/척도 보완)</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>설문/평가 문항을 개발·개선하는 연구자 및 실무자</li>
+<li>정성조사에서 문항 이해도 검증이 필요한 UX/리서치 팀</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>문항의 오해·해석 차이 탐색(질문/지시문/응답척도 포함)</li>
+<li>문항 결함 진단(모호성, 전제, 범주 누락, 이중질문 등)</li>
+<li>집단별 해석 차이(초심자/전문가 등) 토론 기반 수집</li>
+<li>수정안 초안 도출 및 우선순위 정리</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>실제 응답자 표집 및 현장 인지면접을 대체하지 못하며 결과는 가설적 진단으로 활용해야 합니다.</li>
+<li>법/의학 등 전문 영역 문항은 추가 전문가 검토가 필요합니다.</li>
+<li>대상자 특성·맥락·척도 정의가 부족하면 제안의 정확도가 낮아질 수 있습니다.</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>다음 문항으로 3라운드 인지면접을 진행해줘: &#x27;최근 2주 동안 스트레스를 얼마나 자주 느꼈나요?&#x27;</li>
+<li>‘정기적으로’라는 표현이 어떻게 해석될지 인지면접으로 점검해줘.</li>
+<li>이 문항의 risk_flags와 revision_suggestions 중심으로 정리해줘.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>라운드 기반 진행 템플릿(문항 제시→상호 반응→최종 정리)</li>
+<li>요약 관리자(meta) 출력 구조: key_points / conflict_map / risk_flags / revision_suggestions / meta_comment</li></ul>
+</body>
+</html>
