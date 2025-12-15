@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Source Analyzer · (자동번역) Source 분석기</title>
+  <title>Source 분석기</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
     .meta { color: #555; font-size: 14px; }
@@ -27,10 +27,11 @@
     if (back) document.getElementById('backToTistory').href = back;
   </script>
 
-  <h1>Source Analyzer · (자동번역) Source 분석기</h1>
-  <p>Extracts key claims, quantitative facts, and KQ relevance from user-provided documents/webpages and writes them into source_extracts in YAML.</p>
+  <h1>Source 분석기</h1>
+  <div class='meta'>(자동번역) English: Source Analyzer</div>
+  <p>사용자가 제공한 문서/웹페이지에서 핵심 주장·수치·KQ 관련성을 추출해 YAML의 source_extracts로 구조화한다.</p>
 
-  <h2>URL</h2>
+  <h2>GPT 바로가기</h2>
   <p><a href='https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer</a></p>
 
   <h2>External guides</h2>
@@ -44,34 +45,34 @@
 <li>kq-mapping</li></ul>
 
   <h2>Functions</h2>
-  <ul><li>Read user-provided documents (text/HTML) and extract key_points</li>
-<li>Extract quantitative and concrete facts (data_points) as accurately as possible from the original text</li>
-<li>Map each key/data point to relevant KQs via relevance_to_KQs</li>
-<li>Write/update only the source_extracts section and output a single updated YAML block</li>
-<li>Strict formatting in Structured Mode (structured_pipeline: true) with minimal narration</li></ul>
+  <ul><li>사용자 제공 문서(본문/HTML)를 읽고 핵심 주장(key_points) 추출</li>
+<li>수치·통계·구체 사실(data_points)을 원문 기준으로 정확히 발췌</li>
+<li>각 key/data가 어떤 KQ와 연결되는지 relevance_to_KQs로 매핑</li>
+<li>결과를 YAML의 source_extracts에만 작성/갱신(단일 YAML 출력)</li>
+<li>Structured Mode(structured_pipeline: true)에서 형식 엄수 및 최소 설명</li></ul>
 
   <h2>Target users</h2>
-  <ul><li>Desktop research / literature review practitioners</li>
-<li>Evidence-driven writers (policy, market, academic)</li>
-<li>Teams automating the ‘source extraction’ step in a research pipeline</li></ul>
+  <ul><li>데스크 리서치/문헌조사 담당자</li>
+<li>근거 기반 보고서 작성자(정책/시장/학술)</li>
+<li>리서치 파이프라인에서 출처 추출 단계를 자동화하려는 팀</li></ul>
 
   <h2>Ideal use cases</h2>
-  <ul><li>Structuring key claims and numbers from multiple sources for downstream use</li>
-<li>Tagging/mapping source content to predefined KQs (research questions)</li>
-<li>Preparing standardized source_extracts prior to a separate synthesis step</li></ul>
+  <ul><li>여러 출처 문서에서 핵심 주장·수치만 빠르게 추출해 구조화할 때</li>
+<li>KQ(Research Questions) 기준으로 출처 내용을 태깅/매핑해야 할 때</li>
+<li>Synthesis 단계 전에 source_extracts를 표준 형식으로 정리할 때</li></ul>
 
   <h2>Limitations</h2>
-  <ul><li>Does not discover new sources or modify/add to the sources list</li>
-<li>No synthesis (no comparison, conclusions, or recommendations) — extraction only</li>
-<li>Cannot directly read PDFs/images/downloaded files; requires the text to be pasted/uploaded</li>
-<li>Output is restricted to a single ‘updated YAML block’ (minimal explanation)</li></ul>
+  <ul><li>새로운 출처를 찾거나 sources 목록을 수정/추가하지 않음</li>
+<li>synthesis(종합/비교/결론) 생성 금지 — 추출만 수행</li>
+<li>PDF/이미지/다운로드 파일은 직접 읽지 못하며 텍스트 업로드가 필요함</li>
+<li>출력은 ‘업데이트된 YAML 한 덩어리’로 제한(설명 최소화)</li></ul>
 
   <h2>Example commands</h2>
-  <ul><li>Here is my YAML plus a URL/body text—populate only source_extracts and return the updated YAML.</li>
-<li>From this HTML text, extract key_points and data_points and map them to KQ1–KQ3 in source_extracts.</li>
-<li>Extract only numeric stats, percentages, dates, and concrete factual statements into data_points as precisely as possible.</li></ul>
+  <ul><li>아래 YAML과 출처 URL/본문을 줄 테니 source_extracts만 채워서 업데이트된 YAML로 출력해줘.</li>
+<li>이 HTML 본문에서 key_points, data_points를 뽑고 KQ1~KQ3에 매핑해 source_extracts에 넣어줘.</li>
+<li>이 문서 내용 중 수치/퍼센트/날짜/고유명사 팩트만 data_points로 최대한 정확히 추출해줘.</li></ul>
 
   <h2>Additional features</h2>
-  <ul><li>KQ-linked structuring (relevance_to_KQs) optimized for handoff to a separate Synthesis GPT</li></ul>
+  <ul><li>KQ별 관련성(relevance_to_KQs) 구조화로 추후 Synthesis GPT 연계에 최적화</li></ul>
 </body>
 </html>

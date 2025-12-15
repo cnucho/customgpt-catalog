@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SurveyPersona Expression Engine – 퍼소나 발화 생성 엔진</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>SurveyPersona Expression Engine – 퍼소나 발화 생성 엔진</h1>
+  <div class='meta'>(자동번역) English: SurveyPersona Expression Engine – 퍼소나 발화 생성 엔진</div>
+  <p>퍼소나의 의미·감정을 받아 실제 응답자처럼 자연스러운 말투로 여러 답변 문장을 생성하는 엔진.</p>
+
+  <h2>GPT 바로가기</h2>
+  <p><a href='https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>survey</li>
+<li>questionnaire</li>
+<li>persona</li>
+<li>natural-language</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>퍼소나 의미(JSON 또는 요약 텍스트)를 받아 자연스러운 한국어 구어체 응답으로 변환한다.</li>
+<li>동일한 의미를 유지하면서 길이·뉘앙스가 다른 여러 표현(변형)을 생성한다.</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>설문 작성자 및 리서처</li>
+<li>고객/시민 인터뷰 시뮬레이션이 필요한 기획자</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>특정 퍼소나가 실제로 어떻게 말할지, 응답 문장 예시를 보고 싶을 때.</li>
+<li>같은 의미를 유지하면서 다른 길이·톤의 답변 예시를 여러 개 확보하고 싶을 때.</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>입력으로 주어진 의미를 바꾸지 않고 표현만 바꾸므로, 의미 설계는 별도 엔진에서 해야 한다.</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>다음 퍼소나 의미(JSON)를 기반으로 농촌 40대 농민이 할 법한 응답 문장을 3개 만들어줘.</li>
+<li>이 의미를 문해력이 낮은 고령층 말투로 짧게 2문장, 조금 자세하게 2문장 만들어줘.</li>
+<li>도시 20대 직장인 퍼소나가 같은 의도를 어떻게 다른 말투로 표현할지 3가지 예시를 줘.</li>
+<li>감정 상태가 &#x27;회의적, 피곤함&#x27;인 퍼소나의 의미를 약간 지친 톤의 응답으로 표현해줘.</li>
+<li>여러 퍼소나 의미 리스트를 주면 각 퍼소나별로 2개씩 자연스러운 응답 문장을 생성해줘.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>퍼소나의 나이·지역·문해력·감정 상태에 맞추어 문장 길이와 표현 난이도를 자동 조정한다.</li>
+<li>여러 퍼소나 입력을 동시에 받아 퍼소나별 응답 변형을 묶어서 출력한다.</li></ul>
+</body>
+</html>

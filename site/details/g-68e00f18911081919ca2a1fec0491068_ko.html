@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OmniReg GPT · (자동번역) OmniReg GPT</title>
+  <title>OmniReg GPT</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
     .meta { color: #555; font-size: 14px; }
@@ -27,10 +27,11 @@
     if (back) document.getElementById('backToTistory').href = back;
   </script>
 
-  <h1>OmniReg GPT · (자동번역) OmniReg GPT</h1>
-  <p>A rule-driven assistant for end-to-end regression workflows: data checks, preprocessing, model design, diagnostics, and structured interpretation.</p>
+  <h1>OmniReg GPT</h1>
+  <div class='meta'>(자동번역) English: OmniReg GPT</div>
+  <p>회귀분석 전 과정을 규칙 기반으로 점검·전처리·모형진단·해석까지 일관되게 지원하는 분석 보조 GPT.</p>
 
-  <h2>URL</h2>
+  <h2>GPT 바로가기</h2>
   <p><a href='https://chatgpt.com/g/g-68e00f18911081919ca2a1fec0491068-omnireg-gpt' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68e00f18911081919ca2a1fec0491068-omnireg-gpt</a></p>
 
   <h2>External guides</h2>
@@ -47,39 +48,39 @@
 <li>policy</li></ul>
 
   <h2>Functions</h2>
-  <ul><li>Auto-check missingness, outliers, distributions, and coding issues and provide handling recommendations</li>
-<li>Apply variable-transformation rules (log, dummy coding, ordinal scoring) and suggest candidates</li>
-<li>Support regression model planning across OLS/logistic/Poisson/negative binomial/PLS, including hierarchical (block-wise) comparisons</li>
-<li>Provide assumption and diagnostics checklists (VIF multicollinearity, overdispersion, residual diagnostics, etc.)</li>
-<li>Generate interpretation write-ups using a 5-step structure centered on coefficients/OR/VIP and fit metrics (R²/Q²)</li></ul>
+  <ul><li>결측값·이상값·분포·코딩을 자동 점검하고 처리 권고 제시</li>
+<li>변수 변환(로그/더미/순서형 점수화) 규칙 적용 및 변환 후보 제안</li>
+<li>OLS/로지스틱/포아송/음이항/PLS 등 회귀 모형 설계 및 위계적(단계적) 비교 지원</li>
+<li>다중공선성(VIF), 과산포, 잔차 진단 등 가정 검토 체크리스트 제공</li>
+<li>계수/OR/VIP/R²·Q² 중심의 5단계 구조로 결과 해석문 생성</li></ul>
 
   <h2>Target users</h2>
-  <ul><li>Social science &amp; policy researchers</li>
-<li>Graduate students writing theses/papers</li>
-<li>Data analysts doing regression-heavy work</li></ul>
+  <ul><li>사회과학/정책 연구자</li>
+<li>대학원생·논문 작성자</li>
+<li>데이터 분석가(회귀 중심)</li></ul>
 
   <h2>Ideal use cases</h2>
-  <ul><li>Document a standardized preprocessing/diagnostics workflow for survey or observational regression analyses</li>
-<li>Run hierarchical regression by adding variable blocks and comparing ΔR² across steps</li>
-<li>Design moderated regression with interaction terms (e.g., platform/group moderators)</li>
-<li>Assess overdispersion in Poisson models and propose NB/ZIP/ZINB alternatives</li>
-<li>Conduct PLS regression with cross-validated component selection and VIP-focused interpretation</li></ul>
+  <ul><li>설문/관측 데이터 회귀분석 전처리·진단을 표준 절차로 문서화</li>
+<li>위계적 회귀로 변수군을 단계적으로 추가해 ΔR² 비교</li>
+<li>플랫폼/집단 등의 조절효과(상호작용) 포함 회귀 모형 설계</li>
+<li>포아송 회귀에서 과산포 여부 판단 후 음이항/ZIP/ZINB 대안 제시</li>
+<li>PLS 회귀에서 잠재변수 수 선정 및 VIP 기반 해석</li></ul>
 
   <h2>Limitations</h2>
-  <ul><li>Recommendations are rule-based; final decisions must reflect the study context (measurement, sampling, causal assumptions)</li>
-<li>If raw data quality is poor (coding errors, sampling bias, low response reliability), interpretability and trustworthiness are limited</li>
-<li>Auto-formatting to specific journal/institution reporting templates may require additional templates</li></ul>
+  <ul><li>규칙 기반 권고이므로 연구 맥락(측정, 표집, 인과 가정)에 따른 최종 판단은 사용자가 해야 함</li>
+<li>원자료 품질(코딩 오류, 표본 편향, 응답 신뢰도)이 낮으면 결과 해석의 신뢰성이 제한될 수 있음</li>
+<li>특정 기관/학회 양식에 맞춘 보고서 자동 서식화는 별도 템플릿이 필요할 수 있음</li></ul>
 
   <h2>Example commands</h2>
-  <ul><li>Analyze the ANPOR dataset: fit a 3-step hierarchical OLS model predicting sustainable actions, and report missing/outliers/VIF/residual diagnostics.</li>
-<li>My Poisson model has dispersion = 2.0. Determine overdispersion, refit using negative binomial, and write an interpretation paragraph.</li>
-<li>The dependent variable has skewness 2.8. Should I log-transform it? If yes, show how to back-translate effects to the original scale.</li>
-<li>Run PLS with k-fold CV to choose components, then summarize results focusing on variables with VIP ≥ 1.</li></ul>
+  <ul><li>anpor 데이터 분석: 위계적 OLS로 종속변수(지속가능 행동) 예측 모형을 3단계로 적합하고, 결측/이상값/VIF/잔차 진단까지 보고해줘.</li>
+<li>포아송 회귀를 돌렸는데 dispersion이 2.0이야. 과산포 판단과 음이항 회귀로의 대체 및 해석 문장까지 써줘.</li>
+<li>종속변수의 왜도가 2.8인데 로그 변환을 적용할지, 적용 시 원 단위 환산 해석 예시까지 보여줘.</li>
+<li>PLS로 분석할 건데 k-fold CV로 잠재변수 수를 고르고 VIP≥1 변수 위주로 결과를 요약해줘.</li></ul>
 
   <h2>Additional features</h2>
-  <ul><li>Missingness workflow with a 5% threshold plus Little’s MCAR test decision path</li>
-<li>Multicollinearity rules: recommend removal at VIF&gt;5 and require removal at VIF&gt;10</li>
-<li>PLS workflow: mandatory standardization, CV-based component selection, and reporting VIP/Q²/RMSECV</li>
-<li>A 5-step interpretation template (purpose→methods→results→implications→comparison to prior work)</li></ul>
+  <ul><li>결측률 5% 기준 및 Little’s MCAR 테스트 기반 처리 흐름</li>
+<li>VIF&gt;5 제거 권고, VIF&gt;10 필수 제거 기준</li>
+<li>PLS: 표준화 필수, CV로 잠재변수 수 선정, VIP·Q²·RMSECV 보고</li>
+<li>해석 5단계 템플릿(목적→방법→결과→함의→선행연구 비교)</li></ul>
 </body>
 </html>

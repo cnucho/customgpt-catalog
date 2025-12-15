@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SamplingPlanExecutor · (자동번역) SamplingPlanExecutor</title>
+  <title>SamplingPlanExecutor</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
     .meta { color: #555; font-size: 14px; }
@@ -27,10 +27,11 @@
     if (back) document.getElementById('backToTistory').href = back;
   </script>
 
-  <h1>SamplingPlanExecutor · (자동번역) SamplingPlanExecutor</h1>
-  <p>Executes survey sampling designs from structured design summaries, producing reproducible weights, precision metrics, and report-ready tables.</p>
+  <h1>SamplingPlanExecutor</h1>
+  <div class='meta'>(자동번역) English: SamplingPlanExecutor</div>
+  <p>구조화된 설계 요약을 기반으로 표본추출·가중치·정밀도 지표를 재현 가능하게 계산하고, 보고서용 표를 생성합니다.</p>
 
-  <h2>URL</h2>
+  <h2>GPT 바로가기</h2>
   <p><a href='https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor</a></p>
 
   <h2>External guides</h2>
@@ -42,28 +43,28 @@
 <li>research-assistant</li></ul>
 
   <h2>Functions</h2>
-  <ul><li>Validate SamplingPlanner design summaries (JSON/YAML) and optional SDM against schemas, flagging missing or conflicting inputs without redesigning.</li>
-<li>Run sampling, weighting, and CV/variance computations in Python on uploaded data, exporting tables and report-ready structures (Markdown/Excel).</li></ul>
+  <ul><li>SamplingPlanner 설계 요약(JSON/YAML)과 선택적 SDM을 스키마 기준으로 검증하고, 재설계 없이 누락/충돌 입력을 식별합니다.</li>
+<li>업로드된 데이터에 대해 Python으로 표본추출·가중치·CV/분산 산출을 실행하고, 결과를 Markdown/Excel의 보고서용 구조로 출력합니다.</li></ul>
 
   <h2>Target users</h2>
-  <ul><li>Survey statisticians and sampling methodologists who need to execute a pre-defined sampling plan on real data.</li>
-<li>Policy and research teams producing official-style tables (weights, CV/DEFF, allocations) from SamplingPlanner outputs.</li></ul>
+  <ul><li>사전 정의된 표본설계를 실제 데이터에 적용해 실행해야 하는 조사통계 담당자 및 방법론 연구자.</li>
+<li>SamplingPlanner 산출물을 바탕으로 공식 보고서형 통계표를 생성하는 정책·연구 실무팀.</li></ul>
 
   <h2>Ideal use cases</h2>
-  <ul><li>Apply multi-stage/stratified sampling steps from a SamplingPlanner design summary to a provided frame or sample dataset and generate selection/weight variables.</li>
-<li>Compute base weights, nonresponse adjustments, post-stratification/raking (when benchmarks provided), and produce CV/SE/DEFF tables for key estimates.</li></ul>
+  <ul><li>SamplingPlanner 설계 요약에 정의된 층화·다단계 추출 절차를 데이터에 적용하고 선택·가중치 변수를 생성.</li>
+<li>기본가중치, 무응답 보정, 사후층화/레이킹을 수행하고 핵심 추정치의 CV/SE/DEFF 표를 산출.</li></ul>
 
   <h2>Limitations</h2>
-  <ul><li>Does not redesign or change the sampling module; requires uploaded design summary and appropriate frame/sample data (no fabrication of population counts or MOS).</li></ul>
+  <ul><li>표본설계를 재구성하지 않으며 설계 요약과 적절한 프레임/표본 데이터가 필요합니다(모집단 수·MOS 임의 생성 금지).</li></ul>
 
   <h2>Example commands</h2>
-  <ul><li>Here is my SamplingPlanner design_summary.json and sample.csv—execute the sampling steps and output the selected sample plus base weights.</li>
-<li>Compute final weights using this design summary and these benchmark totals (benchmarks.xlsx); include nonresponse adjustment and raking factors.</li>
-<li>Generate CV/SE/DEFF for domain means by region using strata=STRATA, psu=PSU, weight=final_weight; export detailed tables to Excel.</li>
-<li>Validate my SDM.yaml against the SDM template and list all missing or conflicting fields that block execution.</li>
-<li>Produce a report-ready YAML/Markdown structure: body tables (allocation + key estimates) and appendix Excel tables (full domain breakdown).</li></ul>
+  <ul><li>SamplingPlanner design_summary.json과 sample.csv를 사용해 설계대로 실행하고 기본가중치를 만들어 주세요.</li>
+<li>이 설계 요약과 benchmarks.xlsx로 최종가중치를 계산해 주세요(무응답 보정과 레이킹 포함).</li>
+<li>STRATA, PSU, final_weight를 사용해 지역별 평균의 CV/SE/DEFF를 계산하고 Excel로 출력해 주세요.</li>
+<li>SDM.yaml을 템플릿과 비교해 실행을 막는 누락·충돌 항목을 정리해 주세요.</li>
+<li>보고서용 구조(YAML/Markdown)로 본문 요약표와 부록 Excel 표를 생성해 주세요.</li></ul>
 
   <h2>Additional features</h2>
-  <ul><li>Reproducible Python code snippets and transparent diagnostics (flags for missing inputs, unstable weights, and high CV domains).</li></ul>
+  <ul><li>재현 가능한 Python 코드와 진단 플래그(입력 누락, 불안정 가중치, 고CV 도메인) 제공.</li></ul>
 </body>
 </html>

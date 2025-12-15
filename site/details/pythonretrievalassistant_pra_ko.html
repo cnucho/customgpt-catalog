@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Python Retrieval Assistant (PRA) · (자동번역) Python Retrieval 어시스턴트 (PRA)</title>
+  <title>Python Retrieval 어시스턴트 (PRA)</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
     .meta { color: #555; font-size: 14px; }
@@ -27,10 +27,11 @@
     if (back) document.getElementById('backToTistory').href = back;
   </script>
 
-  <h1>Python Retrieval Assistant (PRA) · (자동번역) Python Retrieval 어시스턴트 (PRA)</h1>
-  <p>Generates robust Python scripts to retrieve specific documents, tables, datasets, and API resources with minimal friction.</p>
+  <h1>Python Retrieval 어시스턴트 (PRA)</h1>
+  <div class='meta'>(자동번역) English: Python Retrieval Assistant (PRA)</div>
+  <p>특정 문서·표·데이터셋·API 자원을 안정적으로 가져오는 저오류 파이썬/Colab 스크립트를 생성한다.</p>
 
-  <h2>URL</h2>
+  <h2>GPT 바로가기</h2>
   <p><a href='https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra</a></p>
 
   <h2>External guides</h2>
@@ -42,28 +43,28 @@
 <li>research-assistant</li></ul>
 
   <h2>Functions</h2>
-  <ul><li>Generate Colab-ready Python scripts to download files (PDF/CSV/ZIP) from known URLs with error handling.</li>
-<li>Create HTML table extraction pipelines (BeautifulSoup/pandas) and optional API retrieval methods when more stable.</li></ul>
+  <ul><li>알려진 URL에서 PDF/CSV/ZIP 등 파일을 내려받는 Colab/로컬용 파이썬 스크립트를 에러 처리 포함으로 생성.</li>
+<li>웹페이지 HTML 표를 CSV로 추출(BeautifulSoup/pandas)하고, 더 안정적이면 API 방식도 선택지로 제안.</li></ul>
 
   <h2>Target users</h2>
-  <ul><li>Researchers and analysts who need reproducible data/document retrieval scripts.</li>
-<li>Policy, academic, and newsroom teams collecting public datasets, reports, and tables.</li></ul>
+  <ul><li>재현 가능한 데이터/문서 수집 스크립트가 필요한 연구자·분석가.</li>
+<li>공개 통계·보고서·표 데이터를 모으는 정책/학술/언론 조직.</li></ul>
 
   <h2>Ideal use cases</h2>
-  <ul><li>Download a known report or dataset URL into Colab/local and save with a clean filename, logs, and retries.</li>
-<li>Scrape an official webpage table into CSV (and optionally provide an API-based alternative when available).</li></ul>
+  <ul><li>지정된 보고서/데이터 URL을 Colab 또는 로컬에서 다운로드하고 깔끔한 파일명·로그·재시도 옵션으로 저장.</li>
+<li>공식 사이트의 표를 CSV로 스크래핑하고(가능 시) 더 안정적인 API 대안까지 함께 제시.</li></ul>
 
   <h2>Limitations</h2>
-  <ul><li>Does not perform broad exploratory research; requires a specific target resource (URL/page/API) and will not bypass authentication/paywalls.</li></ul>
+  <ul><li>광범위한 탐색형 리서치는 하지 않으며, 구체적인 대상(URL/페이지/API)이 필요하고 인증/유료장벽을 우회하지 않는다.</li></ul>
 
   <h2>Example commands</h2>
-  <ul><li>Write a Colab script to download this PDF and save it as &#x27;report_2025.pdf&#x27;: &lt;URL&gt;</li>
-<li>Scrape the main statistics table from this page into UTF-8-SIG CSV with headers preserved: &lt;URL&gt;</li>
-<li>This site blocks simple requests—add headers, retries, and polite rate limiting to the downloader for: &lt;URL&gt;</li>
-<li>Provide two approaches to retrieve this dataset: (1) HTML scrape, (2) API if available; save outputs to ./output.csv: &lt;URL&gt;</li>
-<li>Turn this multi-file ZIP download page into a script that downloads all links matching &#x27;*.zip&#x27; to ./downloads/: &lt;URL&gt;</li></ul>
+  <ul><li>이 PDF를 Colab에서 다운로드해 &#x27;report_2025.pdf&#x27;로 저장하는 스크립트를 만들어줘: &lt;URL&gt;</li>
+<li>이 페이지의 핵심 통계 표를 UTF-8-SIG CSV로 저장해줘(헤더 유지): &lt;URL&gt;</li>
+<li>요청이 차단돼—헤더/재시도/속도 제한을 추가한 다운로더로 바꿔줘: &lt;URL&gt;</li>
+<li>이 데이터는 (1) HTML 스크래핑 (2) API(가능하면) 두 방식으로 수집하는 코드를 나란히 제공해줘. 출력은 ./output.csv</li>
+<li>여러 ZIP 링크가 있는 페이지에서 &#x27;*.zip&#x27;만 모두 내려받아 ./downloads/에 저장하는 스크립트를 만들어줘: &lt;URL&gt;</li></ul>
 
   <h2>Additional features</h2>
-  <ul><li>Includes step-by-step Google Colab run instructions and a download-to-local helper snippet.</li></ul>
+  <ul><li>구글 코랩 실행 절차와 로컬로 파일 내려받기(files.download) 헬퍼 스니펫을 함께 제공.</li></ul>
 </body>
 </html>

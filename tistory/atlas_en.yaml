@@ -1,0 +1,1192 @@
+gpt_atlas:
+  version: '1.0'
+  generated_at: '2025-12-15T13:07:02.133257+00:00'
+  items:
+  - gpt_id: chartartist
+    names:
+      en: ChartArtist
+      ko: ChartArtist
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-692d72d34b6c8191aec3dac13d5053d1-chartartist
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Data analysts and researchers
+    - Product managers and consultants
+    limitations:
+    - Does not provide statistical interpretation or analytical insights
+  - gpt_id: g-6874900592448191ab46ffef82b35ea4
+    names:
+      en: ChartFlow GPT – Table-to-Chart Assistant
+      ko: ChartFlow GPT – Table to Chart 어시스턴트
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6874900592448191ab46ffef82b35ea4-chartflow-gpt
+    tags:
+    - data-visualization
+    - statistics
+    - automation
+    suitable_for:
+    - Policy analysts and data professionals
+    - Report writers handling frequent chart tasks
+    limitations:
+    - Results may vary with ambiguous or unstructured tables
+  - gpt_id: cleaningcodegpt
+    names:
+      en: CleaningCodeGPT
+      ko: CleaningCodeGPT
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-692c27928db88191b5150deeba1861a8-cleaningcodegpt
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Data managers and statisticians
+    - Survey and research data teams
+    limitations:
+    - Does not perform data cleaning, transformation, or analysis
+  - gpt_id: g-688ad8a2c2fc8191b795cdcc8823bc6d
+    names:
+      en: CogiGPT
+      ko: CogiGPT
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-688ad8a2c2fc8191b795cdcc8823bc6d-cogigpt
+    tags:
+    - cognitive-interview
+    - survey-methodology
+    - questionnaire-design
+    - qualitative-research
+    - facilitation
+    suitable_for:
+    - Researchers and practitioners developing or refining survey/assessment items
+    - UX/insights teams validating question comprehension in qualitative studies
+    limitations:
+    - It cannot replace recruiting real respondents or running field cognitive interviews;
+      use outputs as hypothesis-driven diagnostics.
+    - High-stakes domains (legal/medical, etc.) still require expert review.
+    - If context is underspecified (target population, setting, scale definitions),
+      recommendations may be less accurate.
+  - gpt_id: corecritic-weonyopyeong
+    names:
+      en: CoreCritic (WeonYoPyeong)
+      ko: CoreCritic (WeonYoPyeong)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68777722ae9c8191aef591f56e192c26-corecritic-weonyopyeong
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Academic researchers
+    - Graduate students
+    limitations:
+    - Does not infer or speculate beyond explicitly stated content
+  - gpt_id: g-68777722ae9c8191aef591f56e192c26
+    names:
+      en: CoreCritic Weonyopyeong
+      ko: CoreCritic Weonyopyeong
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68777722ae9c8191aef591f56e192c26-corecritic-weonyopyeong
+    tags:
+    - paper-analysis
+    - critical-review
+    - research-assistant
+    - journal-review
+    suitable_for:
+    - Graduate students and researchers
+    - Authors preparing journal submissions
+    limitations:
+    - Does not infer information not explicitly stated in the source text
+  - gpt_id: g-686ce5c0f460819185068b8c9a1bbe18
+    names:
+      en: Crosstab Analyst
+      ko: Crosstab Analyst
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst
+    tags:
+    - statistics
+    - crosstab
+    - survey
+    - chi-square
+    - effect-size
+    - visualization
+    - reporting
+    - bilingual
+    suitable_for:
+    - Survey researchers and quantitative analysts
+    - Marketing/brand insights teams
+    - Policy/public-sector report writers
+    - Graduate students and research assistants
+    limitations:
+    - With very small samples or many sparse cells, χ² assumptions may be weak (consider
+      exact tests or collapsing).
+    - If the percent base (row% vs column%) is unclear, interpretations can be misleading;
+      table meta is required.
+    - Multi-select (checkbox) tables are non-mutually-exclusive; avoid direct comparisons
+      to single-select crosstabs.
+    - By default, it does not pull external web evidence; it interprets only the provided
+      tables/text.
+  - gpt_id: dataprepcodegen
+    names:
+      en: DataPrepCodeGen
+      ko: DataPrepCodeGen
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Official statistics analysts preparing survey microdata in SPSS
+    - Researchers requiring reproducible data preparation scripts
+    limitations:
+    - Does not generate statistical analysis or modeling code.
+  - gpt_id: g-692430bf6b888191a8180fc6170597c7
+    names:
+      en: deskresearch – Market Research Desk Analyst
+      ko: deskresearch – Market 리서치 데스크 Analyst
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-692430bf6b888191a8180fc6170597c7-deskresearch
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Consultants, corporate strategy teams, VC analysts
+    - Startup founders, PMs, business development teams
+    limitations:
+    - Does not access paid databases; relies solely on public data
+  - gpt_id: g-68fc9be3e4b48191b0388dee4c3c6bd6
+    names:
+      en: Essence Diagram Builder GPT
+      ko: Essence Diagram 빌더 GPT
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt
+    tags:
+    - semantic-structure
+    - diagram
+    - mermaid
+    - plantuml
+    - typora
+    - audit
+    - knowledge-structuring
+    - documentation
+    suitable_for:
+    - 'Product/Program Managers (PM/PO): need fast diagramming from requirements,
+      specs, or policy text'
+    - 'Researchers/Students/Educators: organize conceptual relationships into learning-friendly
+      diagrams'
+    - 'Consultants/Analysts: simplify complex narratives into shareable structures'
+    - 'Technical writers: standardize explanations/design notes into consistent diagrams
+      with legends'
+    limitations:
+    - If the input is ambiguous or lacks definitions, the model may introduce more
+      (assumption) nodes and depend on user-provided clarifications
+    - Rendering quality depends on the viewer (e.g., Typora/Markdown engines) and
+      their Mermaid feature support
+    - Designed to avoid asserting facts not present in the source, so out-of-context
+      extrapolation is intentionally limited
+  - gpt_id: g-6877b4af7e6881919583ca821023a098
+    names:
+      en: Expression Assistant – Arpeggio
+      ko: Expression 어시스턴트 – Arpeggio
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6877b4af7e6881919583ca821023a098-areupejio
+    tags:
+    - writing
+    - thinking
+    - philosophy
+    - assistant
+    suitable_for:
+    - Researchers
+    - Planners
+    - Writing Coaches
+    limitations:
+    - Not optimized for free-form creative or emotionally driven writing
+  - gpt_id: gptatlas-gptfinder
+    names:
+      en: GPT Atlas
+      ko: GPT 아틀라스
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-692581c303f0819181fe33297f419cea-gptatlas-jipiticajgi
+    tags:
+    - catalog
+    - search
+    - custom-gpt
+    suitable_for:
+    - Researchers looking for verified custom GPTs
+    - Users who want to avoid hallucinated GPT recommendations
+    limitations:
+    - Cannot suggest GPTs that are not registered in the catalog
+  - gpt_id: g-68a081a137148191bbb40b316870cd95
+    names:
+      en: GroupCompare AI
+      ko: GroupCompare AI
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai
+    tags:
+    - statistics
+    - ab-testing
+    - equivalence-testing
+    - tost
+    - non-inferiority
+    - multiple-testing
+    - effect-size
+    - power-analysis
+    - apa-reporting
+    - research-assistant
+    - i18n
+    suitable_for:
+    - Researchers and data analysts running group comparisons on experiments/surveys/observational
+      data
+    - Product and growth teams (A/B testing, multiple metrics, standardized reporting)
+    - Academic/policy analysts who need effect sizes, power/MDE, and equivalence claims
+    - Consultants/analytics owners who want consistent statistical reporting pipelines
+    limitations:
+    - Equivalence/non-inferiority conclusions are highly sensitive to the chosen margin
+      Δ; unjustified margins can undermine interpretability.
+    - Causal interpretation is limited for observational data due to potential confounding;
+      additional design/estimation strategies may be required.
+    - Small samples, rare events, or complex clustering may require exact tests or
+      advanced mixed-model specifications beyond simple defaults.
+  - gpt_id: g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt
+    names:
+      en: Guided Regression GPT (ANPOR)
+      ko: Guided Regression GPT (ANPOR)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Social science and public health researchers
+    - Survey data analysts in policy contexts
+    limitations:
+    - Direct data access is restricted unless authenticated
+  - gpt_id: guidestat
+    names:
+      en: GuideStat – Integrated Analysis Designer
+      ko: GuideStat – Integrated 분석 Designer
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-689b6c7baf94819193c095eb95b7ebf0-guidestat
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Researchers in social science, public health, and education
+    - Policy analysts and data-driven evaluation teams
+    limitations:
+    - May require user confirmation if design inference fails or data preprocessing
+      issues arise
+  - gpt_id: g-687a250248788191adc1b568797c276c
+    names:
+      en: Jageul GPT – Writing Strategist
+      ko: Jageul GPT – Writing Strategist
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-687a250248788191adc1b568797c276c-jageul-jipiti
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Policy practitioners
+    - Researchers and data analysts
+    limitations:
+    - Limited performance on interpreting the most recent or domain-specific datasets
+  - gpt_id: g-688afbe7d6f88191b09bffd971c3b721
+    names:
+      en: Jeongmil Academic Translation
+      ko: Jeongmil Academic Translation
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog
+    tags:
+    - translation
+    - academic-writing
+    - nonfiction
+    - policy-studies
+    - social-sciences
+    - statistics
+    - communication-studies
+    - public-administration
+    - glossary
+    - back-translation
+    suitable_for:
+    - Researchers and graduate students
+    - Policy and public administration professionals
+    - Users requiring verifiable, terminology-consistent translations
+    limitations:
+    - Source text must be provided by the user.
+    - Optimized for precision rather than literary fluency.
+    - New or domain-specific terms may require user-defined glossary entries.
+  - gpt_id: g-688b5b489dc08191997ed9556e4c86e7
+    names:
+      en: Jeongmil Geulsseugi GPT – Precision Writing Assistant
+      ko: Jeongmil Geulsseugi GPT – Precision Writing 어시스턴트
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-688b5b489dc08191997ed9556e4c86e7-jeongmil-geulsseugi
+    tags:
+    - writing
+    - academic
+    - editing
+    - research-assistant
+    suitable_for:
+    - Researchers and graduate students
+    - Undergraduates learning logical writing
+    - Writers seeking revision or feedback on academic texts
+    limitations:
+    - Does not summarize literature; user input must include conceptual details
+  - gpt_id: g-6890d378ceb08191ab29b9408453be71
+    names:
+      en: Jeongmil Item Extraction – Precesion Questionnaire Extractor
+      ko: Jeongmil Item Extraction – Precesion Questionnaire 추출기
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6890d378ceb08191ab29b9408453be71-jeongmil-munhangcucul-precesion-questionnaire-extractor
+    tags:
+    - survey
+    - questionnaire
+    - excel
+    - data-preprocessing
+    - normalization
+    - merged-cells
+    - schema
+    - research-assistant
+    suitable_for:
+    - Survey/Research operations staff (design & QA)
+    - Data preprocessing/coding staff (codebook & variable dictionary)
+    - Policy/statistics/academic survey analysts
+    limitations:
+    - Highly complex layouts or image-based (scanned) inputs may increase needs_review
+      flags
+    - Does not invent questions/options not present in the source; uncertain structures
+      are minimized and flagged
+    - Branching/condition parsing quality depends on how clearly the source expresses
+      routing rules
+  - gpt_id: g-688c23ce47388191960e1f0ba68c8ab0
+    names:
+      en: Jeongmil Munhanggaebal (Precision Item Development)
+      ko: Jeongmil Munhanggaebal (Precision Item Development)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-688c23ce47388191960e1f0ba68c8ab0-jeongmil-munhanggaebal
+    tags:
+    - survey-design
+    - questionnaire
+    - measurement
+    - psychometrics
+    - validity
+    - reliability
+    - cognitive-interview
+    - hr-analytics
+    - research-assistant
+    suitable_for:
+    - Survey and social science researchers (academic/public/private)
+    - HR/organizational diagnostics practitioners and consultants
+    - UX researchers and data analysts designing quantitative surveys
+    - Educational/assessment item developers
+    limitations:
+    - Reliability and response distributions are simulation-based estimates, not real
+      survey results; empirical validation is required
+    - If the target population profile (role, industry, culture, language nuance)
+      is unclear, item fit may degrade
+    - Sensitive domains (politics/discrimination/health, etc.) may require additional
+      ethical/legal review beyond wording fixes
+    - Detailed internal mechanisms (procedural diagrams, algorithms, hidden rules)
+      are not provided
+  - gpt_id: g-6838668d63808191b62e10778019a303
+    names:
+      en: Jeongmilhoegwi (Precision Regression)
+      ko: Jeongmilhoegwi (Precision Regression)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6838668d63808191b62e10778019a303-jeongmilhoegwi
+    tags:
+    - statistics
+    - regression
+    - ols
+    - logistic-regression
+    - pls
+    - research-assistant
+    suitable_for:
+    - Researchers
+    - Policy and data analysts
+    - Graduate students
+    limitations:
+    - Dependent on data quality and definitions
+  - gpt_id: g-6890c67bf6f08191b7f90d970eafa11f
+    names:
+      en: JeongmilmunhangGPT (Precision Survey Item GPT)
+      ko: JeongmilmunhangGPT (Precision 설문 Item GPT)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6890c67bf6f08191b7f90d970eafa11f-jeongmilmunhanggpt
+    tags:
+    - survey-design
+    - questionnaire
+    - measurement
+    - validity
+    - response-quality
+    - web-survey
+    suitable_for:
+    - Survey and research practitioners (marketing, policy, academic)
+    - Scale/index developers and thesis/dissertation survey designers
+    - Questionnaire reviewers (QC) and data quality owners
+    limitations:
+    - Advanced simulations (virtual respondents, reliability prediction, etc.) are
+      not triggered unless the user explicitly requests them.
+    - Statistical reliability/validity testing (e.g., Cronbach’s alpha, factor analysis)
+      requires real data and external analysis; this GPT mainly supports process and
+      recommendations.
+    - Theory/model suggestions prioritize user-provided sources; unsupported theories
+      are treated only as general GPT knowledge.
+    - Web-survey logic/quality-control suggestions may depend on what your survey
+      platform can implement.
+  - gpt_id: g-689b6ef33270819196a280bc04d80c4e-kadenca
+    names:
+      en: Kadenca – Critical Thinking Assistant
+      ko: Kadenca – Critical Thinking 어시스턴트
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-689b6ef33270819196a280bc04d80c4e-kadenca
+    tags:
+    - critical-thinking
+    - writing-assistant
+    - academic-support
+    suitable_for:
+    - Researchers and graduate students
+    - Report and academic writers
+    - Anyone seeking to articulate complex thoughts clearly
+    limitations:
+    - Not optimized for casual Q&A or straightforward tasks
+  - gpt_id: korea-survey-sampling-gpt
+    names:
+      en: Korea Survey Sampling GPT
+      ko: Korea 설문 Sampling GPT
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-693805e65a788191a13827d509ee18fc-korea-survey-sampling-gpt
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Government and public-sector researchers
+    - Survey methodologists and data analysts
+    limitations:
+    - Does not replace official statistical approval or legal sampling authority
+  - gpt_id: g-687f73f347308191b739e047ca0fa1ab
+    names:
+      en: litsearch GPT – Scholarly Search
+      ko: litsearch GPT – Scholarly Search
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-687f73f347308191b739e047ca0fa1ab-litsearch-gpt-hagsulgeomsaeg
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Researchers and graduate students preparing academic papers or reports
+    - Policy analysts and public-sector researchers conducting evidence-based policy
+      studies
+    limitations:
+    - It cannot directly access paywalled databases or individual full-text PDFs and
+      relies only on information and summaries that are publicly accessible.
+  - gpt_id: g-689d3ec41d948191977d021c5b410fe9
+    names:
+      en: Model Architect
+      ko: Model Architect
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-689d3ec41d948191977d021c5b410fe9-model-akitegteu
+    tags:
+    - research-framework
+    - conceptual-models
+    - strategy-planning
+    - evidence-based
+    - mermaid
+    - json-schema
+    suitable_for:
+    - Academic researchers designing conceptual/theoretical frameworks
+    - Policy/public-sector analysts needing explainable frameworks
+    - Business strategy/planning teams for problem structuring
+    - Consultants/PMs formalizing requirements into models
+    limitations:
+    - Phase A restricts deep dives into a single model and discourages early selection
+    - Analytical ‘methods’ (stats/ML) are generally excluded as candidate models;
+      they may be mentioned only as validation tools when relevant
+    - Without sufficient user inputs (data type/scale, goals, constraints, use context,
+      ethics/quality), Phase C decisions cannot be fully grounded
+    - Certain sources (e.g., Wikipedia, personal blogs, unverified media) are filtered
+      out by policy
+  - gpt_id: g-687c70d104248191a265d9bbc020fdb5
+    names:
+      en: Munbic LayerFixer
+      ko: Munbic LayerFixer
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-687c70d104248191a265d9bbc020fdb5-munbic-layerfixer
+    tags:
+    - writing
+    - editing
+    - academic-writing
+    - argument-structure
+    - style-preservation
+    - revision-workflow
+    - korean
+    suitable_for:
+    - Students, researchers, and professionals writing papers, reports, proposals,
+      or structured essays
+    - Writers who want step-by-step improvements without losing their original voice
+    limitations:
+    - Does not invent facts not present in the text; evaluation and revision stay
+      within the provided content scope.
+    - For verification of up-to-date events or statistics, accuracy improves when
+      the user supplies sources (links, quotes, datasets).
+  - gpt_id: g-689b6ef185d881918d1f4efcc3b12930
+    names:
+      en: Munseongpyeong (文成評)
+      ko: Munseongpyeong (文成評)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong
+    tags:
+    - policy
+    - survey-research
+    - research-methodology
+    - statistics
+    - AAPOR
+    - sampling
+    - weighting
+    - variance-estimation
+    - DEFF
+    - measurement-equivalence
+    - scale-validity
+    - reproducibility
+    - story-flow
+    - report-quality-evaluation
+    suitable_for:
+    - Policy and research report quality assurance owners
+    - Survey research practitioners (design, fielding, analysis)
+    - Authors and reviewers of public, private, or academic research reports
+    - Editors, peer reviewers, and internal audit teams
+    limitations:
+    - All judgments are strictly based on the provided source text and attachments
+      (Strict Factual Mode)
+    - No speculation or inference beyond the evidence (zero-inference rule)
+    - Does not answer general user questions; only produces evaluation outputs
+    - Will not invent, adjust, or retrofit numbers, definitions, or methods absent
+      from the source
+    - Marks items as 'insufficient evidence' when documentation is lacking
+  - gpt_id: g-68e00f18911081919ca2a1fec0491068
+    names:
+      en: OmniReg GPT
+      ko: OmniReg GPT
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68e00f18911081919ca2a1fec0491068-omnireg-gpt
+    tags:
+    - statistics
+    - regression
+    - ols
+    - logistic
+    - pls
+    - diagnostics
+    - research-assistant
+    - policy
+    suitable_for:
+    - Social science & policy researchers
+    - Graduate students writing theses/papers
+    - Data analysts doing regression-heavy work
+    limitations:
+    - Recommendations are rule-based; final decisions must reflect the study context
+      (measurement, sampling, causal assumptions)
+    - If raw data quality is poor (coding errors, sampling bias, low response reliability),
+      interpretability and trustworthiness are limited
+    - Auto-formatting to specific journal/institution reporting templates may require
+      additional templates
+  - gpt_id: g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt
+    names:
+      en: PolicyReport GPT
+      ko: PolicyReport GPT
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt
+    tags:
+    - policy
+    - public-policy
+    - report-writing
+    - comparison
+    - alternatives-analysis
+    - execution-plan
+    - yaml
+    - governance
+    suitable_for:
+    - Policy/strategy analysts and think-tank researchers
+    - Government and public-sector practitioners
+    - Corporate public policy, regulatory, and compliance teams
+    - Consultants, PMs, and business planners
+    limitations:
+    - Does not assume facts, figures, or sources not provided by the user; up-to-date
+      verification may be required for time-sensitive topics
+    - High-stakes decisions may require professional/legal review in the relevant
+      jurisdiction/organization
+    - Prioritizes the fixed stage/template format, which may be less suitable for
+      free-form narrative writing
+  - gpt_id: g-68849e3b74808191a687cf13c0b093b1
+    names:
+      en: PolicyScope
+      ko: PolicyScope
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68849e3b74808191a687cf13c0b093b1-policyscope
+    tags:
+    - policy-analysis
+    - budget
+    - statistics
+    - law
+    - evidence
+    suitable_for:
+    - Policy analysts
+    - Parliament and government staff
+    - Researchers in think tanks and public institutes
+    limitations:
+    - Cannot directly access closed internal systems; works only with publicly available
+      or user-provided documents.
+    - Legal and accounting interpretations are for reference only and must be reviewed
+      by human experts.
+  - gpt_id: g-683aa5aba5dc81919d5b077a128aa55a
+    names:
+      en: Precision PSM Analyser – Propensity Score Matching Assistant
+      ko: Precision PSM Analyser – Propensity Score Matching 어시스턴트
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-683aa5aba5dc81919d5b077a128aa55a-precision-psm-analyser
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Policy researchers
+    - Social science data analysts
+    limitations:
+    - Interpretation requires checking matching quality – don't over-rely on auto
+      output
+  - gpt_id: g-688598a824588191ba086e187637d3d4
+    names:
+      en: ProseStylist (표현비서)
+      ko: ProseStylist (표현비서)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-688598a824588191ba086e187637d3d4-pyohyeonbiseo-prosestylist
+    tags:
+    - writing
+    - editing
+    - drafting
+    - proofreading
+    - style-guide
+    - structure
+    suitable_for:
+    - Professionals who need to quickly refine emails, reports, proposals, and announcements
+    - Writers, students, and creators who want consistent tone and clearer structure
+    limitations:
+    - Does not guarantee fact-checking or up-to-the-minute accuracy unless sources
+      are provided
+    - When instructions conflict, it may follow internal precedence rules and differ
+      from the user’s intended priority
+    - High-stakes domains (legal/medical/financial) still require expert review
+  - gpt_id: pythonretrievalassistant_pra
+    names:
+      en: Python Retrieval Assistant (PRA)
+      ko: Python Retrieval 어시스턴트 (PRA)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Researchers and analysts who need reproducible data/document retrieval scripts.
+    - Policy, academic, and newsroom teams collecting public datasets, reports, and
+      tables.
+    limitations:
+    - Does not perform broad exploratory research; requires a specific target resource
+      (URL/page/API) and will not bypass authentication/paywalls.
+  - gpt_id: g-6873b46ba5008191a4bee2a8a7646da6
+    names:
+      en: Report Proofreading & Audit Assistant – Industrial Safety Survey
+      ko: 리포트 Proofreading & Audit 어시스턴트 – Industrial Safety 설문
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
+    tags:
+    - industrial-safety
+    - survey-methodology
+    - sampling-design
+    - statistical-quality
+    - public-report
+    - proofreading
+    suitable_for:
+    - Authors and reviewers of industrial safety survey reports
+    - Quality assurance staff responsible for sampling and estimation documentation
+    limitations:
+    - Does not recompute statistics without access to raw data or code
+    - Currency of internal organizational guidelines depends on user-provided metadata
+  - gpt_id: g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
+    names:
+      en: Report Proofreading & Validation GPT – Survey-Based Reporting
+      ko: 리포트 Proofreading & Validation GPT – 설문 Based Reporting
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Public-sector statisticians and research contractors producing survey-based
+      official fact-finding reports, including sample design reports, results reports,
+      user guides, and codebooks.
+    - Methodology researchers and analysts seeking systematic review and improvement
+      of survey-based reporting.
+    limitations:
+    - This GPT provides proofreading and methodological review based solely on provided
+      text and tables. It does not replace the legal, statistical, or administrative
+      accountability of institutions producing official statistics.
+  - gpt_id: g-68821d5c02d4819192f868b756cab084
+    names:
+      en: Republic of Korea Statute Navigator
+      ko: Republic of Korea Statute Navigator
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi
+    tags:
+    - korean-law
+    - statutes
+    - law.go.kr
+    - legal-research
+    suitable_for:
+    - Users who need authoritative Korean statute citations
+    - Legal and compliance practitioners
+    limitations:
+    - Only official Tier-A sources are used
+    - Not a substitute for legal advice
+  - gpt_id: g-6884a488c42081918b4d720473f773dd
+    names:
+      en: ResDesign
+      ko: ResDesign
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6884a488c42081918b4d720473f773dd-resdesign
+    tags:
+    - research-design
+    - theory
+    - conceptual-model
+    - hayes-process
+    - methodology
+    - diagram-generation
+    - literature-validation
+    - multilingual
+    suitable_for:
+    - Graduate students and academic researchers
+    - Research methods instructors and learners
+    - R&D practitioners needing conceptual models
+    limitations:
+    - May remain generic if research context is underspecified
+    - Literature validation may require external verification
+    - Quantitative judgments require data and assumptions
+  - gpt_id: g-6916f67c4f9081919d01f65c7f2006bb
+    names:
+      en: Research Architect – Modular Research Design GPT
+      ko: 리서치 Architect – Modular 리서치 Design GPT
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6916f67c4f9081919d01f65c7f2006bb-research-architect
+    tags:
+    - research-design
+    - academic
+    - evaluation
+    - survey
+    - desktop-research
+    - structured-yaml
+    suitable_for:
+    - Academic researchers and graduate students
+    - Survey and evaluation specialists
+    - Research consultants
+    - R&D and policy planners
+    limitations:
+    - Does not perform statistical analyses or interpret empirical results
+    - Cannot revise models based on data (requires follow-up GPT such as ResRefiner)
+    - Does not conduct literature or source synthesis (use LitSearch or SourceFinder
+      GPTs)
+  - gpt_id: g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor
+    names:
+      en: SamplingPlanExecutor
+      ko: SamplingPlanExecutor
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Survey statisticians and sampling methodologists who need to execute a pre-defined
+      sampling plan on real data.
+    - Policy and research teams producing official-style tables (weights, CV/DEFF,
+      allocations) from SamplingPlanner outputs.
+    limitations:
+    - Does not redesign or change the sampling module; requires uploaded design summary
+      and appropriate frame/sample data (no fabrication of population counts or MOS).
+  - gpt_id: samplingplanner
+    names:
+      en: SamplingPlanner
+      ko: SamplingPlanner
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-692c3734ba6c8191a83f97eb05c0de96-samplingplanner
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Survey methodologists
+    - Policy and academic researchers
+    limitations:
+    - Cannot fabricate population or frame data when inputs are missing
+  - gpt_id: g-68a2c0e954b8819199e331146bebe081
+    names:
+      en: ScaleInsight
+      ko: ScaleInsight
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68a2c0e954b8819199e331146bebe081-scaleinsight
+    tags:
+    - scale-development
+    - psychometrics
+    - index
+    - kpi
+    - survey-design
+    - validity-reliability
+    - cfa-irt
+    suitable_for:
+    - Researchers (academic/policy/evaluation) and survey instrument developers
+    - Data/strategy/HR/CX/product teams responsible for KPI and metric design
+    - Organizations building assessment/diagnostic tools (education, public sector,
+      enterprises)
+    limitations:
+    - Final numeric results (e.g., alpha/omega/CFA fit) require actual response data
+      from pilot or field studies
+    - Sensitive organizational/personal data should be shared in de-identified or
+      aggregated form
+    - Literature and prior-scale comparisons depend on provided references/scope and
+      may require source verification
+  - gpt_id: g-690b601abb788191864efe84f729f379
+    names:
+      en: ScholarScope – Academic Manuscript Editing
+      ko: ScholarScope – Academic Manuscript Editing
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-690b601abb788191864efe84f729f379-scholarscope-nonmungyojeong
+    tags:
+    - academic-writing
+    - manuscript-editing
+    - scholarly-style
+    - language-polish
+    - meaning-preservation
+    - revision-log
+    - korean-english
+    suitable_for:
+    - Graduate students and researchers preparing journal submissions
+    - Authors polishing Korean/English manuscripts for international venues
+    - Research teams managing revisions and ensuring consistency after peer review
+    limitations:
+    - Does not fabricate facts, data, or references; it rewrites only based on the
+      author-provided content
+    - If domain context/definitions are insufficient, interpretation may be limited
+      and marked as [meaning uncertain]
+    - Cannot guarantee full compliance with a journal’s detailed formatting/citation
+      rules unless provided by the user
+  - gpt_id: g-6916fc70a38c81918caeced7512a7fd3
+    names:
+      en: Source Analyzer
+      ko: Source 분석기
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer
+    tags:
+    - desktop-research
+    - source-analysis
+    - evidence-extraction
+    - yaml
+    - kq-mapping
+    suitable_for:
+    - Desktop research / literature review practitioners
+    - Evidence-driven writers (policy, market, academic)
+    - Teams automating the ‘source extraction’ step in a research pipeline
+    limitations:
+    - Does not discover new sources or modify/add to the sources list
+    - No synthesis (no comparison, conclusions, or recommendations) — extraction only
+    - Cannot directly read PDFs/images/downloaded files; requires the text to be pasted/uploaded
+    - Output is restricted to a single ‘updated YAML block’ (minimal explanation)
+  - gpt_id: g-6916faee296881918fbe2a1937eeced9
+    names:
+      en: Source Finder
+      ko: Source Finder
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6916faee296881918fbe2a1937eeced9-source-finder
+    tags:
+    - desktop-research
+    - literature-search
+    - bibliography
+    - source-discovery
+    - yaml
+    suitable_for:
+    - Policy, market, and technical researchers
+    - Professionals and students who need references and evidence for reports or papers
+    limitations:
+    - Does not summarize content, extract insights, or write reports (sources only)
+    - Does not modify objectives/scope/key_questions and does not fill source_extracts
+  - gpt_id: g-692926ff1bb881919f6db364e703e390
+    names:
+      en: SPI GPT (survey-policy_insight)
+      ko: SPI GPT (survey policy insight)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-692926ff1bb881919f6db364e703e390-spi-gpt-survey-policy-insight
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    - survey
+    - public-opinion
+    suitable_for:
+    - Government and local administration officials
+    - Parliamentary and legislative staff
+    - Survey and market research professionals
+    - Think tank and policy institute researchers
+    - Data journalists and policy reporters
+    limitations:
+    - Does not collect or access proprietary real-time polling data; relies on user-provided
+      data and publicly available information.
+  - gpt_id: g-692a335daa7c819187da88fad4df24e0
+    names:
+      en: StatCheck
+      ko: StatCheck
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-692a335daa7c819187da88fad4df24e0-statcheck-bunseogcekeu
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Academic researchers
+    - Data analysts and statisticians
+    limitations:
+    - Cannot compute new statistics or generate results without provided data
+  - gpt_id: g-689d215bc6bc8191be5a2886cd559f53
+    names:
+      en: StatResult Parser Pro
+      ko: StatResult Parser 프로
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro
+    tags:
+    - statistics
+    - data-extraction
+    - table-parsing
+    - spss
+    - r
+    - python
+    - reproducible-research
+    suitable_for:
+    - Researchers/graduate students who need reusable structured outputs from SPSS/R/Python/PLS
+      result tables
+    - Analysts moving statistical tables into pipelines (JSON/DB) for automation and
+      reproducibility
+    - Users who want automatic table block detection/normalization across multiple
+      sheets/files
+    limitations:
+    - Does not interpret results (no hypothesis decisions, no causal claims, no inferred
+      variable roles); extraction only.
+    - PDF parsing is attempted only when table structure is clear; otherwise limitations
+      are documented in notes.
+    - Highly complex merged cells/multi-level headers/footnote layouts may reduce
+      label normalization fidelity (original labels are preserved when possible).
+  - gpt_id: surveydatasimulator_pretestgenerator
+    names:
+      en: Survey Data Simulator & Pretest Generator
+      ko: 설문 데이터 Simulator & Pretest Generator
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - Survey researchers
+    - Policy analysts
+    limitations:
+    - Does not validate causal inference or real-world representativeness
+  - gpt_id: g-689c6ac1e9bc81919ddebf9daed3c0e8
+    names:
+      en: Survey SE Engine – Standard Error & RSE
+      ko: 설문 SE Engine – Standard Error & RSE
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin
+    tags:
+    - survey-methodology
+    - sampling-design
+    - statistics
+    - standard-error
+    - RSE
+    - DGIST
+    suitable_for:
+    - Survey/statistics practitioners (public or private sector)
+    - Data analysts and academic researchers working with complex survey data
+    - Report authors who need design-based uncertainty (SE/RSE) for survey estimates
+    limitations:
+    - Variance estimates can be inaccurate if design variables (weights/strata/PSU,
+      etc.) are missing or mapped incorrectly.
+    - Some designs may trigger conservative handling/warnings (e.g., only one PSU
+      within a stratum).
+    - Primarily focused on means/proportions; advanced modeling (e.g., regression)
+      may be out of scope.
+  - gpt_id: g-689c6ac1e9bc81919ddebf9daed3c0e8
+    names:
+      en: Survey SE Engine – Standard Error & RSE
+      ko: 설문 SE Engine – Standard Error & RSE
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin
+    tags:
+    - survey-methodology
+    - sampling-design
+    - statistics
+    - standard-error
+    - RSE
+    - DGIST
+    suitable_for:
+    - Survey/statistics practitioners (public or private sector)
+    - Data analysts and academic researchers working with complex survey data
+    - Report authors who need design-based uncertainty (SE/RSE) for survey estimates
+    limitations:
+    - Variance estimates can be inaccurate if design variables (weights/strata/PSU,
+      etc.) are missing or mapped incorrectly.
+    - Some designs may trigger conservative handling/warnings (e.g., only one PSU
+      within a stratum).
+    - Primarily focused on means/proportions; advanced modeling (e.g., regression)
+      may be out of scope.
+  - gpt_id: surveypersona-expression-engine
+    names:
+      en: SurveyPersona Expression Engine
+      ko: SurveyPersona Expression Engine
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine
+    tags:
+    - survey
+    - questionnaire
+    - persona
+    - nl-generation
+    suitable_for:
+    - Survey designers
+    - UX/CX and insight teams
+    limitations:
+    - Does not create or modify meaning; it only expresses the meaning it receives.
+  - gpt_id: surveypersona-summarizer
+    names:
+      en: 'SurveyPersona Summarizer '
+      ko: SurveyPersona 요약기
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-69376b2256ac81918ff29ed53e7c514b-surveypersona-summarizer
+    tags:
+    - survey
+    - questionnaire
+    - evaluation
+    - design
+    suitable_for:
+    - Survey methodologists and designers
+    - Policy and market research teams
+    limitations:
+    - Quality depends on the correctness and richness of persona engine inputs.
+  - gpt_id: g-68a0753676348191a32bd69ba57ca410
+    names:
+      en: SurveyTables
+      ko: SurveyTables
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables
+    tags:
+    - survey
+    - crosstab
+    - descriptive-statistics
+    - reporting
+    - reproducibility
+    - excel
+    suitable_for:
+    - Research / research operations teams who need fast, standardized survey tabulation
+    - Analysts and PMs who want consistent, report-ready tables and charts
+    - Policy and academic researchers who rely on crosstabs and effect-size-oriented
+      interpretation
+    limitations:
+    - In table-ingestion mode, only standalone integers are treated as counts; percent-only
+      cells may be ignored
+    - Rows/columns labeled Total/Overall/Grand Total are excluded from analysis by
+      default unless explicitly requested
+    - Advanced options (codebook ordering, category collapsing strategy, weights,
+      complex survey design) require explicit user instructions
+  - gpt_id: g-68a0607dfb788191b75e577b0ee17560-t-frame
+    names:
+      en: T-Frame – Framework Model Selector
+      ko: T Frame – Framework Model Selector
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68a0607dfb788191b75e577b0ee17560-t-frame
+    tags:
+    - research-assistant
+    - theoretical-frameworks
+    - behavior-change
+    - marketing
+    - policy
+    - model-selection
+    suitable_for:
+    - Researchers & graduate students
+    - Policy/campaign designers
+    - Marketing, UX, and product strategists
+    limitations:
+    - Focused on conceptual/theoretical frameworks rather than statistical estimation
+      or causal identification models
+    - Recommendations may be less precise if the user context (population, behavior,
+      channel, constraints) is underspecified
+    - Evidence links prioritize primary/authoritative sources, but full-text access
+      may depend on paywalls or institutional access
+  - gpt_id: table-narrator
+    names:
+      en: Table Narrator
+      ko: Table Narrator
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator
+    tags:
+    - policy
+    - statistics
+    - research-assistant
+    suitable_for:
+    - policy researchers
+    - data analysts
+    limitations:
+    - Does not infer causality beyond table values
+  - gpt_id: g-6881e2700cb48191b9290c00a3a20484
+    names:
+      en: Tonggyechajgi
+      ko: Tonggyechajgi
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-6881e2700cb48191b9290c00a3a20484-tonggyecajgi
+    tags:
+    - statistics
+    - law
+    - policy
+    - research-assistant
+    - korea
+    suitable_for:
+    - Policy and research report writers
+    - Practitioners needing legal verification
+    limitations:
+    - Cannot replace professional legal advice
+  - gpt_id: g-68734c99ac908191a0886bc3f8239c2d
+    names:
+      en: Virtual Data Designer (가상데이터 설계기)
+      ko: Virtual 데이터 Designer (가상데이터 설계기)
+      ko_policy: auto
+    url: https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi
+    tags:
+    - synthetic-data
+    - statistics
+    - table-design
+    - cross-table
+    - chart-ready
+    - chartgpt
+    - kpi
+    suitable_for:
+    - Data visualization and research practitioners
+    - Policy / social-indicator analysts and planners
+    - Dashboard and reporting builders
+    - Instructors and students needing practice datasets
+    limitations:
+    - Generated outputs are simulated and may differ from official statistics; validate
+      against primary sources for decisions.
+    - For sensitive domains (medical/legal/financial), cross-check with up-to-date
+      and authoritative references.

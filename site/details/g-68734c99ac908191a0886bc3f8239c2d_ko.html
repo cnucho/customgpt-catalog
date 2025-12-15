@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>가상데이터 설계기</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    .meta { color: #555; font-size: 14px; }
+    h1 { margin-bottom: 6px; }
+    h2 { margin-top: 22px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topnav { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="topnav meta">
+    <a href="../index.html">← GitHub 목록</a>
+    &nbsp;|&nbsp;
+    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const back = p.get('back');
+    if (back) document.getElementById('backToTistory').href = back;
+  </script>
+
+  <h1>가상데이터 설계기</h1>
+  <div class='meta'>(자동번역) English: 가상데이터 설계기</div>
+  <p>현실 기반 다차원 가상데이터를 생성하고, 메타정보 포함 교차표를 ChartGPT(표해)용 JSON으로 출력합니다.</p>
+
+  <h2>GPT 바로가기</h2>
+  <p><a href='https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi</a></p>
+
+  <h2>External guides</h2>
+  <p>-</p>
+
+  <h2>Tags</h2>
+  <ul><li>synthetic-data</li>
+<li>statistics</li>
+<li>table-design</li>
+<li>cross-table</li>
+<li>chart-ready</li>
+<li>chartgpt</li>
+<li>kpi</li></ul>
+
+  <h2>Functions</h2>
+  <ul><li>주제 입력을 해석해 사회지표/변수를 자동 매핑</li>
+<li>현실성 있는 시뮬레이션 수치 생성(평균/표준편차 규칙 기반)</li>
+<li>조건변수 2개 이상 포함한 다차원 교차표 구조 설계</li>
+<li>단위·시점·출처 등 메타정보를 포함해 해석 가능한 표로 정리</li>
+<li>표해(ChartGPT) 연동 가능한 table_state + data 형태(JSON)로 출력</li></ul>
+
+  <h2>Target users</h2>
+  <ul><li>데이터 시각화/리서치 실무자</li>
+<li>정책/사회지표 분석가 및 기획자</li>
+<li>대시보드/리포트 제작자</li>
+<li>교육용 데이터셋이 필요한 강사/학생</li></ul>
+
+  <h2>Ideal use cases</h2>
+  <ul><li>지역·연령·성별 등 조건 변수를 포함한 사회지표 가상데이터 생성</li>
+<li>분석/시각화용 교차표를 빠르게 설계하고 JSON으로 내보내기</li>
+<li>실데이터 부재 상황에서 현실성 있는 시뮬레이션 데이터로 프로토타이핑</li>
+<li>비교/경향/구성/분포/관계 등 목적에 맞는 차트 유형 추천과 데이터 준비</li></ul>
+
+  <h2>Limitations</h2>
+  <ul><li>생성 데이터는 시뮬레이션이며 실제 통계와 다를 수 있으므로, 의사결정에는 원자료 검증이 필요합니다.</li>
+<li>민감한 주제(의료/법률/금융 등)에서는 최신·공식 자료로 교차검증을 권장합니다.</li></ul>
+
+  <h2>Example commands</h2>
+  <ul><li>서울/부산/대구의 2020~2025 행복도·삶의만족도 가상데이터를 연령대×성별로 교차표(JSON)로 만들어줘.</li>
+<li>재택근무 생산성을 직무×근무형태로 비교하는 grouped bar용 표를 만들어줘. 단위/출처/시점 메타도 포함해줘.</li>
+<li>표해에서 바로 그릴 수 있게 table_state와 data로만 출력해줘.</li></ul>
+
+  <h2>Additional features</h2>
+  <ul><li>차트 유형 가이드(비교/경향/구성/분포/관계 등) 기반 추천</li>
+<li>교차표 표준 템플릿(병합/정렬/스타일/메타 포함) 준수</li>
+<li>시각적 일관성을 위한 컬러 팔레트 규칙 적용</li></ul>
+</body>
+</html>
