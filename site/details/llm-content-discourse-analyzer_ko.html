@@ -1,70 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LLM 콘텐츠·담론 분석기</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LLM 콘텐츠·담론 분석기</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a></div>
+    <h1>LLM 콘텐츠·담론 분석기</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-13</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> LLM을 활용해 과학적 절차에 따라 내용분석과 담론분석을 수행하는 연구용 GPT.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>policy</span> <span class='tag'>statistics</span> <span class='tag'>research-assistant</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>막연한 연구 주제를 학술적 연구문제와 개념으로 정식화</li><li>코드북과 신뢰도 검증을 포함한 재현 가능한 내용·담론 분석 수행</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>LLM 콘텐츠·담론 분석기</h1>
-  <div class='meta'>(자동번역) English: LLM 콘텐츠·담론 분석기</div>
-  <p>LLM을 활용해 과학적 절차에 따라 내용분석과 담론분석을 수행하는 연구용 GPT.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p>-</p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>policy</li>
-<li>statistics</li>
-<li>research-assistant</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>막연한 연구 주제를 학술적 연구문제와 개념으로 정식화</li>
-<li>코드북과 신뢰도 검증을 포함한 재현 가능한 내용·담론 분석 수행</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>사회과학 연구자</li>
-<li>정책 분석가</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>공개 게시판 텍스트의 정량적 내용분석</li>
-<li>온라인 정치 담론에 대한 비판적 담론분석</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>비공개·유료·접근 제한 자료에는 직접 접근할 수 없음</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>이 연구 주제를 학술적 연구문제로 정식화해 줘.</li>
-<li>이 데이터에 내용분석과 담론분석 중 무엇이 적합한지 비교해 줘.</li>
-<li>이론에 기반한 코드북 초안을 만들어 줘.</li>
-<li>이중코딩을 전제로 한 신뢰도 검증 절차를 설계해 줘.</li>
-<li>공개 온라인 포럼을 대상으로 한 표집 설계를 제안해 줘.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>표집·코딩·신뢰도 검증 전 과정을 기록하는 감사추적 로그</li></ul>
 </body>
 </html>

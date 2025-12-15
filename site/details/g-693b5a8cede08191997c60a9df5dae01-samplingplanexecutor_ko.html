@@ -1,70 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SamplingPlanExecutor</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SamplingPlanExecutor</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>SamplingPlanExecutor</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-13</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 구조화된 설계 요약을 기반으로 표본추출·가중치·정밀도 지표를 재현 가능하게 계산하고, 보고서용 표를 생성합니다.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>policy</span> <span class='tag'>statistics</span> <span class='tag'>research-assistant</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>SamplingPlanner 설계 요약(JSON/YAML)과 선택적 SDM을 스키마 기준으로 검증하고, 재설계 없이 누락/충돌 입력을 식별합니다.</li><li>업로드된 데이터에 대해 Python으로 표본추출·가중치·CV/분산 산출을 실행하고, 결과를 Markdown/Excel의 보고서용 구조로 출력합니다.</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>SamplingPlanExecutor</h1>
-  <div class='meta'>(자동번역) English: SamplingPlanExecutor</div>
-  <p>구조화된 설계 요약을 기반으로 표본추출·가중치·정밀도 지표를 재현 가능하게 계산하고, 보고서용 표를 생성합니다.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>policy</li>
-<li>statistics</li>
-<li>research-assistant</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>SamplingPlanner 설계 요약(JSON/YAML)과 선택적 SDM을 스키마 기준으로 검증하고, 재설계 없이 누락/충돌 입력을 식별합니다.</li>
-<li>업로드된 데이터에 대해 Python으로 표본추출·가중치·CV/분산 산출을 실행하고, 결과를 Markdown/Excel의 보고서용 구조로 출력합니다.</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>사전 정의된 표본설계를 실제 데이터에 적용해 실행해야 하는 조사통계 담당자 및 방법론 연구자.</li>
-<li>SamplingPlanner 산출물을 바탕으로 공식 보고서형 통계표를 생성하는 정책·연구 실무팀.</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>SamplingPlanner 설계 요약에 정의된 층화·다단계 추출 절차를 데이터에 적용하고 선택·가중치 변수를 생성.</li>
-<li>기본가중치, 무응답 보정, 사후층화/레이킹을 수행하고 핵심 추정치의 CV/SE/DEFF 표를 산출.</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>표본설계를 재구성하지 않으며 설계 요약과 적절한 프레임/표본 데이터가 필요합니다(모집단 수·MOS 임의 생성 금지).</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>SamplingPlanner design_summary.json과 sample.csv를 사용해 설계대로 실행하고 기본가중치를 만들어 주세요.</li>
-<li>이 설계 요약과 benchmarks.xlsx로 최종가중치를 계산해 주세요(무응답 보정과 레이킹 포함).</li>
-<li>STRATA, PSU, final_weight를 사용해 지역별 평균의 CV/SE/DEFF를 계산하고 Excel로 출력해 주세요.</li>
-<li>SDM.yaml을 템플릿과 비교해 실행을 막는 누락·충돌 항목을 정리해 주세요.</li>
-<li>보고서용 구조(YAML/Markdown)로 본문 요약표와 부록 Excel 표를 생성해 주세요.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>재현 가능한 Python 코드와 진단 플래그(입력 누락, 불안정 가중치, 고CV 도메인) 제공.</li></ul>
 </body>
 </html>

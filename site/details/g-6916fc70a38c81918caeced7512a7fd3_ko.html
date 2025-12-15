@@ -1,78 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Source 분석기</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Source Analyzer</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>Source Analyzer</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 사용자가 제공한 문서/웹페이지에서 핵심 주장·수치·KQ 관련성을 추출해 YAML의 source_extracts로 구조화한다.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>desktop-research</span> <span class='tag'>source-analysis</span> <span class='tag'>evidence-extraction</span> <span class='tag'>yaml</span> <span class='tag'>kq-mapping</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>사용자 제공 문서(본문/HTML)를 읽고 핵심 주장(key_points) 추출</li><li>수치·통계·구체 사실(data_points)을 원문 기준으로 정확히 발췌</li><li>각 key/data가 어떤 KQ와 연결되는지 relevance_to_KQs로 매핑</li><li>결과를 YAML의 source_extracts에만 작성/갱신(단일 YAML 출력)</li><li>Structured Mode(structured_pipeline: true)에서 형식 엄수 및 최소 설명</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>Source 분석기</h1>
-  <div class='meta'>(자동번역) English: Source Analyzer</div>
-  <p>사용자가 제공한 문서/웹페이지에서 핵심 주장·수치·KQ 관련성을 추출해 YAML의 source_extracts로 구조화한다.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>desktop-research</li>
-<li>source-analysis</li>
-<li>evidence-extraction</li>
-<li>yaml</li>
-<li>kq-mapping</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>사용자 제공 문서(본문/HTML)를 읽고 핵심 주장(key_points) 추출</li>
-<li>수치·통계·구체 사실(data_points)을 원문 기준으로 정확히 발췌</li>
-<li>각 key/data가 어떤 KQ와 연결되는지 relevance_to_KQs로 매핑</li>
-<li>결과를 YAML의 source_extracts에만 작성/갱신(단일 YAML 출력)</li>
-<li>Structured Mode(structured_pipeline: true)에서 형식 엄수 및 최소 설명</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>데스크 리서치/문헌조사 담당자</li>
-<li>근거 기반 보고서 작성자(정책/시장/학술)</li>
-<li>리서치 파이프라인에서 출처 추출 단계를 자동화하려는 팀</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>여러 출처 문서에서 핵심 주장·수치만 빠르게 추출해 구조화할 때</li>
-<li>KQ(Research Questions) 기준으로 출처 내용을 태깅/매핑해야 할 때</li>
-<li>Synthesis 단계 전에 source_extracts를 표준 형식으로 정리할 때</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>새로운 출처를 찾거나 sources 목록을 수정/추가하지 않음</li>
-<li>synthesis(종합/비교/결론) 생성 금지 — 추출만 수행</li>
-<li>PDF/이미지/다운로드 파일은 직접 읽지 못하며 텍스트 업로드가 필요함</li>
-<li>출력은 ‘업데이트된 YAML 한 덩어리’로 제한(설명 최소화)</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>아래 YAML과 출처 URL/본문을 줄 테니 source_extracts만 채워서 업데이트된 YAML로 출력해줘.</li>
-<li>이 HTML 본문에서 key_points, data_points를 뽑고 KQ1~KQ3에 매핑해 source_extracts에 넣어줘.</li>
-<li>이 문서 내용 중 수치/퍼센트/날짜/고유명사 팩트만 data_points로 최대한 정확히 추출해줘.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>KQ별 관련성(relevance_to_KQs) 구조화로 추후 Synthesis GPT 연계에 최적화</li></ul>
 </body>
 </html>

@@ -172,20 +172,22 @@ def auto_translate_name_ko(name_en: str) -> str:
     return " ".join(out_tokens).strip()
 
 def render_detail_page(entry: dict, lang: str) -> str:
-    name_en = entry.get("name_en") or entry.get("name") or ""
-    name_ko = entry.get("name_ko") or ""
+    # Canonical baseline: English name
+    name_en = (entry.get("name_en") or entry.get("name") or "").strip()
+    name_ko = (entry.get("name_ko") or "").strip()
     ko_policy = (entry.get("name_ko_policy") or "none").lower()
 
-    # IMPORTANT:
-    # - KO detail page should NOT mix EN+KO into one title string.
-    # - EN detail page should NOT mix KO+EN into one title string.
-    # We show the primary-language name as the title, and the other language as a small meta line.
+    # Title & meta rules
     if lang == "ko":
+        # Korean page shows Korean title when available (human or auto).
+        # English baseline is shown as meta (always, when present).
         title_name = name_ko or name_en or entry.get("name") or ""
+        meta_lines = []
+        if name_en:
+            meta_lines.append(f"English: {esc(name_en)}")
         if name_ko and ko_policy == "auto":
-            subtitle_html = f"<div class='meta'>(자동번역) English: {esc(name_en)}</div>" if name_en else "<div class='meta'>(자동번역)</div>"
-        else:
-            subtitle_html = f"<div class='meta'>English: {esc(name_en)}</div>" if (name_en and title_name != name_en) else ""
+            meta_lines.append("(자동번역)")
+        subtitle_html = f"<div class='meta'>{' &nbsp;|&nbsp; '.join(meta_lines)}</div>" if meta_lines else ""
         one_line = (
             entry.get("one_line_ko")
             or entry.get("one_line")
@@ -195,8 +197,9 @@ def render_detail_page(entry: dict, lang: str) -> str:
             or ""
         )
     else:
+        # English page: NEVER show any translation/meta. Use English name as-is.
         title_name = name_en or entry.get("name") or ""
-        subtitle_html = f"<div class='meta'>Korean: {esc(name_ko)}</div>" if name_ko else ""
+        subtitle_html = ""
         one_line = (
             entry.get("one_line_en")
             or entry.get("one_line")
@@ -234,6 +237,9 @@ def render_detail_page(entry: dict, lang: str) -> str:
 
     extra_links_html = " &nbsp;|&nbsp; ".join(extra_links) if extra_links else "-"
 
+    # Topnav links (KO pages live at /details; EN pages live at /en/details)
+    github_index_href = "../index.html" if lang == "ko" else "../index.html"
+
     return f"""<!doctype html>
 <html>
 <head>
@@ -252,7 +258,7 @@ def render_detail_page(entry: dict, lang: str) -> str:
 </head>
 <body>
   <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
+    <a href="{esc(github_index_href)}">← GitHub 목록</a>
     &nbsp;|&nbsp;
     <a id="backToTistory" href="{esc(DEFAULT_TISTORY_LIST_URL)}">← 티스토리 목록</a>
   </div>
@@ -263,7 +269,8 @@ def render_detail_page(entry: dict, lang: str) -> str:
     if (back) document.getElementById('backToTistory').href = back;
   </script>
 
-  <h1>{esc(title_name)}</h1>\n  {subtitle_html}
+  <h1>{esc(title_name)}</h1>
+  {subtitle_html}
   <p>{esc(one_line)}</p>
 
   <h2>GPT 바로가기</h2>
@@ -296,6 +303,7 @@ def render_detail_page(entry: dict, lang: str) -> str:
 </html>
 """
 
+
 def render_index(entries, lang: str, title: str, details_prefix: str, extra_link_html: str, tistory_list_url: str) -> str:
     li = []
     for idx, e in enumerate(entries, start=1):
@@ -304,13 +312,23 @@ def render_index(entries, lang: str, title: str, details_prefix: str, extra_link
         name_ko = e.get("name_ko") or ""
         ko_policy = (e.get("name_ko_policy") or "none").lower()
 
-        if name_ko:
-            if ko_policy == "auto":
+        name_en = e.get("name_en") or e.get("name") or item_id
+        name_ko = e.get("name_ko") or ""
+        ko_policy = (e.get("name_ko_policy") or "none").lower()
+
+        # Display rules (요구사항):
+        # - KO index: if original Korean exists -> show Korean only.
+        #            if only English exists -> show "EN · (자동번역) KO" when KO is auto-generated.
+        # - EN index: show English only when available; otherwise show Korean.
+        if lang == "ko":
+            if name_ko and ko_policy != "auto":
+                display_name = name_ko
+            elif name_ko and ko_policy == "auto":
                 display_name = f"{name_en} · (자동번역) {name_ko}"
             else:
-                display_name = f"{name_en} · {name_ko}"
-        else:
-            display_name = name_en
+                display_name = name_en
+        else:  # lang == "en"
+            display_name = name_en or item_id
 
         one = e.get(f"one_line_{lang}") or e.get("one_line") or e.get("one_line_ko") or e.get("one_line_en") or ""
         tags = " ".join(get_list(e, "tags"))
@@ -337,7 +355,7 @@ def render_index(entries, lang: str, title: str, details_prefix: str, extra_link
             f"<div class='row'>"
             f"  <a class='titlelink' href='{detail_href}'><strong>{idx}. {esc(display_name)}</strong></a>"
             f"</div>"
-            f"<div class='meta'>{esc(one)}</div>"
+            f"<div class='meta'>{esc(one)}" + (f" &nbsp;|&nbsp; EN: {esc(name_en)}" if (lang=='ko' and name_en) else "") + "</div>"
             f"<div class='btnbar'>{''.join(btns)}</div>"
             f"</li>"
         )
@@ -532,13 +550,24 @@ def build():
             e["name_en"] = url_to_en[url]
 
     # ensure name_ko exists (auto translate if missing)
+    # IMPORTANT: English name is the canonical baseline.
+    # If English exists and Korean is missing, we add an auto-translated Korean name.
     for e in all_loaded:
+        # Canonical English name
+        if not e.get("name_en"):
+            # Fallback to 'name' only if it looks like an English-ish name
+            nm = (e.get("name") or "").strip()
+            if nm and is_probably_english_name(nm):
+                e["name_en"] = nm
+
+        # Auto Korean only from English baseline
         if not e.get("name_ko"):
-            en = e.get("name_en") or e.get("name") or ""
-            ko = auto_translate_name_ko(en)
-            if ko:
-                e["name_ko"] = ko
-                e["name_ko_policy"] = "auto"
+            en = (e.get("name_en") or "").strip()
+            if en:
+                ko = auto_translate_name_ko(en)
+                if ko:
+                    e["name_ko"] = ko
+                    e["name_ko_policy"] = "auto"
         else:
             if not e.get("name_ko_policy"):
                 e["name_ko_policy"] = "human"

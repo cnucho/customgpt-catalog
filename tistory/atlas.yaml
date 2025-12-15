@@ -1,12 +1,10 @@
 gpt_atlas:
   version: '1.0'
-  generated_at: '2025-12-15T13:07:01.754109+00:00'
+  generated_at: '2025-12-15T15:29:51.894462+00:00'
   items:
   - gpt_id: chartartist
     names:
       en: ChartArtist
-      ko: ChartArtist
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692d72d34b6c8191aec3dac13d5053d1-chartartist
     tags:
     - policy
@@ -20,8 +18,6 @@ gpt_atlas:
   - gpt_id: g-6874900592448191ab46ffef82b35ea4
     names:
       en: ChartFlow GPT – 표해 시각화 도우미
-      ko: ChartFlow GPT – 표해 시각화 도우미
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6874900592448191ab46ffef82b35ea4-chartflow-gpt
     tags:
     - data-visualization
@@ -35,8 +31,6 @@ gpt_atlas:
   - gpt_id: classass-hyeondaesahoe
     names:
       en: ClassAss_현대사회 – 커뮤니케이션과 현대사회 전용 GPT
-      ko: ClassAss 현대사회 – 커뮤니케이션과 현대사회 전용 GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688ace2771a08191922b4c71228988e3-classass-hyeondaesahoe
     tags:
     - 교육
@@ -50,8 +44,6 @@ gpt_atlas:
   - gpt_id: cleaningcodegpt
     names:
       en: CleaningCodeGPT
-      ko: CleaningCodeGPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692c27928db88191b5150deeba1861a8-cleaningcodegpt
     tags:
     - policy
@@ -65,8 +57,6 @@ gpt_atlas:
   - gpt_id: g-688ad8a2c2fc8191b795cdcc8823bc6d
     names:
       en: CogiGPT
-      ko: CogiGPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688ad8a2c2fc8191b795cdcc8823bc6d-cogigpt
     tags:
     - cognitive-interview
@@ -84,8 +74,6 @@ gpt_atlas:
   - gpt_id: g-68777722ae9c8191aef591f56e192c26
     names:
       en: CoreCritic 원요평
-      ko: CoreCritic 원요평
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68777722ae9c8191aef591f56e192c26-corecritic-weonyopyeong
     tags:
     - paper-analysis
@@ -100,8 +88,6 @@ gpt_atlas:
   - gpt_id: g-686ce5c0f460819185068b8c9a1bbe18
     names:
       en: Crosstab Analyst
-      ko: Crosstab Analyst
-      ko_policy: auto
     url: https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst
     tags:
     - statistics
@@ -125,8 +111,6 @@ gpt_atlas:
   - gpt_id: dataprepcodegen
     names:
       en: DataPrepCodeGen
-      ko: DataPrepCodeGen
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen
     tags:
     - policy
@@ -140,8 +124,6 @@ gpt_atlas:
   - gpt_id: g-692430bf6b888191a8180fc6170597c7
     names:
       en: deskresearch – 시장조사 데스크 리서처
-      ko: deskresearch – 시장조사 데스크 리서처
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692430bf6b888191a8180fc6170597c7-deskresearch
     tags:
     - policy
@@ -155,8 +137,6 @@ gpt_atlas:
   - gpt_id: g-68fc9be3e4b48191b0388dee4c3c6bd6
     names:
       en: Essence Diagram Builder GPT
-      ko: Essence Diagram 빌더 GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt
     tags:
     - semantic-structure
@@ -179,8 +159,6 @@ gpt_atlas:
   - gpt_id: gptatlas-gptfinder
     names:
       en: GPT Atlas 지피티찾기
-      ko: GPT 아틀라스 지피티찾기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692581c303f0819181fe33297f419cea-gptatlas-jipiticajgi
     tags:
     - 카탈로그
@@ -194,8 +172,6 @@ gpt_atlas:
   - gpt_id: g-68a081a137148191bbb40b316870cd95
     names:
       en: GroupCompare AI
-      ko: GroupCompare AI
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai
     tags:
     - statistics
@@ -221,8 +197,6 @@ gpt_atlas:
   - gpt_id: g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt
     names:
       en: Guided Regression GPT (ANPOR)
-      ko: Guided Regression GPT (ANPOR)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt
     tags:
     - policy
@@ -236,8 +210,6 @@ gpt_atlas:
   - gpt_id: guidestat
     names:
       en: GuideStat – 통합 분석 설계 GPT
-      ko: GuideStat – 통합 분석 설계 GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689b6c7baf94819193c095eb95b7ebf0-guidestat
     tags:
     - policy
@@ -251,8 +223,6 @@ gpt_atlas:
   - gpt_id: g-687f73f347308191b739e047ca0fa1ab
     names:
       en: litsearch GPT 학술검색
-      ko: litsearch GPT 학술검색
-      ko_policy: auto
     url: https://chatgpt.com/g/g-687f73f347308191b739e047ca0fa1ab-litsearch-gpt-hagsulgeomsaeg
     tags:
     - policy
@@ -266,8 +236,6 @@ gpt_atlas:
   - gpt_id: g-68e00f18911081919ca2a1fec0491068
     names:
       en: OmniReg GPT
-      ko: OmniReg GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68e00f18911081919ca2a1fec0491068-omnireg-gpt
     tags:
     - statistics
@@ -289,8 +257,6 @@ gpt_atlas:
   - gpt_id: g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt
     names:
       en: PolicyReport GPT
-      ko: PolicyReport GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt
     tags:
     - policy
@@ -313,8 +279,6 @@ gpt_atlas:
   - gpt_id: g-68849e3b74808191a687cf13c0b093b1
     names:
       en: PolicyScope (폴리시스코프)
-      ko: PolicyScope (폴리시스코프)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68849e3b74808191a687cf13c0b093b1-policyscope
     tags:
     - policy-analysis
@@ -332,8 +296,6 @@ gpt_atlas:
   - gpt_id: g-683aa5aba5dc81919d5b077a128aa55a
     names:
       en: Precision PSM Analyser – 정밀 성향점수 매칭 분석기
-      ko: Precision PSM Analyser – 정밀 성향점수 매칭 분석기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-683aa5aba5dc81919d5b077a128aa55a-precision-psm-analyser
     tags:
     - policy
@@ -347,8 +309,6 @@ gpt_atlas:
   - gpt_id: pythonretrievalassistant_pra
     names:
       en: Python Retrieval Assistant (PRA)
-      ko: Python Retrieval 어시스턴트 (PRA)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra
     tags:
     - policy
@@ -362,8 +322,6 @@ gpt_atlas:
   - gpt_id: g-6884a488c42081918b4d720473f773dd
     names:
       en: ResDesign
-      ko: ResDesign
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6884a488c42081918b4d720473f773dd-resdesign
     tags:
     - research-design
@@ -385,8 +343,6 @@ gpt_atlas:
   - gpt_id: g-6916f67c4f9081919d01f65c7f2006bb
     names:
       en: Research Architect – 연구 설계 GPT
-      ko: 리서치 Architect – 연구 설계 GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6916f67c4f9081919d01f65c7f2006bb-research-architect
     tags:
     - research-design
@@ -407,8 +363,6 @@ gpt_atlas:
   - gpt_id: g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor
     names:
       en: SamplingPlanExecutor
-      ko: SamplingPlanExecutor
-      ko_policy: auto
     url: https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor
     tags:
     - policy
@@ -422,8 +376,6 @@ gpt_atlas:
   - gpt_id: g-68a2c0e954b8819199e331146bebe081
     names:
       en: ScaleInsight
-      ko: ScaleInsight
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68a2c0e954b8819199e331146bebe081-scaleinsight
     tags:
     - scale-development
@@ -444,8 +396,6 @@ gpt_atlas:
   - gpt_id: g-690b601abb788191864efe84f729f379
     names:
       en: ScholarScope 논문교정
-      ko: ScholarScope 논문교정
-      ko_policy: auto
     url: https://chatgpt.com/g/g-690b601abb788191864efe84f729f379-scholarscope-nonmungyojeong
     tags:
     - academic-writing
@@ -467,8 +417,6 @@ gpt_atlas:
   - gpt_id: g-6916fc70a38c81918caeced7512a7fd3
     names:
       en: Source Analyzer
-      ko: Source 분석기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer
     tags:
     - desktop-research
@@ -488,8 +436,6 @@ gpt_atlas:
   - gpt_id: g-6916faee296881918fbe2a1937eeced9
     names:
       en: Source Finder
-      ko: Source Finder
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6916faee296881918fbe2a1937eeced9-source-finder
     tags:
     - desktop-research
@@ -506,8 +452,6 @@ gpt_atlas:
   - gpt_id: g-692926ff1bb881919f6db364e703e390
     names:
       en: SPI GPT (survey-policy_insight)
-      ko: SPI GPT (survey policy insight)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692926ff1bb881919f6db364e703e390-spi-gpt-survey-policy-insight
     tags:
     - policy
@@ -526,8 +470,6 @@ gpt_atlas:
   - gpt_id: g-692a335daa7c819187da88fad4df24e0
     names:
       en: StatCheck 분석체크
-      ko: StatCheck 분석체크
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692a335daa7c819187da88fad4df24e0-statcheck-bunseogcekeu
     tags:
     - policy
@@ -541,8 +483,6 @@ gpt_atlas:
   - gpt_id: g-689d215bc6bc8191be5a2886cd559f53
     names:
       en: StatResult Parser Pro
-      ko: StatResult Parser 프로
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro
     tags:
     - statistics
@@ -563,8 +503,6 @@ gpt_atlas:
   - gpt_id: surveydatasimulator_pretestgenerator
     names:
       en: Survey Data Simulator & Pretest Generator
-      ko: 설문 데이터 Simulator & Pretest Generator
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator
     tags:
     - policy
@@ -578,8 +516,6 @@ gpt_atlas:
   - gpt_id: g-689c6ac1e9bc81919ddebf9daed3c0e8
     names:
       en: Survey SE Engine 표준오차엔진
-      ko: 설문 SE Engine 표준오차엔진
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin
     tags:
     - survey-methodology
@@ -599,8 +535,6 @@ gpt_atlas:
   - gpt_id: surveyflow-cognitive-testing-assistant
     names:
       en: SurveyFlow & Cognitive Testing Assistant
-      ko: SurveyFlow & Cognitive Testing 어시스턴트
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69379a30085481919ff76da42c97fa1f-surveyflow-cognitive-testing-assistant
     suitable_for:
     - 설문조사 전문가
@@ -611,8 +545,6 @@ gpt_atlas:
   - gpt_id: surveypersona-expression-engine
     names:
       en: SurveyPersona Expression Engine – 퍼소나 발화 생성 엔진
-      ko: SurveyPersona Expression Engine – 퍼소나 발화 생성 엔진
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine
     tags:
     - survey
@@ -627,8 +559,6 @@ gpt_atlas:
   - gpt_id: surveypersona-meaning-engine
     names:
       en: SurveyPersona Meaning Engine – 퍼소나 의미 해석 엔진
-      ko: SurveyPersona Meaning Engine – 퍼소나 의미 해석 엔진
-      ko_policy: auto
     url: https://chatgpt.com/g/g-693766b243248191b496489f57d9e13b-surveypersona-meaning-engine
     tags:
     - survey
@@ -643,8 +573,6 @@ gpt_atlas:
   - gpt_id: surveypersona-summarizer
     names:
       en: SurveyPersona Summarizer – 설문 메타 요약·개선 엔진
-      ko: SurveyPersona 요약기 – 설문 메타 요약·개선 엔진
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69376b2256ac81918ff29ed53e7c514b-surveypersona-summarizer
     tags:
     - survey
@@ -659,8 +587,6 @@ gpt_atlas:
   - gpt_id: g-68a0753676348191a32bd69ba57ca410
     names:
       en: SurveyTables
-      ko: SurveyTables
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables
     tags:
     - survey
@@ -680,8 +606,6 @@ gpt_atlas:
   - gpt_id: g-68734c99ac908191a0886bc3f8239c2d
     names:
       en: 가상데이터 설계기
-      ko: 가상데이터 설계기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi
     tags:
     - synthetic-data
@@ -702,8 +626,6 @@ gpt_atlas:
   - gpt_id: g-68821d5c02d4819192f868b756cab084
     names:
       en: 대한민국 법조문 탐색기
-      ko: 대한민국 법조문 탐색기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi
     tags:
     - korean-law
@@ -719,8 +641,6 @@ gpt_atlas:
   - gpt_id: g-689d3ec41d948191977d021c5b410fe9
     names:
       en: 모델 아키텍트
-      ko: 모델 아키텍트
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689d3ec41d948191977d021c5b410fe9-model-akitegteu
     tags:
     - research-framework
@@ -742,8 +662,6 @@ gpt_atlas:
   - gpt_id: g-68a0607dfb788191b75e577b0ee17560-t-frame
     names:
       en: 모형판별기 T-Frame
-      ko: 모형판별기 T Frame
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68a0607dfb788191b75e577b0ee17560-t-frame
     tags:
     - research-assistant
@@ -763,8 +681,6 @@ gpt_atlas:
   - gpt_id: g-685ccc566ff48191a25daae6ce47f0c1
     names:
       en: 문결
-      ko: 문결
-      ko_policy: auto
     url: https://chatgpt.com/g/g-685ccc566ff48191a25daae6ce47f0c1-mungyeol
     tags:
     - 한글교정
@@ -782,8 +698,6 @@ gpt_atlas:
   - gpt_id: g-687c70d104248191a265d9bbc020fdb5
     names:
       en: 문빛 LayerFixer
-      ko: 문빛 LayerFixer
-      ko_policy: auto
     url: https://chatgpt.com/g/g-687c70d104248191a265d9bbc020fdb5-munbic-layerfixer
     tags:
     - writing
@@ -802,8 +716,6 @@ gpt_atlas:
   - gpt_id: g-689b6ef185d881918d1f4efcc3b12930
     names:
       en: 문성평 (文成評)
-      ko: 문성평 (文成評)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong
     tags:
     - policy
@@ -834,8 +746,6 @@ gpt_atlas:
   - gpt_id: g-6873b46ba5008191a4bee2a8a7646da6
     names:
       en: 보고서교열검수기
-      ko: 보고서교열검수기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
     tags:
     - industrial-safety
@@ -853,8 +763,6 @@ gpt_atlas:
   - gpt_id: g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
     names:
       en: 보고서교열검수기 – 표본조사 기반 실태조사 보고서 검토
-      ko: 보고서교열검수기 – 표본조사 기반 실태조사 보고서 검토
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
     tags:
     - policy
@@ -870,8 +778,6 @@ gpt_atlas:
   - gpt_id: samplingplanner
     names:
       en: 샘플링플래너(SamplingPlanner)
-      ko: 샘플링플래너(SamplingPlanner)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692c3734ba6c8191a83f97eb05c0de96-samplingplanner
     tags:
     - policy
@@ -885,8 +791,6 @@ gpt_atlas:
   - gpt_id: g-687a250248788191adc1b568797c276c
     names:
       en: 자글 GPT – 글쓰기 조력자
-      ko: 자글 GPT – 글쓰기 조력자
-      ko_policy: auto
     url: https://chatgpt.com/g/g-687a250248788191adc1b568797c276c-jageul-jipiti
     tags:
     - policy
@@ -900,8 +804,6 @@ gpt_atlas:
   - gpt_id: g-688b5b489dc08191997ed9556e4c86e7
     names:
       en: 정밀 글쓰기 GPT
-      ko: 정밀 글쓰기 GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688b5b489dc08191997ed9556e4c86e7-jeongmil-geulsseugi
     tags:
     - writing
@@ -917,8 +819,6 @@ gpt_atlas:
   - gpt_id: g-688c23ce47388191960e1f0ba68c8ab0
     names:
       en: 정밀 문항개발
-      ko: 정밀 문항개발
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688c23ce47388191960e1f0ba68c8ab0-jeongmil-munhanggaebal
     tags:
     - survey-design
@@ -943,8 +843,6 @@ gpt_atlas:
   - gpt_id: g-6890d378ceb08191ab29b9408453be71
     names:
       en: 정밀 문항추출 Precesion Questionnaire Extractor
-      ko: 정밀 문항추출 Precesion Questionnaire 추출기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6890d378ceb08191ab29b9408453be71-jeongmil-munhangcucul-precesion-questionnaire-extractor
     tags:
     - survey
@@ -966,8 +864,6 @@ gpt_atlas:
   - gpt_id: g-688afbe7d6f88191b09bffd971c3b721
     names:
       en: 정밀 학술번역
-      ko: 정밀 학술번역
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog
     tags:
     - translation
@@ -991,8 +887,6 @@ gpt_atlas:
   - gpt_id: g-6890c67bf6f08191b7f90d970eafa11f
     names:
       en: 정밀문항GPT
-      ko: 정밀문항GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6890c67bf6f08191b7f90d970eafa11f-jeongmilmunhanggpt
     tags:
     - survey-design
@@ -1014,8 +908,6 @@ gpt_atlas:
   - gpt_id: g-6838668d63808191b62e10778019a303
     names:
       en: 정밀회귀
-      ko: 정밀회귀
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6838668d63808191b62e10778019a303-jeongmilhoegwi
     tags:
     - statistics
@@ -1033,8 +925,6 @@ gpt_atlas:
   - gpt_id: g-689b6ef33270819196a280bc04d80c4e-kadenca
     names:
       en: 카덴차 – 사고 정교화 비서
-      ko: 카덴차 – 사고 정교화 비서
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689b6ef33270819196a280bc04d80c4e-kadenca
     tags:
     - critical-thinking
@@ -1049,8 +939,6 @@ gpt_atlas:
   - gpt_id: korea-survey-sampling-gpt
     names:
       en: 코리아 서베이 샘플링 GPT
-      ko: 코리아 서베이 샘플링 GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-693805e65a788191a13827d509ee18fc-korea-survey-sampling-gpt
     tags:
     - policy
@@ -1064,8 +952,6 @@ gpt_atlas:
   - gpt_id: corecritic-weonyopyeong
     names:
       en: 코어크리틱 (원요평)
-      ko: 코어크리틱 (원요평)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68777722ae9c8191aef591f56e192c26-corecritic-weonyopyeong
     tags:
     - policy
@@ -1079,8 +965,6 @@ gpt_atlas:
   - gpt_id: table-narrator
     names:
       en: 테이블 내레이터
-      ko: 테이블 내레이터
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator
     tags:
     - policy
@@ -1094,8 +978,6 @@ gpt_atlas:
   - gpt_id: g-6881e2700cb48191b9290c00a3a20484
     names:
       en: 통계찾기
-      ko: 통계찾기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6881e2700cb48191b9290c00a3a20484-tonggyecajgi
     tags:
     - statistics
@@ -1111,8 +993,6 @@ gpt_atlas:
   - gpt_id: g-688598a824588191ba086e187637d3d4
     names:
       en: 표현비서 (ProseStylist)
-      ko: 표현비서 (ProseStylist)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688598a824588191ba086e187637d3d4-pyohyeonbiseo-prosestylist
     tags:
     - writing
@@ -1131,8 +1011,6 @@ gpt_atlas:
   - gpt_id: g-6877b4af7e6881919583ca821023a098
     names:
       en: 표현비서 아르페지오
-      ko: 표현비서 아르페지오
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6877b4af7e6881919583ca821023a098-areupejio
     tags:
     - writing
@@ -1148,8 +1026,6 @@ gpt_atlas:
   - gpt_id: chartartist
     names:
       en: ChartArtist
-      ko: ChartArtist
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692d72d34b6c8191aec3dac13d5053d1-chartartist
     tags:
     - policy
@@ -1163,8 +1039,6 @@ gpt_atlas:
   - gpt_id: g-6874900592448191ab46ffef82b35ea4
     names:
       en: ChartFlow GPT – Table-to-Chart Assistant
-      ko: ChartFlow GPT – Table to Chart 어시스턴트
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6874900592448191ab46ffef82b35ea4-chartflow-gpt
     tags:
     - data-visualization
@@ -1178,8 +1052,6 @@ gpt_atlas:
   - gpt_id: cleaningcodegpt
     names:
       en: CleaningCodeGPT
-      ko: CleaningCodeGPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692c27928db88191b5150deeba1861a8-cleaningcodegpt
     tags:
     - policy
@@ -1193,8 +1065,6 @@ gpt_atlas:
   - gpt_id: g-688ad8a2c2fc8191b795cdcc8823bc6d
     names:
       en: CogiGPT
-      ko: CogiGPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688ad8a2c2fc8191b795cdcc8823bc6d-cogigpt
     tags:
     - cognitive-interview
@@ -1214,8 +1084,6 @@ gpt_atlas:
   - gpt_id: corecritic-weonyopyeong
     names:
       en: CoreCritic (WeonYoPyeong)
-      ko: CoreCritic (WeonYoPyeong)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68777722ae9c8191aef591f56e192c26-corecritic-weonyopyeong
     tags:
     - policy
@@ -1229,8 +1097,6 @@ gpt_atlas:
   - gpt_id: g-68777722ae9c8191aef591f56e192c26
     names:
       en: CoreCritic Weonyopyeong
-      ko: CoreCritic Weonyopyeong
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68777722ae9c8191aef591f56e192c26-corecritic-weonyopyeong
     tags:
     - paper-analysis
@@ -1245,8 +1111,6 @@ gpt_atlas:
   - gpt_id: g-686ce5c0f460819185068b8c9a1bbe18
     names:
       en: Crosstab Analyst
-      ko: Crosstab Analyst
-      ko_policy: auto
     url: https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst
     tags:
     - statistics
@@ -1274,8 +1138,6 @@ gpt_atlas:
   - gpt_id: dataprepcodegen
     names:
       en: DataPrepCodeGen
-      ko: DataPrepCodeGen
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen
     tags:
     - policy
@@ -1289,8 +1151,6 @@ gpt_atlas:
   - gpt_id: g-692430bf6b888191a8180fc6170597c7
     names:
       en: deskresearch – Market Research Desk Analyst
-      ko: deskresearch – Market 리서치 데스크 Analyst
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692430bf6b888191a8180fc6170597c7-deskresearch
     tags:
     - policy
@@ -1304,8 +1164,6 @@ gpt_atlas:
   - gpt_id: g-68fc9be3e4b48191b0388dee4c3c6bd6
     names:
       en: Essence Diagram Builder GPT
-      ko: Essence Diagram 빌더 GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt
     tags:
     - semantic-structure
@@ -1334,8 +1192,6 @@ gpt_atlas:
   - gpt_id: g-6877b4af7e6881919583ca821023a098
     names:
       en: Expression Assistant – Arpeggio
-      ko: Expression 어시스턴트 – Arpeggio
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6877b4af7e6881919583ca821023a098-areupejio
     tags:
     - writing
@@ -1351,8 +1207,6 @@ gpt_atlas:
   - gpt_id: gptatlas-gptfinder
     names:
       en: GPT Atlas
-      ko: GPT 아틀라스
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692581c303f0819181fe33297f419cea-gptatlas-jipiticajgi
     tags:
     - catalog
@@ -1366,8 +1220,6 @@ gpt_atlas:
   - gpt_id: g-68a081a137148191bbb40b316870cd95
     names:
       en: GroupCompare AI
-      ko: GroupCompare AI
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai
     tags:
     - statistics
@@ -1397,8 +1249,6 @@ gpt_atlas:
   - gpt_id: g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt
     names:
       en: Guided Regression GPT (ANPOR)
-      ko: Guided Regression GPT (ANPOR)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6839cf9468d481919ef5dd49ee22c006-guided-regression-gpt
     tags:
     - policy
@@ -1412,8 +1262,6 @@ gpt_atlas:
   - gpt_id: guidestat
     names:
       en: GuideStat – Integrated Analysis Designer
-      ko: GuideStat – Integrated 분석 Designer
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689b6c7baf94819193c095eb95b7ebf0-guidestat
     tags:
     - policy
@@ -1428,8 +1276,6 @@ gpt_atlas:
   - gpt_id: g-687a250248788191adc1b568797c276c
     names:
       en: Jageul GPT – Writing Strategist
-      ko: Jageul GPT – Writing Strategist
-      ko_policy: auto
     url: https://chatgpt.com/g/g-687a250248788191adc1b568797c276c-jageul-jipiti
     tags:
     - policy
@@ -1443,8 +1289,6 @@ gpt_atlas:
   - gpt_id: g-688afbe7d6f88191b09bffd971c3b721
     names:
       en: Jeongmil Academic Translation
-      ko: Jeongmil Academic Translation
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog
     tags:
     - translation
@@ -1468,8 +1312,6 @@ gpt_atlas:
   - gpt_id: g-688b5b489dc08191997ed9556e4c86e7
     names:
       en: Jeongmil Geulsseugi GPT – Precision Writing Assistant
-      ko: Jeongmil Geulsseugi GPT – Precision Writing 어시스턴트
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688b5b489dc08191997ed9556e4c86e7-jeongmil-geulsseugi
     tags:
     - writing
@@ -1485,8 +1327,6 @@ gpt_atlas:
   - gpt_id: g-6890d378ceb08191ab29b9408453be71
     names:
       en: Jeongmil Item Extraction – Precesion Questionnaire Extractor
-      ko: Jeongmil Item Extraction – Precesion Questionnaire 추출기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6890d378ceb08191ab29b9408453be71-jeongmil-munhangcucul-precesion-questionnaire-extractor
     tags:
     - survey
@@ -1511,8 +1351,6 @@ gpt_atlas:
   - gpt_id: g-688c23ce47388191960e1f0ba68c8ab0
     names:
       en: Jeongmil Munhanggaebal (Precision Item Development)
-      ko: Jeongmil Munhanggaebal (Precision Item Development)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688c23ce47388191960e1f0ba68c8ab0-jeongmil-munhanggaebal
     tags:
     - survey-design
@@ -1541,8 +1379,6 @@ gpt_atlas:
   - gpt_id: g-6838668d63808191b62e10778019a303
     names:
       en: Jeongmilhoegwi (Precision Regression)
-      ko: Jeongmilhoegwi (Precision Regression)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6838668d63808191b62e10778019a303-jeongmilhoegwi
     tags:
     - statistics
@@ -1560,8 +1396,6 @@ gpt_atlas:
   - gpt_id: g-6890c67bf6f08191b7f90d970eafa11f
     names:
       en: JeongmilmunhangGPT (Precision Survey Item GPT)
-      ko: JeongmilmunhangGPT (Precision 설문 Item GPT)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6890c67bf6f08191b7f90d970eafa11f-jeongmilmunhanggpt
     tags:
     - survey-design
@@ -1587,8 +1421,6 @@ gpt_atlas:
   - gpt_id: g-689b6ef33270819196a280bc04d80c4e-kadenca
     names:
       en: Kadenca – Critical Thinking Assistant
-      ko: Kadenca – Critical Thinking 어시스턴트
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689b6ef33270819196a280bc04d80c4e-kadenca
     tags:
     - critical-thinking
@@ -1603,8 +1435,6 @@ gpt_atlas:
   - gpt_id: korea-survey-sampling-gpt
     names:
       en: Korea Survey Sampling GPT
-      ko: Korea 설문 Sampling GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-693805e65a788191a13827d509ee18fc-korea-survey-sampling-gpt
     tags:
     - policy
@@ -1618,8 +1448,6 @@ gpt_atlas:
   - gpt_id: g-687f73f347308191b739e047ca0fa1ab
     names:
       en: litsearch GPT – Scholarly Search
-      ko: litsearch GPT – Scholarly Search
-      ko_policy: auto
     url: https://chatgpt.com/g/g-687f73f347308191b739e047ca0fa1ab-litsearch-gpt-hagsulgeomsaeg
     tags:
     - policy
@@ -1635,8 +1463,6 @@ gpt_atlas:
   - gpt_id: g-689d3ec41d948191977d021c5b410fe9
     names:
       en: Model Architect
-      ko: Model Architect
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689d3ec41d948191977d021c5b410fe9-model-akitegteu
     tags:
     - research-framework
@@ -1661,8 +1487,6 @@ gpt_atlas:
   - gpt_id: g-687c70d104248191a265d9bbc020fdb5
     names:
       en: Munbic LayerFixer
-      ko: Munbic LayerFixer
-      ko_policy: auto
     url: https://chatgpt.com/g/g-687c70d104248191a265d9bbc020fdb5-munbic-layerfixer
     tags:
     - writing
@@ -1684,8 +1508,6 @@ gpt_atlas:
   - gpt_id: g-689b6ef185d881918d1f4efcc3b12930
     names:
       en: Munseongpyeong (文成評)
-      ko: Munseongpyeong (文成評)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong
     tags:
     - policy
@@ -1718,8 +1540,6 @@ gpt_atlas:
   - gpt_id: g-68e00f18911081919ca2a1fec0491068
     names:
       en: OmniReg GPT
-      ko: OmniReg GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68e00f18911081919ca2a1fec0491068-omnireg-gpt
     tags:
     - statistics
@@ -1744,8 +1564,6 @@ gpt_atlas:
   - gpt_id: g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt
     names:
       en: PolicyReport GPT
-      ko: PolicyReport GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt
     tags:
     - policy
@@ -1771,8 +1589,6 @@ gpt_atlas:
   - gpt_id: g-68849e3b74808191a687cf13c0b093b1
     names:
       en: PolicyScope
-      ko: PolicyScope
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68849e3b74808191a687cf13c0b093b1-policyscope
     tags:
     - policy-analysis
@@ -1792,8 +1608,6 @@ gpt_atlas:
   - gpt_id: g-683aa5aba5dc81919d5b077a128aa55a
     names:
       en: Precision PSM Analyser – Propensity Score Matching Assistant
-      ko: Precision PSM Analyser – Propensity Score Matching 어시스턴트
-      ko_policy: auto
     url: https://chatgpt.com/g/g-683aa5aba5dc81919d5b077a128aa55a-precision-psm-analyser
     tags:
     - policy
@@ -1808,8 +1622,6 @@ gpt_atlas:
   - gpt_id: g-688598a824588191ba086e187637d3d4
     names:
       en: ProseStylist (표현비서)
-      ko: ProseStylist (표현비서)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-688598a824588191ba086e187637d3d4-pyohyeonbiseo-prosestylist
     tags:
     - writing
@@ -1830,8 +1642,6 @@ gpt_atlas:
   - gpt_id: pythonretrievalassistant_pra
     names:
       en: Python Retrieval Assistant (PRA)
-      ko: Python Retrieval 어시스턴트 (PRA)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra
     tags:
     - policy
@@ -1847,8 +1657,6 @@ gpt_atlas:
   - gpt_id: g-6873b46ba5008191a4bee2a8a7646da6
     names:
       en: Report Proofreading & Audit Assistant – Industrial Safety Survey
-      ko: 리포트 Proofreading & Audit 어시스턴트 – Industrial Safety 설문
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
     tags:
     - industrial-safety
@@ -1866,8 +1674,6 @@ gpt_atlas:
   - gpt_id: g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
     names:
       en: Report Proofreading & Validation GPT – Survey-Based Reporting
-      ko: 리포트 Proofreading & Validation GPT – 설문 Based Reporting
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi
     tags:
     - policy
@@ -1886,8 +1692,6 @@ gpt_atlas:
   - gpt_id: g-68821d5c02d4819192f868b756cab084
     names:
       en: Republic of Korea Statute Navigator
-      ko: Republic of Korea Statute Navigator
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi
     tags:
     - korean-law
@@ -1903,8 +1707,6 @@ gpt_atlas:
   - gpt_id: g-6884a488c42081918b4d720473f773dd
     names:
       en: ResDesign
-      ko: ResDesign
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6884a488c42081918b4d720473f773dd-resdesign
     tags:
     - research-design
@@ -1926,8 +1728,6 @@ gpt_atlas:
   - gpt_id: g-6916f67c4f9081919d01f65c7f2006bb
     names:
       en: Research Architect – Modular Research Design GPT
-      ko: 리서치 Architect – Modular 리서치 Design GPT
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6916f67c4f9081919d01f65c7f2006bb-research-architect
     tags:
     - research-design
@@ -1949,8 +1749,6 @@ gpt_atlas:
   - gpt_id: g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor
     names:
       en: SamplingPlanExecutor
-      ko: SamplingPlanExecutor
-      ko_policy: auto
     url: https://chatgpt.com/g/g-693b5a8cede08191997c60a9df5dae01-samplingplanexecutor
     tags:
     - policy
@@ -1967,8 +1765,6 @@ gpt_atlas:
   - gpt_id: samplingplanner
     names:
       en: SamplingPlanner
-      ko: SamplingPlanner
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692c3734ba6c8191a83f97eb05c0de96-samplingplanner
     tags:
     - policy
@@ -1982,8 +1778,6 @@ gpt_atlas:
   - gpt_id: g-68a2c0e954b8819199e331146bebe081
     names:
       en: ScaleInsight
-      ko: ScaleInsight
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68a2c0e954b8819199e331146bebe081-scaleinsight
     tags:
     - scale-development
@@ -2008,8 +1802,6 @@ gpt_atlas:
   - gpt_id: g-690b601abb788191864efe84f729f379
     names:
       en: ScholarScope – Academic Manuscript Editing
-      ko: ScholarScope – Academic Manuscript Editing
-      ko_policy: auto
     url: https://chatgpt.com/g/g-690b601abb788191864efe84f729f379-scholarscope-nonmungyojeong
     tags:
     - academic-writing
@@ -2033,8 +1825,6 @@ gpt_atlas:
   - gpt_id: g-6916fc70a38c81918caeced7512a7fd3
     names:
       en: Source Analyzer
-      ko: Source 분석기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer
     tags:
     - desktop-research
@@ -2054,8 +1844,6 @@ gpt_atlas:
   - gpt_id: g-6916faee296881918fbe2a1937eeced9
     names:
       en: Source Finder
-      ko: Source Finder
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6916faee296881918fbe2a1937eeced9-source-finder
     tags:
     - desktop-research
@@ -2072,8 +1860,6 @@ gpt_atlas:
   - gpt_id: g-692926ff1bb881919f6db364e703e390
     names:
       en: SPI GPT (survey-policy_insight)
-      ko: SPI GPT (survey policy insight)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692926ff1bb881919f6db364e703e390-spi-gpt-survey-policy-insight
     tags:
     - policy
@@ -2093,8 +1879,6 @@ gpt_atlas:
   - gpt_id: g-692a335daa7c819187da88fad4df24e0
     names:
       en: StatCheck
-      ko: StatCheck
-      ko_policy: auto
     url: https://chatgpt.com/g/g-692a335daa7c819187da88fad4df24e0-statcheck-bunseogcekeu
     tags:
     - policy
@@ -2108,8 +1892,6 @@ gpt_atlas:
   - gpt_id: g-689d215bc6bc8191be5a2886cd559f53
     names:
       en: StatResult Parser Pro
-      ko: StatResult Parser 프로
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro
     tags:
     - statistics
@@ -2136,8 +1918,6 @@ gpt_atlas:
   - gpt_id: surveydatasimulator_pretestgenerator
     names:
       en: Survey Data Simulator & Pretest Generator
-      ko: 설문 데이터 Simulator & Pretest Generator
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator
     tags:
     - policy
@@ -2151,8 +1931,6 @@ gpt_atlas:
   - gpt_id: g-689c6ac1e9bc81919ddebf9daed3c0e8
     names:
       en: Survey SE Engine – Standard Error & RSE
-      ko: 설문 SE Engine – Standard Error & RSE
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin
     tags:
     - survey-methodology
@@ -2175,8 +1953,6 @@ gpt_atlas:
   - gpt_id: g-689c6ac1e9bc81919ddebf9daed3c0e8
     names:
       en: Survey SE Engine – Standard Error & RSE
-      ko: 설문 SE Engine – Standard Error & RSE
-      ko_policy: auto
     url: https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin
     tags:
     - survey-methodology
@@ -2199,8 +1975,6 @@ gpt_atlas:
   - gpt_id: surveypersona-expression-engine
     names:
       en: SurveyPersona Expression Engine
-      ko: SurveyPersona Expression Engine
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine
     tags:
     - survey
@@ -2215,8 +1989,6 @@ gpt_atlas:
   - gpt_id: surveypersona-summarizer
     names:
       en: 'SurveyPersona Summarizer '
-      ko: SurveyPersona 요약기
-      ko_policy: auto
     url: https://chatgpt.com/g/g-69376b2256ac81918ff29ed53e7c514b-surveypersona-summarizer
     tags:
     - survey
@@ -2231,8 +2003,6 @@ gpt_atlas:
   - gpt_id: g-68a0753676348191a32bd69ba57ca410
     names:
       en: SurveyTables
-      ko: SurveyTables
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables
     tags:
     - survey
@@ -2256,8 +2026,6 @@ gpt_atlas:
   - gpt_id: g-68a0607dfb788191b75e577b0ee17560-t-frame
     names:
       en: T-Frame – Framework Model Selector
-      ko: T Frame – Framework Model Selector
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68a0607dfb788191b75e577b0ee17560-t-frame
     tags:
     - research-assistant
@@ -2280,8 +2048,6 @@ gpt_atlas:
   - gpt_id: table-narrator
     names:
       en: Table Narrator
-      ko: Table Narrator
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator
     tags:
     - policy
@@ -2295,8 +2061,6 @@ gpt_atlas:
   - gpt_id: g-6881e2700cb48191b9290c00a3a20484
     names:
       en: Tonggyechajgi
-      ko: Tonggyechajgi
-      ko_policy: auto
     url: https://chatgpt.com/g/g-6881e2700cb48191b9290c00a3a20484-tonggyecajgi
     tags:
     - statistics
@@ -2312,8 +2076,6 @@ gpt_atlas:
   - gpt_id: g-68734c99ac908191a0886bc3f8239c2d
     names:
       en: Virtual Data Designer (가상데이터 설계기)
-      ko: Virtual 데이터 Designer (가상데이터 설계기)
-      ko_policy: auto
     url: https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi
     tags:
     - synthetic-data

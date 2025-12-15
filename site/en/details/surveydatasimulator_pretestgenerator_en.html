@@ -1,70 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Survey Data Simulator &amp; Pretest Generator</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Survey Data Simulator &amp; Pretest Generator</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>Survey Data Simulator &amp; Pretest Generator</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-13</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> Generate realistic synthetic survey datasets based on human-like linguistic responses and personas.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>policy</span> <span class='tag'>statistics</span> <span class='tag'>research-assistant</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Simulate survey respondents with realistic linguistic answers</li><li>Convert natural language responses into coded, analysis-ready datasets</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>Survey Data Simulator &amp; Pretest Generator</h1>
-  <div class='meta'>Korean: 설문 데이터 Simulator &amp; Pretest Generator</div>
-  <p>Generate realistic synthetic survey datasets based on human-like linguistic responses and personas.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>policy</li>
-<li>statistics</li>
-<li>research-assistant</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Simulate survey respondents with realistic linguistic answers</li>
-<li>Convert natural language responses into coded, analysis-ready datasets</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Survey researchers</li>
-<li>Policy analysts</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Pretesting questionnaires before field deployment</li>
-<li>Generating synthetic survey data for method testing and teaching</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>Does not validate causal inference or real-world representativeness</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Simulate 300 respondents for this questionnaire and export as CSV.</li>
-<li>Generate synthetic survey data with mobile and older adult personas.</li>
-<li>Create SPSS-ready data from these survey questions.</li>
-<li>Show missingness and distribution issues in the simulated dataset.</li>
-<li>Produce persona-level summaries for a pretest survey.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>Persona-driven nonresponse and inconsistency modeling</li></ul>
 </body>
 </html>

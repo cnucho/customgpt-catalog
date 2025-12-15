@@ -1,87 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jeongmil Academic Translation</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeongmil Academic Translation</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>Jeongmil Academic Translation</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> A precision translator for academic and nonfiction texts with strict meaning fidelity, terminology consistency, and back-translation verification.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>translation</span> <span class='tag'>academic-writing</span> <span class='tag'>nonfiction</span> <span class='tag'>policy-studies</span> <span class='tag'>social-sciences</span> <span class='tag'>statistics</span> <span class='tag'>communication-studies</span> <span class='tag'>public-administration</span> <span class='tag'>glossary</span> <span class='tag'>back-translation</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Paragraph-level auto-segmentation and sequential translation</li><li>Terminology-consistent translation using master, session, and user-defined glossaries</li><li>Meaning validation through back-translation</li><li>Translation reports covering literal vs. free rendering and cultural notes</li><li>Parallel source–translation–back-translation output with cumulative logging</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>Jeongmil Academic Translation</h1>
-  <div class='meta'>Korean: Jeongmil Academic Translation</div>
-  <p>A precision translator for academic and nonfiction texts with strict meaning fidelity, terminology consistency, and back-translation verification.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>translation</li>
-<li>academic-writing</li>
-<li>nonfiction</li>
-<li>policy-studies</li>
-<li>social-sciences</li>
-<li>statistics</li>
-<li>communication-studies</li>
-<li>public-administration</li>
-<li>glossary</li>
-<li>back-translation</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Paragraph-level auto-segmentation and sequential translation</li>
-<li>Terminology-consistent translation using master, session, and user-defined glossaries</li>
-<li>Meaning validation through back-translation</li>
-<li>Translation reports covering literal vs. free rendering and cultural notes</li>
-<li>Parallel source–translation–back-translation output with cumulative logging</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Researchers and graduate students</li>
-<li>Policy and public administration professionals</li>
-<li>Users requiring verifiable, terminology-consistent translations</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Terminology-standardized translation for policy and social science texts</li>
-<li>Meaning-preserving translation of academic manuscripts</li>
-<li>Back-translation comparison for submission-ready documents</li>
-<li>Project-wide consistency via enforced glossaries</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>Source text must be provided by the user.</li>
-<li>Optimized for precision rather than literary fluency.</li>
-<li>New or domain-specific terms may require user-defined glossary entries.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Translate the following text by paragraphs with parallel source–translation–back-translation output: [text]</li>
-<li>// Glossary: Fix &#x27;policy implementation&#x27; as &#x27;정책 이행&#x27;. Then translate: [text]</li>
-<li>Highlight major literal vs. free translation differences and add cultural notes: [text]</li>
-<li>Prioritize default glossary translations for statistical terms: [text]</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>AI-style reduction filters</li>
-<li>Declarative academic tone with concise sentences</li>
-<li>Back-translation verification mode</li>
-<li>Built-in master glossary for policy studies and statistics</li></ul>
 </body>
 </html>

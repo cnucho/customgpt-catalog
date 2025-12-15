@@ -1,67 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>litsearch GPT 학술검색</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>litsearch GPT 학술검색</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-687f73f347308191b739e047ca0fa1ab-litsearch-gpt-hagsulgeomsaeg' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>litsearch GPT 학술검색</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-06</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 신뢰 기반 학술·정책 문헌을 안전한 출처 위주로 탐색·구조화해 주는 전문 리서치 보조 GPT입니다.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>policy</span> <span class='tag'>statistics</span> <span class='tag'>research-assistant</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>사용자가 제시한 주제·키워드를 기반으로 학술·정책 관련 문헌을 신뢰도 기준에 따라 탐색·필터링합니다.</li><li>검색된 문헌을 주제, 출처 유형, 신뢰도 정보와 함께 구조화·요약하여 연구·정책 분석에 활용하기 쉽게 정리합니다.</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>litsearch GPT 학술검색</h1>
-  <div class='meta'>(자동번역) English: litsearch GPT 학술검색</div>
-  <p>신뢰 기반 학술·정책 문헌을 안전한 출처 위주로 탐색·구조화해 주는 전문 리서치 보조 GPT입니다.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-687f73f347308191b739e047ca0fa1ab-litsearch-gpt-hagsulgeomsaeg' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-687f73f347308191b739e047ca0fa1ab-litsearch-gpt-hagsulgeomsaeg</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>policy</li>
-<li>statistics</li>
-<li>research-assistant</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>사용자가 제시한 주제·키워드를 기반으로 학술·정책 관련 문헌을 신뢰도 기준에 따라 탐색·필터링합니다.</li>
-<li>검색된 문헌을 주제, 출처 유형, 신뢰도 정보와 함께 구조화·요약하여 연구·정책 분석에 활용하기 쉽게 정리합니다.</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>학술 논문·보고서 작성을 수행하는 연구자와 대학원생</li>
-<li>정책분석가·공공기관 연구원 등 근거 기반 정책연구를 수행하는 실무자</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>특정 연구 주제에 대한 선행연구와 핵심 학술·기관 문헌을 체계적으로 탐색·정리할 때</li>
-<li>정책·연구 보고서 작성을 위해 신뢰할 수 있는 학술 논문과 국제·국내 기관 보고서를 근거로 수집·요약할 때</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>유료 데이터베이스나 개별 원문 PDF에는 직접 접근하지 못하며, 공개적으로 확인 가능한 정보와 요약을 기반으로만 문헌을 정리합니다.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>‘한국의 탄소중립 정책’과 관련된 학술 논문과 국제기구 보고서를 safe 모드로 찾아서, 연구주제·방법·핵심결과 중심으로 정리해줘.</li>
-<li>‘디지털 전환과 노동시장 불평등’ 주제로 지난 5~10년간 주요 학술·기관 문헌을 찾아, 학문 분야별(경제학·사회학 등)로 구분해 개괄을 작성해줘.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>safe·flexible·exploratory·institutional_scan 등 검색 모드에 따라 출처 유형과 신뢰도 기준을 달리 적용하는 스마트 문헌 검색 프로토콜을 제공합니다.</li></ul>
 </body>
 </html>

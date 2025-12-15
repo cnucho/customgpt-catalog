@@ -57,29 +57,18 @@ def normalize_entry(data: dict) -> dict:
     return data
 
 def guess_lang(entry: dict, filename: str) -> str:
-    """
-    Language is decided ONLY by:
-      1) filename marker: _ko/_kr/_kor/_en (also -ko/-kr/-kor/-en), anywhere
-      2) entry.language / entry.lang value: ko/kr/kor/en/eng/english/korean
-    Otherwise defaults to 'en' (prevents EN leaking into KO index).
+    """Decide language ONLY by filename markers.
+    - EN if token 'en' appears as a filename part (e.g., _en, -en, .en.)
+    - KO if token 'ko', 'kr', or 'kor' appears as a filename part
+    If no marker is found, defaults to 'en'.
     """
     fn = (filename or "").lower()
 
-    # filename markers (strongest)
-    if any(m in fn for m in ("_en", "-en")):
+    if re.search(r"(^|[_\-.])(en)([_\-.]|$)", fn):
         return "en"
-    if any(m in fn for m in ("_ko", "_kr", "_kor", "-ko", "-kr", "-kor")):
+    if re.search(r"(^|[_\-.])(ko|kr|kor)([_\-.]|$)", fn):
         return "ko"
-
-    lang = (entry.get("language") or entry.get("lang") or "").lower().strip()
-    if lang in ("ko", "kr", "kor", "korean"):
-        return "ko"
-    if lang in ("en", "eng", "english"):
-        return "en"
-
-    # default EN (important)
     return "en"
-
 def display_name(e):
     name_en = e.get("name_en") or e.get("name") or ""
     name_ko = e.get("name_ko") or ""

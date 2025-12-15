@@ -1,78 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>T-Frame – Framework Model Selector</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>T-Frame – Framework Model Selector</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-68a0607dfb788191b75e577b0ee17560-t-frame' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>T-Frame – Framework Model Selector</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.2</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> A research assistant GPT that recommends, compares, and stress-tests theoretical frameworks (behavior, adoption, marketing, etc.) to help you choose the best model for your study.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>research-assistant</span> <span class='tag'>theoretical-frameworks</span> <span class='tag'>behavior-change</span> <span class='tag'>marketing</span> <span class='tag'>policy</span> <span class='tag'>model-selection</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Structure the research objective and capture it as an objective object for downstream reasoning</li><li>Recommend candidate theories/frameworks (e.g., TPB, HBM, UTAUT, COM-B) and compare strengths, limitations, and fit</li><li>Run a simulated expert debate (multiple viewpoints) and a consumer-persona simulation to test applicability</li><li>Output a final model report including components, a tree outline, a Mermaid diagram, and evidence links</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>T-Frame – Framework Model Selector</h1>
-  <div class='meta'>Korean: T Frame – Framework Model Selector</div>
-  <p>A research assistant GPT that recommends, compares, and stress-tests theoretical frameworks (behavior, adoption, marketing, etc.) to help you choose the best model for your study.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-68a0607dfb788191b75e577b0ee17560-t-frame' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68a0607dfb788191b75e577b0ee17560-t-frame</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>research-assistant</li>
-<li>theoretical-frameworks</li>
-<li>behavior-change</li>
-<li>marketing</li>
-<li>policy</li>
-<li>model-selection</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Structure the research objective and capture it as an objective object for downstream reasoning</li>
-<li>Recommend candidate theories/frameworks (e.g., TPB, HBM, UTAUT, COM-B) and compare strengths, limitations, and fit</li>
-<li>Run a simulated expert debate (multiple viewpoints) and a consumer-persona simulation to test applicability</li>
-<li>Output a final model report including components, a tree outline, a Mermaid diagram, and evidence links</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Researchers &amp; graduate students</li>
-<li>Policy/campaign designers</li>
-<li>Marketing, UX, and product strategists</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Quickly explore and compare frameworks for behavior change, technology adoption, or customer journeys and justify model choice</li>
-<li>Before surveys/interviews/experiments: shortlist constructs (components) and draft a conceptual model</li>
-<li>Prepare a clear ‘why this model’ rationale with credible evidence links for reports and proposals</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>Focused on conceptual/theoretical frameworks rather than statistical estimation or causal identification models</li>
-<li>Recommendations may be less precise if the user context (population, behavior, channel, constraints) is underspecified</li>
-<li>Evidence links prioritize primary/authoritative sources, but full-text access may depend on paywalls or institutional access</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Recommend 5 theory frameworks for ‘college students’ green purchasing behavior’ and summarize each one’s strengths/limits/fit, key constructs, and seminal links.</li>
-<li>I’m studying enterprise collaboration tool adoption—compare UTAUT vs TPB and suggest what to measure first in my context.</li>
-<li>If we choose COM-B, generate a 1-page summary with a component tree and a Mermaid diagram.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>Built-in model catalog (v2) for quick reference to frameworks like TPB/HBM/UTAUT/AIDA/COM-B, etc.</li>
-<li>Conversation workflow: objective intake → recommendations → expert debate → consumer simulation → final report</li></ul>
 </body>
 </html>

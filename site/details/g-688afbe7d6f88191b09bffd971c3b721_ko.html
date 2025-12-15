@@ -1,87 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>정밀 학술번역</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>정밀 학술번역</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>정밀 학술번역</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 학술·논픽션 문서를 의미 중심으로 정확히 번역하고, 용어 일관성과 역번역 검증까지 수행하는 정밀 번역 GPT.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>translation</span> <span class='tag'>academic-writing</span> <span class='tag'>nonfiction</span> <span class='tag'>policy-studies</span> <span class='tag'>social-sciences</span> <span class='tag'>statistics</span> <span class='tag'>communication-studies</span> <span class='tag'>public-administration</span> <span class='tag'>glossary</span> <span class='tag'>back-translation</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>문단 단위 자동 분할 후 순차 번역(의미 흐름 유지)</li><li>용어사전(마스터/세션/사용자 정의) 기반 일관 번역</li><li>역번역(back-translation)으로 번역 결과 교차 검증</li><li>직역/의역 차이, 문화적 주의 표현을 포함한 번역 리포트 생성</li><li>원문-번역-역번역 병렬 출력 및 결과 누적 저장(JSON/상태 복구 지향)</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>정밀 학술번역</h1>
-  <div class='meta'>(자동번역) English: 정밀 학술번역</div>
-  <p>학술·논픽션 문서를 의미 중심으로 정확히 번역하고, 용어 일관성과 역번역 검증까지 수행하는 정밀 번역 GPT.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>translation</li>
-<li>academic-writing</li>
-<li>nonfiction</li>
-<li>policy-studies</li>
-<li>social-sciences</li>
-<li>statistics</li>
-<li>communication-studies</li>
-<li>public-administration</li>
-<li>glossary</li>
-<li>back-translation</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>문단 단위 자동 분할 후 순차 번역(의미 흐름 유지)</li>
-<li>용어사전(마스터/세션/사용자 정의) 기반 일관 번역</li>
-<li>역번역(back-translation)으로 번역 결과 교차 검증</li>
-<li>직역/의역 차이, 문화적 주의 표현을 포함한 번역 리포트 생성</li>
-<li>원문-번역-역번역 병렬 출력 및 결과 누적 저장(JSON/상태 복구 지향)</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>학술 논문·보고서 번역이 필요한 연구자/대학원생</li>
-<li>정책·행정·사회과학 문서의 정확한 번역이 필요한 실무자</li>
-<li>용어 일관성과 검증 가능한 번역 기록이 필요한 사용자</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>정책학/사회과학/통계학 문단 단위 번역 및 용어 표준화</li>
-<li>논문 초록·서론·방법·결과·논의 섹션의 의미 보존 번역</li>
-<li>제출용 번역에서 번역-역번역 비교로 오류 가능성 점검</li>
-<li>용어사전 기반으로 프로젝트 전반의 번역 톤과 표현 통일</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>사용자가 원문을 제공하지 않으면 번역을 수행할 수 없다.</li>
-<li>문장 자연스러움보다 의미 정확성과 용어 일관성을 우선하므로, 문학적 번역에는 덜 적합하다.</li>
-<li>전문 분야별 표준 번역은 용어사전 범위에 의존하며, 신규 용어는 사용자 정의 등록이 필요할 수 있다.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>다음 텍스트를 문단 단위로 번역하되, 원문-번역-역번역을 병렬로 출력하고 용어사전 적용 내역도 보여줘: [텍스트]</li>
-<li>// 용어사전: &#x27;policy implementation&#x27;은 &#x27;정책 이행&#x27;으로 고정. 이후 본문을 번역해줘: [텍스트]</li>
-<li>직역과 의역 차이가 큰 부분은 표시하고, 문화적 오해 소지가 있으면 각주로 처리해줘: [텍스트]</li>
-<li>통계 용어(p-value, confidence interval 등)는 용어사전 기본 번역을 우선 적용해 번역해줘: [텍스트]</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>AI-티 완화 필터 적용</li>
-<li>서술형 평서체, 짧고 명확한 문장 선호</li>
-<li>역번역 검증 및 문화적 주의 각주 모드</li>
-<li>정책학/통계학 중심 마스터 용어사전 내장</li></ul>
 </body>
 </html>

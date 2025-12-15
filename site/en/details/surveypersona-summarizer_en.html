@@ -1,72 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SurveyPersona Summarizer </title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SurveyPersona Summarizer </title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-69376b2256ac81918ff29ed53e7c514b-surveypersona-summarizer' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>SurveyPersona Summarizer </h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-09</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> Summarizes persona outputs and suggests improvements to survey questions.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>survey</span> <span class='tag'>questionnaire</span> <span class='tag'>evaluation</span> <span class='tag'>design</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Summarize persona meaning interpretations and natural-language responses into key findings.</li><li>Identify risks (ambiguity, bias, cognitive load) and propose concrete question revisions.</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>SurveyPersona Summarizer </h1>
-  <div class='meta'>Korean: SurveyPersona 요약기</div>
-  <p>Summarizes persona outputs and suggests improvements to survey questions.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-69376b2256ac81918ff29ed53e7c514b-surveypersona-summarizer' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69376b2256ac81918ff29ed53e7c514b-surveypersona-summarizer</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>survey</li>
-<li>questionnaire</li>
-<li>evaluation</li>
-<li>design</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Summarize persona meaning interpretations and natural-language responses into key findings.</li>
-<li>Identify risks (ambiguity, bias, cognitive load) and propose concrete question revisions.</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Survey methodologists and designers</li>
-<li>Policy and market research teams</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Reviewing cognitive testing outputs to refine survey question wording.</li>
-<li>Comparing how different personas diverge in their understanding of the same item.</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>Quality depends on the correctness and richness of persona engine inputs.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Given these persona meaning outputs, summarize key issues and suggest better wording.</li>
-<li>Read these persona responses and flag any bias or leading wording in the question.</li>
-<li>Compare interpretations across personas and highlight where misunderstandings diverge.</li>
-<li>List cognitive risks and propose two alternative phrasings for this question.</li>
-<li>Summarize strengths and weaknesses of this question based on all persona outputs.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>Produces a structured summary with key_points, divergence_map, risk_flags, revision_suggestions, and meta_comment.</li>
-<li>Can work with meaning-only, language-only, or combined inputs from other engines.</li></ul>
 </body>
 </html>

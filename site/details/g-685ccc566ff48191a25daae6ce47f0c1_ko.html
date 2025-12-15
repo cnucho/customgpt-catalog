@@ -1,77 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>문결</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>문결</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-685ccc566ff48191a25daae6ce47f0c1-mungyeol' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>문결</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 한글 긴 텍스트를 자연스럽고 일관성 있게 교정·편집해 주는 GPT</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>한글교정</span> <span class='tag'>편집</span> <span class='tag'>문체</span> <span class='tag'>작문도우미</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>긴 한글 텍스트 맞춤법 및 띄어쓰기 교정</li><li>문장의 자연스러운 흐름과 표현 개선</li><li>문체 일관성 유지 및 전체 논리 흐름 조정</li><li>모호하거나 불명확한 표현 감지 및 수정 제안</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>문결</h1>
-  <div class='meta'>(자동번역) English: 문결</div>
-  <p>한글 긴 텍스트를 자연스럽고 일관성 있게 교정·편집해 주는 GPT</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-685ccc566ff48191a25daae6ce47f0c1-mungyeol' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-685ccc566ff48191a25daae6ce47f0c1-mungyeol</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>한글교정</li>
-<li>편집</li>
-<li>문체</li>
-<li>작문도우미</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>긴 한글 텍스트 맞춤법 및 띄어쓰기 교정</li>
-<li>문장의 자연스러운 흐름과 표현 개선</li>
-<li>문체 일관성 유지 및 전체 논리 흐름 조정</li>
-<li>모호하거나 불명확한 표현 감지 및 수정 제안</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>학생</li>
-<li>작가</li>
-<li>연구자</li>
-<li>블로거 및 콘텐츠 제작자</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>논문/보고서 초안 교정</li>
-<li>블로그/기사 문장 표현 자연스럽게 다듬기</li>
-<li>긴 텍스트 일관성 및 문체 조정</li>
-<li>모호한 지시어 및 흐름 교체 제안</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>전문 용어가 과도하게 많은 텍스트에서는 추가 검토가 필요할 수 있음</li>
-<li>문화/문학적 창작 텍스트에 대한 예술적 판단 한계</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>이 긴 보고서를 문체와 표현을 자연스럽게 정리해줘.</li>
-<li>아래 텍스트의 띄어쓰기, 맞춤법 오류와 중언부언을 모두 수정해줘.</li>
-<li>논문 서론 부분의 흐름을 더 논리적으로 다듬어줘.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>문단 간 연결성 평가 및 개선 제안</li>
-<li>모호한 지시어 자동 감지 및 구체적 대체어 추천</li></ul>
 </body>
 </html>

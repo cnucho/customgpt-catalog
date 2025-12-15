@@ -1,79 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Survey SE Engine – Standard Error &amp; RSE</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Survey SE Engine – Standard Error &amp; RSE</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>Survey SE Engine – Standard Error &amp; RSE</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> Upload a CSV to auto-detect the sampling design and compute design-based SE/RSE and confidence intervals for survey estimates.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>survey-methodology</span> <span class='tag'>sampling-design</span> <span class='tag'>statistics</span> <span class='tag'>standard-error</span> <span class='tag'>RSE</span> <span class='tag'>DGIST</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Load CSV with automatic delimiter and encoding handling</li><li>Auto-detect design columns (weight/strata/PSU/SSU/TSU/FPC) and infer sampling design (SRS/stratified/cluster/multistage)</li><li>Ask only minimal follow-up questions to confirm design inputs, missing codes, target variables, and measurement levels</li><li>Produce design-based estimates (means/proportions) with SE, RSE, and 95% confidence intervals in a standardized results table</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>Survey SE Engine – Standard Error &amp; RSE</h1>
-  <div class='meta'>Korean: 설문 SE Engine – Standard Error &amp; RSE</div>
-  <p>Upload a CSV to auto-detect the sampling design and compute design-based SE/RSE and confidence intervals for survey estimates.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-689c6ac1e9bc81919ddebf9daed3c0e8-survey-se-engine-pyojunocaenjin</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>survey-methodology</li>
-<li>sampling-design</li>
-<li>statistics</li>
-<li>standard-error</li>
-<li>RSE</li>
-<li>DGIST</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Load CSV with automatic delimiter and encoding handling</li>
-<li>Auto-detect design columns (weight/strata/PSU/SSU/TSU/FPC) and infer sampling design (SRS/stratified/cluster/multistage)</li>
-<li>Ask only minimal follow-up questions to confirm design inputs, missing codes, target variables, and measurement levels</li>
-<li>Produce design-based estimates (means/proportions) with SE, RSE, and 95% confidence intervals in a standardized results table</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Survey/statistics practitioners (public or private sector)</li>
-<li>Data analysts and academic researchers working with complex survey data</li>
-<li>Report authors who need design-based uncertainty (SE/RSE) for survey estimates</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Quickly compute SE, RSE, and 95% CIs for means/proportions from complex sample surveys</li>
-<li>Automatically map design elements from messy CSVs with ambiguous column names</li>
-<li>Generate report-ready, standardized output tables (estimate, SE, RSE, CI)</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>Variance estimates can be inaccurate if design variables (weights/strata/PSU, etc.) are missing or mapped incorrectly.</li>
-<li>Some designs may trigger conservative handling/warnings (e.g., only one PSU within a stratum).</li>
-<li>Primarily focused on means/proportions; advanced modeling (e.g., regression) may be out of scope.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Compute SE/RSE/95% CIs for this CSV. (upload file)</li>
-<li>Use weight=final_weight, strata=strata_id, PSU=psu_id; treat y1 as continuous and y2 as binary.</li>
-<li>Treat -9, -8, and 9999 as missing; auto-select the top 30 numeric variables.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>Built-in sampling-design detection rules and variance strategies (Taylor/stratified/SRS approximation)</li>
-<li>Missing-data handling (default NA + user-defined missing codes)</li>
-<li>Standardized output schema and rounding rules for estimates/SE/RSE/CIs</li></ul>
 </body>
 </html>

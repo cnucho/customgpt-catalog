@@ -1,70 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DataPrepCodeGen</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DataPrepCodeGen</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>DataPrepCodeGen</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-13</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 메타데이터 기반으로 공식통계용 SPSS 데이터 전처리 코드를 생성하는 GPT.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>policy</span> <span class='tag'>statistics</span> <span class='tag'>research-assistant</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>변수 라벨, 값라벨, 결측, 재코딩, 파생변수, 리쉐이프를 포함한 SPSS 구문을 완전 생성.</li><li>메타데이터 불일치를 자동 감지하고 안전한 기본 가정을 적용해 주석으로 문서화.</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>DataPrepCodeGen</h1>
-  <div class='meta'>(자동번역) English: DataPrepCodeGen</div>
-  <p>메타데이터 기반으로 공식통계용 SPSS 데이터 전처리 코드를 생성하는 GPT.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>policy</li>
-<li>statistics</li>
-<li>research-assistant</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>변수 라벨, 값라벨, 결측, 재코딩, 파생변수, 리쉐이프를 포함한 SPSS 구문을 완전 생성.</li>
-<li>메타데이터 불일치를 자동 감지하고 안전한 기본 가정을 적용해 주석으로 문서화.</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>SPSS로 공식통계 조사자료를 전처리하는 분석 담당자</li>
-<li>재현 가능한 데이터 준비 스크립트가 필요한 연구자</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>코드북 수준의 메타데이터로부터 전체 SPSS 데이터 준비 스크립트 생성.</li>
-<li>라벨, 결측, 파생변수, 리쉐이프를 표준 규칙으로 일괄 처리.</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>통계 분석이나 모델링 코드는 생성하지 않음.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>이 메타데이터로 VARIABLE LABELS와 VALUE LABELS를 설정하는 SPSS 코드를 만들어줘.</li>
-<li>연령 변수를 연령대 그룹 변수로 재코딩하되 원변수는 유지해줘.</li>
-<li>DO IF를 사용해 대상자 플래그와 스킵 플래그를 생성해줘.</li>
-<li>wide 형태 변수를 long 형태로 리쉐이프하는 SPSS 구문을 만들어줘.</li>
-<li>문항 묶음으로 지수 변수를 만들고 검증용 명령도 추가해줘.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>가정과 메타데이터 이슈를 코드 주석과 함께 자동 기록.</li></ul>
 </body>
 </html>

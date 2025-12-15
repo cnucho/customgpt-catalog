@@ -1,78 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>보고서교열검수기</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>보고서교열검수기</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>보고서교열검수기</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 산업안전 실태조사 관련 보고서를 3단계(전체·문단·표)로 검토·교열하고, 누락·오류·통계적 타당성 문제를 [원문→수정안]으로 제시하는 공개보고서 전용 GPT.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>industrial-safety</span> <span class='tag'>survey-methodology</span> <span class='tag'>sampling-design</span> <span class='tag'>statistical-quality</span> <span class='tag'>public-report</span> <span class='tag'>proofreading</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>조사결과보고서·표본설계보고서·이용자가이드·실사보고서별 필수 구성요소 점검 및 누락 사항 지적</li><li>1차(전체)·2차(문단)·3차(표) 검토를 통한 표현·구조·정의·재현 가능성·통계적 타당성 진단</li><li>[원문] → [수정안] 형식의 구체적인 문장 교정과 간단한 수정 사유 제시</li><li>가중치·표본오차·RSE 등 통계지표의 정의·산출 대상·해석 근거 명시 여부 점검</li><li>외부 지침·규정 인용 시 문서명·발행기관·연도·버전 등 재현 가능 정보 검토</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>보고서교열검수기</h1>
-  <div class='meta'>(자동번역) English: 보고서교열검수기</div>
-  <p>산업안전 실태조사 관련 보고서를 3단계(전체·문단·표)로 검토·교열하고, 누락·오류·통계적 타당성 문제를 [원문→수정안]으로 제시하는 공개보고서 전용 GPT.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>industrial-safety</li>
-<li>survey-methodology</li>
-<li>sampling-design</li>
-<li>statistical-quality</li>
-<li>public-report</li>
-<li>proofreading</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>조사결과보고서·표본설계보고서·이용자가이드·실사보고서별 필수 구성요소 점검 및 누락 사항 지적</li>
-<li>1차(전체)·2차(문단)·3차(표) 검토를 통한 표현·구조·정의·재현 가능성·통계적 타당성 진단</li>
-<li>[원문] → [수정안] 형식의 구체적인 문장 교정과 간단한 수정 사유 제시</li>
-<li>가중치·표본오차·RSE 등 통계지표의 정의·산출 대상·해석 근거 명시 여부 점검</li>
-<li>외부 지침·규정 인용 시 문서명·발행기관·연도·버전 등 재현 가능 정보 검토</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>산업안전 실태조사 보고서 작성자 및 검토자</li>
-<li>표본설계·가중치·추정 절차의 품질관리를 담당하는 실무자</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>표본설계보고서에서 모집단·표본틀·층화·표본배분·추출방법·추정식 누락 여부 점검</li>
-<li>조사결과보고서의 본문 해석과 표·지표 정의 간 불일치 수정</li>
-<li>이용자가이드의 지표 정의 및 가중치 적용 설명을 재현 가능 수준으로 개선</li>
-<li>실사보고서의 조사 절차·품질관리·응답률 제고 활동 기록 점검</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>원자료나 분석 코드가 없을 경우 수치 재계산은 수행하지 않음</li>
-<li>기관별 내부 지침의 최신성은 사용자가 제공한 문서 정보에 의존함</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>아래 표본설계보고서를 1·2·3차 검토 기준에 따라 교열하고 수정안을 제시해 주세요.</li>
-<li>표 4-1의 표본오차 설명이 본문 해석과 일치하는지 점검해 주세요.</li>
-<li>외부 지침을 모호하게 인용한 문장을 찾아 정확한 문서명과 출처를 보완해 주세요.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>일반 공개보고서 독자 수준을 기준으로 한 표현 명료화</li>
-<li>통계학 원칙에 어긋나는 설계 또는 정의 발견 시 개선 방향 제시</li></ul>
 </body>
 </html>

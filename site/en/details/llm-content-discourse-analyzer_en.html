@@ -1,70 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LLM Content &amp; Discourse Analyzer</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LLM Content &amp; Discourse Analyzer</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a></div>
+    <h1>LLM Content &amp; Discourse Analyzer</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-13</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> A research-grade GPT for systematic content analysis and discourse analysis using LLMs.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>policy</span> <span class='tag'>statistics</span> <span class='tag'>research-assistant</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Transform vague research topics into formal research questions and concepts</li><li>Conduct reproducible content or discourse analysis with codebooks and reliability checks</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>LLM Content &amp; Discourse Analyzer</h1>
-  <div class='meta'>Korean: LLM Content &amp; Discourse 분석기</div>
-  <p>A research-grade GPT for systematic content analysis and discourse analysis using LLMs.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p>-</p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>policy</li>
-<li>statistics</li>
-<li>research-assistant</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Transform vague research topics into formal research questions and concepts</li>
-<li>Conduct reproducible content or discourse analysis with codebooks and reliability checks</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Social science researchers</li>
-<li>Policy analysts</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Analyzing public forum posts using quantitative content analysis</li>
-<li>Conducting critical discourse analysis of online political texts</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>Cannot access private, paywalled, or non-public datasets</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Formalize this research topic into academic research questions.</li>
-<li>Compare content analysis and discourse analysis for this dataset.</li>
-<li>Propose a theory-based draft codebook for this study.</li>
-<li>Design a reliability testing procedure assuming double coding.</li>
-<li>Create a reproducible sampling plan for public forum data.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>Full audit trail with sampling, coding, and reliability logs</li></ul>
 </body>
 </html>

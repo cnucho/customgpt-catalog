@@ -1,87 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Crosstab Analyst</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Crosstab Analyst</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>Crosstab Analyst</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v2.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 설문/보고서 교차표를 A0~A7 프로토콜로 일관되게 해석하고, 필요 시 검정·시각화·요약문까지 생성하는 분석 GPT.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>statistics</span> <span class='tag'>crosstab</span> <span class='tag'>survey</span> <span class='tag'>chi-square</span> <span class='tag'>effect-size</span> <span class='tag'>visualization</span> <span class='tag'>reporting</span> <span class='tag'>korean</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>교차표 구조 진단(행/열 변수, 분모 방향, 백분율 기준, 결측·DK/NR 처리)</li><li>카이제곱(χ²) 기반 독립성 검정 및 효과크기(Cramér’s V) 요약</li><li>표준화 잔차(|z|) 기반 핵심 차이 포인트(핫스팟) 추출</li><li>기대빈도/희소셀 점검 및 범주 통폐합(merge) 후보 제안</li><li>히트맵·군집/차원축소(MCA 등) 등 시각화 산출(요청 시)</li><li>보고서용 문장화(중립 표현, %p 차이, 표본수/주의사항 포함)</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>Crosstab Analyst</h1>
-  <div class='meta'>(자동번역) English: Crosstab Analyst</div>
-  <p>설문/보고서 교차표를 A0~A7 프로토콜로 일관되게 해석하고, 필요 시 검정·시각화·요약문까지 생성하는 분석 GPT.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>statistics</li>
-<li>crosstab</li>
-<li>survey</li>
-<li>chi-square</li>
-<li>effect-size</li>
-<li>visualization</li>
-<li>reporting</li>
-<li>korean</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>교차표 구조 진단(행/열 변수, 분모 방향, 백분율 기준, 결측·DK/NR 처리)</li>
-<li>카이제곱(χ²) 기반 독립성 검정 및 효과크기(Cramér’s V) 요약</li>
-<li>표준화 잔차(|z|) 기반 핵심 차이 포인트(핫스팟) 추출</li>
-<li>기대빈도/희소셀 점검 및 범주 통폐합(merge) 후보 제안</li>
-<li>히트맵·군집/차원축소(MCA 등) 등 시각화 산출(요청 시)</li>
-<li>보고서용 문장화(중립 표현, %p 차이, 표본수/주의사항 포함)</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>리서처/서베이 분석가</li>
-<li>마케팅/브랜드 인사이트 담당자</li>
-<li>정책/공공 분야 보고서 작성자</li>
-<li>대학원생/연구보조원(RA)</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>집단별(성별/연령/지역 등) 응답 비율 비교와 차이 요약</li>
-<li>교차표의 유의성(χ²)·효과크기(V)·핵심 셀(표준화 잔차) 동시 보고</li>
-<li>기대빈도&lt;5 등 가정 위반 가능성 점검 및 범주 재코딩 제안</li>
-<li>보고서용 결과 문장/코멘트 자동 생성(주의사항 포함)</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>표본 수가 매우 작거나 희소 셀이 많으면 χ² 가정이 약해질 수 있음(정확검정/범주 통합 등 대안 필요).</li>
-<li>입력 표의 분모(행/열 %)가 불명확하면 비교 해석이 왜곡될 수 있어, 표 구조 정보가 필요함.</li>
-<li>다중응답(복수선택) 표는 중복 특성이 있어 단일선택 표와 직접 비교에 주의가 필요함.</li>
-<li>외부 웹 근거를 자동으로 끌어오지 않으며(기본), 제공된 표/텍스트 범위 내에서 해석함.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>이 교차표에서 행% 기준으로 주요 차이를 요약해줘. 표준화 잔차 상위 셀도 함께 알려줘.</li>
-<li>χ² 검정 결과와 Cramér’s V를 포함해서 보고서 문장으로 써줘. (유의/비유의는 중립적으로 표현)</li>
-<li>기대빈도&lt;5가 많은데, 통폐합 후보를 3개만 제안하고 장단점을 설명해줘.</li>
-<li>서열형(1~5점) 응답을 연령대와 교차해서 추세성(LBL)도 같이 볼 수 있을까?</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>A0~A7 단계(구조 점검→검정/핫스팟→시각화→문장화) 기반 일관된 분석 플로우</li>
-<li>전처리 규칙(preprocess_patch)로 합계/100% 점검, DK/NR/기타 라벨 처리, 작은 표본 주의 문구 제공</li>
-<li>matplotlib 단일-플롯 원칙(색상 명시 금지 기본)과 한글 폰트(NotoSansKR) 지원</li></ul>
 </body>
 </html>

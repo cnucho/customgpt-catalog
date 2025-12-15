@@ -1,87 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Crosstab Analyst</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Crosstab Analyst</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>Crosstab Analyst</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v2.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> An analysis GPT that interprets survey/report crosstabs consistently via an A0–A7 protocol, and produces tests, visuals, and report-ready summaries when needed.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>statistics</span> <span class='tag'>crosstab</span> <span class='tag'>survey</span> <span class='tag'>chi-square</span> <span class='tag'>effect-size</span> <span class='tag'>visualization</span> <span class='tag'>reporting</span> <span class='tag'>bilingual</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Diagnose crosstab structure (row/column variables, denominator direction, percent base, missing/DK/NR handling)</li><li>Run χ² independence tests and summarize effect size (Cramér’s V)</li><li>Extract key differences (“hotspots”) using standardized residuals (|z|)</li><li>Check expected counts/sparsity and suggest category-collapsing (merge) candidates</li><li>Generate visual outputs (e.g., residual heatmaps, clustering/MCA) on request</li><li>Draft report-ready narrative with neutral wording, percentage-point deltas, and caveats (sample size/assumptions)</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>Crosstab Analyst</h1>
-  <div class='meta'>Korean: Crosstab Analyst</div>
-  <p>An analysis GPT that interprets survey/report crosstabs consistently via an A0–A7 protocol, and produces tests, visuals, and report-ready summaries when needed.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>statistics</li>
-<li>crosstab</li>
-<li>survey</li>
-<li>chi-square</li>
-<li>effect-size</li>
-<li>visualization</li>
-<li>reporting</li>
-<li>bilingual</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Diagnose crosstab structure (row/column variables, denominator direction, percent base, missing/DK/NR handling)</li>
-<li>Run χ² independence tests and summarize effect size (Cramér’s V)</li>
-<li>Extract key differences (“hotspots”) using standardized residuals (|z|)</li>
-<li>Check expected counts/sparsity and suggest category-collapsing (merge) candidates</li>
-<li>Generate visual outputs (e.g., residual heatmaps, clustering/MCA) on request</li>
-<li>Draft report-ready narrative with neutral wording, percentage-point deltas, and caveats (sample size/assumptions)</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Survey researchers and quantitative analysts</li>
-<li>Marketing/brand insights teams</li>
-<li>Policy/public-sector report writers</li>
-<li>Graduate students and research assistants</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Comparing response proportions across segments (gender/age/region, etc.) and summarizing the gaps</li>
-<li>Reporting χ² significance, Cramér’s V, and top cells by standardized residuals in one coherent output</li>
-<li>Flagging assumption risks (e.g., expected count &lt; 5) and proposing recoding/collapsing options</li>
-<li>Producing report-style commentary with explicit % vs % and +/− percentage-point differences</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>With very small samples or many sparse cells, χ² assumptions may be weak (consider exact tests or collapsing).</li>
-<li>If the percent base (row% vs column%) is unclear, interpretations can be misleading; table meta is required.</li>
-<li>Multi-select (checkbox) tables are non-mutually-exclusive; avoid direct comparisons to single-select crosstabs.</li>
-<li>By default, it does not pull external web evidence; it interprets only the provided tables/text.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Summarize the main differences using row percentages, and list the top standardized-residual cells.</li>
-<li>Write a report paragraph including χ² and Cramér’s V. Use neutral wording for significance.</li>
-<li>There are many expected counts &lt; 5—suggest up to three category-collapsing options with pros/cons.</li>
-<li>Cross age groups with a 1–5 ordinal scale and also run a linear-by-linear (trend) association check.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>A consistent A0–A7 workflow (structure → tests/hotspots → visuals → narrative)</li>
-<li>Preprocessing rules to sanity-check totals/100%, handle DK/NR/Other labels, and add small-N caveats</li>
-<li>Matplotlib single-figure policy (no explicit colors by default) with Korean font support (NotoSansKR)</li></ul>
 </body>
 </html>

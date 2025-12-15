@@ -1,70 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Report Proofreading &amp; Validation GPT – Survey-Based Reporting</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Report Proofreading &amp; Validation GPT – Survey-Based Reporting</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>Report Proofreading &amp; Validation GPT – Survey-Based Reporting</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-06</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> A specialized GPT for reviewing and validating survey-based reports such as sample design reports, fieldwork reports, analytical reports, user guides, and codebooks, ensuring clarity, coherence, and statistical soundness.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>policy</span> <span class='tag'>statistics</span> <span class='tag'>research-assistant</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Proofreads and refines survey-based reports—including sample design reports, fieldwork/management reports, analytical results reports, user guides, and codebooks—ensuring clarity, consistency in terminology, and correctness in definitions and indicator descriptions.</li><li>Evaluates statistical design elements such as population definition, sampling frame, stratification, allocation, sampling, weighting, estimation formulas, and sampling errors (e.g., RSE), checking for missing elements, logical validity, methodological soundness, and reproducibility.</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>Report Proofreading &amp; Validation GPT – Survey-Based Reporting</h1>
-  <div class='meta'>Korean: 리포트 Proofreading &amp; Validation GPT – 설문 Based Reporting</div>
-  <p>A specialized GPT for reviewing and validating survey-based reports such as sample design reports, fieldwork reports, analytical reports, user guides, and codebooks, ensuring clarity, coherence, and statistical soundness.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>policy</li>
-<li>statistics</li>
-<li>research-assistant</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Proofreads and refines survey-based reports—including sample design reports, fieldwork/management reports, analytical results reports, user guides, and codebooks—ensuring clarity, consistency in terminology, and correctness in definitions and indicator descriptions.</li>
-<li>Evaluates statistical design elements such as population definition, sampling frame, stratification, allocation, sampling, weighting, estimation formulas, and sampling errors (e.g., RSE), checking for missing elements, logical validity, methodological soundness, and reproducibility.</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Public-sector statisticians and research contractors producing survey-based official fact-finding reports, including sample design reports, results reports, user guides, and codebooks.</li>
-<li>Methodology researchers and analysts seeking systematic review and improvement of survey-based reporting.</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Reviewing sample design reports to identify unclear or statistically invalid explanations regarding population, sampling frame, stratification, allocation, weighting, or estimation.</li>
-<li>Examining analytical reports to ensure indicator definitions, interpretations, and table explanations are consistent, comprehensible to the general public, and free of contradictions.</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>This GPT provides proofreading and methodological review based solely on provided text and tables. It does not replace the legal, statistical, or administrative accountability of institutions producing official statistics.</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Please review the population and sampling frame sections of this sample design report and identify unclear or statistically unsound explanations.</li>
-<li>Here is the summary of a survey-based analytical report. Improve clarity for a general audience and highlight ambiguous indicator definitions.</li>
-<li>Evaluate the fieldwork procedures section—training, quality control, callbacks, and re-interviews—and suggest corrections for missing steps or ambiguous descriptions.</li>
-<li>Assess whether the weighting instructions and RSE explanations in this user guide are sufficient for reproducing analyses, and propose improved wording if needed.</li>
-<li>Review these 10 codebook variables and check for consistency in value labels, handling of special codes, and contradictions across variable descriptions.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>Applies an internal checklist tailored to each stage of survey reporting (design, fieldwork, analysis, dissemination) and each document type (sample design report, fieldwork report, analytical report, user guide, codebook) to ensure systematic, reproducible review.</li></ul>
 </body>
 </html>

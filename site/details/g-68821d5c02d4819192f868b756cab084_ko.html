@@ -1,72 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>대한민국 법조문 탐색기</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>대한민국 법조문 탐색기</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>대한민국 법조문 탐색기</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.8</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> 국가법령정보센터 등 공식(A급) 출처만으로 법령·조문을 단계적으로 탐색하고 문서명/조문번호/링크 중심으로 제시하는 법조문 탐색 GPT.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>korean-law</span> <span class='tag'>statutes</span> <span class='tag'>law.go.kr</span> <span class='tag'>legal-research</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>자연어 질문을 법령·조문 탐색용 법률 용어로 정규화하여 확인</li><li>국가법령정보센터(law.go.kr) 등 A급 공식 출처에서만 법령/조문 탐색</li><li>법령명·조문번호·공식 링크 중심의 메타정보 제공</li><li>B급 출처 자동 배제 및 혼입 시 결과 폐기</li><li>통계 요청 시 KOSIS 등 A급 공식 통계 포털로 라우팅</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>대한민국 법조문 탐색기</h1>
-  <div class='meta'>(자동번역) English: 대한민국 법조문 탐색기</div>
-  <p>국가법령정보센터 등 공식(A급) 출처만으로 법령·조문을 단계적으로 탐색하고 문서명/조문번호/링크 중심으로 제시하는 법조문 탐색 GPT.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>korean-law</li>
-<li>statutes</li>
-<li>law.go.kr</li>
-<li>legal-research</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>자연어 질문을 법령·조문 탐색용 법률 용어로 정규화하여 확인</li>
-<li>국가법령정보센터(law.go.kr) 등 A급 공식 출처에서만 법령/조문 탐색</li>
-<li>법령명·조문번호·공식 링크 중심의 메타정보 제공</li>
-<li>B급 출처 자동 배제 및 혼입 시 결과 폐기</li>
-<li>통계 요청 시 KOSIS 등 A급 공식 통계 포털로 라우팅</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>정확한 법령 조문 출처가 필요한 일반 이용자</li>
-<li>법무·행정·준법 실무자</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>특정 주제에 대한 관련 법령·조문 후보 탐색</li>
-<li>조문 단위 공식 링크 확인</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>공식 A급 출처에서 확인되지 않으면 결과를 제공하지 않을 수 있음</li>
-<li>법률 자문을 대체하지 않음</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>직장 내 괴롭힘 관련 법령 조문을 찾아줘.</li>
-<li>개인정보 제3자 제공 근거 조문 링크를 줘.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>3단계 탐색 흐름(용어 정규화→조문 탐색→원문 확인)</li></ul>
 </body>
 </html>

@@ -1,85 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PolicyReport GPT</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PolicyReport GPT</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>PolicyReport GPT</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v1.0.0</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> A structured policy/report assistant that consistently delivers outputs across five fixed stages (problem definition→comparison→alternatives→execution plan→conclusion) with YAML state updates.</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>policy</span> <span class='tag'>public-policy</span> <span class='tag'>report-writing</span> <span class='tag'>comparison</span> <span class='tag'>alternatives-analysis</span> <span class='tag'>execution-plan</span> <span class='tag'>yaml</span> <span class='tag'>governance</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Structure policy/report drafts using a fixed 5-stage flow (problem_definition→comparison→alternatives→execution_plan→conclusion)</li><li>For each stage: produce a one-paragraph summary plus one table/matrix</li><li>After each stage: update and print a report_state YAML block (only the current stage results)</li><li>Enforce evidence-friendly quantification by requiring numbers to be expressed with unit and source</li><li>Proceed non-coercively within the user-provided scope (avoid pushing unsolicited next steps)</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>PolicyReport GPT</h1>
-  <div class='meta'>Korean: PolicyReport GPT</div>
-  <p>A structured policy/report assistant that consistently delivers outputs across five fixed stages (problem definition→comparison→alternatives→execution plan→conclusion) with YAML state updates.</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>policy</li>
-<li>public-policy</li>
-<li>report-writing</li>
-<li>comparison</li>
-<li>alternatives-analysis</li>
-<li>execution-plan</li>
-<li>yaml</li>
-<li>governance</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Structure policy/report drafts using a fixed 5-stage flow (problem_definition→comparison→alternatives→execution_plan→conclusion)</li>
-<li>For each stage: produce a one-paragraph summary plus one table/matrix</li>
-<li>After each stage: update and print a report_state YAML block (only the current stage results)</li>
-<li>Enforce evidence-friendly quantification by requiring numbers to be expressed with unit and source</li>
-<li>Proceed non-coercively within the user-provided scope (avoid pushing unsolicited next steps)</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Policy/strategy analysts and think-tank researchers</li>
-<li>Government and public-sector practitioners</li>
-<li>Corporate public policy, regulatory, and compliance teams</li>
-<li>Consultants, PMs, and business planners</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Define and lock scope for a policy/strategy question (goals, constraints, stakeholders)</li>
-<li>Create an options comparison matrix (impact, cost, risk, feasibility, etc.)</li>
-<li>Draft an execution plan (roadmap, timeline, owners, risk mitigations)</li>
-<li>Maintain consistent stage-wise deliverables plus YAML state for collaboration and traceability</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>Does not assume facts, figures, or sources not provided by the user; up-to-date verification may be required for time-sensitive topics</li>
-<li>High-stakes decisions may require professional/legal review in the relevant jurisdiction/organization</li>
-<li>Prioritizes the fixed stage/template format, which may be less suitable for free-form narrative writing</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Organize this policy issue using the 5-stage framework: (background/goals/constraints/audience/timeline)</li>
-<li>Compare three alternatives in a table using impact, cost, risk, and feasibility</li>
-<li>Create a 12-month execution plan for the selected option (quarterly milestones, owners, budget assumptions)</li>
-<li>After each stage, also output the report_state YAML (current stage only)</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>Consistent stage deliverables (1-paragraph summary + 1 table) to improve report coherence</li>
-<li>Non-coercive interaction (stay within user scope; avoid pushing next steps)</li>
-<li>YAML-based state tracking for reproducibility, collaboration, and auditability</li></ul>
 </body>
 </html>

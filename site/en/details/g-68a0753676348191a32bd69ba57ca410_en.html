@@ -1,84 +1,48 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SurveyTables</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    .meta { color: #555; font-size: 14px; }
-    h1 { margin-bottom: 6px; }
-    h2 { margin-top: 22px; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav { margin-bottom: 12px; }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SurveyTables</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0; color: #222; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 24px; }
+  h1 { margin: 0 0 6px 0; font-size: 26px; }
+  .meta { color: #666; margin: 4px 0 16px; font-size: 14px; }
+  .pill { font-size: 12px; color: #333; background: #f3f3f3; padding: 6px 10px; border-radius: 999px; text-decoration: none; margin-right: 6px; display: inline-block; }
+  .tag { display:inline-block; background:#f6f6f6; border-radius:999px; padding:4px 10px; margin:2px 6px 2px 0; font-size:12px; }
+  .card { border: 1px solid #eee; border-radius: 14px; padding: 16px; margin-top: 16px; }
+  ul { margin: 0; padding-left: 18px; }
+</style>
 </head>
 <body>
-  <div class="topnav meta">
-    <a href="../index.html">← GitHub 목록</a>
-    &nbsp;|&nbsp;
-    <a id="backToTistory" href="https://skcho.tistory.com/129">← 티스토리 목록</a>
+  <div class="wrap">
+    <div style="margin-bottom:10px;"><a id='backLink' class='pill' href='#' style='display:none'>← 목록(티스토리)로</a><a class='pill' href='https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a></div>
+    <h1>SurveyTables</h1>
+    
+
+    <div class="card">
+      <div><strong>Version:</strong> v2025.08.21</div>
+      <div><strong>Last Updated:</strong> 2025-12-14</div>
+      <div style="margin-top:10px;"><strong>One-line:</strong> A survey analysis assistant that turns tables or tidy data into reproducible crosstabs, descriptives, charts, and report-ready outputs</div>
+      <div style='margin-top:10px;'><strong>Tags:</strong> <span class='tag'>survey</span> <span class='tag'>crosstab</span> <span class='tag'>descriptive-statistics</span> <span class='tag'>reporting</span> <span class='tag'>reproducibility</span> <span class='tag'>excel</span></div>
+    </div>
+
+    <div class='card'><strong>Functions</strong><ul><li>Extract integer frequencies from table cells, excluding total/overall rows and columns, and convert to long/pivot formats</li><li>Preprocess tidy data (type inference + missing/outlier checks) and produce descriptive summaries</li><li>Run crosstab inference (Chi-square / Fisher when needed) and report effect size (Cramér’s V)</li><li>Keep narratives consistent across tables/charts/text by grounding everything in a persistent ‘interpretation object’</li><li>Provide Excel-style report structure guidance and reproducibility logging</li></ul></div>
+
+    
+    <script>
+      (function(){
+        var p = new URLSearchParams(window.location.search);
+        var back = p.get('back');
+        if(back){
+          var a = document.getElementById('backLink');
+          if(a){ a.href = back; a.style.display='inline-block'; }
+        }
+      })();
+    </script>
+    
   </div>
-
-  <script>
-    const p = new URLSearchParams(location.search);
-    const back = p.get('back');
-    if (back) document.getElementById('backToTistory').href = back;
-  </script>
-
-  <h1>SurveyTables</h1>
-  <div class='meta'>Korean: SurveyTables</div>
-  <p>A survey analysis assistant that turns tables or tidy data into reproducible crosstabs, descriptives, charts, and report-ready outputs</p>
-
-  <h2>GPT 바로가기</h2>
-  <p><a href='https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables</a></p>
-
-  <h2>External guides</h2>
-  <p>-</p>
-
-  <h2>Tags</h2>
-  <ul><li>survey</li>
-<li>crosstab</li>
-<li>descriptive-statistics</li>
-<li>reporting</li>
-<li>reproducibility</li>
-<li>excel</li></ul>
-
-  <h2>Functions</h2>
-  <ul><li>Extract integer frequencies from table cells, excluding total/overall rows and columns, and convert to long/pivot formats</li>
-<li>Preprocess tidy data (type inference + missing/outlier checks) and produce descriptive summaries</li>
-<li>Run crosstab inference (Chi-square / Fisher when needed) and report effect size (Cramér’s V)</li>
-<li>Keep narratives consistent across tables/charts/text by grounding everything in a persistent ‘interpretation object’</li>
-<li>Provide Excel-style report structure guidance and reproducibility logging</li></ul>
-
-  <h2>Target users</h2>
-  <ul><li>Research / research operations teams who need fast, standardized survey tabulation</li>
-<li>Analysts and PMs who want consistent, report-ready tables and charts</li>
-<li>Policy and academic researchers who rely on crosstabs and effect-size-oriented interpretation</li></ul>
-
-  <h2>Ideal use cases</h2>
-  <ul><li>Paste a frequency/crosstab table, drop totals, extract counts only, and rebuild a clean crosstab</li>
-<li>Create Gender × Satisfaction crosstabs with significance testing and effect-size summaries</li>
-<li>Generate categorical frequencies, numeric descriptives, and multi-response summaries in one pass</li>
-<li>Operate a standardized reporting pipeline where identical inputs must yield identical outputs (with logs/seed)</li></ul>
-
-  <h2>Limitations</h2>
-  <ul><li>In table-ingestion mode, only standalone integers are treated as counts; percent-only cells may be ignored</li>
-<li>Rows/columns labeled Total/Overall/Grand Total are excluded from analysis by default unless explicitly requested</li>
-<li>Advanced options (codebook ordering, category collapsing strategy, weights, complex survey design) require explicit user instructions</li></ul>
-
-  <h2>Example commands</h2>
-  <ul><li>Turn this table into a crosstab. Exclude totals, and show counts + row percentages.</li>
-<li>Build a crosstab for Gender (columns) × Satisfaction (rows) and summarize Chi-square + Cramér’s V.</li>
-<li>From this dataframe, produce frequency tables for categorical variables and mean/SD/95% CI for numeric variables.</li>
-<li>Keep the same message, but change formatting only (e.g., 1 decimal place) without recomputing the analysis.</li></ul>
-
-  <h2>Additional features</h2>
-  <ul><li>Rule-based ingestion that drops Total/Overall labels and extracts integer-only frequencies from cells</li>
-<li>Quality checks for missingness (exclude by threshold / listwise deletion) and outlier detection with logging</li>
-<li>Built-in table/chart policies (row% default, totals as counts-only, optional sparse-category merge to ‘Other’)</li>
-<li>Persistent interpretation object + decision engine that distinguishes formatting-only changes vs analysis changes</li>
-<li>Excel-oriented output structure and reproducibility logging fields</li></ul>
 </body>
 </html>
