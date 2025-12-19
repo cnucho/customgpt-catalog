@@ -1,40 +1,64 @@
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GroupCompare AI</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
-    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
-    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
-    .btn:hover { background:#ededed; }
-    .muted { color:#666; }
-    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+    :root {
+      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
+      --primary:#111827; --primaryText:#fff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
+    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
+    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
+    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
+    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
+    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
+    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
+    .section{margin-top:14px}
+    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
+    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
+    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
+    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
+    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
+    summary::-webkit-details-marker{display:none}
+    .kv{margin-top:10px;display:grid;gap:8px}
+    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
+    .k{color:var(--muted);font-size:12px}
+    .v{color:var(--text);font-size:13px}
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <a class="btn" href="../index.html">← 목록</a>
-    <a class='btn' href='https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
-    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  <div class="wrap">
+    <div class="card">
+      <div class="topbar">
+        <div class="leftbar">
+          <a class="btn" href="../index.html">← 목록</a>
+          <a class='btn primary' href='https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+          <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">티스토리</a>
+        </div>
+      </div>
+
+      <h1>GroupCompare AI</h1>
+      <p class='sub'>업로드 데이터로 집단 간 차이·동등성(TOST)·비열등성 검정을 자동 설계/실행하고, 다중비교·효과크기·검증력(MDE)까지 APA 형식으로 보고합니다.</p>
+      
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='funcs'><li class='fitem'>데이터 전처리 및 진단(결측/이상치/왜도/클러스터·패널 감지)과 권고안 제시</li><li class='fitem'>집단 비교 검정 자동 선택 및 실행(t/Welch/Mann–Whitney, ANOVA/Welch ANOVA, 카이제곱/정확검정 등)</li><li class='fitem'>공변량 보정(ANCOVA) 및 군집/패널 자료 대응(클러스터 SE, 혼합효과모형 권고)</li><li class='fitem'>다중비교 보정(Holm 기본, Bonferroni/BH 옵션) 및 보정 범위 관리</li><li class='fitem'>효과크기 및 신뢰구간 산출(Cohen d/Hedges g, η²/ω², 위험차·RR·OR 등)과 해석 문구 제공</li><li class='fitem'>동등성/비열등성 검정(TOST 90% CI) 및 Δ(허용범위) 템플릿 기반 판정</li><li class='fitem'>검증력/표본계획(사전·사후 파워, MDE) 및 저파워 경고 자동 삽입</li><li class='fitem'>하위집단 분석 및 상호작용(교호작용 p, 이질성 요약, 포레스트 플롯 권고)</li><li class='fitem'>요약 카드/세부표/그림/부록(코드·로그) 포함 보고서 생성(APA 표기 기준)</li><li class='fitem'>다국어(한국어·영어·동남아 주요 언어) 보고 문구/라벨 자동화(i18n)</li></ul>
+      </div>
+
+      <details>
+        <summary>기술 정보</summary>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68a081a137148191bbb40b316870cd95</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a081a137148191bbb40b316870cd95</div></div><div class='row'><div class='k'>version</div><div class='v'>1.4-i18n-dual-support</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai</div></div></div>
+      </details>
+    </div>
   </div>
-
-  <h1>GroupCompare AI</h1>
-  <p class="muted">업로드 데이터로 집단 간 차이·동등성(TOST)·비열등성 검정을 자동 설계/실행하고, 다중비교·효과크기·검증력(MDE)까지 APA 형식으로 보고합니다.</p>
-  
-
-  <h3>상세정보</h3>
-  <ul>
-    <li><strong>_id</strong>: <code>g-68a081a137148191bbb40b316870cd95</code></li>
-    <li><strong>gpt_id</strong>: g-68a081a137148191bbb40b316870cd95</li>
-    <li><strong>url</strong>: https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai</li>
-    <li><strong>version</strong>: 1.4-i18n-dual-support</li>
-    <li><strong>last_updated</strong>: 2025-12-14</li>
-    <li><strong>viz1</strong>: public</li>
-    <li><strong>viz2</strong>: show_url</li>
-  </ul>
-
-  <h3>Functions</h3><ul><li>데이터 전처리 및 진단(결측/이상치/왜도/클러스터·패널 감지)과 권고안 제시</li><li>집단 비교 검정 자동 선택 및 실행(t/Welch/Mann–Whitney, ANOVA/Welch ANOVA, 카이제곱/정확검정 등)</li><li>공변량 보정(ANCOVA) 및 군집/패널 자료 대응(클러스터 SE, 혼합효과모형 권고)</li><li>다중비교 보정(Holm 기본, Bonferroni/BH 옵션) 및 보정 범위 관리</li><li>효과크기 및 신뢰구간 산출(Cohen d/Hedges g, η²/ω², 위험차·RR·OR 등)과 해석 문구 제공</li><li>동등성/비열등성 검정(TOST 90% CI) 및 Δ(허용범위) 템플릿 기반 판정</li><li>검증력/표본계획(사전·사후 파워, MDE) 및 저파워 경고 자동 삽입</li><li>하위집단 분석 및 상호작용(교호작용 p, 이질성 요약, 포레스트 플롯 권고)</li><li>요약 카드/세부표/그림/부록(코드·로그) 포함 보고서 생성(APA 표기 기준)</li><li>다국어(한국어·영어·동남아 주요 언어) 보고 문구/라벨 자동화(i18n)</li></ul>
 </body>
 </html>

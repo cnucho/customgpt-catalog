@@ -1,40 +1,64 @@
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SurveyPersona Expression Engine – 퍼소나 발화 생성 엔진</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
-    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
-    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
-    .btn:hover { background:#ededed; }
-    .muted { color:#666; }
-    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+    :root {
+      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
+      --primary:#111827; --primaryText:#fff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
+    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
+    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
+    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
+    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
+    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
+    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
+    .section{margin-top:14px}
+    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
+    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
+    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
+    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
+    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
+    summary::-webkit-details-marker{display:none}
+    .kv{margin-top:10px;display:grid;gap:8px}
+    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
+    .k{color:var(--muted);font-size:12px}
+    .v{color:var(--text);font-size:13px}
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <a class="btn" href="../index.html">← 목록</a>
-    <a class='btn' href='https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
-    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  <div class="wrap">
+    <div class="card">
+      <div class="topbar">
+        <div class="leftbar">
+          <a class="btn" href="../index.html">← 목록</a>
+          <a class='btn primary' href='https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+          <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">티스토리</a>
+        </div>
+      </div>
+
+      <h1>SurveyPersona Expression Engine – 퍼소나 발화 생성 엔진</h1>
+      <p class='sub'>퍼소나의 의미·감정을 받아 실제 응답자처럼 자연스러운 말투로 여러 답변 문장을 생성하는 엔진.</p>
+      
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='funcs'><li class='fitem'>퍼소나 의미(JSON 또는 요약 텍스트)를 받아 자연스러운 한국어 구어체 응답으로 변환한다.</li><li class='fitem'>동일한 의미를 유지하면서 길이·뉘앙스가 다른 여러 표현(변형)을 생성한다.</li></ul>
+      </div>
+
+      <details>
+        <summary>기술 정보</summary>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>surveypersona-expression-engine</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>surveypersona-expression-engine</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-09</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine</div></div></div>
+      </details>
+    </div>
   </div>
-
-  <h1>SurveyPersona Expression Engine – 퍼소나 발화 생성 엔진</h1>
-  <p class="muted">퍼소나의 의미·감정을 받아 실제 응답자처럼 자연스러운 말투로 여러 답변 문장을 생성하는 엔진.</p>
-  
-
-  <h3>상세정보</h3>
-  <ul>
-    <li><strong>_id</strong>: <code>surveypersona-expression-engine</code></li>
-    <li><strong>gpt_id</strong>: surveypersona-expression-engine</li>
-    <li><strong>url</strong>: https://chatgpt.com/g/g-6937695e1cbc8191964f08ff99e690ca-surveypersona-expression-engine</li>
-    <li><strong>version</strong>: v1.0.0</li>
-    <li><strong>last_updated</strong>: 2025-12-09</li>
-    <li><strong>viz1</strong>: public</li>
-    <li><strong>viz2</strong>: show_url</li>
-  </ul>
-
-  <h3>Functions</h3><ul><li>퍼소나 의미(JSON 또는 요약 텍스트)를 받아 자연스러운 한국어 구어체 응답으로 변환한다.</li><li>동일한 의미를 유지하면서 길이·뉘앙스가 다른 여러 표현(변형)을 생성한다.</li></ul>
 </body>
 </html>

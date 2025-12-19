@@ -1,40 +1,64 @@
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>surveyDesignStudio (설문설계스튜디오)</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
-    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
-    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
-    .btn:hover { background:#ededed; }
-    .muted { color:#666; }
-    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+    :root {
+      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
+      --primary:#111827; --primaryText:#fff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
+    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
+    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
+    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
+    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
+    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
+    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
+    .section{margin-top:14px}
+    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
+    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
+    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
+    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
+    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
+    summary::-webkit-details-marker{display:none}
+    .kv{margin-top:10px;display:grid;gap:8px}
+    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
+    .k{color:var(--muted);font-size:12px}
+    .v{color:var(--text);font-size:13px}
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <a class="btn" href="../index.html">← 목록</a>
-    <a class='btn' href='https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
-    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  <div class="wrap">
+    <div class="card">
+      <div class="topbar">
+        <div class="leftbar">
+          <a class="btn" href="../index.html">← 목록</a>
+          <a class='btn primary' href='https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+          <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">티스토리</a>
+        </div>
+      </div>
+
+      <h1>surveyDesignStudio (설문설계스튜디오)</h1>
+      <p class='sub'>리서치 회사용 설문조사 기획·설계·제안서 스토리보드를 end-to-end로 만드는 설문 설계 전문 GPT</p>
+      
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='funcs'><li class='fitem'>컨셉 보드(목적·문제정의·가설·타깃 페르소나) 설계</li><li class='fitem'>조사 프레임워크(변수·도메인·모형) 구성 및 변수-문항 매핑</li><li class='fitem'>표본설계(프레임·추출/할당·쿼터 구조·표본수 산정 논리) 작성</li><li class='fitem'>설문지 제작(기본/확장/탐색 버전) 및 문항 문장 다듬기·편향 제거</li><li class='fitem'>지표/지수 정의 및 산출 로직(스케일·합성 규칙) 설계</li><li class='fitem'>분석 계획(기술통계→세그먼트→모형) 및 결과보고서 구조 제안</li><li class='fitem'>제안서 스토리보드 생성(템플릿 기반) 및 산출물 구성</li></ul>
+      </div>
+
+      <details>
+        <summary>기술 정보</summary>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>version</div><div class='v'>v2.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio</div></div></div>
+      </details>
+    </div>
   </div>
-
-  <h1>surveyDesignStudio (설문설계스튜디오)</h1>
-  <p class="muted">리서치 회사용 설문조사 기획·설계·제안서 스토리보드를 end-to-end로 만드는 설문 설계 전문 GPT</p>
-  
-
-  <h3>상세정보</h3>
-  <ul>
-    <li><strong>_id</strong>: <code>g-69289a3991048191bb4bd43b4fa746bf</code></li>
-    <li><strong>gpt_id</strong>: g-69289a3991048191bb4bd43b4fa746bf</li>
-    <li><strong>url</strong>: https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio</li>
-    <li><strong>version</strong>: v2.0.0</li>
-    <li><strong>last_updated</strong>: 2025-12-16</li>
-    <li><strong>viz1</strong>: public</li>
-    <li><strong>viz2</strong>: show_url</li>
-  </ul>
-
-  <h3>Functions</h3><ul><li>컨셉 보드(목적·문제정의·가설·타깃 페르소나) 설계</li><li>조사 프레임워크(변수·도메인·모형) 구성 및 변수-문항 매핑</li><li>표본설계(프레임·추출/할당·쿼터 구조·표본수 산정 논리) 작성</li><li>설문지 제작(기본/확장/탐색 버전) 및 문항 문장 다듬기·편향 제거</li><li>지표/지수 정의 및 산출 로직(스케일·합성 규칙) 설계</li><li>분석 계획(기술통계→세그먼트→모형) 및 결과보고서 구조 제안</li><li>제안서 스토리보드 생성(템플릿 기반) 및 산출물 구성</li></ul>
 </body>
 </html>
