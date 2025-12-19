@@ -1,0 +1,72 @@
+gpt_id: "g-692037b898ec819184bc3ef69df64dba"
+name: "StatSurveyGPT (통계조사·자료보고서 GPT)"
+url: "https://chatgpt.com/g/g-692037b898ec819184bc3ef69df64dba-statsurveygpt"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "통계조사·자료보고서를 위한 조사설계, 지표화, 품질분석, 표·그래프·해석을 통합 지원하는 전문 GPT"
+
+functions:
+  - "조사설계(Methodology) 및 표본설계(Sampling Design) 프레임 수립"
+  - "문항–지표화(Operationalization) 및 코드북/유목 재통합(Recoding) 지원"
+  - "신뢰도·타당도 분석(예: 내적일관성, 구성타당도 등) 설계·해석 가이드"
+  - "통계표 구성·해석 및 보고서 서술(Descriptive Tables & Interpretation)"
+  - "시각화(Visualization) 구성 원칙 제안 및 그래프 기획"
+  - "국내·국제 유사통계/유사지표 탐색 및 정의·단위·기간 비교(가능 시 근거 출처 병기)"
+  - "초보자를 위한 단계별 ‘이용자 가이드 모듈’ 기반 안내"
+
+alias:
+  - "statsurveygpt"
+  - "survey-report-gpt"
+  - "통계조사GPT"
+  - "자료보고서GPT"
+
+tags:
+  - "statistics"
+  - "survey"
+  - "sampling"
+  - "methodology"
+  - "operationalization"
+  - "data-report"
+  - "visualization"
+  - "research-assistant"
+  - "policy"
+
+target_users:
+  - "공공기관/연구기관의 통계조사·실태조사 담당자"
+  - "대학·대학원 조사연구 수행자(사회과학·정책·행정 등)"
+  - "기업 리서치/UX 리서치 실무자"
+  - "보고서 작성 및 표·지표 설계가 필요한 데이터 분석가"
+
+ideal_use_cases:
+  - "실태조사/만족도조사/패널조사 설계서 및 방법론(표본·문항·품질관리) 초안 작성"
+  - "설문 문항을 지표로 전환하고 코드북·재코딩 규칙을 정리"
+  - "결과표(교차표/분포표) 메타데이터 포함 템플릿 구성 및 해석문 작성"
+  - "국내(KOSIS 등)·국제(OECD/World Bank 등) 유사 지표 비교표 설계"
+  - "조사 한계, 비표본오차, 응답률 이슈 등 품질 섹션 작성"
+
+limitations:
+  - "제공되지 않은 조사방법·표본설계·수치·가중치·신뢰도·타당도 결과는 임의 생성하지 않음(모르면 ‘자료 없음’으로 표기)"
+  - "최신 법·지침·통계 값이 필요한 경우 웹 근거 확인이 필요하며, 출처 간 불일치 시 값/정의 충돌을 병기"
+  - "민감한 의사결정(정책/법률/의료 등)은 최종 검증을 담당 전문가가 수행해야 함"
+
+example_commands:
+  - "다음 조사 목적에 맞춰 모집단·표본틀·표본설계(층화/집락/가중치) 초안을 써줘: [목적/대상/예산/기간]"
+  - "설문 문항 12개를 지표로 전환해서 지표정의, 산식, 척도, 결측처리 규칙을 코드북 형태로 만들어줘"
+  - "이 결과표를 보고서 문장으로 해석해줘(유의점 포함): [표/수치]"
+  - "국내·국제에서 유사한 지표가 있는지 찾아 비교 포맷(정의/단위/기간/출처)으로 정리해줘"
+  - "응답률 28% 조사에서 품질관리(QA)와 한계 섹션을 어떻게 쓰면 좋을지 구성해줘"
+
+additional_features:
+  - "Survey Methodology Module"
+  - "Sampling Design Module"
+  - "Indicator Operationalization Module"
+  - "Coding & Recoding Module"
+  - "Statistical Table Interpretation Module"
+  - "Visualization Module"
+  - "International Comparison Module"
+  - "Evidence & Verification Module"
+  - "Statistical Survey Report Framework"
+  - "User Guide Module"

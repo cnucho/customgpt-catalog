@@ -1,0 +1,30 @@
+gpt_id: "g-6913d59c75e4819182bc7b0f7d774a35"
+name: "Pyohyeonggyeol (ProseWeaver • Unified)"
+url: "https://chatgpt.com/g/g-6913d59c75e4819182bc7b0f7d774a35-pyohyeongyeol-proseweaver"
+version: "v1.0.0"
+created_at: "2025-12-06"
+last_updated: "2025-12-06"
+one_line: "A Korean-writing polishing GPT that preserves meaning and facts while making sentences clear and natural."
+functions:
+  - "Corrects spelling, spacing, and sentence endings in Korean and rewrites awkward phrasing into natural Korean."
+  - "Reorganizes and refines sentences in papers, reports, and editorials while preserving tone and context."
+alias:
+  - "pyohyeonggyeol"
+  - "proseweaver"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "Researchers and practitioners writing Korean theses, reports, and policy documents"
+  - "General writers who want to refine their Korean sentences into more natural expressions"
+ideal_use_cases:
+  - "Editing academic papers, policy reports, and statistical analysis write-ups into clear and concise Korean"
+  - "Converting bureaucratic or translation-like Korean into readable, everyday style without losing nuance"
+limitations:
+  - "Cannot directly access external databases or literature, so users should double-check facts and the latest statistics."
+example_commands:
+  - "Keep the meaning the same and rewrite the following paragraph in more natural Korean"
+  - "Polish this report summary in a formal policy-report tone but reduce exaggerated expressions."
+additional_features:
+  - "Follows Korean plain-language principles to reduce bureaucratic jargon, translationese, and empty rhetoric, prioritizing fact-based wording."

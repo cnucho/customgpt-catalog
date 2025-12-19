@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LGMeta</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../en/index.html">← Catalog</a>
+    <a class='btn' href='https://chatgpt.com/g/g-692c1c0e69388191af46f23674c5a103-lgmeta' target='_blank' rel='noopener noreferrer'>Open GPT</a>
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>LGMeta</h1>
+  <p class="muted">A metadata GPT that auto-suggests multi-variable logical/relational validation rules (LGMeta) for survey and dataset QC.</p>
+  
+
+  <h3>Details</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-692c1c0e69388191af46f23674c5a103-lgmeta</code></li>
+    <li><strong>gpt_id</strong>: g-692c1c0e69388191af46f23674c5a103-lgmeta</li>
+    <li><strong>url</strong>: https://chatgpt.com/g/g-692c1c0e69388191af46f23674c5a103-lgmeta</li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-16</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>Auto-suggest LGMeta multi-variable validation rule drafts from survey JSON and qcmeta.json</li><li>Generate conditional_presence rules from required_if / skip_if logic</li><li>Propose part_whole candidates using variable name/label patterns (total/sum/male/female/etc.)</li><li>Suggest uniqueness rules for identifiers (phone numbers, IDs, business registration numbers, etc.)</li><li>Propose existence/repeated_consistency rules for household-person repeated structures (e.g., household_id)</li><li>Suggest range_relation/hierarchy_order candidates for date/age/amount and financial hierarchies</li><li>Output rules in LGMeta CSV/JSON schema (default enabled=false; uncertain rules flagged as TODO in comments)</li></ul>
+</body>
+</html>

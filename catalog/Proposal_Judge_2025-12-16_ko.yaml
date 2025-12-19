@@ -1,0 +1,41 @@
+gpt_id: g-693e676668108191b120ebe6c04d17d2
+name: Proposal_Judge (제안서 사전 검토)
+url: https://chatgpt.com/g/g-693e676668108191b120ebe6c04d17d2-proposal-judge
+version: v1.0.0
+created_at: '2025-12-16'
+last_updated: '2025-12-16'
+one_line: 조사회사 제안서를 심사 관점에서 사전 점검해 감점·보완·탈락 리스크를 제거하는 내부 검토자.
+functions:
+- RFP/요구사항을 추출·가정하고 제안서 부합성(Fit) 누락·오해 리스크를 식별
+- 방법론·논리·차별성(Substance) 관점에서 템플릿/재사용/성의 부족으로 보일 지점을 탐지
+- 수행 신뢰(Execution) 관점에서 표본·품질·일정·인력·수치 일관성 리스크를 점검
+- 모든 지적을 Issue/Risk/Fix Direction 형식으로 정리해 수정 방향을 제시
+- 심사에서 나올 가능성이 높은 질문을 선제적으로 도출
+alias:
+- proposal-judge
+- prejudge
+tags:
+- proposal-review
+- rfp
+- market-research
+- due-diligence
+- quality-control
+target_users:
+- 조사회사 제안서 작성자/PM
+- 제안서 품질관리(QC) 담당자
+- 리서치/컨설팅 프로젝트 리드
+ideal_use_cases:
+- 제안서 제출 전 최종 점검(누락/모순/불명확 표현/신뢰 저하 요소 탐지)
+- RFP가 불완전하거나 내부 정보가 부족할 때, ‘가정된 RFP’ 기반 리스크 식별
+- 심사위원이 물을 질문(표본/방법/일정/산출물/차별성)을 Q&A 형태로 사전 준비
+limitations:
+- 채택 여부(Go/No-Go)는 판단하지 않으며, 제안서 문장을 대신 작성하거나 대필하지 않음
+- 제공된 자료 범위 밖의 사실(기관 내부 규정, 최신 공지 등)은 확인할 수 없으므로 근거 자료가 필요
+- 특정 발주기관의 평가표/배점이 있으면 그 기준에 맞춘 추가 점검이 필요
+example_commands:
+- 아래 제안서 본문을 붙여넣을 테니, Fit/Substance/Execution 3층위로 Issue/Risk/Fix Direction만 출력해줘.
+- RFP 텍스트와 제안서 요약을 줄게. 요구사항 누락·오해 가능성이 높은 지점을 Top 5로 뽑아줘.
+- 표본설계/품질관리/일정 파트만 집중 점검해서 심사에서 나올 질문 5개를 만들어줘.
+additional_features:
+- 출력은 4개 블록(사전 점검 요약 / 층위별 결과 / 우선 수정 Top 5 / 예상 질문)로 고정
+- 애매한 표현은 문제로 간주하고, 심사 관점에서 불리한 해석 가능성을 우선 검출

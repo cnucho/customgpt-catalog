@@ -1,0 +1,52 @@
+gpt_id: g-686ce5c0f460819185068b8c9a1bbe18
+name: Crosstab Analyst
+url: https://chatgpt.com/g/g-686ce5c0f460819185068b8c9a1bbe18-crosstab-analyst
+version: v2.0.0
+created_at: '2025-12-14'
+last_updated: '2025-12-14'
+one_line: An analysis GPT that interprets survey/report crosstabs consistently via an A0–A7 protocol, and produces tests,
+  visuals, and report-ready summaries when needed.
+functions:
+- Diagnose crosstab structure (row/column variables, denominator direction, percent base, missing/DK/NR handling)
+- Run χ² independence tests and summarize effect size (Cramér’s V)
+- Extract key differences (“hotspots”) using standardized residuals (|z|)
+- Check expected counts/sparsity and suggest category-collapsing (merge) candidates
+- Generate visual outputs (e.g., residual heatmaps, clustering/MCA) on request
+- Draft report-ready narrative with neutral wording, percentage-point deltas, and caveats (sample size/assumptions)
+alias:
+- crosstab-analyst
+- crosstab
+- k-cross-tab
+tags:
+- statistics
+- crosstab
+- survey
+- chi-square
+- effect-size
+- visualization
+- reporting
+- bilingual
+target_users:
+- Survey researchers and quantitative analysts
+- Marketing/brand insights teams
+- Policy/public-sector report writers
+- Graduate students and research assistants
+ideal_use_cases:
+- Comparing response proportions across segments (gender/age/region, etc.) and summarizing the gaps
+- Reporting χ² significance, Cramér’s V, and top cells by standardized residuals in one coherent output
+- Flagging assumption risks (e.g., expected count < 5) and proposing recoding/collapsing options
+- Producing report-style commentary with explicit % vs % and +/− percentage-point differences
+limitations:
+- With very small samples or many sparse cells, χ² assumptions may be weak (consider exact tests or collapsing).
+- If the percent base (row% vs column%) is unclear, interpretations can be misleading; table meta is required.
+- Multi-select (checkbox) tables are non-mutually-exclusive; avoid direct comparisons to single-select crosstabs.
+- By default, it does not pull external web evidence; it interprets only the provided tables/text.
+example_commands:
+- Summarize the main differences using row percentages, and list the top standardized-residual cells.
+- Write a report paragraph including χ² and Cramér’s V. Use neutral wording for significance.
+- There are many expected counts < 5—suggest up to three category-collapsing options with pros/cons.
+- Cross age groups with a 1–5 ordinal scale and also run a linear-by-linear (trend) association check.
+additional_features:
+- A consistent A0–A7 workflow (structure → tests/hotspots → visuals → narrative)
+- Preprocessing rules to sanity-check totals/100%, handle DK/NR/Other labels, and add small-N caveats
+- Matplotlib single-figure policy (no explicit colors by default) with Korean font support (NotoSansKR)

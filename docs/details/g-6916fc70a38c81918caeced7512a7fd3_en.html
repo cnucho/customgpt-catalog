@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source Analyzer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../en/index.html">← Catalog</a>
+    <a class='btn' href='https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer' target='_blank' rel='noopener noreferrer'>Open GPT</a>
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>Source Analyzer</h1>
+  <p class="muted">Extracts key claims, quantitative facts, and KQ relevance from user-provided documents/webpages and writes them into source_extracts in YAML.</p>
+  
+
+  <h3>Details</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-6916fc70a38c81918caeced7512a7fd3</code></li>
+    <li><strong>gpt_id</strong>: g-6916fc70a38c81918caeced7512a7fd3</li>
+    <li><strong>url</strong>: https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer</li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-14</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>Read user-provided documents (text/HTML) and extract key_points</li><li>Extract quantitative and concrete facts (data_points) as accurately as possible from the original text</li><li>Map each key/data point to relevant KQs via relevance_to_KQs</li><li>Write/update only the source_extracts section and output a single updated YAML block</li><li>Strict formatting in Structured Mode (structured_pipeline: true) with minimal narration</li></ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+gpt_id: "g-689b6ef33270819196a280bc04d80c4e-kadenca"
+name: "Kadenca – Critical Thinking Assistant"
+url: "https://chatgpt.com/g/g-689b6ef33270819196a280bc04d80c4e-kadenca"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A critical dialogue partner that helps users clarify and refine their thinking into coherent writing"
+
+functions:
+  - "Helps assess and restructure logical flow"
+  - "Identifies conceptual ambiguities and potential misunderstandings"
+  - "Improves clarity and consistency at the paragraph level"
+  - "Supports section goal planning and macro organization"
+  - "Guides APA7 citation formatting"
+
+alias:
+  - "thinking-gpt"
+  - "kadenca"
+  - "critical-writing-helper"
+
+tags:
+  - "critical-thinking"
+  - "writing-assistant"
+  - "academic-support"
+
+target_users:
+  - "Researchers and graduate students"
+  - "Report and academic writers"
+  - "Anyone seeking to articulate complex thoughts clearly"
+
+ideal_use_cases:
+  - "Clarifying and refining concepts during academic writing"
+  - "Ensuring consistency across arguments in a paragraph"
+  - "Using theme-antithesis-synthesis to build structured insights"
+
+limitations:
+  - "Not optimized for casual Q&A or straightforward tasks"
+
+example_commands:
+  - "Check if this paragraph clearly distinguishes the key concepts."
+  - "Can you verify if the logical structure in this argument holds up?"
+
+additional_features:
+  - "SectionPlan system for parallel section-paragraph management"
+  - "Theme–Antithesis–Synthesis structure support"

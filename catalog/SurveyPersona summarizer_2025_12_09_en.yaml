@@ -1,0 +1,35 @@
+gpt_id: "surveypersona-summarizer"
+name: "SurveyPersona Summarizer "
+url: "https://chatgpt.com/g/g-69376b2256ac81918ff29ed53e7c514b-surveypersona-summarizer"
+version: "v1.0.0"
+created_at: "2025-12-09"
+last_updated: "2025-12-09"
+one_line: "Summarizes persona outputs and suggests improvements to survey questions."
+functions:
+  - "Summarize persona meaning interpretations and natural-language responses into key findings."
+  - "Identify risks (ambiguity, bias, cognitive load) and propose concrete question revisions."
+alias:
+  - "survey-meta"
+  - "questionnaire-summarizer"
+tags:
+  - "survey"
+  - "questionnaire"
+  - "evaluation"
+  - "design"
+target_users:
+  - "Survey methodologists and designers"
+  - "Policy and market research teams"
+ideal_use_cases:
+  - "Reviewing cognitive testing outputs to refine survey question wording."
+  - "Comparing how different personas diverge in their understanding of the same item."
+limitations:
+  - "Quality depends on the correctness and richness of persona engine inputs."
+example_commands:
+  - "Given these persona meaning outputs, summarize key issues and suggest better wording."
+  - "Read these persona responses and flag any bias or leading wording in the question."
+  - "Compare interpretations across personas and highlight where misunderstandings diverge."
+  - "List cognitive risks and propose two alternative phrasings for this question."
+  - "Summarize strengths and weaknesses of this question based on all persona outputs."
+additional_features:
+  - "Produces a structured summary with key_points, divergence_map, risk_flags, revision_suggestions, and meta_comment."
+  - "Can work with meaning-only, language-only, or combined inputs from other engines."

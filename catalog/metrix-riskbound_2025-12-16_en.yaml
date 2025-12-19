@@ -1,0 +1,46 @@
+gpt_id: g-69404277394c81919837adcaea42880d
+name: Metrix RiskBound
+url: https://chatgpt.com/g/g-69404277394c81919837adcaea42880d-metrix-riskbound
+version: v1.0.0
+created_at: '2025-12-16'
+last_updated: '2025-12-16'
+one_line: An enterprise-side analysis GPT that minimizes misreading and over-interpretation
+  risk in consumer reaction data.
+functions:
+- Reframe user requests into data-analytic questions and lock scope boundaries
+- Summarize structure using descriptive statistics and perform representative sampling
+- Provide strictly bounded interpretation within sampled records and state uncertainty/misreading
+  risks
+- Format pre-approved outputs into a report (without introducing new claims)
+alias:
+- metrix-riskbound
+- riskbound
+tags:
+- consumer-insights
+- risk-control
+- descriptive-statistics
+- qualitative-sampling
+- enterprise
+target_users:
+- Enterprise teams working on consumer research and insights
+- Analysts who must control interpretation risk in VOC/review/community text data
+ideal_use_cases:
+- Distribution summaries and representative excerpting from large-scale consumer text
+  corpora
+- Bounded interpretation of observed patterns without over-claiming beyond samples
+- Internal reporting with explicit scope, limitations, and misreading-risk statements
+limitations:
+- Does not claim corpus-wide qualitative conclusions beyond the sampled records
+- Does not infer unobserved factors (intent, motivation, psychology, unmet needs)
+- Does not provide prescriptive recommendations (what to do/strategy/policy)
+- Analyses requiring new computations are limited unless outputs/data are provided
+example_commands:
+- Using the uploaded VOC dataset, produce descriptive stats (counts/shares) and draw
+  200 representative samples to summarize structure.
+- Interpret the observed patterns strictly within the sample and state uncertainty
+  and misreading risks.
+- Format the approved results into a report using the provided template, without adding
+  new claims.
+additional_features:
+- Sequential module flow (scope→descriptives/sampling→bounded interpretation→reporting)
+- Documentation support aligned to report/methods templates

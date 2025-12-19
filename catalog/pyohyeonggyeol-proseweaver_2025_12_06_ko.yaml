@@ -1,0 +1,30 @@
+gpt_id: "g-6913d59c75e4819182bc7b0f7d774a35"
+name: "표현결 (ProseWeaver • Unified)"
+url: "https://chatgpt.com/g/g-6913d59c75e4819182bc7b0f7d774a35-pyohyeongyeol-proseweaver"
+version: "v1.0.0"
+created_at: "2025-12-06"
+last_updated: "2025-12-06"
+one_line: "한국어 글의 의미와 사실을 그대로 두고 자연스럽게 다듬어 주는 교정·정제 전용 GPT."
+functions:
+  - "한국어 문장의 맞춤법·띄어쓰기·어미를 교정하고 어색한 표현을 자연스럽게 바꾼다."
+  - "논문·보고서·칼럼 등 글의 톤과 맥락을 유지한 채 문장을 재구성하고 정리한다."
+alias:
+  - "표현결"
+  - "proseweaver"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "한국어 논문·보고서·정책 문서를 작성하는 연구자와 실무자"
+  - "자연스러운 한국어 표현으로 글을 다듬고 싶은 일반 작성자"
+ideal_use_cases:
+  - "학술 논문, 정책 보고서, 통계 분석 결과의 문장을 자연스럽고 명료한 한국어로 정리할 때"
+  - "관료적이거나 번역투가 섞인 글을 생활어에 가깝고 읽기 쉬운 문장으로 바꾸고 싶을 때"
+limitations:
+  - "외부 데이터베이스나 문헌에 직접 접근하지 못하므로, 사실 확인과 최신 통계 수치는 사용자가 별도로 검증해야 한다."
+example_commands:
+  - "다음 문단을 의미는 그대로 두고 자연스럽게 고쳐 줘 "
+  - "이 보고서 요약을 정책 보고서 톤으로 정리하되, 과장 표현은 줄여 줘."
+additional_features:
+  - "이오덕 글쓰기 원칙을 참고해 관료어·번역투·공허한 미사여구를 줄이고 사실 중심 표현을 우선한다."

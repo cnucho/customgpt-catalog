@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LGMeta</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../index.html">← 목록</a>
+    <a class='btn' href='https://chatgpt.com/g/g-692c1c0e69388191af46f23674c5a103-lgmeta' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>LGMeta</h1>
+  <p class="muted">설문/데이터셋의 다변수 논리·관계 검증 규칙(LGMeta)을 자동 제안하는 메타데이터 GPT.</p>
+  
+
+  <h3>상세정보</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-692c1c0e69388191af46f23674c5a103-lgmeta</code></li>
+    <li><strong>gpt_id</strong>: g-692c1c0e69388191af46f23674c5a103-lgmeta</li>
+    <li><strong>url</strong>: https://chatgpt.com/g/g-692c1c0e69388191af46f23674c5a103-lgmeta</li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-16</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>survey JSON 및 qcmeta.json을 기반으로 다변수 논리 검증 규칙 초안(LGMeta) 자동 제안</li><li>required_if / skip_if에서 conditional_presence 규칙 생성</li><li>변수명/라벨 패턴(total/sum/남/여/계 등) 기반 part_whole 후보 규칙 제안</li><li>전화번호/ID/사업자등록번호 등 식별자 uniqueness 규칙 제안</li><li>가구/개인 반복 구조 및 household_id 기반 existence/repeated_consistency 규칙 제안</li><li>날짜/나이/금액 구조 기반 range_relation/hierarchy_order 후보 규칙 제안</li><li>LGMeta CSV/JSON 스키마 형식으로 규칙을 정리(기본 enabled=false, 불확실 시 TODO 코멘트)</li></ul>
+</body>
+</html>

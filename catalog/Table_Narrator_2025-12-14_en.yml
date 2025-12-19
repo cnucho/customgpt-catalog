@@ -1,0 +1,57 @@
+gpt_id: "g-6892419d09b48191a097dcaf3bde6ced"
+name: "Table Narrator"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A table-interpretation GPT that converts statistical, survey, and experimental result tables into report/paper-ready narrative text."
+
+functions:
+  - "Analyzes table structure (rows, columns, multi-level headers) and identifies the denominator axis (row/column basis)."
+  - "Classifies cell value types (counts, percentages, scores, indices) and normalizes units/ranges."
+  - "Checks distribution consistency (e.g., totals≈100%), and flags possible nonresponse or multi-response cases with conservative wording."
+  - "Generates item-by-item interpretations and an overall summary, expressing differences explicitly in percentage points or numeric gaps."
+  - "For time series (3+ time points), summarizes changes and trends; for 2 points, reports simple increase/decrease only."
+  - "If statistical test results are provided (or requested), incorporates significance-aware phrasing; otherwise avoids definitive claims."
+
+alias:
+  - "table-narrator"
+  - "table-interpreter"
+  - "tablenarrator"
+
+tags:
+  - "statistics"
+  - "survey"
+  - "public-policy"
+  - "experimental-results"
+  - "table-interpretation"
+  - "report-writing"
+  - "english"
+
+target_users:
+  - "Policy, government, and research staff working with survey/statistics tables"
+  - "Academic researchers writing results sections"
+  - "Data analysts producing narrative summaries for reports"
+  - "Consultants and market research teams"
+
+ideal_use_cases:
+  - "Turn frequency/percentage tables into polished narrative statements"
+  - "Summarize cross-tab differences between groups in percentage points"
+  - "Describe mean-score tables (e.g., satisfaction) with clear comparisons and a concise takeaway"
+  - "Explain year-by-year indicator tables with change and trend wording"
+  - "Automatically add cautions for missing totals, unclear denominators, or likely nonresponse"
+
+limitations:
+  - "If the denominator basis (row/column) is unclear and totals/notes are missing, interpretations are intentionally conservative and avoid strong inferences."
+  - "Without test outputs (e.g., p-values), it will not claim differences are 'significant'."
+  - "It minimizes causal/contextual speculation and stays within what the table supports."
+
+example_commands:
+  - "Analyze the table structure (rows/columns/value types/denominator) and write item-by-item interpretations plus an overall summary: [paste table]."
+  - "Determine whether this crosstab is row- or column-based and compare groups in percentage points."
+  - "The totals are not 100%—include a note about possible nonresponse and rewrite as report-ready sentences."
+  - "Interpret this 2019–2024 time-series table with trend-focused wording, avoiding definitive claims."
+
+additional_features:
+  - "Splits and normalizes composite cells (e.g., '45 / 23%') before narrating"
+  - "Template-based narration for report/paper tone"

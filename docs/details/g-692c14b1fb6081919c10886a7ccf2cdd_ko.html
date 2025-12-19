@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QCMeta GPT</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../index.html">← 목록</a>
+    <a class='btn' href='https://chatgpt.com/g/g-692c14b1fb6081919c10886a7ccf2cdd-qcmeta-gpt' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>QCMeta GPT</h1>
+  <p class="muted">설문 파일(JSON/CSV/Excel)을 분석해 QC 메타데이터 초안(qcmeta_draft.csv)을 만들고, 확정본(qcmeta_final.csv)을 qcmeta.json으로 변환합니다.</p>
+  
+
+  <h3>상세정보</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-692c14b1fb6081919c10886a7ccf2cdd</code></li>
+    <li><strong>gpt_id</strong>: g-692c14b1fb6081919c10886a7ccf2cdd</li>
+    <li><strong>url</strong>: https://chatgpt.com/g/g-692c14b1fb6081919c10886a7ccf2cdd-qcmeta-gpt</li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-16</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>설문 문항 구조를 분석해 단일 변수 수준의 QC 메타데이터(qcmeta_draft.csv) 생성</li><li>multi/grid/loop 문항을 규칙에 따라 변수 확장 및 storage_vars 생성</li><li>확정 가능한 값만 메타 필드(type, valid_range, missing_codes 등)에 입력하고 불확실한 값은 &#x27;?&#x27; + TODO 코멘트로 표시</li><li>사용자가 수정한 qcmeta_final.csv를 qcmeta.json으로 변환(임의 보정/추정 없음)</li></ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Table Narrator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../en/index.html">← Catalog</a>
+    
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>Table Narrator</h1>
+  <p class="muted">A table-interpretation GPT that converts statistical, survey, and experimental result tables into report/paper-ready narrative text.</p>
+  
+
+  <h3>Details</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-6892419d09b48191a097dcaf3bde6ced</code></li>
+    <li><strong>gpt_id</strong>: g-6892419d09b48191a097dcaf3bde6ced</li>
+    <li><strong>url</strong>: </li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-14</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>Analyzes table structure (rows, columns, multi-level headers) and identifies the denominator axis (row/column basis).</li><li>Classifies cell value types (counts, percentages, scores, indices) and normalizes units/ranges.</li><li>Checks distribution consistency (e.g., totals≈100%), and flags possible nonresponse or multi-response cases with conservative wording.</li><li>Generates item-by-item interpretations and an overall summary, expressing differences explicitly in percentage points or numeric gaps.</li><li>For time series (3+ time points), summarizes changes and trends; for 2 points, reports simple increase/decrease only.</li><li>If statistical test results are provided (or requested), incorporates significance-aware phrasing; otherwise avoids definitive claims.</li></ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PolicyReport GPT</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../en/index.html">← Catalog</a>
+    <a class='btn' href='https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt' target='_blank' rel='noopener noreferrer'>Open GPT</a>
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>PolicyReport GPT</h1>
+  <p class="muted">A structured policy/report assistant that consistently delivers outputs across five fixed stages (problem definition→comparison→alternatives→execution plan→conclusion) with YAML state updates.</p>
+  
+
+  <h3>Details</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt</code></li>
+    <li><strong>gpt_id</strong>: g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt</li>
+    <li><strong>url</strong>: https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt</li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-14</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>Structure policy/report drafts using a fixed 5-stage flow (problem_definition→comparison→alternatives→execution_plan→conclusion)</li><li>For each stage: produce a one-paragraph summary plus one table/matrix</li><li>After each stage: update and print a report_state YAML block (only the current stage results)</li><li>Enforce evidence-friendly quantification by requiring numbers to be expressed with unit and source</li><li>Proceed non-coercively within the user-provided scope (avoid pushing unsolicited next steps)</li></ul>
+</body>
+</html>

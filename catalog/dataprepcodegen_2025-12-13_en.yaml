@@ -1,0 +1,33 @@
+gpt_id: "dataprepcodegen"
+name: "DataPrepCodeGen"
+url: "https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "Metadata-driven generator for SPSS-first data preparation code in official statistics."
+functions:
+  - "Generate complete SPSS syntax for variable setup, recoding, derived variables, and reshape operations."
+  - "Detect metadata inconsistencies, infer safe defaults, and document all assumptions without blocking code generation."
+alias:
+  - "SPSS-dataprep"
+  - "metadata-syntax"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "Official statistics analysts preparing survey microdata in SPSS"
+  - "Researchers requiring reproducible data preparation scripts"
+ideal_use_cases:
+  - "Produce end-to-end SPSS data preparation scripts directly from codebook-style metadata."
+  - "Standardize labels, missing values, derived variables, and reshaping with documented assumptions."
+limitations:
+  - "Does not generate statistical analysis or modeling code."
+example_commands:
+  - "Generate SPSS VARIABLE LABELS, VALUE LABELS, and MISSING VALUES from this metadata."
+  - "Recode age into age groups as a new variable while preserving the original."
+  - "Create eligibility and skip flags using DO IF logic and comment all assumptions."
+  - "Reshape wide survey items into long format using VARSTOCASES."
+  - "Build a composite index from grouped items and add validation commands."
+additional_features:
+  - "Always outputs full SPSS code with structured comments and optional validation syntax."

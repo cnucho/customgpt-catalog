@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>정밀 문항추출 Precesion Questionnaire Extractor</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../index.html">← 목록</a>
+    <a class='btn' href='https://chatgpt.com/g/g-6890d378ceb08191ab29b9408453be71-jeongmil-munhangcucul-precesion-questionnaire-extractor' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>정밀 문항추출 Precesion Questionnaire Extractor</h1>
+  <p class="muted">병합셀·비정형 설문 Excel을 자동 정규화해 문항/옵션 구조(JSON)로 정밀 추출하는 GPT</p>
+  
+
+  <h3>상세정보</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-6890d378ceb08191ab29b9408453be71</code></li>
+    <li><strong>gpt_id</strong>: g-6890d378ceb08191ab29b9408453be71</li>
+    <li><strong>url</strong>: https://chatgpt.com/g/g-6890d378ceb08191ab29b9408453be71-jeongmil-munhangcucul-precesion-questionnaire-extractor</li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-14</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>엑셀 병합 셀 자동 탐지 및 값 손실 없는 채움(수평/수직/블록 병합)</li><li>헤더(문항번호/문항문구/옵션 등) 영역 탐지 및 데이터 블록 판별</li><li>표 방향(row_questions/column_questions) 자동 판별 및 재해석</li><li>전방채움(forward fill) 기반 표 정규화로 문항·옵션 필드 분리</li><li>문항/하위문항(parent_question_id, item_id) 구조화 및 options[] 구성</li><li>조건식/분기 로직(라우팅) 표현을 위한 규칙 기반 패턴 적용</li><li>문항번호 패턴 기반 expected vs extracted 비교로 누락/초과 문항 검출</li><li>민감/지양 표현 감지 및 검수 플래그(needs_review 등) 부여</li><li>설문 JSON 템플릿(메타데이터/문항/추출리포트) 형태로 결과 출력</li></ul>
+</body>
+</html>

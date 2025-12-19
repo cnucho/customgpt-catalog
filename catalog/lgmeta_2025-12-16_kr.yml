@@ -1,0 +1,57 @@
+gpt_id: "g-692c1c0e69388191af46f23674c5a103-lgmeta"
+name: "LGMeta"
+url: "https://chatgpt.com/g/g-692c1c0e69388191af46f23674c5a103-lgmeta"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "설문/데이터셋의 다변수 논리·관계 검증 규칙(LGMeta)을 자동 제안하는 메타데이터 GPT."
+
+functions:
+  - "survey JSON 및 qcmeta.json을 기반으로 다변수 논리 검증 규칙 초안(LGMeta) 자동 제안"
+  - "required_if / skip_if에서 conditional_presence 규칙 생성"
+  - "변수명/라벨 패턴(total/sum/남/여/계 등) 기반 part_whole 후보 규칙 제안"
+  - "전화번호/ID/사업자등록번호 등 식별자 uniqueness 규칙 제안"
+  - "가구/개인 반복 구조 및 household_id 기반 existence/repeated_consistency 규칙 제안"
+  - "날짜/나이/금액 구조 기반 range_relation/hierarchy_order 후보 규칙 제안"
+  - "LGMeta CSV/JSON 스키마 형식으로 규칙을 정리(기본 enabled=false, 불확실 시 TODO 코멘트)"
+
+alias:
+  - "lgmeta"
+  - "logical-gmeta"
+
+tags:
+  - "data-quality"
+  - "metadata"
+  - "survey"
+  - "validation-rules"
+  - "qc"
+  - "statistics"
+
+target_users:
+  - "데이터 품질(QC) 담당자"
+  - "설문/패널 데이터 설계자 및 분석가"
+  - "ETL/데이터 파이프라인 엔지니어"
+
+ideal_use_cases:
+  - "설문 문항 로직(required_if/skip_if)을 다변수 검증 규칙으로 변환해 초안 작성"
+  - "합계/부분합(남+여=계 등) 및 비율 합계(100%) 규칙 후보를 빠르게 도출"
+  - "식별자 중복(전화번호/ID/사업자등록번호) 방지 규칙 초안 생성"
+  - "가구-개인(반복) 구조의 존재/교차일치 규칙 제안"
+  - "날짜/나이/금액의 순서·범위 및 손익/재무 서열 관계 규칙 후보 생성"
+
+limitations:
+  - "자동 생성 규칙은 기본적으로 enabled=false이며, 최종 확정은 사람이 검토해야 함"
+  - "변수 의미/코드체계(예: 결측/특수코드) 정보가 부족하면 규칙이 과대/과소 제안될 수 있음"
+  - "데이터 원천(설문지/코드북/표본 설계)이 제공되지 않으면 일부 규칙은 TODO로만 남을 수 있음"
+
+example_commands:
+  - "survey JSON과 qcmeta.json을 입력했을 때 LGMeta 규칙 초안(lgmeta_draft.csv 구조)로 제안해줘."
+  - "required_if/skip_if를 conditional_presence 규칙으로 변환하고, 불확실한 건 TODO 코멘트로 남겨줘."
+  - "변수 라벨에 '남/여/계'가 있는 항목을 찾아 part_whole 후보 규칙을 만들어줘."
+  - "household_id와 person_id가 있을 때 existence 및 repeated_consistency 규칙을 제안해줘."
+
+additional_features:
+  - "rule_type/subtype(부분-전체, 조건부 존재, 순서/범위, 서열, 비율, 모순패턴, 반복일치, 단일값, 유일성, 존재) 카테고리 기반 정형화"
+  - "CSV/JSON 스키마(필드: rule_id, rule_name, rule_type, subtype, scope, condition, expression, variables, group_by, human_desc_ko, severity, enabled, comment) 준수"

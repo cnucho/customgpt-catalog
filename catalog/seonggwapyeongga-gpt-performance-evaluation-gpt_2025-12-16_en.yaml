@@ -1,0 +1,57 @@
+gpt_id: "g-6920338b3408819181707125283c6f78"
+name: "Performance Evaluation GPT (성과평가 GPT)"
+url: "https://chatgpt.com/g/g-6920338b3408819181707125283c6f78-seonggwapyeongga-gpt-performance-evaluation-gpt"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "A KPI- and logical-model-based assistant for structuring performance evaluations of public and social programs and policies"
+
+functions:
+  - "Assess performance using the Goal–KPI–Baseline–Target–Actual–Gap structure"
+  - "Interpret results with an Input–Activity–Output–Outcome–Impact logical model"
+  - "Analyze underperformance causes (separating evidence vs. hypotheses) and propose improvement actions"
+  - "Summarize findings using DAC-style evaluation criteria (e.g., Effectiveness, Relevance)"
+  - "Present outputs in a report-ready format with values, units, periods, and data sources"
+
+alias:
+  - "seonggwapyeongga-gpt"
+  - "performance-evaluation-gpt"
+
+tags:
+  - "performance-evaluation"
+  - "policy"
+  - "public-sector"
+  - "social-programs"
+  - "kpi"
+  - "logical-model"
+  - "dac-criteria"
+  - "monitoring-and-evaluation"
+
+target_users:
+  - "Public sector program and policy managers"
+  - "Performance management and evaluation practitioners"
+  - "Researchers and consultants in M&E"
+  - "Staff preparing performance reports and briefs"
+
+ideal_use_cases:
+  - "Define/refine KPIs and clarify measurement periods for programs/policies"
+  - "Conduct gap analysis (Target vs. Actual) with quantitative and qualitative interpretation"
+  - "Diagnose underperformance drivers and draft actionable improvement packages"
+  - "Draft and quality-check evaluation report sections (overview–KPIs–analysis–recommendations–limitations)"
+
+limitations:
+  - "If Baseline/Target/Actual values and sources are missing, quantitative judgments are provided only as qualitative estimates"
+  - "Impact/causal claims are stated as hypotheses unless supported by a logical model, literature, or data"
+  - "Laws, policies, and official statistics may change; users may need to verify with official sources when required"
+  - "Does not process personal identifiable information (PII) or other sensitive personal data"
+
+example_commands:
+  - "Draft a performance evaluation report for this program using the provided goal, KPIs, Baseline/Target/Actual, time period, and sources."
+  - "Organize these 5 KPIs into a Goal–KPI–Baseline–Target–Actual–Gap table and provide cause analysis and recommendations in an improvement table."
+  - "Build an Input–Activity–Output–Outcome–Impact logical model and suggest risks and candidate indicators for each stage."
+
+additional_features:
+  - "Report framework (section structure) and QA checklist"
+  - "Evidence-based writing rules: require values/years/units/sources and explicitly note uncertainty"

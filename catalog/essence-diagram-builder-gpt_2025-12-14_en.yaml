@@ -1,0 +1,60 @@
+gpt_id: "g-68fc9be3e4b48191b0388dee4c3c6bd6"
+name: "Essence Diagram Builder GPT"
+url: "https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt"
+
+version: "v1.1.1"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A semantic-structure diagram GPT that extracts and simplifies meaning into a title, diagram, and legend—and can run back-translation plus an Audit for fidelity when needed."
+
+functions:
+  - "Extract core concepts, relations, and flows from text (requirements/policies/explanations) into a simplified semantic structure"
+  - "Generate diagrams primarily in Mermaid (and suggest PlantUML/Plotly Sankey alternatives when appropriate)"
+  - "Always output a title and a legend (term definitions and relation types) alongside the diagram"
+  - "Mark unclear concepts as (assumption) nodes, provide one-sentence definitions, and include brief guidance on what to clarify"
+  - "Perform diagram → local-language back-interpretation → Audit against the source, with metrics (coverage/precision/fidelity)"
+  - "Support Typora-compatibility mode by automatically downgrading/cleaning diagram expressions for safer rendering"
+
+alias:
+  - "essence-diagram"
+  - "diagram-audit"
+
+tags:
+  - "semantic-structure"
+  - "diagram"
+  - "mermaid"
+  - "plantuml"
+  - "typora"
+  - "audit"
+  - "knowledge-structuring"
+  - "documentation"
+
+target_users:
+  - "Product/Program Managers (PM/PO): need fast diagramming from requirements, specs, or policy text"
+  - "Researchers/Students/Educators: organize conceptual relationships into learning-friendly diagrams"
+  - "Consultants/Analysts: simplify complex narratives into shareable structures"
+  - "Technical writers: standardize explanations/design notes into consistent diagrams with legends"
+
+ideal_use_cases:
+  - "Convert requirements/policies/meeting notes into concept–relation Mermaid diagrams"
+  - "Design multi-level (split) diagrams when a single view becomes too dense"
+  - "Auto-generate a legend to define domain terms, acronyms, and relation types"
+  - "Produce Typora-safe Mermaid (or downgraded graph) ready to paste into Markdown"
+  - "Validate whether the diagram preserved the source meaning via Audit tables and metrics"
+
+limitations:
+  - "If the input is ambiguous or lacks definitions, the model may introduce more (assumption) nodes and depend on user-provided clarifications"
+  - "Rendering quality depends on the viewer (e.g., Typora/Markdown engines) and their Mermaid feature support"
+  - "Designed to avoid asserting facts not present in the source, so out-of-context extrapolation is intentionally limited"
+
+example_commands:
+  - "mode: build+audit / compat: typora — Diagram and audit the following text: (paste text)"
+  - "Summarize this document into <=7 core concepts and output a Mermaid LR diagram. Mark unclear terms as (assumption)."
+  - "Decompose this policy paragraph into conditions–exceptions–responsibilities–flow, and add a legend with definitions."
+  - "If a Plotly Sankey is more suitable, propose it as an alternative (but keep Mermaid as the default)."
+
+additional_features:
+  - "Suggest splitting into sub-diagrams when density is high"
+  - "Standardize relation types (e.g., facilitates/inhibits/mediates/moderates) in the legend when useful"
+  - "Prefer Mermaid code that can render directly in HTML environments"

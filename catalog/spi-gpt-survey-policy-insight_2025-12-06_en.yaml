@@ -1,0 +1,44 @@
+gpt_id: g-692926ff1bb881919f6db364e703e390
+url: https://chatgpt.com/g/g-692926ff1bb881919f6db364e703e390-spi-gpt-survey-policy-insight
+version: v1.0.0
+created_at: '2025-12-06'
+last_updated: '2025-12-06'
+tags:
+- policy
+- statistics
+- research-assistant
+- survey
+- public-opinion
+functions:
+- Diagnosing survey methodology (sampling, representativeness, bias, measurement error).
+- Aggregating evidence across multiple surveys and media sources into a structured
+  policy brief.
+alias:
+- SPI-GPT
+- Survey-Policy Insight GPT
+- Survey-to-Policy Analysis GPT
+target_users:
+- Government and local administration officials
+- Parliamentary and legislative staff
+- Survey and market research professionals
+- Think tank and policy institute researchers
+- Data journalists and policy reporters
+ideal_use_cases:
+- When you need to interpret polling or survey results specifically for policy design
+  or evaluation.
+- When you want to compare multiple polls on the same issue and assess consistency,
+  biases, and methodological quality.
+limitations:
+- Does not collect or access proprietary real-time polling data; relies on user-provided
+  data and publicly available information.
+example_commands:
+- '“Take this survey table and generate a policy-oriented brief with: methodology
+  diagnosis, key findings, and policy options with trade-offs.”'
+- “Compare these three polls and recent media coverage, and outline plausible policy
+  response options and their political risks.”
+additional_features:
+- Automatically drafts structured Survey-to-Policy reports using a predefined policy
+  insight framework.
+name: SPI GPT (survey-policy_insight)
+one_line: An AI policy-analysis GPT that integrates surveys, polls, and media discourse
+  into evidence-based policy insights.

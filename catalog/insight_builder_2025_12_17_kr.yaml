@@ -1,0 +1,57 @@
+gpt_id: "g-6916fd5b04ec8191a0fb8e0c4617ad2b"
+name: "Insight Builder"
+url: "https://chatgpt.com/g/g-6916fd5b04ec8191a0fb8e0c4617ad2b-insight-builder"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "데스크톱 리서치용 구조화 추출물(YAML)을 교차-소스 관점에서 합성해 인사이트·갭·권고안을 작성하는 합성 에이전트"
+
+functions:
+  - "구조화된 source_extracts(YAML)를 바탕으로 교차-소스 테마/패턴을 합성"
+  - "핵심 질문(Key Questions)에 직접 연결되는 인사이트 도출"
+  - "불일치/누락/근거 한계 등 갭과 제한사항 정리"
+  - "근거 기반의 실행 가능한 권고안(recommendations) 작성"
+  - "출처 근거를 Source ID(S1, S2 등)로 참조"
+  - "지정된 YAML 필드(synthesis, gaps_and_limitations, recommendations)만 업데이트"
+
+alias:
+  - "insight-builder"
+  - "synthesis-agent"
+  - "desktop-research-synth"
+
+tags:
+  - "desktop-research"
+  - "synthesis"
+  - "evidence-based"
+  - "cross-source"
+  - "yaml"
+  - "research-assistant"
+
+target_users:
+  - "데스크톱 리서치 결과를 빠르게 합성해야 하는 리서처/애널리스트"
+  - "여러 출처의 추출물을 바탕으로 보고서 초안을 만드는 정책/전략/시장 조사 담당자"
+  - "구조화 파이프라인(Structured Mode)로 리서치를 운영하는 팀"
+
+ideal_use_cases:
+  - "여러 문서/기사에서 추출한 요약(YAML)을 교차 비교해 핵심 테마와 결론을 정리"
+  - "Key Questions 중심으로 근거를 묶어 ‘합성 섹션’을 만들고, 추가 조사 필요 지점을 식별"
+  - "출처 간 상충되는 주장/수치를 정리하고, 어떤 근거가 더 강한지 평가 포인트를 제시"
+  - "최종 작성 단계(Writing GPT)로 넘기기 위한 합성·갭·권고안 패키지 생성"
+
+limitations:
+  - "원문 문서 열람/추가 웹 리서치/새 출처 수집은 수행하지 않음"
+  - "입력 YAML의 source_extracts 품질(정확성/대표성/편향)에 결과가 크게 의존"
+  - "지정된 필드 외(objective, scope, key_questions 등)는 수정하지 않음"
+  - "정량 비교는 추출물에 포함된 수치/정의/단위가 충분히 명시된 경우에만 신뢰 가능"
+
+example_commands:
+  - "이 YAML의 source_extracts를 기반으로 synthesis, gaps_and_limitations, recommendations만 채워줘."
+  - "Key Questions별로 테마를 정리하고, 근거는 S1~S8로 인용해 줘."
+  - "출처 간 불일치(숫자/정의/기간)를 표 형태로 요약한 뒤 갭에 반영해 줘."
+  - "권고안은 실행 순서(우선순위)와 리스크/가정까지 포함해 줘."
+
+additional_features:
+  - "Structured Mode 지원: structured_pipeline: true 인 경우 출력은 업데이트된 YAML 블록만 제공"
+  - "교차-소스 합성에 최적화: 단일 출처 요약이 아니라 패턴/대조/공통분모 중심으로 구성"

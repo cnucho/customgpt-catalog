@@ -1,0 +1,33 @@
+gpt_id: "surveydatasimulator_pretestgenerator"
+name: "Survey Data Simulator & Pretest Generator"
+url: "https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "사람처럼 응답하는 페르소나 기반 합성 설문 데이터를 생성합니다."
+functions:
+  - "자연어 기반 설문 응답 시뮬레이션 생성"
+  - "언어적 응답을 분석용 코드 데이터로 변환"
+alias:
+  - "설문시뮬레이터"
+  - "프리테스트생성기"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "설문조사 연구자"
+  - "정책 분석가"
+ideal_use_cases:
+  - "본조사 전 설문 문항 프리테스트"
+  - "교육 및 분석 연습용 합성 설문 데이터 생성"
+limitations:
+  - "실제 모집단 대표성이나 인과추론을 보장하지 않음"
+example_commands:
+  - "이 설문지로 300명의 가상 응답자를 생성해 주세요."
+  - "모바일 사용자와 고령자 페르소나를 포함해 시뮬레이션하세요."
+  - "SPSS에서 바로 쓸 수 있는 설문 데이터를 만들어 주세요."
+  - "결측치와 분포상의 문제를 요약해 주세요."
+  - "페르소나별 응답 특성을 간단히 정리해 주세요."
+additional_features:
+  - "페르소나 심리에 기반한 비응답 및 응답 불일치 반영"

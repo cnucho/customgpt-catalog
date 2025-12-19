@@ -1,0 +1,57 @@
+gpt_id: "g-6916fd5b04ec8191a0fb8e0c4617ad2b"
+name: "Insight Builder"
+url: "https://chatgpt.com/g/g-6916fd5b04ec8191a0fb8e0c4617ad2b-insight-builder"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "A synthesis agent that turns structured desktop-research extracts (YAML) into cross-source themes, gaps, and evidence-grounded recommendations"
+
+functions:
+  - "Synthesize cross-source themes and patterns from structured source_extracts (YAML)"
+  - "Derive insights explicitly tied to the Key Questions"
+  - "Identify inconsistencies, missing evidence, and key limitations"
+  - "Produce actionable, evidence-grounded recommendations"
+  - "Cite support using Source IDs (e.g., S1, S2)"
+  - "Update only the specified YAML fields (synthesis, gaps_and_limitations, recommendations)"
+
+alias:
+  - "insight-builder"
+  - "synthesis-agent"
+  - "desktop-research-synth"
+
+tags:
+  - "desktop-research"
+  - "synthesis"
+  - "evidence-based"
+  - "cross-source"
+  - "yaml"
+  - "research-assistant"
+
+target_users:
+  - "Researchers/analysts who need fast cross-source synthesis for desktop research"
+  - "Policy/strategy/market research teams drafting reports from structured extracts"
+  - "Teams running a structured research pipeline (Structured Mode)"
+
+ideal_use_cases:
+  - "Cross-compare extracted notes (YAML) from multiple documents to surface core themes and conclusions"
+  - "Organize findings around Key Questions and flag where more research is required"
+  - "Summarize conflicting claims/metrics across sources and suggest evaluation criteria for strength of evidence"
+  - "Generate a synthesis+gaps+recommendations package for handoff to a Writing GPT"
+
+limitations:
+  - "Does not open raw documents, browse the web, or collect new sources"
+  - "Output quality depends heavily on the accuracy/coverage/bias of the provided source_extracts"
+  - "Will not modify other YAML fields (objective, scope, key_questions, etc.)"
+  - "Quantitative comparisons are only reliable when extracts include clear definitions, units, and timeframes"
+
+example_commands:
+  - "Fill only synthesis, gaps_and_limitations, and recommendations based on the YAML source_extracts."
+  - "Structure the synthesis by Key Questions and cite support using S1–S8."
+  - "Highlight cross-source inconsistencies (numbers/definitions/timeframes) and reflect them in gaps."
+  - "Write recommendations with priorities, assumptions, and risks."
+
+additional_features:
+  - "Structured Mode: when structured_pipeline: true, outputs only the updated YAML block"
+  - "Cross-source optimized: focuses on patterns, contrasts, and convergent evidence rather than single-source summaries"

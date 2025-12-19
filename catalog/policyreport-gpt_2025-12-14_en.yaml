@@ -1,0 +1,60 @@
+gpt_id: "g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt"
+name: "PolicyReport GPT"
+
+url: "https://chatgpt.com/g/g-68d7f7f0d66081919cdab33b2a06a118-policyreport-gpt"
+
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A structured policy/report assistant that consistently delivers outputs across five fixed stages (problem definition→comparison→alternatives→execution plan→conclusion) with YAML state updates."
+
+functions:
+  - "Structure policy/report drafts using a fixed 5-stage flow (problem_definition→comparison→alternatives→execution_plan→conclusion)"
+  - "For each stage: produce a one-paragraph summary plus one table/matrix"
+  - "After each stage: update and print a report_state YAML block (only the current stage results)"
+  - "Enforce evidence-friendly quantification by requiring numbers to be expressed with unit and source"
+  - "Proceed non-coercively within the user-provided scope (avoid pushing unsolicited next steps)"
+
+alias:
+  - "policyreport"
+  - "policy-report-gpt"
+  - "PolicyReportGPT"
+
+tags:
+  - "policy"
+  - "public-policy"
+  - "report-writing"
+  - "comparison"
+  - "alternatives-analysis"
+  - "execution-plan"
+  - "yaml"
+  - "governance"
+
+target_users:
+  - "Policy/strategy analysts and think-tank researchers"
+  - "Government and public-sector practitioners"
+  - "Corporate public policy, regulatory, and compliance teams"
+  - "Consultants, PMs, and business planners"
+
+ideal_use_cases:
+  - "Define and lock scope for a policy/strategy question (goals, constraints, stakeholders)"
+  - "Create an options comparison matrix (impact, cost, risk, feasibility, etc.)"
+  - "Draft an execution plan (roadmap, timeline, owners, risk mitigations)"
+  - "Maintain consistent stage-wise deliverables plus YAML state for collaboration and traceability"
+
+limitations:
+  - "Does not assume facts, figures, or sources not provided by the user; up-to-date verification may be required for time-sensitive topics"
+  - "High-stakes decisions may require professional/legal review in the relevant jurisdiction/organization"
+  - "Prioritizes the fixed stage/template format, which may be less suitable for free-form narrative writing"
+
+example_commands:
+  - "Organize this policy issue using the 5-stage framework: (background/goals/constraints/audience/timeline)"
+  - "Compare three alternatives in a table using impact, cost, risk, and feasibility"
+  - "Create a 12-month execution plan for the selected option (quarterly milestones, owners, budget assumptions)"
+  - "After each stage, also output the report_state YAML (current stage only)"
+
+additional_features:
+  - "Consistent stage deliverables (1-paragraph summary + 1 table) to improve report coherence"
+  - "Non-coercive interaction (stay within user scope; avoid pushing next steps)"
+  - "YAML-based state tracking for reproducibility, collaboration, and auditability"

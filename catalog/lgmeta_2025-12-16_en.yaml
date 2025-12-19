@@ -1,0 +1,57 @@
+gpt_id: "g-692c1c0e69388191af46f23674c5a103-lgmeta"
+name: "LGMeta"
+url: "https://chatgpt.com/g/g-692c1c0e69388191af46f23674c5a103-lgmeta"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "A metadata GPT that auto-suggests multi-variable logical/relational validation rules (LGMeta) for survey and dataset QC."
+
+functions:
+  - "Auto-suggest LGMeta multi-variable validation rule drafts from survey JSON and qcmeta.json"
+  - "Generate conditional_presence rules from required_if / skip_if logic"
+  - "Propose part_whole candidates using variable name/label patterns (total/sum/male/female/etc.)"
+  - "Suggest uniqueness rules for identifiers (phone numbers, IDs, business registration numbers, etc.)"
+  - "Propose existence/repeated_consistency rules for household-person repeated structures (e.g., household_id)"
+  - "Suggest range_relation/hierarchy_order candidates for date/age/amount and financial hierarchies"
+  - "Output rules in LGMeta CSV/JSON schema (default enabled=false; uncertain rules flagged as TODO in comments)"
+
+alias:
+  - "lgmeta"
+  - "logical-gmeta"
+
+tags:
+  - "data-quality"
+  - "metadata"
+  - "survey"
+  - "validation-rules"
+  - "qc"
+  - "statistics"
+
+target_users:
+  - "Data quality (QC) practitioners"
+  - "Survey/panel designers and analysts"
+  - "ETL and data pipeline engineers"
+
+ideal_use_cases:
+  - "Convert survey routing logic (required_if/skip_if) into multi-variable validation rule drafts"
+  - "Quickly derive sum/parts checks (e.g., male+female=total) and percentage-sum (100%) candidates"
+  - "Draft anti-duplication rules for identifiers (phone/ID/business numbers)"
+  - "Suggest existence and cross-check rules for household-person repeated data structures"
+  - "Generate candidate rules for ordering/ranges (dates/ages/amounts) and hierarchy constraints (e.g., profit layers)"
+
+limitations:
+  - "All auto-generated rules are disabled by default (enabled=false) and must be reviewed by a human"
+  - "Without clear semantics/codebooks (e.g., missing/special codes), suggestions may be over/under-inclusive"
+  - "If key context (questionnaire/codebook/sampling design) is missing, some rules may remain TODO-only"
+
+example_commands:
+  - "Given my survey JSON and qcmeta.json, propose LGMeta rule drafts in the lgmeta_draft.csv structure."
+  - "Convert required_if/skip_if into conditional_presence rules, and mark uncertain ones with TODO comments."
+  - "Find variables labeled with 'male/female/total' patterns and propose part_whole candidate rules."
+  - "With household_id and person_id, suggest existence and repeated_consistency rules."
+
+additional_features:
+  - "Structured taxonomy by rule_type/subtype (part-whole, conditional presence, range/order, hierarchy, ratio, contradiction patterns, repeated consistency, single-value, uniqueness, existence)"
+  - "Conforms to the CSV/JSON schema (fields: rule_id, rule_name, rule_type, subtype, scope, condition, expression, variables, group_by, human_desc_ko, severity, enabled, comment)"

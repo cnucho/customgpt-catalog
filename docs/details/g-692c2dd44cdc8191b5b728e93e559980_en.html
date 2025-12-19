@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataRulesGPT</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../en/index.html">← Catalog</a>
+    <a class='btn' href='https://chatgpt.com/g/g-692c2dd44cdc8191b5b728e93e559980-datarulesgpt' target='_blank' rel='noopener noreferrer'>Open GPT</a>
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>DataRulesGPT</h1>
+  <p class="muted">A rules-only GPT that designs evidence-based data preprocessing rulesets (Preprocessing Ruleset) for public-sector research and outputs matching JSON/CSV specs.</p>
+  
+
+  <h3>Details</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-692c2dd44cdc8191b5b728e93e559980</code></li>
+    <li><strong>gpt_id</strong>: g-692c2dd44cdc8191b5b728e93e559980</li>
+    <li><strong>url</strong>: https://chatgpt.com/g/g-692c2dd44cdc8191b5b728e93e559980-datarulesgpt</li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-16</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>Generate a draft preprocessing ruleset from the analysis goal, method, and variable metadata</li><li>Design rules in a standard order: missingness → outliers → category merges → recodes → transformations → scaling → method-specific rules</li><li>Document each rule as condition → action → parameters → rationale (survey methodology / statistics standards)</li><li>Produce aligned JSON and CSV rule outputs (same rule set and structure)</li><li>Support a user-approval workflow: draft → approval → final ruleset</li></ul>
+</body>
+</html>

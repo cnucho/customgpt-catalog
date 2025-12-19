@@ -1,0 +1,54 @@
+gpt_id: "g-693d97a27ca48191bb93fc6d353a2232"
+name: "SlideAnimator Builder"
+
+url: "https://chatgpt.com/g/g-693d97a27ca48191bb93fc6d353a2232-slideanimator-builder"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "Losslessly maps finalized slide content into SlideSpec (JSON) and renders a high-quality Reveal.js HTML deck."
+
+functions:
+  - "Normalizes user-provided finalized slides (title/body/elements/order) without modifying any text"
+  - "Losslessly maps slides into SlideSpec (JSON)"
+  - "Renders a high-quality Reveal.js deck as deck.html"
+  - "Includes per-slide animation_spec (Reveal.js fragments by default) for attention guidance"
+  - "Adds QA notes (warnings/assumptions) only; never edits meaning or wording"
+  - "Provides simple local run instructions (open directly / run via a local server)"
+
+alias:
+  - "slideanimator-builder"
+  - "slideanimator-renderer"
+
+tags:
+  - "slides"
+  - "slidespec"
+  - "revealjs"
+  - "presentation"
+  - "animation"
+  - "renderer"
+  - "content-lock"
+
+target_users:
+  - "Users who already finalized slide content and want automated rendering/animation"
+  - "Teams running a SlideSpec (JSON) pipeline for review, versioning, and distribution"
+
+ideal_use_cases:
+  - "Convert a finalized slide list into SlideSpec (JSON) for review and version control"
+  - "Generate a Reveal.js-ready HTML deck (deck.html) for immediate playback"
+  - "Apply lightweight step-by-step fragment animations without altering the narrative flow"
+
+limitations:
+  - "Never modifies, summarizes, paraphrases, or reorders titles/body/bullets under any circumstance"
+  - "Does not infer layout changes from semantics without render_hint (falls back to safe defaults)"
+  - "For images/copyrighted assets, only uses user-owned/rightful sources; otherwise may use placeholders"
+
+example_commands:
+  - "Take the following 8 finalized slides and map them losslessly to SlideSpec (JSON), then render deck.html. (Do not change any text.)"
+  - "Use render_hint=two_column for every slide. Use one click per fragment step."
+  - "Disable animation on exec summary slides (animation_spec.enabled=false) and use fragments for the rest."
+  - "Output slidespec.json, deck.html, and simple instructions to run locally."
+
+additional_features:
+  - "Records QA notes (e.g., non-assertion titles) into assumptions/notes fields"

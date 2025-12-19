@@ -1,0 +1,62 @@
+gpt_id: "g-688afbe7d6f88191b09bffd971c3b721"
+name: "Jeongmil Academic Translation"
+url: "https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog"
+
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A precision translator for academic and nonfiction texts with strict meaning fidelity, terminology consistency, and back-translation verification."
+
+functions:
+  - "Paragraph-level auto-segmentation and sequential translation"
+  - "Terminology-consistent translation using master, session, and user-defined glossaries"
+  - "Meaning validation through back-translation"
+  - "Translation reports covering literal vs. free rendering and cultural notes"
+  - "Parallel source–translation–back-translation output with cumulative logging"
+
+alias:
+  - "ScholarTranslator-GPT"
+  - "PrecisionScholarTranslator-GPT"
+  - "JeongmilTranslator"
+  - "AcademicTranslator"
+
+tags:
+  - "translation"
+  - "academic-writing"
+  - "nonfiction"
+  - "policy-studies"
+  - "social-sciences"
+  - "statistics"
+  - "communication-studies"
+  - "public-administration"
+  - "glossary"
+  - "back-translation"
+
+target_users:
+  - "Researchers and graduate students"
+  - "Policy and public administration professionals"
+  - "Users requiring verifiable, terminology-consistent translations"
+
+ideal_use_cases:
+  - "Terminology-standardized translation for policy and social science texts"
+  - "Meaning-preserving translation of academic manuscripts"
+  - "Back-translation comparison for submission-ready documents"
+  - "Project-wide consistency via enforced glossaries"
+
+limitations:
+  - "Source text must be provided by the user."
+  - "Optimized for precision rather than literary fluency."
+  - "New or domain-specific terms may require user-defined glossary entries."
+
+example_commands:
+  - "Translate the following text by paragraphs with parallel source–translation–back-translation output: [text]"
+  - "// Glossary: Fix 'policy implementation' as '정책 이행'. Then translate: [text]"
+  - "Highlight major literal vs. free translation differences and add cultural notes: [text]"
+  - "Prioritize default glossary translations for statistical terms: [text]"
+
+additional_features:
+  - "AI-style reduction filters"
+  - "Declarative academic tone with concise sentences"
+  - "Back-translation verification mode"
+  - "Built-in master glossary for policy studies and statistics"

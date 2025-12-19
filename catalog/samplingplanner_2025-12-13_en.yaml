@@ -1,0 +1,33 @@
+gpt_id: "samplingplanner"
+name: "SamplingPlanner"
+url: "https://chatgpt.com/g/g-692c3734ba6c8191a83f97eb05c0de96-samplingplanner"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "A professional assistant for designing transparent and auditable survey sampling plans."
+functions:
+  - "Design probability and quasi-probability sampling plans"
+  - "Produce auditable sampling documentation and JSON/YAML outputs"
+alias:
+  - "sampling-design"
+  - "survey-sampling"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "Survey methodologists"
+  - "Policy and academic researchers"
+ideal_use_cases:
+  - "Designing stratified or multistage sampling plans for surveys"
+  - "Preparing sampling sections for proposals and feasibility studies"
+limitations:
+  - "Cannot fabricate population or frame data when inputs are missing"
+example_commands:
+  - "Design a two-stage stratified household sample for a national survey"
+  - "Create a PPS sampling plan using last year's frame counts"
+  - "List missing inputs required for a valid sampling design"
+  - "Output the sampling plan as reproducible JSON"
+  - "Assess whether the proposed sample supports domain estimation"
+additional_features:
+  - "Clear handling of provisional previous-year population counts"

@@ -1,0 +1,50 @@
+# filename: qcmeta-gpt_2025-12-16_en.yaml
+
+gpt_id: "g-692c14b1fb6081919c10886a7ccf2cdd"
+name: "QCMeta GPT"
+url: "https://chatgpt.com/g/g-692c14b1fb6081919c10886a7ccf2cdd-qcmeta-gpt"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "Analyzes survey files (JSON/CSV/Excel) to generate a QC metadata draft (qcmeta_draft.csv) and converts a reviewed final file (qcmeta_final.csv) into qcmeta.json."
+
+functions:
+  - "Analyze survey question structures and generate variable-level QC metadata (qcmeta_draft.csv)"
+  - "Expand multi/grid/loop questions into variables and generate storage_vars according to rules"
+  - "Populate only confirmable metadata fields; leave uncertain values as '?' with TODO comments"
+  - "Convert user-reviewed qcmeta_final.csv into qcmeta.json without guessing"
+
+alias:
+  - "qcmeta"
+  - "qcmeta-draft"
+
+tags:
+  - "survey"
+  - "metadata"
+  - "qc"
+  - "statistics"
+  - "data-management"
+
+target_users:
+  - "Researchers and data analysts responsible for survey QC and codebooks"
+  - "Survey designers and data managers needing standardized metadata"
+
+ideal_use_cases:
+  - "Create a QC metadata draft from survey JSON/CSV/Excel with a human review workflow"
+  - "Ensure consistent variable naming and storage for multi/grid/loop surveys"
+  - "Convert approved qcmeta_final.csv into qcmeta.json"
+
+limitations:
+  - "Does not infer unspecified information; such fields remain '?'"
+  - "Incomplete survey definitions result in more TODO items"
+  - "Final qcmeta.json reflects only confirmed values in qcmeta_final.csv"
+
+example_commands:
+  - "Analyze this survey JSON and generate qcmeta_draft.csv."
+  - "Convert this qcmeta_final.csv into qcmeta.json."
+  - "Expand grid questions into row-based variables."
+
+additional_features:
+  - "Forces review by keeping uncertainties as '?' and adding TODO comments"

@@ -1,0 +1,65 @@
+gpt_id: "g-692421ab3f748191b2ef470fd309446b"
+name: "studyScope"
+url: "https://chatgpt.com/g/g-692421ab3f748191b2ef470fd309446b-studyscope"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "An academic research navigator that discovers feasible, data-backed topics and guides you from scoping to testable research questions, datasets, and method design."
+
+functions:
+  - "Select/refine field and subfield scope (Field Mapper)"
+  - "Scan emerging/hot topics and trends (Emerging Topic Scanner)"
+  - "Evaluate feasibility by time/skills/data/method complexity (Feasibility Grid)"
+  - "Check open dataset availability and data-source options (Dataset Availability Checker)"
+  - "Extract gaps and ‘future work’ directions from reviews/meta-analyses (Gap Mapper)"
+  - "Convert broad scoping into specific, testable research questions (Scoping-to-Question Converter)"
+  - "Provide next-step routing guidance (datasets, literature search, research design, policy/legal, modeling)"
+
+alias:
+  - "studyscope"
+  - "research-topic-navigator"
+  - "academic-topic-finder"
+
+tags:
+  - "research-assistant"
+  - "topic-discovery"
+  - "literature-scoping"
+  - "dataset-discovery"
+  - "feasibility-analysis"
+  - "research-design"
+  - "bilingual"
+  - "Korea"
+  - "STEM"
+  - "social-science"
+
+target_users:
+  - "Undergraduate/graduate students (thesis, capstone, term projects)"
+  - "Early-career researchers (topic pivoting, pilot ideas)"
+  - "Practitioner-researchers (turning policy/industry problems into RQs)"
+  - "Research planners/PMs (portfolio building and prioritization)"
+
+ideal_use_cases:
+  - "From a vague interest to 3–10 narrowed, empirically testable topic candidates"
+  - "Compare candidates by dataset access, method difficulty, and timeline fit"
+  - "Define contribution points by mapping gaps from reviews/meta-analyses"
+  - "Produce a one-page summary: final RQ, hypotheses, variables, and data needs"
+  - "Hand off structured context to DatasetFinder/LitSearch/ResearchDesigner/PolicyScope/ModelArchitect"
+
+limitations:
+  - "No direct access to paywalled databases or automatic full-text downloading"
+  - "Ethics (IRB), copyright, and dataset license requirements must be verified by the user"
+  - "Does not assume the existence of proprietary/internal datasets unless the user confirms access"
+  - "For fast-moving topics, strengthening outputs with web-based verification is recommended when requested"
+
+example_commands:
+  - "My field is economics and I'm interested in platform labor. Propose 5 feasible empirical topics with feasibility scores for a 12-week timeline."
+  - "I want to study learning analytics with open datasets. Suggest candidate datasets and draft research questions."
+  - "For air pollution and depression, summarize ‘future work’ from recent reviews, map gaps, and compress into 3 RQ candidates."
+  - "I prefer panel data / DiD. Narrow to topics with easy data access and propose a research design."
+
+additional_features:
+  - "Modular workflow: field → trends → feasibility → data → gaps → research questions"
+  - "Routing options: DatasetFinderGPT / LitSearchGPT / ResearchDesignerGPT / PolicyScope / ModelArchitectGPT"
+  - "On request, outputs a ResearchExchangeSchema (YAML) for clean cross-GPT handoff with preserved context"

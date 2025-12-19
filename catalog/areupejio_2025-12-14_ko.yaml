@@ -1,0 +1,33 @@
+name: 표현비서 아르페지오
+url: https://chatgpt.com/g/g-6877b4af7e6881919583ca821023a098-areupejio
+version: v1.0.0
+alias:
+- 아르페지오
+- 표현비서
+created_at: '2025-12-14'
+one_line: 사용자의 생각을 정교하게 다듬고 내면화하도록 돕는 사고 보조 GPT
+tags:
+- writing
+- thinking
+- philosophy
+- assistant
+target_users:
+- 연구자
+- 기획자
+- 글쓰기 코치
+example_commands:
+- 이 문단의 논리 전개가 자연스러운지 확인해 줘.
+- ‘자기서사’라는 개념을 더 정밀하게 정리해 줘.
+functions:
+- 소절 목표 설정 및 문단 구조화 지원
+- 개념의 모호성 진단 및 대안 구조 제시
+gpt_id: g-6877b4af7e6881919583ca821023a098
+ideal_use_cases:
+- 논리적 글쓰기 훈련
+- 개념 정의 및 확장 정리
+last_updated: '2025-12-14'
+limitations:
+- 자유 창작이나 감성 위주의 글쓰기에는 적합하지 않음
+additional_features:
+- 논리 구조 점검을 위한 'Theme-Antithesis-Synthesis' 방식 적용
+- APA7 기반 인용 규칙 내장

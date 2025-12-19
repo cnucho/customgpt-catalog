@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Table Narrator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 920px; }
+    .topbar { display:flex; gap:10px; align-items:center; margin-bottom: 12px; flex-wrap:wrap; }
+    .btn { display:inline-block; font-size: 12px; padding: 6px 10px; border-radius: 10px; background: #f6f6f6; color: #222; text-decoration: none; }
+    .btn:hover { background:#ededed; }
+    .muted { color:#666; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="btn" href="../index.html">← 목록</a>
+    <a class='btn' href='https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+    <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">Tistory</a>
+  </div>
+
+  <h1>Table Narrator</h1>
+  <p class="muted">통계·조사·실험 결과표를 구조적으로 해석해 보고서/논문용 서술문으로 자동 변환하는 표 해석 GPT.</p>
+  
+
+  <h3>상세정보</h3>
+  <ul>
+    <li><strong>_id</strong>: <code>g-6892419d09b48191a097dcaf3bde6ced</code></li>
+    <li><strong>gpt_id</strong>: g-6892419d09b48191a097dcaf3bde6ced</li>
+    <li><strong>url</strong>: https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator</li>
+    <li><strong>version</strong>: v1.0.0</li>
+    <li><strong>last_updated</strong>: 2025-12-14</li>
+    <li><strong>viz1</strong>: public</li>
+    <li><strong>viz2</strong>: show_url</li>
+  </ul>
+
+  <h3>Functions</h3><ul><li>표의 행·열·다단 헤더 구조를 분석하고 기준축(분모 방향)을 식별한다.</li><li>셀 값 유형(빈도·백분율·점수·지수 등)을 판별하고 단위/범위를 정규화한다.</li><li>합계=100% 여부, 무응답/다중응답 가능성 등을 점검해 보수적으로 해석한다.</li><li>항목별 해석문과 전체 요약문을 생성하며, 비교는 %p 또는 수치 차이로 명확히 표기한다.</li><li>시계열(3시점 이상)인 경우 변화·추세를 요약하고, 2시점은 단순 증감으로 기술한다.</li><li>통계 검정 결과가 주어진 경우(또는 요청 시) 유의성 반영 문장을 생성하되, 없으면 단정 표현을 피한다.</li></ul>
+</body>
+</html>

@@ -1,0 +1,60 @@
+gpt_id: g-692c2dd44cdc8191b5b728e93e559980
+name: DataRulesGPT
+url: https://chatgpt.com/g/g-692c2dd44cdc8191b5b728e93e559980-datarulesgpt
+version: v1.0.0
+created_at: '2025-12-16'
+last_updated: '2025-12-16'
+one_line: A rules-only GPT that designs evidence-based data preprocessing rulesets
+  (Preprocessing Ruleset) for public-sector research and outputs matching JSON/CSV
+  specs.
+functions:
+- Generate a draft preprocessing ruleset from the analysis goal, method, and variable
+  metadata
+- 'Design rules in a standard order: missingness → outliers → category merges → recodes
+  → transformations → scaling → method-specific rules'
+- Document each rule as condition → action → parameters → rationale (survey methodology
+  / statistics standards)
+- Produce aligned JSON and CSV rule outputs (same rule set and structure)
+- 'Support a user-approval workflow: draft → approval → final ruleset'
+alias:
+- datarulesgpt
+- preprocess-rules
+tags:
+- data-preprocessing
+- survey-methodology
+- statistics
+- research
+- governance
+- reproducibility
+target_users:
+- Public-policy and government researchers
+- Data analysts / statisticians working with survey or administrative data
+- Users who need a ruleset to hand off to an execution agent (e.g., CleaningGPT)
+ideal_use_cases:
+- Writing an auditable, reproducible preprocessing plan for survey/administrative
+  data
+- Choosing missing-data and outlier-handling rules aligned with the intended method
+  (regression, logistic, PCA, clustering, etc.)
+- Merging sparse categories to prevent dummy-variable explosion or perfect separation
+  in logistic models
+- Exporting a machine-readable ruleset (JSON/CSV) for downstream execution by another
+  agent
+limitations:
+- Does not manipulate data or run code (rules generation only)
+- Does not invent/guess unseen statistics or thresholds; uses 'no data provided' when
+  information is missing
+- Output quality depends heavily on the provided metadata (types, missing rates, distributions,
+  valid ranges, category counts, etc.)
+example_commands:
+- My goal is 'factors influencing policy satisfaction' and the method is logistic
+  regression. Here are the variables (name/description/type/valid range/missing rate/category
+  counts). Create a draft preprocessing ruleset in JSON and CSV.
+- Propose textbook-based handling rules for variables with 35% missingness vs 8% missingness,
+  and include the rationale for each.
+- Create a rule to merge categorical levels below 2% frequency and include the rationale
+  for preventing perfect separation in logistic regression.
+- I’m running PCA. Provide a prioritized ruleset covering scaling, transformations,
+  and outlier handling.
+additional_features:
+- Managed ruleset fields (rule_id, priority, status) for governance and review
+- Enforces the prescribed rule-generation order for consistency

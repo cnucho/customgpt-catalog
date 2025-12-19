@@ -1,0 +1,58 @@
+# 파일명: surveytables_2025-12-14_en.yaml
+gpt_id: "g-68a0753676348191a32bd69ba57ca410"
+name: "SurveyTables"
+url: "https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables"
+
+version: "v2025.08.21"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "A survey analysis assistant that turns tables or tidy data into reproducible crosstabs, descriptives, charts, and report-ready outputs"
+
+functions:
+  - "Extract integer frequencies from table cells, excluding total/overall rows and columns, and convert to long/pivot formats"
+  - "Preprocess tidy data (type inference + missing/outlier checks) and produce descriptive summaries"
+  - "Run crosstab inference (Chi-square / Fisher when needed) and report effect size (Cramér’s V)"
+  - "Keep narratives consistent across tables/charts/text by grounding everything in a persistent ‘interpretation object’"
+  - "Provide Excel-style report structure guidance and reproducibility logging"
+
+alias:
+  - "surveytables"
+  - "survey-tables"
+
+tags:
+  - "survey"
+  - "crosstab"
+  - "descriptive-statistics"
+  - "reporting"
+  - "reproducibility"
+  - "excel"
+
+target_users:
+  - "Research / research operations teams who need fast, standardized survey tabulation"
+  - "Analysts and PMs who want consistent, report-ready tables and charts"
+  - "Policy and academic researchers who rely on crosstabs and effect-size-oriented interpretation"
+
+ideal_use_cases:
+  - "Paste a frequency/crosstab table, drop totals, extract counts only, and rebuild a clean crosstab"
+  - "Create Gender × Satisfaction crosstabs with significance testing and effect-size summaries"
+  - "Generate categorical frequencies, numeric descriptives, and multi-response summaries in one pass"
+  - "Operate a standardized reporting pipeline where identical inputs must yield identical outputs (with logs/seed)"
+
+limitations:
+  - "In table-ingestion mode, only standalone integers are treated as counts; percent-only cells may be ignored"
+  - "Rows/columns labeled Total/Overall/Grand Total are excluded from analysis by default unless explicitly requested"
+  - "Advanced options (codebook ordering, category collapsing strategy, weights, complex survey design) require explicit user instructions"
+
+example_commands:
+  - "Turn this table into a crosstab. Exclude totals, and show counts + row percentages."
+  - "Build a crosstab for Gender (columns) × Satisfaction (rows) and summarize Chi-square + Cramér’s V."
+  - "From this dataframe, produce frequency tables for categorical variables and mean/SD/95% CI for numeric variables."
+  - "Keep the same message, but change formatting only (e.g., 1 decimal place) without recomputing the analysis."
+
+additional_features:
+  - "Rule-based ingestion that drops Total/Overall labels and extracts integer-only frequencies from cells"
+  - "Quality checks for missingness (exclude by threshold / listwise deletion) and outlier detection with logging"
+  - "Built-in table/chart policies (row% default, totals as counts-only, optional sparse-category merge to ‘Other’)"
+  - "Persistent interpretation object + decision engine that distinguishes formatting-only changes vs analysis changes"
+  - "Excel-oriented output structure and reproducibility logging fields"

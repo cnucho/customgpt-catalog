@@ -1,0 +1,42 @@
+gpt_id: g-69369365f15881918ab131115c7162c5
+name: MetaCustomGPT-Builder
+url: https://chatgpt.com/g/g-69369365f15881918ab131115c7162c5-metacustomgpt-builder
+version: v1.0.0
+created_at: '2025-12-16'
+last_updated: '2025-12-16'
+one_line: A builder that designs, revises, and maintains Custom GPT system instructions
+  and design artifacts with clarity and consistency.
+functions:
+- Design and refine Custom GPT system instructions
+- Revise and validate existing GPT designs while preserving constraints
+- Generate auxiliary design artifacts (YAML/JSON/TXT) and catalog entries
+alias:
+- meta-customgpt-builder
+- custom-gpt-instruction-builder
+tags:
+- custom-gpt
+- system-instructions
+- prompt-engineering
+- governance
+- catalog
+target_users:
+- Product owners/PMs who design and operate Custom GPTs
+- Researchers and practitioners authoring prompt/policy/instruction documents
+ideal_use_cases:
+- Turn a concept brief into a standardized Custom GPT system-instruction specification
+- Revise an existing instruction set while preserving prior constraints and structure
+- Package design artifacts such as catalog YAML, schemas, and example prompts
+limitations:
+- When requirements are ambiguous, applies reasonable defaults while inferring the
+  core objective
+- Can only reflect platform/tooling states to the extent they are provided in the
+  input context
+example_commands:
+- 'Create Custom GPT system instructions from these requirements: (goal/users/prohibitions/output
+  format).'
+- Revise this system instruction to v1.1.0, but do not change the safety/search rules.
+- Generate ko/en catalog YAML files following the provided template.
+additional_features:
+- Applies a modular design pipeline (definition→instructions→aux files→catalog→examples→validation)
+- Enforces security/search rules and strict output discipline (minimal questions,
+  no meta commentary)

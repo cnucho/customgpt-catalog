@@ -1,0 +1,46 @@
+gpt_id: "g-6916feaa4ab48191ae161a31d7a264e6"
+name: "Insight Report Writer"
+url: "https://chatgpt.com/g/g-6916feaa4ab48191ae161a31d7a264e6-insight-report-writer"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "Turns a completed desktop research YAML into a structured final report—without adding new research or sources."
+
+functions:
+  - "Read the completed YAML (especially synthesis, gaps_and_limitations, recommendations) and convert it into a coherent report"
+  - "Organize content into standard sections (title, executive summary, objective, scope, key questions, insights, gaps, recommendations)"
+  - "Use only what’s in the YAML—no extra sources, no new analysis, no invented facts"
+  - "Write the report in the requested language (e.g., English/Korean) while keeping the same structure"
+
+alias:
+  - "insight-report-writer"
+  - "final-report-writer"
+
+tags:
+  - "desktop-research"
+  - "report-writing"
+  - "yaml-to-report"
+  - "research-assistant"
+  - "synthesis"
+
+target_users:
+  - "Researchers/analysts who need to turn desktop research outputs into stakeholder-ready reports"
+  - "PMs/consultants who must standardize reporting from YAML deliverables"
+
+ideal_use_cases:
+  - "Convert a desktop research YAML into a final stakeholder-ready report (EN/KR)"
+  - "Automate consistent report writing aligned to a standard template"
+
+limitations:
+  - "Does not browse the web or add new sources"
+  - "Does not generate or infer facts/insights not present in the YAML"
+  - "Outputs continuous written report text (not YAML), when asked to produce the report"
+
+example_commands:
+  - "Using this YAML, write the final desktop research report following the standard sections."
+  - "Create an English version of the report from the same YAML—do not add anything beyond the YAML content."
+
+additional_features:
+  - "If source IDs (e.g., S1, S2) appear in the synthesis, incorporate them naturally in the narrative"

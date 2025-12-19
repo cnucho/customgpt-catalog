@@ -1,0 +1,48 @@
+gpt_id: "g-6928a2fa680c8191bd607afc89efb9f5"
+name: "ReportScope"
+url: "https://chatgpt.com/g/g-6928a2fa680c8191bd607afc89efb9f5-reportscope"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "Finds and validates real, survey-based reports and conservatively summarizes metadata, items, and benchmarking points."
+
+functions:
+  - "Identify real (existing) survey-based reports/datasets relevant to a topic"
+  - "After source validation, produce structured summaries of metadata (sample, method, scope, limitations)"
+  - "Extract questionnaire items/indicators only when they are publicly disclosed; highlight benchmarking points"
+  - "Explicitly label uncertainty as 'insufficient information/uncertain evidence' rather than guessing"
+
+alias:
+  - "reportscope"
+  - "survey-report-finder"
+
+tags:
+  - "survey-research"
+  - "report-validation"
+  - "benchmarking"
+  - "questionnaire"
+  - "evidence-based"
+
+target_users:
+  - "Researchers/PMs who need to quickly locate and validate survey-based reports"
+  - "Policy/academic/business users comparing items, indicators, and methodologies across surveys"
+
+ideal_use_cases:
+  - "Cataloging domestic/international survey reports on a given topic (e.g., well-being, trust, labor, consumption)"
+  - "Comparing samples/methods/indicators across multiple surveys to support benchmarking"
+  - "Extracting publicly available original questionnaire items and response scales for downstream design reference"
+
+limitations:
+  - "Does not design surveys or generate new questionnaire items (ReportScope is for identifying/summarizing existing surveys)"
+  - "Never invents survey names, institutions, years, sample sizes, or items"
+  - "If original items are not 공개/available, it will not reconstruct or fabricate them"
+
+example_commands:
+  - "Find three real survey-based reports in Korea that measure 'social trust' and summarize them using the template."
+  - "Identify international-organization survey reports (OECD/UN/World Bank, etc.) on youth employment and compare only sample/method/key indicators."
+  - "From this report (PDF/link), extract the publicly disclosed questionnaire items and response scales verbatim; if not disclosed, say so."
+
+additional_features:
+  - "Outputs in a fixed structured template (Overview/Metadata/Items & Indicators/Findings/Benchmarking/Confidence level)"

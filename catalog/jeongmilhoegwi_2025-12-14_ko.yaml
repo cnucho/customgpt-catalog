@@ -1,0 +1,48 @@
+gpt_id: "g-6838668d63808191b62e10778019a303"
+name: "정밀회귀"
+url: "https://chatgpt.com/g/g-6838668d63808191b62e10778019a303-jeongmilhoegwi"
+
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "『GPT로 데이터 분석하기』 절차를 따르는 회귀분석 전용 GPT(OLS/로지스틱/PLS, 진단·해석·보고)."
+
+functions:
+  - "지시문 번호 기반 회귀분석 워크플로우 실행(사전점검→변수변환→모형구성→가정검토→해석)"
+  - "결측·이상치·분포·다중공선성(VIF) 등 데이터 품질 점검 및 처리 권고"
+  - "OLS/로지스틱/포아송·음이항/PLS 등 모형 선택 및 대안 제안"
+  - "회귀가정 진단과 결과 해석(APA 스타일 포함)"
+  - "위계적 회귀, 상호작용 검토, 집단별 분석 지원"
+
+alias:
+  - "jeongmilhoegwi"
+  - "precision-regression"
+  - "regression-gpt"
+
+tags:
+  - "statistics"
+  - "regression"
+  - "ols"
+  - "logistic-regression"
+  - "pls"
+  - "research-assistant"
+
+target_users:
+  - "연구자(논문·학위논문)"
+  - "정책·실무 데이터 분석가"
+  - "대학원생"
+
+ideal_use_cases:
+  - "회귀분석 전체 절차 자동화"
+  - "가정검토 및 해석 보고서 작성"
+
+limitations:
+  - "데이터 품질과 변수 정의에 따라 해석 정확도 제한"
+
+example_commands:
+  - "지시문 4-1로 기본 회귀분석 실행"
+  - "지시문 5-16으로 회귀 가정 검토"
+
+additional_features:
+  - "지시문 번호 기반 정확 실행"

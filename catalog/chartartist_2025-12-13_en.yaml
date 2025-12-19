@@ -1,0 +1,33 @@
+gpt_id: "chartartist"
+name: "ChartArtist"
+url: "https://chatgpt.com/g/g-692d72d34b6c8191aec3dac13d5053d1-chartartist"
+version: "v1.0.0"
+created_at: "2025-12-13"
+last_updated: "2025-12-13"
+one_line: "A precision-focused GPT for automatically rendering accurate and visually polished data charts."
+functions:
+  - "Automatic chart type selection based on data structure"
+  - "High-quality visual rendering with strict design validation"
+alias:
+  - "chart-renderer"
+  - "data-visualizer"
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+target_users:
+  - "Data analysts and researchers"
+  - "Product managers and consultants"
+ideal_use_cases:
+  - "Creating publication-ready charts from raw tabular data"
+  - "Generating consistent visualizations for reports and presentations"
+limitations:
+  - "Does not provide statistical interpretation or analytical insights"
+example_commands:
+  - "Render a bar chart from this CSV data with value labels inside the bars."
+  - "Create a line chart for this time-series dataset using a colorblind-safe palette."
+  - "Generate a pie chart showing percentage distribution, limited to 8 categories."
+  - "Visualize this dataset as a scatter plot with a trendline."
+  - "Export the rendered chart as an HTML report using the default template."
+additional_features:
+  - "Built-in accessibility validation including contrast ratio checks"

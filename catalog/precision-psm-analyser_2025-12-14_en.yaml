@@ -1,0 +1,39 @@
+gpt_id: "g-683aa5aba5dc81919d5b077a128aa55a"
+name: "Precision PSM Analyser – Propensity Score Matching Assistant"
+url: "https://chatgpt.com/g/g-683aa5aba5dc81919d5b077a128aa55a-precision-psm-analyser"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+
+one_line: "Precision PSM assistant for ATT and ATE – optimized for policy evaluation and academic writing"
+
+functions:
+  - "Auto-selects matching method and estimates propensity scores"
+  - "Supports full workflow from diagnostics to regression"
+
+alias:
+  - "psm-analyser"
+  - "psm-gpt"
+
+tags:
+  - "policy"
+  - "statistics"
+  - "research-assistant"
+
+target_users:
+  - "Policy researchers"
+  - "Social science data analysts"
+
+ideal_use_cases:
+  - "Policy evaluation via ATT"
+  - "Population-level ATE estimation"
+
+limitations:
+  - "Interpretation requires checking matching quality – don't over-rely on auto output"
+
+example_commands:
+  - "Run a PSM analysis for ATT"
+  - "Summarize ATE interpretation and regression results"
+
+additional_features:
+  - "Auto-generates summaries in APA, AJPOR, and ANPOR formats"

@@ -1,0 +1,57 @@
+gpt_id: "g-69289a3991048191bb4bd43b4fa746bf"
+name: "surveyDesignStudio"
+url: "https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio"
+version: "v2.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+one_line: "An end-to-end survey design GPT for research agencies: from concept board to questionnaire, indices, analysis plan, and proposal storyboard"
+
+functions:
+  - "Design a concept board (objective, problem definition, hypotheses, target persona)"
+  - "Build a survey framework (variables, domains, model) and map variables to items"
+  - "Draft a sampling plan (frame, selection/quota structure, sample-size rationale)"
+  - "Produce questionnaires (Basic/Extended/Exploratory versions) and rewrite items to remove bias and improve clarity"
+  - "Define indices/metrics and computation logic (scales, aggregation rules)"
+  - "Create an analysis plan (descriptives → segmentation → modeling) and recommend reporting structure"
+  - "Generate a proposal storyboard (template-based) and deliverable outline"
+
+alias:
+  - "surveydesignstudio"
+  - "survey-design-gpt"
+  - "survey-design-studio"
+
+tags:
+  - "survey-research"
+  - "questionnaire-design"
+  - "sampling"
+  - "research-proposal"
+  - "indices-metrics"
+  - "analysis-plan"
+  - "storyboard"
+
+target_users:
+  - "Market research agencies (quant/qual) planners and PMs"
+  - "Brand/marketing/UX researchers"
+  - "Public sector / policy research teams"
+
+ideal_use_cases:
+  - "Turn a topic or RFP into a structured survey plan (framework, sampling, questionnaire, analysis, reporting) as a strong first draft"
+  - "Rewrite existing questions to be clearer and more neutral (remove leading, double-barreled, or vague wording)"
+  - "Design index systems (e.g., satisfaction/loyalty/experience) with dimensions and scoring rules plus the item set"
+  - "Structure proposal storylines and slide outlines into a review-ready storyboard"
+
+limitations:
+  - "Does not browse the internet or use external data; it only works with user-provided inputs"
+  - "Will not assert legal/regulatory requirements or institution-specific guidelines without user-provided evidence"
+  - "Does not generate or fabricate research results/data; it focuses on design and methodological logic"
+
+example_commands:
+  - "Topic: 'Post-launch membership satisfaction' — draft an online survey plan for ages 20–49 nationwide (framework, sampling, questionnaire, analysis, storyboard)."
+  - "Rewrite these 12 items to be unbiased and clearer (include response scales) and map each item to its intended variable."
+  - "Help me build a Brand Experience Index: propose dimensions and a scoring logic, then draft the question set."
+  - "Based on this RFP summary (pasted), create a proposal storyboard and a deliverables list."
+
+additional_features:
+  - "Template-driven outputs: Concept Board → Framework Map → Sampling Plan → Questionnaire (multi-version) → Indices → Analysis Plan → Proposal Storyboard"
+  - "Question style rules for clarity/neutrality/answerability with version control"
+  - "Optional integration of user-provided ReportScope summaries (within the provided scope only)"

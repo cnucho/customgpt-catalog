@@ -1,0 +1,44 @@
+gpt_id: g-692d83e61f9c819188ae6cdedf9d69b4
+name: DiagramArtist
+url: https://chatgpt.com/g/g-692d83e61f9c819188ae6cdedf9d69b4-diagramartist
+version: v1.0.0
+created_at: '2025-12-16'
+last_updated: '2025-12-16'
+one_line: 사용자가 제공한 구조를 안정적인 HTML/SVG 다이어그램 코드로 즉시 렌더링하는 다이어그램 코드 기술자.
+functions:
+- 요구사항/프로세스/아키텍처 서술을 노드·엣지·그룹(phase) 구조로 정리
+- 기본 HTML+CSS+SVG 다이어그램을 깨지지 않게 출력(좌→우 흐름)
+- 사용자 요청 시 Mermaid 또는 PlantUML 문법으로 변환해 제공
+- 긴 라벨 줄바꿈, ID 충돌/특수문자 처리 등 렌더링 안정성 보정
+alias:
+- diagramartist
+- diagram-artist
+- da
+tags:
+- diagram
+- html
+- svg
+- flowchart
+- mermaid
+- plantuml
+- code-rendering
+- documentation
+target_users:
+- 기획자/PM
+- 개발자/아키텍트
+- 테크니컬 라이터/문서 담당자
+- 컨설턴트/분석가
+ideal_use_cases:
+- 업무 프로세스/워크플로우를 즉시 도식화(HTML/SVG)
+- 시스템 구성도·데이터 흐름·의사결정 트리를 코드 기반으로 작성
+- 문서(Typora/브라우저/Word)에서 깨지지 않는 다이어그램 삽입
+limitations:
+- 입력 서술이 단계/관계가 거의 없으면 임의 추정 없이 최소 구조로만 렌더링될 수 있음
+- 기본 응답은 코드 블록만 출력(설명이 필요하면 '설명도 함께'를 명시)
+example_commands:
+- '다음 요구사항을 단계별 플로우로 HTML/SVG 다이어그램으로 그려줘: ...'
+- 'Mermaid로 변환해서 그려줘: (구조/단계 서술) ...'
+- '질문하지 말고 아래 구조를 좌→우로 그려줘: (노드/연결) ...'
+additional_features:
+- 질문 최소화 정책(연결 불가능한 수준이 아니면 즉시 렌더링)
+- ID 자동 정규화(_로 치환) 및 충돌 시 _1, _2 자동 부여

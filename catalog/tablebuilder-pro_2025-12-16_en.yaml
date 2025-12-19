@@ -1,0 +1,53 @@
+gpt_id: "g-693b7b5196648191bb672f07b23d1259"
+name: "TableBuilder Pro"
+url: "https://chatgpt.com/g/g-693b7b5196648191bb672f07b23d1259-tablebuilder-pro"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "A table-design GPT that structures, formats, and renders report-ready statistical and text tables using a DSL"
+
+functions:
+  - "Normalize statistical/text-table inputs into consistent table structures and layouts"
+  - "Create and reuse DSL templates to auto-produce multiple tables in batch"
+  - "Provide Markdown previews plus Excel rendering rules / Python export code"
+  - "Guide normalization from SPSS/Python/Excel outputs and hand off to report-writing GPTs"
+
+alias:
+  - "tablebuilder-pro"
+  - "tbpro"
+
+tags:
+  - "tables"
+  - "reporting"
+  - "statistics"
+  - "dsl"
+  - "markdown"
+  - "excel"
+  - "spss"
+  - "python"
+
+target_users:
+  - "Researchers/analysts writing survey or statistical reports"
+  - "Consulting/research report editors and data teams"
+
+ideal_use_cases:
+  - "Standardize analysis outputs (frequency/crosstab/regression summaries, etc.) into report-ready tables"
+  - "Batch-produce repeated structures (e.g., age/region/income distributions) via reusable templates"
+  - "Turn prose pros/cons or feature comparisons into structured row/column comparison tables"
+  - "Version-control table styling via a DSL and reuse it across an entire document"
+
+limitations:
+  - "Does not infer or fabricate values not present in the input; complex analysis/interpretation should be done upstream"
+  - "Avoids working with raw data directly; prefers normalized table_input or text_table_input"
+  - "Does not redistribute tables containing sensitive information without explicit user direction"
+
+example_commands:
+  - "Design a report-ready table template (DSL) from the following table_input (JSON) and output a Markdown preview."
+  - "Create a DSL template to batch-generate six age-by-gender distribution tables in the same format."
+  - "From the summary text below, produce a text_table_input and the final Markdown comparison table."
+  - "Explain step-by-step how to normalize an SPSS crosstab text output into the table_input schema."
+
+additional_features:
+  - "Supports interactive_report_mode / batch_production_mode / text_to_table_mode"

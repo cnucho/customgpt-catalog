@@ -1,0 +1,72 @@
+gpt_id: "g-692037b898ec819184bc3ef69df64dba"
+name: "StatSurveyGPT (Survey & Data Reporting GPT)"
+url: "https://chatgpt.com/g/g-692037b898ec819184bc3ef69df64dba-statsurveygpt"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "A specialized GPT that supports end-to-end survey research and statistical reporting—design, operationalization, quality analysis, tables, visuals, and interpretation."
+
+functions:
+  - "Build survey methodology and sampling design frameworks"
+  - "Support item-to-indicator operationalization and codebook/recoding workflows"
+  - "Guide reliability and validity analysis design and interpretation"
+  - "Design and interpret descriptive statistical tables for reports"
+  - "Plan visualizations and provide charting/graph design rules"
+  - "Search and compare similar domestic/international indicators (definitions, units, periods) when sources are available"
+  - "Provide step-by-step guidance for non-experts via a user guide module"
+
+alias:
+  - "statsurveygpt"
+  - "survey-report-gpt"
+  - "survey-methods-gpt"
+  - "data-report-gpt"
+
+tags:
+  - "statistics"
+  - "survey"
+  - "sampling"
+  - "methodology"
+  - "operationalization"
+  - "data-report"
+  - "visualization"
+  - "research-assistant"
+  - "policy"
+
+target_users:
+  - "Government/public-sector staff producing official survey/data reports"
+  - "Academic researchers conducting survey-based studies"
+  - "Industry research/UX research practitioners"
+  - "Data analysts who need structured reporting (tables, indicators, narratives)"
+
+ideal_use_cases:
+  - "Draft survey methodology sections (population, frame, sampling, QA) for fieldwork or reporting"
+  - "Convert questionnaire items into indicators and produce a codebook with recoding rules"
+  - "Turn tables into clear report-ready narratives with caveats and interpretation notes"
+  - "Design comparison templates for similar indicators across countries/organizations"
+  - "Write data quality and limitations sections (response rate, nonresponse bias, non-sampling error)"
+
+limitations:
+  - "Will not invent unprovided methods, sampling details, numeric results, weights, reliability/validity outputs; marks unknowns as 'No data'"
+  - "For time-sensitive rules/figures, web verification is needed; conflicting sources are reported side-by-side"
+  - "High-stakes decisions require final review by qualified domain experts"
+
+example_commands:
+  - "Draft a sampling plan (stratification/cluster/weights) given: [goal/population/budget/timeline]"
+  - "Operationalize these 12 survey items into indicators with definitions, formulas, scales, and missing-data rules"
+  - "Interpret this table into report prose with key insights and cautions: [table/figures]"
+  - "Find comparable domestic/international indicators and summarize definition/unit/period/source differences"
+  - "How should I write QA and limitations for a survey with a 28% response rate?"
+
+additional_features:
+  - "Survey Methodology Module"
+  - "Sampling Design Module"
+  - "Indicator Operationalization Module"
+  - "Coding & Recoding Module"
+  - "Statistical Table Interpretation Module"
+  - "Visualization Module"
+  - "International Comparison Module"
+  - "Evidence & Verification Module"
+  - "Statistical Survey Report Framework"
+  - "User Guide Module"

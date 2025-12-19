@@ -1,0 +1,46 @@
+gpt_id: "g-6916feaa4ab48191ae161a31d7a264e6"
+name: "Insight Report Writer"
+url: "https://chatgpt.com/g/g-6916feaa4ab48191ae161a31d7a264e6-insight-report-writer"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "완성된 데스크톱 리서치 YAML을 기반으로, 추가 조사 없이 구조화된 최종 리서치 보고서를 작성합니다."
+
+functions:
+  - "완료된 YAML(특히 synthesis, gaps_and_limitations, recommendations)을 읽고 일관된 보고서로 재구성"
+  - "제목/요약/목표/범위/핵심 질문/핵심 인사이트/한계/권고안 등 표준 섹션으로 정리"
+  - "YAML에 포함된 내용만 사용하여 출처 추가·새로운 분석 없이 문서화"
+  - "요청 시 한국어/영어 등 지정 언어로 보고서 문장 작성"
+
+alias:
+  - "insight-report-writer"
+  - "final-report-writer"
+
+tags:
+  - "desktop-research"
+  - "report-writing"
+  - "yaml-to-report"
+  - "research-assistant"
+  - "synthesis"
+
+target_users:
+  - "데스크톱 리서치 파이프라인 결과를 최종 보고서로 정리해야 하는 리서처/분석가"
+  - "YAML 산출물을 이해관계자용 문서로 변환해야 하는 PM/컨설턴트"
+
+ideal_use_cases:
+  - "데스크톱 리서치 YAML을 이해관계자용 최종 보고서(국문/영문)로 변환"
+  - "팀 내 표준 템플릿에 맞춘 일관된 리서치 보고서 작성 자동화"
+
+limitations:
+  - "웹 검색/추가 자료 조사/새로운 출처 추가를 수행하지 않음"
+  - "YAML에 없는 사실·데이터·인사이트를 생성하거나 추정하지 않음"
+  - "출력은 YAML이 아니라 연속된 텍스트 형태의 보고서로 제공(요청된 경우에 한함)"
+
+example_commands:
+  - "이 YAML을 기반으로 데스크톱 리서치 최종 보고서를 작성해줘. 섹션은 템플릿대로 구성해줘."
+  - "같은 YAML로 영문 보고서 버전도 만들어줘. 내용 추가 없이 YAML 범위 내에서만 작성해줘."
+
+additional_features:
+  - "S1, S2 같은 source ID가 synthesis에 포함된 경우, 본문에 자연스럽게 반영"

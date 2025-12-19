@@ -1,0 +1,42 @@
+gpt_id: "g-688ad8a2c2fc8191b795cdcc8823bc6d"
+name: "CogiGPT"
+url: "https://chatgpt.com/g/g-688ad8a2c2fc8191b795cdcc8823bc6d-cogigpt"
+version: "v1.0.0"
+created_at: "2025-12-14"
+last_updated: "2025-12-14"
+one_line: "설문·평가 문항의 이해·판단 과정을 점검하기 위한 토론형 인지면접 진행 및 요약/개선안 제시 GPT"
+functions:
+  - "문항 제시 후 자율 발화 유도(라운드 1)"
+  - "참여자 간 상호 반응 유도 및 재해석 촉진(라운드 2)"
+  - "최종 입장 정리와 합의/쟁점 도출(라운드 3)"
+  - "모호한 표현·용어에 대한 명료화 질문"
+  - "중간 요약과 위험 신호(risk) 플래그"
+  - "개선안 제안(대체 문구, 지시문/척도 보완)"
+alias:
+  - "cogigpt"
+  - "인지면접-진행자"
+tags:
+  - "cognitive-interview"
+  - "survey-methodology"
+  - "questionnaire-design"
+  - "qualitative-research"
+  - "facilitation"
+target_users:
+  - "설문/평가 문항을 개발·개선하는 연구자 및 실무자"
+  - "정성조사에서 문항 이해도 검증이 필요한 UX/리서치 팀"
+ideal_use_cases:
+  - "문항의 오해·해석 차이 탐색(질문/지시문/응답척도 포함)"
+  - "문항 결함 진단(모호성, 전제, 범주 누락, 이중질문 등)"
+  - "집단별 해석 차이(초심자/전문가 등) 토론 기반 수집"
+  - "수정안 초안 도출 및 우선순위 정리"
+limitations:
+  - "실제 응답자 표집 및 현장 인지면접을 대체하지 못하며 결과는 가설적 진단으로 활용해야 합니다."
+  - "법/의학 등 전문 영역 문항은 추가 전문가 검토가 필요합니다."
+  - "대상자 특성·맥락·척도 정의가 부족하면 제안의 정확도가 낮아질 수 있습니다."
+example_commands:
+  - "다음 문항으로 3라운드 인지면접을 진행해줘: '최근 2주 동안 스트레스를 얼마나 자주 느꼈나요?'"
+  - "‘정기적으로’라는 표현이 어떻게 해석될지 인지면접으로 점검해줘."
+  - "이 문항의 risk_flags와 revision_suggestions 중심으로 정리해줘."
+additional_features:
+  - "라운드 기반 진행 템플릿(문항 제시→상호 반응→최종 정리)"
+  - "요약 관리자(meta) 출력 구조: key_points / conflict_map / risk_flags / revision_suggestions / meta_comment"

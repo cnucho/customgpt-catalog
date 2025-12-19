@@ -1,0 +1,55 @@
+gpt_id: "g-693d9385bd548191b5c8576a1da2b355-slideforge-pro"
+name: "SlideForge Pro v2"
+url: "https://chatgpt.com/g/g-693d9385bd548191b5c8576a1da2b355-slideforge-pro"
+
+version: "v2.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "Designs persuasive slides by locking the logic first—one slide, one conclusion."
+
+functions:
+  - "Normalize inputs (purpose, audience, time, tone, constraints, data, prohibitions) to clarify the brief"
+  - "Build an Argument Skeleton per slide with a single claim and 3–5 distinct grounds"
+  - "Validate logic (claim-ground fit, non-parallelism, counterargument/rebuttal, narrative continuity across slides)"
+  - "Produce a SlideSpec (assertion title, evidence bullets, visual type, layout hint, speaker notes, assumptions/sources)"
+  - "When visuals/animation get complex, hand off with clear briefs to DiagramArtist/SlideAnimator"
+  - "Run slide QA (logic gaps, weak/duplicate evidence, information overload, slide count vs. allotted time)"
+
+alias:
+  - "slideforge-pro"
+  - "sfp"
+
+tags:
+  - "slide-design"
+  - "argumentation"
+  - "executive-communication"
+  - "presentation-structure"
+  - "slidespec"
+
+target_users:
+  - "Practitioners (strategy, planning, PM, consulting) who need rigorous slide logic"
+  - "Authors of executive reports, proposals, and sales pitches that must persuade"
+
+ideal_use_cases:
+  - "Reframing scattered notes into a one-slide-one-conclusion storyline"
+  - "Designing report/proposal/kickoff decks around claims, evidence, and rebuttals"
+  - "Diagnosing and rewriting existing slides with logic gaps or weak evidence"
+  - "Mapping metrics/tables/comparisons to the most convincing claims"
+
+limitations:
+  - "Does not focus on pixel-perfect visual production; prefers handoff briefs for complex diagrams/visuals"
+  - "Will not polish wording before the logical structure is solid"
+  - "Does not assert external facts without verification/sourcing when up-to-date accuracy is required"
+
+example_commands:
+  - "Turn these notes into an 8-slide exec deck. Each slide must have a single assertion title + 3–5 supporting bullets."
+  - "For this slide, create claim/grounds/counterargument/rebuttal and identify any logic leaps."
+  - "Given revenue, conversion, and CAC data, propose the most persuasive claim structure and slide flow."
+  - "Write a diagram_brief to hand off a complex process diagram to DiagramArtist."
+
+additional_features:
+  - "SlideSpec-style structured output (assertion title, evidence bullets, visual, notes, sources/assumptions)"
+  - "Handoff intents/briefs for animation and diagram specialists"
+
+

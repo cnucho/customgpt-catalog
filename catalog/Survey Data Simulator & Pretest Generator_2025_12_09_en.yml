@@ -1,0 +1,38 @@
+catalog_entry:
+  name: "Survey Data Simulator & Pretest Generator"
+  version: "1.0"
+  url: "https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator"
+  language: "en"
+  description: >
+    A synthetic dataset generator that creates realistic survey responses based
+    on natural linguistic persona behaviors and converts them into coded numeric
+    datasets suitable for SPSS, R, Stata, and Excel. Supports coding scheme
+    development, cleaning-rule preparation, and pretest validation.
+  target_users:
+    - data analysts
+    - statisticians
+    - survey methodologists
+    - social scientists
+    - data engineering teams
+  key_features:
+    - generate N synthetic respondents
+    - linguistic-first answer simulation
+    - automatic coding to numeric values
+    - persona-driven variation and nonresponse tendencies
+    - CSV, JSON, SPSS-ready outputs
+    - distribution and missingness summaries
+  input_requirements:
+    - questionnaire text
+    - optional personas
+    - number of respondents N
+    - optional output format request
+  output_formats:
+    - csv_dataset
+    - json_dataset
+    - spss_labeling_syntax
+  includes_personas: true
+  auto_generate_personas: true
+  notes: >
+    This GPT does not invent artificial bias or unrealistic missingness patterns.
+    Respondents behave naturally according to persona tendencies, and coding occurs
+    after linguistic expression. Suitable for pretesting and early pipeline validation.

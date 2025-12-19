@@ -1,0 +1,38 @@
+catalog_entry:
+  name: "Survey Data Simulator & Pretest Generator"
+  version: "1.0"
+  url:"https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator"
+  language: "ko"
+  description: 
+    설문지를 기반으로 자연어 페르소나 응답을 먼저 생성한 뒤 이를 숫자 코드로
+    변환하여 SPSS, R, Stata, Excel 분석에 바로 사용할 수 있는 가상 데이터셋을
+    생성하는 GPT입니다. 코딩 스킴 개발, 데이터 클리닝 규칙 설계, 사전 분포 점검,
+    무응답 패턴 탐색 등 사전 분석 절차에 유용합니다. 응답 패턴은 인위적 알고리즘이
+    아니라 페르소나의 언어적 행동에 의해 자연스럽게 결정됩니다.
+  target_users:
+    - 데이터 분석가
+    - 통계전문가
+    - 설문조사 기획자
+    - 사회과학 연구자
+    - 데이터 엔지니어링 팀
+  key_features:
+    - 원하는 수(N)의 가상 응답자 생성
+    - 자연어 기반 응답 생성 후 숫자 코딩 적용
+    - 페르소나 기반 변이 및 자연적 무응답
+    - CSV, JSON, SPSS용 구조 출력
+    - 기본 분포·결측·변이 요약 제공
+  input_requirements:
+    - 설문지 텍스트
+    - 선택적 페르소나 목록
+    - 생성할 응답자 수 N
+    - 선택적 출력 포맷 지정
+  output_formats:
+    - csv_dataset
+    - json_dataset
+    - spss_labeling_syntax
+  includes_personas: true
+  auto_generate_personas: true
+  notes: >
+    이 GPT는 사용자 의도와 상관없이 인위적으로 결측이나 편향을 생성하지 않습니다.
+    모든 응답은 먼저 자연어로 생성되고, 이후 분석을 위해 숫자로 코딩됩니다.
+    실제 설문 문화와 비슷한 자연스러운 데이터 생성에 중점을 둡니다.

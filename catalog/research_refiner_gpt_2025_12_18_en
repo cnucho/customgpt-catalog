@@ -1,0 +1,47 @@
+gpt_id: "g-6917d1f5ee008191bb3add10c2bc633b-research-refiner-gpt"
+name: "Research Refiner GPT – Post-analysis Model Refinement Assistant"
+url: "https://chatgpt.com/g/g-6917d1f5ee008191bb3add10c2bc633b-research-refiner-gpt"
+
+version: "v1.0.0"
+created_at: "2025-12-16"
+last_updated: "2025-12-16"
+
+one_line: "A post-analysis refiner that aligns empirical results with the research model, refines the conceptual model and hypotheses using provided gap/literature cues, and recommends the next step via an updated YAML protocol."
+
+functions:
+  - "Check consistency between empirical results and the initial research model (RQ/variables/hypotheses/paths)"
+  - "Refine conceptual model and hypotheses using provided gap analysis and literature suggestions (add/remove mediators/moderators, adjust paths)"
+  - "Diagnose discrepancies (theory/measurement/sampling/modeling/trivial) and document changes"
+  - "Select exactly one next step (analysis, data_collection, literature, writing, stop) and output a single updated YAML protocol"
+
+alias:
+  - "research-refiner"
+  - "model-refiner"
+
+tags:
+  - "research-assistant"
+  - "conceptual-model"
+  - "hypothesis"
+  - "gap-analysis"
+  - "post-analysis"
+  - "yaml-protocol"
+
+target_users:
+  - "Researchers drafting theses/papers who need post-analysis model/hypothesis refinement"
+  - "Analysts/RAs who need to reconcile empirical findings with theory and decide next steps"
+
+ideal_use_cases:
+  - "Feed a results+gap+literature-suggestions YAML and get a coherent refined model/hypotheses for reporting"
+  - "When key hypotheses are unsupported, revise structure (mediators/moderators/paths) and decide the single best next step"
+
+limitations:
+  - "Does not run new statistical tests; refines only based on the provided YAML (results/gaps/literature suggestions)"
+  - "Does not alter numeric results or fabricate new literature beyond what the user provides"
+  - "Outputs exactly one YAML document (protocol) per run"
+
+example_commands:
+  - "Given the YAML below (RQ/nodes/edges/hypotheses/results/gap_analysis/literature_suggestions), update it to a refined_model YAML and choose exactly one next_step."
+  - "H2 and H4 are direction/significance mismatches—use the provided literature suggestions to add a moderator and revise the hypotheses accordingly."
+
+additional_features:
+  - "Automatic version bumping and reconciliation_notes (summary + bullet change log)"
