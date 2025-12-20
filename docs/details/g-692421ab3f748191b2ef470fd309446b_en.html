@@ -6,32 +6,156 @@
   <title>studyScope</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Select/refine field and subfield scope (Field Mapper)</li><li class='fitem'>Scan emerging/hot topics and trends (Emerging Topic Scanner)</li><li class='fitem'>Evaluate feasibility by time/skills/data/method complexity (Feasibility Grid)</li><li class='fitem'>Check open dataset availability and data-source options (Dataset Availability Checker)</li><li class='fitem'>Extract gaps and ‘future work’ directions from reviews/meta-analyses (Gap Mapper)</li><li class='fitem'>Convert broad scoping into specific, testable research questions (Scoping-to-Question Converter)</li><li class='fitem'>Provide next-step routing guidance (datasets, literature search, research design, policy/legal, modeling)</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-692421ab3f748191b2ef470fd309446b-studyscope' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-692421ab3f748191b2ef470fd309446b-studyscope</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>research-assistant</span><span class='chip'>topic-discovery</span><span class='chip'>literature-scoping</span><span class='chip'>dataset-discovery</span><span class='chip'>feasibility-analysis</span><span class='chip'>research-design</span><span class='chip'>bilingual</span><span class='chip'>Korea</span><span class='chip'>STEM</span><span class='chip'>social-science</span></div>
+        <div class='chips'><span class='chip'>studyscope</span><span class='chip'>research-topic-navigator</span><span class='chip'>academic-topic-finder</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Select/refine field and subfield scope (Field Mapper)</li><li>Scan emerging/hot topics and trends (Emerging Topic Scanner)</li><li>Evaluate feasibility by time/skills/data/method complexity (Feasibility Grid)</li><li>Check open dataset availability and data-source options (Dataset Availability Checker)</li><li>Extract gaps and ‘future work’ directions from reviews/meta-analyses (Gap Mapper)</li><li>Convert broad scoping into specific, testable research questions (Scoping-to-Question Converter)</li><li>Provide next-step routing guidance (datasets, literature search, research design, policy/legal, modeling)</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-692421ab3f748191b2ef470fd309446b</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692421ab3f748191b2ef470fd309446b</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-692421ab3f748191b2ef470fd309446b-studyscope</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-692421ab3f748191b2ef470fd309446b</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692421ab3f748191b2ef470fd309446b</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Modular workflow: field → trends → feasibility → data → gaps → research questions&quot;, &quot;Routing options: DatasetFinderGPT / LitSearchGPT / ResearchDesignerGPT / PolicyScope / ModelArchitectGPT&quot;, &quot;On request, outputs a ResearchExchangeSchema (YAML) for clean cross-GPT handoff with preserved context&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;My field is economics and I&#x27;m interested in platform labor. Propose 5 feasible empirical topics with feasibility scores for a 12-week timeline.&quot;, &quot;I want to study learning analytics with open datasets. Suggest candidate datasets and draft research questions.&quot;, &quot;For air pollution and depression, summarize ‘future work’ from recent reviews, map gaps, and compress into 3 RQ candidates.&quot;, &quot;I prefer panel data / DiD. Narrow to topics with easy data access and propose a research design.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692421ab3f748191b2ef470fd309446b</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;From a vague interest to 3–10 narrowed, empirically testable topic candidates&quot;, &quot;Compare candidates by dataset access, method difficulty, and timeline fit&quot;, &quot;Define contribution points by mapping gaps from reviews/meta-analyses&quot;, &quot;Produce a one-page summary: final RQ, hypotheses, variables, and data needs&quot;, &quot;Hand off structured context to DatasetFinder/LitSearch/ResearchDesigner/PolicyScope/ModelArchitect&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;No direct access to paywalled databases or automatic full-text downloading&quot;, &quot;Ethics (IRB), copyright, and dataset license requirements must be verified by the user&quot;, &quot;Does not assume the existence of proprietary/internal datasets unless the user confirms access&quot;, &quot;For fast-moving topics, strengthening outputs with web-based verification is recommended when requested&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Undergraduate/graduate students (thesis, capstone, term projects)&quot;, &quot;Early-career researchers (topic pivoting, pilot ideas)&quot;, &quot;Practitioner-researchers (turning policy/industry problems into RQs)&quot;, &quot;Research planners/PMs (portfolio building and prioritization)&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

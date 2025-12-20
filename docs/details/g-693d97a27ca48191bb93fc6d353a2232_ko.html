@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SlideAnimator Builder</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="topbar">
+        <div class="leftbar">
+          <a class="btn" href="../index.html">← 목록</a>
+          <a class='btn primary' href='https://chatgpt.com/g/g-693d97a27ca48191bb93fc6d353a2232-slideanimator-builder' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+          <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">티스토리</a>
+        </div>
+      </div>
+
+      <h1>SlideAnimator Builder</h1>
+      <p class='sub'>이미 확정된 슬라이드 내용을 SlideSpec(JSON)으로 손실 없이 매핑하고 Reveal.js HTML 덱으로 렌더링한다.</p>
+      
+
+      <div class="section">
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-693d97a27ca48191bb93fc6d353a2232-slideanimator-builder' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-693d97a27ca48191bb93fc6d353a2232-slideanimator-builder</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>slides</span><span class='chip'>slidespec</span><span class='chip'>revealjs</span><span class='chip'>presentation</span><span class='chip'>animation</span><span class='chip'>renderer</span><span class='chip'>content-lock</span></div>
+        <div class='chips'><span class='chip'>slideanimator-builder</span><span class='chip'>slideanimator-renderer</span></div>
+        
+      </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>사용자가 제공한 확정 슬라이드(제목/본문/요소/순서)를 변경 없이 정규화한다</li><li>SlideSpec(JSON)으로 손실 없이 매핑한다</li><li>Reveal.js 기반 deck.html로 고품질 렌더링한다</li><li>슬라이드별 animation_spec(기본 fragment 단계)를 포함해 시선 유도용 애니메이션을 적용한다</li><li>QA 메모(경고/가정)만 남기고 텍스트/의미는 절대 수정하지 않는다</li><li>로컬 실행 방법(직접 열기/로컬 서버)을 함께 제공한다</li></ul>
+      </div>
+
+      
+
+      
+
+      <details>
+        <summary>기술 정보</summary>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-693d97a27ca48191bb93fc6d353a2232</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-693d97a27ca48191bb93fc6d353a2232</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
+      </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;슬라이드별 QA 메모(제목이 주장형이 아닌 경우 등)를 assumptions/notes에 기록&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;다음 슬라이드 8장을 그대로 SlideSpec(JSON)으로 매핑하고 deck.html로 렌더링해줘. (텍스트 변경 금지)&quot;, &quot;render_hint=two_column을 사용해서 각 슬라이드를 2단 레이아웃으로 렌더링해줘. 애니메이션은 클릭마다 한 단계씩.&quot;, &quot;exec 대상 요약 슬라이드는 애니메이션을 꺼두고(animation_spec.enabled=false) 나머지만 fragment로 처리해줘.&quot;, &quot;slidespec.json, deck.html, 실행 방법을 함께 출력해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-693d97a27ca48191bb93fc6d353a2232</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;확정된 슬라이드 목록을 SlideSpec(JSON)으로 변환해 검수/버전관리하고 싶을 때&quot;, &quot;Reveal.js로 바로 실행 가능한 HTML 덱(deck.html)을 생성하고 싶을 때&quot;, &quot;발표 흐름을 해치지 않는 단계적 등장(fragment) 애니메이션을 빠르게 적용하고 싶을 때&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;입력으로 받은 제목/본문/불릿/순서/의미를 어떤 경우에도 수정·요약·의역·재배열하지 않는다&quot;, &quot;render_hint 없이 의미 추론으로 레이아웃을 바꾸지 않는다(기본 레이아웃만 적용)&quot;, &quot;이미지/저작권 리소스는 사용자가 권리를 보유한 경우에만 URL/소스를 사용할 수 있으며, 그 외에는 placeholder로 처리할 수 있다&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;슬라이드 내용을 이미 확정했고, 자동 렌더링/애니메이션 적용이 필요한 사용자&quot;, &quot;SlideSpec(JSON) 기반 파이프라인(검수/렌더링/배포)을 운영하는 팀&quot;]</div></div></div></details>
+
+      
+
+    </div>
+  </div>
+</body>
+</html>

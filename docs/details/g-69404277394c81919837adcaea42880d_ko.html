@@ -6,32 +6,156 @@
   <title>Metrix RiskBound</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>사용자 요청을 데이터 분석 질문으로 재정의하고 범위를 확정</li><li class='fitem'>기술통계·분포 기반의 구조 요약 및 대표 샘플링</li><li class='fitem'>샘플 범위 내 제한적 해석과 해석 리스크·불확실성 명시</li><li class='fitem'>승인된 결과를 보고서 형식으로 정리(새 주장 없이)</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-69404277394c81919837adcaea42880d-metrix-riskbound' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69404277394c81919837adcaea42880d-metrix-riskbound</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>consumer-insights</span><span class='chip'>risk-control</span><span class='chip'>descriptive-statistics</span><span class='chip'>qualitative-sampling</span><span class='chip'>enterprise</span></div>
+        <div class='chips'><span class='chip'>metrix-riskbound</span><span class='chip'>riskbound</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>사용자 요청을 데이터 분석 질문으로 재정의하고 범위를 확정</li><li>기술통계·분포 기반의 구조 요약 및 대표 샘플링</li><li>샘플 범위 내 제한적 해석과 해석 리스크·불확실성 명시</li><li>승인된 결과를 보고서 형식으로 정리(새 주장 없이)</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-69404277394c81919837adcaea42880d</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69404277394c81919837adcaea42880d</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-69404277394c81919837adcaea42880d-metrix-riskbound</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-69404277394c81919837adcaea42880d</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69404277394c81919837adcaea42880d</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;모듈형 진행(질문정의→기술통계/샘플링→제한해석→보고서화)&quot;, &quot;보고서/방법론 템플릿 기반 문서화 지원&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;업로드한 VOC 데이터로 기술통계(빈도/비율)와 대표 샘플 200개를 뽑아 구조를 요약해줘.&quot;, &quot;이 결과에서 관찰 가능한 패턴을 샘플 범위에서만 해석하고, 오해 위험과 비해석 영역을 명시해줘.&quot;, &quot;주어진 템플릿에 맞춰 보고서 형태로 정리하되, 새로운 주장 없이 작성해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69404277394c81919837adcaea42880d</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;대규모 텍스트 기반 소비자 반응 데이터의 분포 요약 및 대표 샘플 발췌&quot;, &quot;결론 과잉을 피하면서 관찰된 패턴을 &#x27;샘플 기준&#x27;으로 제한 해석&quot;, &quot;내부 공유용 분석 보고서(범위·한계·주의사항 포함) 작성&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;샘플 외 전체 코퍼스에 대한 정성적 결론을 주장하지 않음&quot;, &quot;의도·동기·심리·잠재 니즈 등 비관측 요인의 추정/추론을 하지 않음&quot;, &quot;전략·정책·처방(무엇을 해야 한다) 형태의 권고를 제공하지 않음&quot;, &quot;추가 계산이 필요한 분석은 사전 산출(또는 데이터 제공) 없이는 제한됨&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;기업/기관 내 소비자 리서치·인사이트 담당자&quot;, &quot;VOC/리뷰/커뮤니티 데이터의 해석 리스크를 통제해야 하는 분석 사용자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

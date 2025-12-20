@@ -6,32 +6,156 @@
   <title>Insight Report Writer</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>완료된 YAML(특히 synthesis, gaps_and_limitations, recommendations)을 읽고 일관된 보고서로 재구성</li><li class='fitem'>제목/요약/목표/범위/핵심 질문/핵심 인사이트/한계/권고안 등 표준 섹션으로 정리</li><li class='fitem'>YAML에 포함된 내용만 사용하여 출처 추가·새로운 분석 없이 문서화</li><li class='fitem'>요청 시 한국어/영어 등 지정 언어로 보고서 문장 작성</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-6916feaa4ab48191ae161a31d7a264e6-insight-report-writer' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6916feaa4ab48191ae161a31d7a264e6-insight-report-writer</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>desktop-research</span><span class='chip'>report-writing</span><span class='chip'>yaml-to-report</span><span class='chip'>research-assistant</span><span class='chip'>synthesis</span></div>
+        <div class='chips'><span class='chip'>insight-report-writer</span><span class='chip'>final-report-writer</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>완료된 YAML(특히 synthesis, gaps_and_limitations, recommendations)을 읽고 일관된 보고서로 재구성</li><li>제목/요약/목표/범위/핵심 질문/핵심 인사이트/한계/권고안 등 표준 섹션으로 정리</li><li>YAML에 포함된 내용만 사용하여 출처 추가·새로운 분석 없이 문서화</li><li>요청 시 한국어/영어 등 지정 언어로 보고서 문장 작성</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6916feaa4ab48191ae161a31d7a264e6</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916feaa4ab48191ae161a31d7a264e6</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-6916feaa4ab48191ae161a31d7a264e6-insight-report-writer</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6916feaa4ab48191ae161a31d7a264e6</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916feaa4ab48191ae161a31d7a264e6</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;S1, S2 같은 source ID가 synthesis에 포함된 경우, 본문에 자연스럽게 반영&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;이 YAML을 기반으로 데스크톱 리서치 최종 보고서를 작성해줘. 섹션은 템플릿대로 구성해줘.&quot;, &quot;같은 YAML로 영문 보고서 버전도 만들어줘. 내용 추가 없이 YAML 범위 내에서만 작성해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916feaa4ab48191ae161a31d7a264e6</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;데스크톱 리서치 YAML을 이해관계자용 최종 보고서(국문/영문)로 변환&quot;, &quot;팀 내 표준 템플릿에 맞춘 일관된 리서치 보고서 작성 자동화&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;웹 검색/추가 자료 조사/새로운 출처 추가를 수행하지 않음&quot;, &quot;YAML에 없는 사실·데이터·인사이트를 생성하거나 추정하지 않음&quot;, &quot;출력은 YAML이 아니라 연속된 텍스트 형태의 보고서로 제공(요청된 경우에 한함)&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;데스크톱 리서치 파이프라인 결과를 최종 보고서로 정리해야 하는 리서처/분석가&quot;, &quot;YAML 산출물을 이해관계자용 문서로 변환해야 하는 PM/컨설턴트&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

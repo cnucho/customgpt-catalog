@@ -6,32 +6,156 @@
   <title>StatResult Parser Pro</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>Excel/CSV/TSV/HTML/Markdown/텍스트(SPSS 출력 등)/일부 PDF에서 표를 자동 탐지해 테이블 단위로 분리</li><li class='fitem'>각 테이블에 table_id(t001, t002, …)를 부여하고, 차원(dimensions)과 셀(cells)을 공통 JSON 스키마로 구조화</li><li class='fitem'>분석 유형(예: descriptive, crosstab, regression, anova, reliability, hayes, pls 등)을 표의 제목/헤더 패턴으로 식별</li><li class='fitem'>결측/기호 셀을 null 또는 문자열로 처리하고, 처리 규칙과 파싱 한계를 notes에 기록</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>statistics</span><span class='chip'>data-extraction</span><span class='chip'>table-parsing</span><span class='chip'>spss</span><span class='chip'>r</span><span class='chip'>python</span><span class='chip'>reproducible-research</span></div>
+        <div class='chips'><span class='chip'>statresult-parser-pro</span><span class='chip'>stat-parser</span><span class='chip'>result-extractor</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>Excel/CSV/TSV/HTML/Markdown/텍스트(SPSS 출력 등)/일부 PDF에서 표를 자동 탐지해 테이블 단위로 분리</li><li>각 테이블에 table_id(t001, t002, …)를 부여하고, 차원(dimensions)과 셀(cells)을 공통 JSON 스키마로 구조화</li><li>분석 유형(예: descriptive, crosstab, regression, anova, reliability, hayes, pls 등)을 표의 제목/헤더 패턴으로 식별</li><li>결측/기호 셀을 null 또는 문자열로 처리하고, 처리 규칙과 파싱 한계를 notes에 기록</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;분석 유형 식별 휴리스틱(회귀/ANOVA/신뢰도/교차표/Hayes/PLS 등) 기반 분류&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;첨부한 SPSS 출력(.txt)에서 모든 표를 찾아 위 JSON 스키마로 변환해줘. 표 제목/섹션명도 최대한 보존해줘.&quot;, &quot;이 엑셀 파일의 모든 시트에서 빈 행/열로 분리된 테이블 블록을 각각 t001~로 파싱해서 JSON으로 출력해줘.&quot;, &quot;아래 Markdown 표 3개를 각각 테이블로 인식해서 dimensions/cells 구조로 변환해줘. 결측 표시는 null로 처리하고 규칙을 notes에 적어줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;SPSS 출력(ASCII 표/콘솔 로그)에서 ‘Descriptive Statistics/Correlations/ANOVA/Coefficients/Reliability’ 등 표를 일괄 추출해 JSON으로 변환&quot;, &quot;Excel의 여러 시트에서 빈 행/열로 구분된 셀 블록을 각각 독립 테이블로 탐지해 t001~로 번호화&quot;, &quot;HTML/Markdown에 포함된 &lt;table&gt; 또는 마크다운 표를 그대로 구조화해 downstream 처리(ETL, DB 적재)에 활용&quot;, &quot;Hayes PROCESS/PLS 등 특정 키워드가 있는 결과표를 subtype까지 보존해 구조화&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;통계적 해석(가설 채택/기각, 변수 역할 추론, 인과 서술 등)은 수행하지 않으며, 표 구조/값의 ‘추출’만 한다.&quot;, &quot;PDF는 표 구조가 명확한 경우에만 파싱을 시도하며, 애매한 경우 notes에 한계를 명시한다.&quot;, &quot;원본 표의 병합셀/다단 헤더/주석 구조가 복잡하면 일부 라벨 정규화가 어려울 수 있다(가능한 한 원문 라벨 유지).&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;SPSS/R/Python/PLS 결과표를 구조화해 재사용해야 하는 연구자·대학원생&quot;, &quot;논문/보고서용 통계표를 데이터 파이프라인(JSON/DB)로 옮기려는 분석가&quot;, &quot;여러 시트·여러 표가 섞인 결과 파일을 자동 분할/정규화하려는 사용자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

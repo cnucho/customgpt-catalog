@@ -1,0 +1,119 @@
+# =====================================================================
+# MASTER CATALOG TEMPLATE FOR GPT ATLAS
+# ---------------------------------------------------------------------
+# This unified template merges:
+#   - catalog_instruction.txt
+#   - catalog지시문.md
+#   - gpt_catalog_template.yaml
+#
+# It serves as the *single authoritative reference* for generating
+# GPT Catalog YAML entries in both English and Korean.
+#
+# MetaCustomGPT-Builder MUST reference this file whenever a catalog is created.
+#
+# =====================================================================
+
+
+# =====================================================================
+# 1) GLOBAL RULES FOR CATALOG GENERATION
+# =====================================================================
+
+instructions_for_filling: |
+  You must create a GPT Catalog YAML that exactly follows the structure of the
+  template in the "gpt_block_template" section.
+
+  ❗ Mandatory rules:
+  1. Do NOT modify, remove, or add any keys in the template.
+  2. Do NOT change indentation or YAML structure.
+  3. Replace ONLY fields marked as REPLACE_WITH_...
+  4. All required fields must be filled.
+  5. If a field has no content, use "" or [].
+  6. alias must include only 2–4 meaningful, functional keywords.
+  7. example_commands must include at least 5 practical prompts.
+  8. Output must be a *pure YAML block only*, no extra sentences.
+  9. The YAML must be valid and machine-parsable by build_catalog.py.
+  10. English (en) and Korean (ko) catalogs MUST both be produced.
+
+  ❗ URL Rule:
+  - The user must provide the actual public GPT URL (https://chatgpt.com/g/...).
+  - You must insert it unchanged into the "url" field.
+
+  ❗ File Naming Rule:
+  File names follow the pattern:
+      {gpt-name}_{date}_{lang}.yaml
+
+      gpt-name : English slug, lowercase, hyphen-separated
+      date     : YYYY-MM-DD
+      lang     : en or ko
+
+  Example:
+      surveypersona-meaning-engine_2025-12-09_en.yaml
+
+
+# =====================================================================
+# 2) GUIDELINES FOR EN & KO VERSIONS
+# =====================================================================
+
+language_guidelines:
+  - "English and Korean catalogs must share identical structure."
+  - "Text content should be adapted naturally to each language."
+  - "Korean versions may localize tone and domain language."
+  - "Avoid literal translations unless clarity requires it."
+  - "Ensure both versions accurately describe the same GPT."
+
+
+# =====================================================================
+# 3) MASTER TEMPLATE BLOCK (DO NOT MODIFY STRUCTURE)
+# =====================================================================
+
+gpt_block_template: |
+  gpt_id: "REPLACE_WITH_GPT_ID"
+  name: "REPLACE_WITH_GPT_NAME"
+  url: "REPLACE_WITH_GPT_URL"
+  version: "v1.0.0"
+  created_at: "YYYY-MM-DD"
+  last_updated: "YYYY-MM-DD"
+  one_line: "REPLACE_WITH_ONE_LINE_DESCRIPTION"
+  functions:
+    - "REPLACE_WITH_FUNCTION_1"
+    - "REPLACE_WITH_FUNCTION_2"
+  alias:
+    - "REPLACE_WITH_SHORT_ALIAS_1"
+    - "REPLACE_WITH_SHORT_ALIAS_2"
+  tags:
+    - "policy"
+    - "statistics"
+    - "research-assistant"
+  target_users:
+    - "REPLACE_WITH_TARGET_USER_GROUP_1"
+    - "REPLACE_WITH_TARGET_USER_GROUP_2"
+  ideal_use_cases:
+    - "REPLACE_WITH_USE_CASE_1"
+    - "REPLACE_WITH_USE_CASE_2"
+  limitations:
+    - "REPLACE_WITH_LIMITATION_1"
+  example_commands:
+    - "REPLACE_WITH_EXAMPLE_PROMPT_1"
+    - "REPLACE_WITH_EXAMPLE_PROMPT_2"
+    - "REPLACE_WITH_EXAMPLE_PROMPT_3"
+    - "REPLACE_WITH_EXAMPLE_PROMPT_4"
+    - "REPLACE_WITH_EXAMPLE_PROMPT_5"
+  additional_features:
+    - "REPLACE_WITH_ADDITIONAL_FEATURE_1"
+
+
+# =====================================================================
+# 4) NOTES FOR METACUSTOMGPT-BUILDER
+# =====================================================================
+
+builder_notes:
+  - "MetaCustomGPT-Builder must ALWAYS load this master template before producing a catalog."
+  - "All replacement must occur within the YAML template block."
+  - "No explanatory prose should appear in the final catalog output."
+  - "Builder must ensure the EN and KO versions match structurally."
+  - "Builder must ensure consistency across GPT name, file slug, and catalog fields."
+
+
+# =====================================================================
+# END OF TEMPLATE
+# =====================================================================

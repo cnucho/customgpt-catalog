@@ -6,32 +6,156 @@
   <title>정밀 문항추출 Precesion Questionnaire Extractor</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>엑셀 병합 셀 자동 탐지 및 값 손실 없는 채움(수평/수직/블록 병합)</li><li class='fitem'>헤더(문항번호/문항문구/옵션 등) 영역 탐지 및 데이터 블록 판별</li><li class='fitem'>표 방향(row_questions/column_questions) 자동 판별 및 재해석</li><li class='fitem'>전방채움(forward fill) 기반 표 정규화로 문항·옵션 필드 분리</li><li class='fitem'>문항/하위문항(parent_question_id, item_id) 구조화 및 options[] 구성</li><li class='fitem'>조건식/분기 로직(라우팅) 표현을 위한 규칙 기반 패턴 적용</li><li class='fitem'>문항번호 패턴 기반 expected vs extracted 비교로 누락/초과 문항 검출</li><li class='fitem'>민감/지양 표현 감지 및 검수 플래그(needs_review 등) 부여</li><li class='fitem'>설문 JSON 템플릿(메타데이터/문항/추출리포트) 형태로 결과 출력</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-6890d378ceb08191ab29b9408453be71-jeongmil-munhangcucul-precesion-questionnaire-extractor' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6890d378ceb08191ab29b9408453be71-jeongmil-munhangcucul-precesion-questionnaire-extractor</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>survey</span><span class='chip'>questionnaire</span><span class='chip'>excel</span><span class='chip'>data-preprocessing</span><span class='chip'>normalization</span><span class='chip'>merged-cells</span><span class='chip'>schema</span><span class='chip'>research-assistant</span></div>
+        <div class='chips'><span class='chip'>jeongmil-munhang</span><span class='chip'>precision-questionnaire-extractor</span><span class='chip'>survey-qna-extractor</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>엑셀 병합 셀 자동 탐지 및 값 손실 없는 채움(수평/수직/블록 병합)</li><li>헤더(문항번호/문항문구/옵션 등) 영역 탐지 및 데이터 블록 판별</li><li>표 방향(row_questions/column_questions) 자동 판별 및 재해석</li><li>전방채움(forward fill) 기반 표 정규화로 문항·옵션 필드 분리</li><li>문항/하위문항(parent_question_id, item_id) 구조화 및 options[] 구성</li><li>조건식/분기 로직(라우팅) 표현을 위한 규칙 기반 패턴 적용</li><li>문항번호 패턴 기반 expected vs extracted 비교로 누락/초과 문항 검출</li><li>민감/지양 표현 감지 및 검수 플래그(needs_review 등) 부여</li><li>설문 JSON 템플릿(메타데이터/문항/추출리포트) 형태로 결과 출력</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6890d378ceb08191ab29b9408453be71</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6890d378ceb08191ab29b9408453be71</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-6890d378ceb08191ab29b9408453be71-jeongmil-munhangcucul-precesion-questionnaire-extractor</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6890d378ceb08191ab29b9408453be71</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6890d378ceb08191ab29b9408453be71</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;조건식/분기 규칙 패턴 라이브러리 기반의 라우팅 구조화&quot;, &quot;용어 사전/단위·척도 사전 기반의 표준화 힌트 제공&quot;, &quot;추출 결과 스키마(설문 JSON 템플릿) 준수 출력&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;이 설문 Excel에서 병합셀을 그대로 인식해서 문항/옵션 JSON으로 추출해줘.&quot;, &quot;표 방향이 혼합된 것 같은데 row_questions로 우선 해석하고, 실패하면 column_questions로 재검토해서 정규화해줘.&quot;, &quot;문항번호 패턴으로 expected_question_list를 만들고, 누락/초과 문항 리포트를 포함해줘.&quot;, &quot;분기 조건 문구를 routing.condition_raw에 보존하고, 가능한 경우 parsed_logic로도 정리해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6890d378ceb08191ab29b9408453be71</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;병합 셀/다단 헤더가 많은 설문 Excel을 문항/옵션 구조로 변환&quot;, &quot;문항 누락 여부(원문 대비 추출 결과) 자동 점검 리포트 생성&quot;, &quot;하위문항/매트릭스형 문항을 parent-child 구조로 정리&quot;, &quot;분기/조건 문구를 구조화해 후속 전처리·라우팅 설계에 연결&quot;, &quot;민감 표현 포함 가능 문항을 자동 표시해 검수 효율화&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;표 구조가 극도로 복잡하거나 이미지 기반(스캔)일 경우 needs_review가 증가할 수 있음&quot;, &quot;원문에 없는 문항/옵션을 ‘새로 생성’하지 않으며, 불확실한 경우 최소 정보로 기록함&quot;, &quot;분기/조건 로직은 원문 표기 품질에 따라 파싱 가능 범위가 달라질 수 있음&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;리서치/서베이 운영자(설문 설계·검수 담당)&quot;, &quot;데이터 전처리/코딩 담당자(변수사전·코드북 준비)&quot;, &quot;정책·통계·학술 조사 분석가&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

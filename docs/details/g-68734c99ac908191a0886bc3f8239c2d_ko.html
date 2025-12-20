@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>가상데이터 설계기</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="topbar">
+        <div class="leftbar">
+          <a class="btn" href="../index.html">← 목록</a>
+          <a class='btn primary' href='https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi' target='_blank' rel='noopener noreferrer'>GPT 바로가기</a>
+          <a class="btn" href="https://skcho.tistory.com/129" target="_blank" rel="noopener noreferrer">티스토리</a>
+        </div>
+      </div>
+
+      <h1>가상데이터 설계기</h1>
+      <p class='sub'>현실 기반 다차원 가상데이터를 생성하고, 메타정보 포함 교차표를 ChartGPT(표해)용 JSON으로 출력합니다.</p>
+      
+
+      <div class="section">
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68734c99ac908191a0886bc3f8239c2d-gasangdeiteo-seolgyegi</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>synthetic-data</span><span class='chip'>statistics</span><span class='chip'>table-design</span><span class='chip'>cross-table</span><span class='chip'>chart-ready</span><span class='chip'>chartgpt</span><span class='chip'>kpi</span></div>
+        <div class='chips'><span class='chip'>gasangdeiteo-seolgyegi</span><span class='chip'>virtual-data-designer</span></div>
+        
+      </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>주제 입력을 해석해 사회지표/변수를 자동 매핑</li><li>현실성 있는 시뮬레이션 수치 생성(평균/표준편차 규칙 기반)</li><li>조건변수 2개 이상 포함한 다차원 교차표 구조 설계</li><li>단위·시점·출처 등 메타정보를 포함해 해석 가능한 표로 정리</li><li>표해(ChartGPT) 연동 가능한 table_state + data 형태(JSON)로 출력</li></ul>
+      </div>
+
+      
+
+      
+
+      <details>
+        <summary>기술 정보</summary>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68734c99ac908191a0886bc3f8239c2d</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68734c99ac908191a0886bc3f8239c2d</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
+      </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;차트 유형 가이드(비교/경향/구성/분포/관계 등) 기반 추천&quot;, &quot;교차표 표준 템플릿(병합/정렬/스타일/메타 포함) 준수&quot;, &quot;시각적 일관성을 위한 컬러 팔레트 규칙 적용&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;서울/부산/대구의 2020~2025 행복도·삶의만족도 가상데이터를 연령대×성별로 교차표(JSON)로 만들어줘.&quot;, &quot;재택근무 생산성을 직무×근무형태로 비교하는 grouped bar용 표를 만들어줘. 단위/출처/시점 메타도 포함해줘.&quot;, &quot;표해에서 바로 그릴 수 있게 table_state와 data로만 출력해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68734c99ac908191a0886bc3f8239c2d</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;지역·연령·성별 등 조건 변수를 포함한 사회지표 가상데이터 생성&quot;, &quot;분석/시각화용 교차표를 빠르게 설계하고 JSON으로 내보내기&quot;, &quot;실데이터 부재 상황에서 현실성 있는 시뮬레이션 데이터로 프로토타이핑&quot;, &quot;비교/경향/구성/분포/관계 등 목적에 맞는 차트 유형 추천과 데이터 준비&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;생성 데이터는 시뮬레이션이며 실제 통계와 다를 수 있으므로, 의사결정에는 원자료 검증이 필요합니다.&quot;, &quot;민감한 주제(의료/법률/금융 등)에서는 최신·공식 자료로 교차검증을 권장합니다.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;데이터 시각화/리서치 실무자&quot;, &quot;정책/사회지표 분석가 및 기획자&quot;, &quot;대시보드/리포트 제작자&quot;, &quot;교육용 데이터셋이 필요한 강사/학생&quot;]</div></div></div></details>
+
+      
+
+    </div>
+  </div>
+</body>
+</html>

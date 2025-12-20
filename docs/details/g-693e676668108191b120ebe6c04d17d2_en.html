@@ -6,32 +6,156 @@
   <title>Proposal_Judge (Proposal Pre-Review)</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Extracts (or explicitly assumes) RFP requirements and flags fit gaps or misinterpretations</li><li class='fitem'>Detects methodology/logic/differentiation issues that may look templated, reused, or low-effort</li><li class='fitem'>Checks execution credibility: sampling, quality control, timeline, staffing, and numeric consistency</li><li class='fitem'>Formats every finding as Issue/Risk/Fix Direction with actionable remediation guidance</li><li class='fitem'>Anticipates likely evaluator questions to support pre-submission Q&amp;A readiness</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-693e676668108191b120ebe6c04d17d2-proposal-judge' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-693e676668108191b120ebe6c04d17d2-proposal-judge</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>proposal-review</span><span class='chip'>rfp</span><span class='chip'>market-research</span><span class='chip'>due-diligence</span><span class='chip'>quality-control</span></div>
+        <div class='chips'><span class='chip'>proposal-judge</span><span class='chip'>prejudge</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Extracts (or explicitly assumes) RFP requirements and flags fit gaps or misinterpretations</li><li>Detects methodology/logic/differentiation issues that may look templated, reused, or low-effort</li><li>Checks execution credibility: sampling, quality control, timeline, staffing, and numeric consistency</li><li>Formats every finding as Issue/Risk/Fix Direction with actionable remediation guidance</li><li>Anticipates likely evaluator questions to support pre-submission Q&amp;A readiness</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-693e676668108191b120ebe6c04d17d2</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-693e676668108191b120ebe6c04d17d2</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-693e676668108191b120ebe6c04d17d2-proposal-judge</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-693e676668108191b120ebe6c04d17d2</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-693e676668108191b120ebe6c04d17d2</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Output is locked to 4 blocks (summary / layered findings / top 5 fixes / likely questions)&quot;, &quot;Treats ambiguity as a problem and prioritizes worst-case evaluator interpretations&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;Paste the proposal text and output only: Summary / Fit/Substance/Execution findings / Top 5 fixes / Likely questions.&quot;, &quot;Here is the RFP and a proposal outline—identify the Top 5 high-risk fit gaps and how to fix them.&quot;, &quot;Review only the sampling, QC, and schedule sections; produce 5 evaluator questions we should prepare for.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-693e676668108191b120ebe6c04d17d2</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Final pre-submission proposal audit (missing items, contradictions, unclear claims, trust-reducing wording)&quot;, &quot;Risk identification using an &#x27;assumed RFP&#x27; when requirements or internal inputs are incomplete&quot;, &quot;Pre-building evaluator Q&amp;A around sampling, methods, schedule, deliverables, and differentiation&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;Does not declare Go/No-Go; does not rewrite or ghostwrite proposal sentences&quot;, &quot;Cannot verify facts beyond provided materials (e.g., internal rules or latest notices) without evidence&quot;, &quot;If a specific scoring rubric exists, an additional review aligned to that rubric is recommended&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Research proposal authors / PMs&quot;, &quot;Proposal QA/QC reviewers&quot;, &quot;Research &amp; consulting project leads&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

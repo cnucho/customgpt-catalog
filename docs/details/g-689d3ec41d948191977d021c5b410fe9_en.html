@@ -6,32 +6,156 @@
   <title>Model Architect</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Phase A: Present 2–3 candidate models with balanced pros/cons</li><li class='fitem'>Phase B: Adaptive inquiry across data, goals, constraints, use context, and ethics/quality to update fit scores</li><li class='fitem'>Phase C: Decide on single/modified/hybrid and generate one Mermaid block (Korean labels) plus final JSON aligned to the schema</li><li class='fitem'>Provide evidence using a source priority order (peer-reviewed → government reports → official statistics) and enforce source quality gates</li><li class='fitem'>Run an internal review loop (definitions → missing subdimensions → consistency → recency → actionable suggestions)</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-689d3ec41d948191977d021c5b410fe9-model-akitegteu' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-689d3ec41d948191977d021c5b410fe9-model-akitegteu</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>research-framework</span><span class='chip'>conceptual-models</span><span class='chip'>strategy-planning</span><span class='chip'>evidence-based</span><span class='chip'>mermaid</span><span class='chip'>json-schema</span></div>
+        <div class='chips'><span class='chip'>model-architect</span><span class='chip'>framework-selector</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Phase A: Present 2–3 candidate models with balanced pros/cons</li><li>Phase B: Adaptive inquiry across data, goals, constraints, use context, and ethics/quality to update fit scores</li><li>Phase C: Decide on single/modified/hybrid and generate one Mermaid block (Korean labels) plus final JSON aligned to the schema</li><li>Provide evidence using a source priority order (peer-reviewed → government reports → official statistics) and enforce source quality gates</li><li>Run an internal review loop (definitions → missing subdimensions → consistency → recency → actionable suggestions)</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689d3ec41d948191977d021c5b410fe9</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d3ec41d948191977d021c5b410fe9</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-689d3ec41d948191977d021c5b410fe9-model-akitegteu</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689d3ec41d948191977d021c5b410fe9</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d3ec41d948191977d021c5b410fe9</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Built-in evidence priority policy and prohibited source filters&quot;, &quot;Final output conforms to the JSON schema (components/justification/mermaid_code/review_suggestions)&quot;, &quot;Automatic improvement suggestions via an internal review module&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;My study uses Likert-scale surveys and aims to explain behavioral intention. Give only 3 Phase A candidates.&quot;, &quot;This is a policy evaluation with stakeholder interviews. Use Phase B questions to fill the axes.&quot;, &quot;Based on what we discussed, enter Phase C and output a modified or hybrid model with Mermaid + JSON.&quot;, &quot;Audit my component definitions using the review module and list concrete improvement suggestions.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d3ec41d948191977d021c5b410fe9</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Compare and shortlist theory models (e.g., TAM/TPB/UTAUT) for a study design&quot;, &quot;Structure a policy/strategy project using frameworks (e.g., SWOT/PESTEL/Logic Model)&quot;, &quot;Define components and subdimensions for mixed-method designs and detect omissions&quot;, &quot;Produce report-ready outputs as Mermaid diagrams and structured JSON&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;Phase A restricts deep dives into a single model and discourages early selection&quot;, &quot;Analytical ‘methods’ (stats/ML) are generally excluded as candidate models; they may be mentioned only as validation tools when relevant&quot;, &quot;Without sufficient user inputs (data type/scale, goals, constraints, use context, ethics/quality), Phase C decisions cannot be fully grounded&quot;, &quot;Certain sources (e.g., Wikipedia, personal blogs, unverified media) are filtered out by policy&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Academic researchers designing conceptual/theoretical frameworks&quot;, &quot;Policy/public-sector analysts needing explainable frameworks&quot;, &quot;Business strategy/planning teams for problem structuring&quot;, &quot;Consultants/PMs formalizing requirements into models&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

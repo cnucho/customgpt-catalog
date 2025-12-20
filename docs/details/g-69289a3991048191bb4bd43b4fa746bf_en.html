@@ -6,32 +6,156 @@
   <title>surveyDesignStudio</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Design a concept board (objective, problem definition, hypotheses, target persona)</li><li class='fitem'>Build a survey framework (variables, domains, model) and map variables to items</li><li class='fitem'>Draft a sampling plan (frame, selection/quota structure, sample-size rationale)</li><li class='fitem'>Produce questionnaires (Basic/Extended/Exploratory versions) and rewrite items to remove bias and improve clarity</li><li class='fitem'>Define indices/metrics and computation logic (scales, aggregation rules)</li><li class='fitem'>Create an analysis plan (descriptives → segmentation → modeling) and recommend reporting structure</li><li class='fitem'>Generate a proposal storyboard (template-based) and deliverable outline</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v2.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>survey-research</span><span class='chip'>questionnaire-design</span><span class='chip'>sampling</span><span class='chip'>research-proposal</span><span class='chip'>indices-metrics</span><span class='chip'>analysis-plan</span><span class='chip'>storyboard</span></div>
+        <div class='chips'><span class='chip'>surveydesignstudio</span><span class='chip'>survey-design-gpt</span><span class='chip'>survey-design-studio</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Design a concept board (objective, problem definition, hypotheses, target persona)</li><li>Build a survey framework (variables, domains, model) and map variables to items</li><li>Draft a sampling plan (frame, selection/quota structure, sample-size rationale)</li><li>Produce questionnaires (Basic/Extended/Exploratory versions) and rewrite items to remove bias and improve clarity</li><li>Define indices/metrics and computation logic (scales, aggregation rules)</li><li>Create an analysis plan (descriptives → segmentation → modeling) and recommend reporting structure</li><li>Generate a proposal storyboard (template-based) and deliverable outline</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>version</div><div class='v'>v2.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Template-driven outputs: Concept Board → Framework Map → Sampling Plan → Questionnaire (multi-version) → Indices → Analysis Plan → Proposal Storyboard&quot;, &quot;Question style rules for clarity/neutrality/answerability with version control&quot;, &quot;Optional integration of user-provided ReportScope summaries (within the provided scope only)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;Topic: &#x27;Post-launch membership satisfaction&#x27; — draft an online survey plan for ages 20–49 nationwide (framework, sampling, questionnaire, analysis, storyboard).&quot;, &quot;Rewrite these 12 items to be unbiased and clearer (include response scales) and map each item to its intended variable.&quot;, &quot;Help me build a Brand Experience Index: propose dimensions and a scoring logic, then draft the question set.&quot;, &quot;Based on this RFP summary (pasted), create a proposal storyboard and a deliverables list.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Turn a topic or RFP into a structured survey plan (framework, sampling, questionnaire, analysis, reporting) as a strong first draft&quot;, &quot;Rewrite existing questions to be clearer and more neutral (remove leading, double-barreled, or vague wording)&quot;, &quot;Design index systems (e.g., satisfaction/loyalty/experience) with dimensions and scoring rules plus the item set&quot;, &quot;Structure proposal storylines and slide outlines into a review-ready storyboard&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;Does not browse the internet or use external data; it only works with user-provided inputs&quot;, &quot;Will not assert legal/regulatory requirements or institution-specific guidelines without user-provided evidence&quot;, &quot;Does not generate or fabricate research results/data; it focuses on design and methodological logic&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Market research agencies (quant/qual) planners and PMs&quot;, &quot;Brand/marketing/UX researchers&quot;, &quot;Public sector / policy research teams&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

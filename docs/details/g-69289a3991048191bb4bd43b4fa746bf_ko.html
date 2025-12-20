@@ -6,32 +6,156 @@
   <title>surveyDesignStudio (설문설계스튜디오)</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>컨셉 보드(목적·문제정의·가설·타깃 페르소나) 설계</li><li class='fitem'>조사 프레임워크(변수·도메인·모형) 구성 및 변수-문항 매핑</li><li class='fitem'>표본설계(프레임·추출/할당·쿼터 구조·표본수 산정 논리) 작성</li><li class='fitem'>설문지 제작(기본/확장/탐색 버전) 및 문항 문장 다듬기·편향 제거</li><li class='fitem'>지표/지수 정의 및 산출 로직(스케일·합성 규칙) 설계</li><li class='fitem'>분석 계획(기술통계→세그먼트→모형) 및 결과보고서 구조 제안</li><li class='fitem'>제안서 스토리보드 생성(템플릿 기반) 및 산출물 구성</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v2.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>survey-research</span><span class='chip'>questionnaire-design</span><span class='chip'>sampling</span><span class='chip'>research-proposal</span><span class='chip'>indices-metrics</span><span class='chip'>analysis-plan</span><span class='chip'>storyboard</span></div>
+        <div class='chips'><span class='chip'>surveydesignstudio</span><span class='chip'>설문설계스튜디오</span><span class='chip'>survey-design-gpt</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>컨셉 보드(목적·문제정의·가설·타깃 페르소나) 설계</li><li>조사 프레임워크(변수·도메인·모형) 구성 및 변수-문항 매핑</li><li>표본설계(프레임·추출/할당·쿼터 구조·표본수 산정 논리) 작성</li><li>설문지 제작(기본/확장/탐색 버전) 및 문항 문장 다듬기·편향 제거</li><li>지표/지수 정의 및 산출 로직(스케일·합성 규칙) 설계</li><li>분석 계획(기술통계→세그먼트→모형) 및 결과보고서 구조 제안</li><li>제안서 스토리보드 생성(템플릿 기반) 및 산출물 구성</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>version</div><div class='v'>v2.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-69289a3991048191bb4bd43b4fa746bf-surveydesignstudio</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;템플릿 기반 산출물: Concept Board → Framework Map → Sampling Plan → Questionnaire(버전별) → Indices → Analysis Plan → Proposal Storyboard&quot;, &quot;문항 스타일 룰(명확성·중립성·응답가능성) 적용 및 버전 관리&quot;, &quot;사용자 제공 ReportScope 요약이 있을 경우, 이를 설계에 통합(사용자 제공 정보 범위 내)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;주제: &#x27;신규 멤버십 런칭 후 만족도&#x27;로 전국 20~49세 대상 온라인 설문 설계안(프레임워크·표본·설문지·분석·스토리보드) 만들어줘.&quot;, &quot;아래 문항 12개를 편향 없이 더 명확하게 고쳐주고(응답척도 포함), 각 문항이 어떤 변수에 매핑되는지 표로 정리해줘.&quot;, &quot;브랜드 경험 지표를 만들고 싶은데, 하위 차원(인지/사용/추천 등)과 산출 로직을 제안해줘.&quot;, &quot;RFP 요약(붙여넣기) 기반으로 제안서 스토리보드와 산출물 목록을 작성해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-69289a3991048191bb4bd43b4fa746bf</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;RFP 또는 조사 주제만 주어졌을 때 조사 설계(프레임워크·표본·설문지·분석·보고 구조)를 빠르게 초안화&quot;, &quot;기존 문항을 더 명확하고 중립적으로 리라이팅(유도/이중질문/모호 표현 제거)&quot;, &quot;지표(예: 만족/충성/경험) 구성 논리와 계산 규칙을 정의하고 문항 세트를 설계&quot;, &quot;제안서 스토리라인/슬라이드 목차를 구조화해 내부 검토용 스토리보드 제작&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;외부 인터넷/데이터 검색을 하지 않으며, 사용자 제공 정보만으로 설계를 생성함&quot;, &quot;실제 법적/규제 요건이나 특정 기관 가이드라인은 사용자 제공 근거 없이 단정하지 않음&quot;, &quot;실제 결과 데이터 생성·추정은 수행하지 않으며(가짜 데이터 생성 금지), 설계와 논리 중심으로 지원함&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;리서치/조사 대행사(정성·정량) 기획자 및 PM&quot;, &quot;브랜드/마케팅/UX 리서처&quot;, &quot;공공/정책 조사 담당자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

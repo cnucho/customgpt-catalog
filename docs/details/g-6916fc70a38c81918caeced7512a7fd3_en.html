@@ -6,32 +6,156 @@
   <title>Source Analyzer</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Read user-provided documents (text/HTML) and extract key_points</li><li class='fitem'>Extract quantitative and concrete facts (data_points) as accurately as possible from the original text</li><li class='fitem'>Map each key/data point to relevant KQs via relevance_to_KQs</li><li class='fitem'>Write/update only the source_extracts section and output a single updated YAML block</li><li class='fitem'>Strict formatting in Structured Mode (structured_pipeline: true) with minimal narration</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>desktop-research</span><span class='chip'>source-analysis</span><span class='chip'>evidence-extraction</span><span class='chip'>yaml</span><span class='chip'>kq-mapping</span></div>
+        <div class='chips'><span class='chip'>source-analyzer</span><span class='chip'>sa</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Read user-provided documents (text/HTML) and extract key_points</li><li>Extract quantitative and concrete facts (data_points) as accurately as possible from the original text</li><li>Map each key/data point to relevant KQs via relevance_to_KQs</li><li>Write/update only the source_extracts section and output a single updated YAML block</li><li>Strict formatting in Structured Mode (structured_pipeline: true) with minimal narration</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6916fc70a38c81918caeced7512a7fd3</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916fc70a38c81918caeced7512a7fd3</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-6916fc70a38c81918caeced7512a7fd3-source-analyzer</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6916fc70a38c81918caeced7512a7fd3</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916fc70a38c81918caeced7512a7fd3</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;KQ-linked structuring (relevance_to_KQs) optimized for handoff to a separate Synthesis GPT&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;Here is my YAML plus a URL/body text—populate only source_extracts and return the updated YAML.&quot;, &quot;From this HTML text, extract key_points and data_points and map them to KQ1–KQ3 in source_extracts.&quot;, &quot;Extract only numeric stats, percentages, dates, and concrete factual statements into data_points as precisely as possible.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916fc70a38c81918caeced7512a7fd3</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Structuring key claims and numbers from multiple sources for downstream use&quot;, &quot;Tagging/mapping source content to predefined KQs (research questions)&quot;, &quot;Preparing standardized source_extracts prior to a separate synthesis step&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;Does not discover new sources or modify/add to the sources list&quot;, &quot;No synthesis (no comparison, conclusions, or recommendations) — extraction only&quot;, &quot;Cannot directly read PDFs/images/downloaded files; requires the text to be pasted/uploaded&quot;, &quot;Output is restricted to a single ‘updated YAML block’ (minimal explanation)&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Desktop research / literature review practitioners&quot;, &quot;Evidence-driven writers (policy, market, academic)&quot;, &quot;Teams automating the ‘source extraction’ step in a research pipeline&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

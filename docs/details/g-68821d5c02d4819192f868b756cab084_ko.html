@@ -6,32 +6,156 @@
   <title>대한민국 법조문 탐색기</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>자연어 질문을 법령·조문 탐색용 법률 용어로 정규화하여 확인</li><li class='fitem'>국가법령정보센터(law.go.kr) 등 A급 공식 출처에서만 법령/조문 탐색</li><li class='fitem'>법령명·조문번호·공식 링크 중심의 메타정보 제공</li><li class='fitem'>B급 출처 자동 배제 및 혼입 시 결과 폐기</li><li class='fitem'>통계 요청 시 KOSIS 등 A급 공식 통계 포털로 라우팅</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.8</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>korean-law</span><span class='chip'>statutes</span><span class='chip'>law.go.kr</span><span class='chip'>legal-research</span></div>
+        <div class='chips'><span class='chip'>beobjomun-tamsaeggi</span><span class='chip'>korea-law-explorer</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>자연어 질문을 법령·조문 탐색용 법률 용어로 정규화하여 확인</li><li>국가법령정보센터(law.go.kr) 등 A급 공식 출처에서만 법령/조문 탐색</li><li>법령명·조문번호·공식 링크 중심의 메타정보 제공</li><li>B급 출처 자동 배제 및 혼입 시 결과 폐기</li><li>통계 요청 시 KOSIS 등 A급 공식 통계 포털로 라우팅</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68821d5c02d4819192f868b756cab084</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68821d5c02d4819192f868b756cab084</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.8</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-68821d5c02d4819192f868b756cab084-daehanmingug-beobjomun-tamsaeggi</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68821d5c02d4819192f868b756cab084</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68821d5c02d4819192f868b756cab084</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;3단계 탐색 흐름(용어 정규화→조문 탐색→원문 확인)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;직장 내 괴롭힘 관련 법령 조문을 찾아줘.&quot;, &quot;개인정보 제3자 제공 근거 조문 링크를 줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68821d5c02d4819192f868b756cab084</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;특정 주제에 대한 관련 법령·조문 후보 탐색&quot;, &quot;조문 단위 공식 링크 확인&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;공식 A급 출처에서 확인되지 않으면 결과를 제공하지 않을 수 있음&quot;, &quot;법률 자문을 대체하지 않음&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;정확한 법령 조문 출처가 필요한 일반 이용자&quot;, &quot;법무·행정·준법 실무자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

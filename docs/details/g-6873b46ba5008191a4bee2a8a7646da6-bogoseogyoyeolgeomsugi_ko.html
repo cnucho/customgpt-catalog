@@ -6,32 +6,156 @@
   <title>보고서교열검수기 – 표본조사 기반 실태조사 보고서 검토</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>표본조사 기반 실태조사와 관련된 표본설계보고서, 실사(조사관리)보고서, 결과분석보고서, 이용자가이드, 코드북 등의 문장을 교열하고, 용어·정의·지표 설명을 일관되고 명료하게 정리합니다.</li><li class='fitem'>모집단·표본틀·층화·표본배분·표본추출·가중치·추정식·표본오차(RSE 등) 등 핵심 통계 설계 요소의 누락·비논리·통계학적 타당성·재현 가능성을 점검하고 개선 방향을 제안합니다.</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-06</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-06</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>policy</span><span class='chip'>statistics</span><span class='chip'>research-assistant</span></div>
+        <div class='chips'><span class='chip'>bogoseo-gyoyeol-gumsugi</span><span class='chip'>sample-survey-report-gpt</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>표본조사 기반 실태조사와 관련된 표본설계보고서, 실사(조사관리)보고서, 결과분석보고서, 이용자가이드, 코드북 등의 문장을 교열하고, 용어·정의·지표 설명을 일관되고 명료하게 정리합니다.</li><li>모집단·표본틀·층화·표본배분·표본추출·가중치·추정식·표본오차(RSE 등) 등 핵심 통계 설계 요소의 누락·비논리·통계학적 타당성·재현 가능성을 점검하고 개선 방향을 제안합니다.</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-06</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;표본조사 기반 실태조사의 생애주기(표본설계–실사–분석–공개)별로 체크해야 할 핵심 항목(모집단·표본틀·표본배분·가중치·지표 정의·오차 해석 등)을 내재화한 점검 리스트를 활용하여, 각 보고서 유형(표본설계보고서, 실사보고서, 결과분석보고서, 이용자가이드, 코드북 등)에 맞는 교열·검토 관점을 자동으로 적용합니다.&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;산업안전 실태조사 표본설계보고서의 2. 모집단과 3. 표본틀 부분을 붙이겠습니다. 정의가 모호하거나 통계학적으로 타당하지 않은 설명, 재현이 어려운 부분을 지적해 주세요.&quot;, &quot;다음은 표본조사 기반 실태조사 결과분석보고서의 요약본입니다. 일반 국민이 이해하기 어렵거나 전문용어가 과도한 문장을 다듬고, 지표 정의가 모호한 곳을 표시해 주세요.&quot;, &quot;실사보고서(조사관리보고서)의 조사원 교육, 현장 품질관리, 콜백·재조사 절차 부분을 검토해서 누락된 단계나 비논리적이거나 애매한 표현을 수정 제안 형태로 정리해 주세요.&quot;, &quot;이용자가이드에서 제시한 가중치 사용법과 표본오차(RSE) 설명이 제3자가 동일 분석을 재현할 수 있을 정도로 충분한지 평가하고, 필요한 보완 설명을 문장 예시로 제안해 주세요.&quot;, &quot;코드북의 주요 변수 10개에 대한 변수명·레이블·값 정의를 붙일 테니, 값 범주와 설명이 일관되는지, 특수값 처리(-9, 97 등)가 명확한지, 서로 상충되는 설명이 없는지 점검해 주세</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6873b46ba5008191a4bee2a8a7646da6-bogoseogyoyeolgeomsugi</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;표본설계보고서 초안에서 모집단·표본틀·층화·표본크기·표본배분·가중치·추정식 설명이 누락되거나 통계학적으로 부자연스러운 부분을 사전 점검할 때&quot;, &quot;외부 공개용 조사결과보고서의 요약·본문·표 해설에서 통계지표 정의와 해석이 일반 국민 기준으로 이해 가능하고, 지표·수치 간 모순이 없는지 검토할 때&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;제공된 텍스트와 표를 기반으로 한 교열·검토 도구로서, 실제 통계 생산·조사 설계 및 법적·행정적 의사결정에 대한 최종 책임은 작성 기관 및 담당자에게 있으며 이를 대체할 수 없습니다.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;산업안전 등 표본조사 기반 실태조사 결과를 생산·공표하는 공공기관 통계 담당자와 연구용역 수행기관의 보고서 작성자&quot;, &quot;표본조사 기반 실태조사·현황조사 보고서(표본설계보고서, 결과분석보고서, 이용자가이드, 코드북 등)를 체계적으로 검토·개선하려는 통계·조사 방법론 연구자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

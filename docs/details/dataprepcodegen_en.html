@@ -6,32 +6,156 @@
   <title>DataPrepCodeGen – SPSS/R Data Preparation Code Generator</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Generate SPSS data preparation syntax based on survey/statistical metadata and codebooks</li><li class='fitem'>Translate SPSS preparation syntax into equivalent R (tidyverse) data preparation code (excluding analytical code)</li><li class='fitem'>Create variable labels, value labels, missing value definitions, and display formats for official statistics datasets</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-11</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-11</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>policy</span><span class='chip'>statistics</span><span class='chip'>research-assistant</span></div>
+        <div class='chips'><span class='chip'>dataprepcodegen</span><span class='chip'>dataprep-gpt</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Generate SPSS data preparation syntax based on survey/statistical metadata and codebooks</li><li>Translate SPSS preparation syntax into equivalent R (tidyverse) data preparation code (excluding analytical code)</li><li>Create variable labels, value labels, missing value definitions, and display formats for official statistics datasets</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-11</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Interprets metadata schemas (variable roles, semantic types, groups) to draft type conversions, grouped sums/means, and index variables&quot;, &quot;Adds concise Korean comments to SPSS and R code to document each preparation step for official statistics workflows&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;Use this survey metadata to generate SPSS VARIABLE LABELS, VALUE LABELS, and MISSING VALUES syntax.&quot;, &quot;Convert this SPSS data preparation script into R tidyverse code, excluding any analytical procedures.&quot;, &quot;Given these variable roles (id, weight, psu, strata), create a reusable SPSS preparation template.&quot;, &quot;From this codebook, draft SPSS FORMATS and any necessary type conversion code for income, age, and date variables.&quot;, &quot;Generate SPSS VARSTOCASES syntax to reshape these repeated-measures va</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Automating SPSS variable/value labeling and missing value declarations from questionnaires or metadata files&quot;, &quot;Refactoring legacy SPSS preparation scripts into cleaner, documented syntax&quot;, &quot;Producing parallel SPSS and R (tidyverse) preparation scripts for the same dataset to support migration&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;Does not generate or interpret statistical analysis code (e.g., regression, hypothesis tests); it focuses strictly on data preparation.&quot;, &quot;Does not perform file system operations, database connections, or OS-level commands.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Statisticians and data managers working with official statistics and survey microdata&quot;, &quot;Practitioners responsible for SPSS-based data cleaning and preparation&quot;, &quot;Analysts transitioning from SPSS to R who need parallel preparation scripts&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

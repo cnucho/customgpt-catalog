@@ -6,32 +6,156 @@
   <title>Jeongmil Munhanggaebal (Precision Item Development)</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Derive measurement constructs and sub-dimensions (factors) from items</li><li class='fitem'>Audit content validity (double-barreled items, ambiguity, leading/biasing wording, inappropriate terms) and propose revisions</li><li class='fitem'>Simulate cognitive interviews (virtual respondents’ answers and rationales) to detect interpretation variance</li><li class='fitem'>Detect semantic redundancy across items and recommend merge/removal</li><li class='fitem'>Predict reliability (e.g., Cronbach’s alpha) via simulated data and flag problematic items</li><li class='fitem'>Deliver a structured final item set (item-construct-dimension mapping) with version comparisons</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-688c23ce47388191960e1f0ba68c8ab0-jeongmil-munhanggaebal' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-688c23ce47388191960e1f0ba68c8ab0-jeongmil-munhanggaebal</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>survey-design</span><span class='chip'>questionnaire</span><span class='chip'>measurement</span><span class='chip'>psychometrics</span><span class='chip'>validity</span><span class='chip'>reliability</span><span class='chip'>cognitive-interview</span><span class='chip'>hr-analytics</span><span class='chip'>research-assistant</span></div>
+        <div class='chips'><span class='chip'>jeongmil-munhanggaebal</span><span class='chip'>precision-item-dev</span><span class='chip'>survey-item-audit</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Derive measurement constructs and sub-dimensions (factors) from items</li><li>Audit content validity (double-barreled items, ambiguity, leading/biasing wording, inappropriate terms) and propose revisions</li><li>Simulate cognitive interviews (virtual respondents’ answers and rationales) to detect interpretation variance</li><li>Detect semantic redundancy across items and recommend merge/removal</li><li>Predict reliability (e.g., Cronbach’s alpha) via simulated data and flag problematic items</li><li>Deliver a structured final item set (item-construct-dimension mapping) with version comparisons</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-688c23ce47388191960e1f0ba68c8ab0</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-688c23ce47388191960e1f0ba68c8ab0</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-688c23ce47388191960e1f0ba68c8ab0-jeongmil-munhanggaebal</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-688c23ce47388191960e1f0ba68c8ab0</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-688c23ce47388191960e1f0ba68c8ab0</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Default scale: 5-point Likert (1=Strongly disagree ~ 5=Strongly agree)&quot;, &quot;Default cognitive interview: 5 virtual respondents&quot;, &quot;Default reliability prediction: 100 virtual respondents with item-level diagnostics&quot;, &quot;Version tracking (before/after) and item-construct-dimension mapping table&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;Start precision item generation. Map these 12 items to constructs/dimensions, flag content-validity issues, and propose revised versions.&quot;, &quot;Start precision item generation. Target: office workers aged 20–39. Create an 8-item job stress scale and show a 5-person cognitive interview simulation with rationales.&quot;, &quot;Start precision item generation. Identify redundant items, propose merges, and predict Cronbach’s alpha using a 100-respondent simulation.&quot;, &quot;Start precision item generation. Neutraliz</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-688c23ce47388191960e1f0ba68c8ab0</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Review and refine existing survey items for validity, bias, and redundancy&quot;, &quot;Design new scale items aligned to a construct-dimension framework and organize an item bank&quot;, &quot;Pre-test wording via cognitive-interview-style simulation to anticipate misinterpretations or reactance&quot;, &quot;Estimate reliability risks (low alpha, inconsistent items) before running a pilot&quot;, &quot;Neutralize socially desirable or leading phrasing in Likert-style questionnaires (default 5-point)&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;Reliability and response distributions are simulation-based estimates, not real survey results; empirical validation is required&quot;, &quot;If the target population profile (role, industry, culture, language nuance) is unclear, item fit may degrade&quot;, &quot;Sensitive domains (politics/discrimination/health, etc.) may require additional ethical/legal review beyond wording fixes&quot;, &quot;Detailed internal mechanisms (procedural diagrams, algorithms, hidden rules) are not provided&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Survey and social science researchers (academic/public/private)&quot;, &quot;HR/organizational diagnostics practitioners and consultants&quot;, &quot;UX researchers and data analysts designing quantitative surveys&quot;, &quot;Educational/assessment item developers&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

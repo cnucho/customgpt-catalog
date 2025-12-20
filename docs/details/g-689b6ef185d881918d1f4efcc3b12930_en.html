@@ -6,32 +6,156 @@
   <title>Munseongpyeong (文成評)</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Summarize overall report structure and analyze problem framing (policy/research framing)</li><li class='fitem'>Conduct 6-axis evaluation: completeness, validity (data and logic consistency), feasibility, story coherence, clarity/fitness of problem setting, and methodology quality</li><li class='fitem'>Perform in-depth methodology audits: AAPOR RR/CR/COOP/REF, sampling design, weighting (design → nonresponse → post-stratification), variance estimation (Taylor/BRR/JK), design effects (DEFF), replicate weights, missingness/imputation flags</li><li class='fitem'>Assess measurement quality: measurement equivalence, time-series and subgroup comparability, scale reliability, factor analysis, and measurement invariance checks</li><li class='fitem'>Review reproducibility: availability of data, codebooks, questionnaires, and analytical procedures</li><li class='fitem'>Audit visualizations for uncertainty communication (confidence intervals, error bars, DEFF disclosure)</li><li class='fitem'>Provide concrete improvements in a source → revision → rationale format</li><li class='fitem'>Generate Story Mode outputs: Narrative_Spine, Coherence_Score (P1–P5), Breakpoints, Bridge_Texts, Story_Map</li><li class='fitem'>Assign axis-level grades and an overall weighted grade with explicit evidence</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>policy</span><span class='chip'>survey-research</span><span class='chip'>research-methodology</span><span class='chip'>statistics</span><span class='chip'>AAPOR</span><span class='chip'>sampling</span><span class='chip'>weighting</span><span class='chip'>variance-estimation</span><span class='chip'>DEFF</span><span class='chip'>measurement-equivalence</span><span class='chip'>scale-validity</span><span class='chip'>reproducibility</span><span class='chip'>story-flow</span><span class='chip'>report-quality-evaluation</span></div>
+        <div class='chips'><span class='chip'>munseongpyeong</span><span class='chip'>msp-evaluator</span><span class='chip'>report-evaluator-6axis</span><span class='chip'>policy-research-reviewer</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Summarize overall report structure and analyze problem framing (policy/research framing)</li><li>Conduct 6-axis evaluation: completeness, validity (data and logic consistency), feasibility, story coherence, clarity/fitness of problem setting, and methodology quality</li><li>Perform in-depth methodology audits: AAPOR RR/CR/COOP/REF, sampling design, weighting (design → nonresponse → post-stratification), variance estimation (Taylor/BRR/JK), design effects (DEFF), replicate weights, missingness/imputation flags</li><li>Assess measurement quality: measurement equivalence, time-series and subgroup comparability, scale reliability, factor analysis, and measurement invariance checks</li><li>Review reproducibility: availability of data, codebooks, questionnaires, and analytical procedures</li><li>Audit visualizations for uncertainty communication (confidence intervals, error bars, DEFF disclosure)</li><li>Provide concrete improvements in a source → revision → rationale format</li><li>Generate Story Mode outputs: Narrative_Spine, Coherence_Score (P1–P5), Breakpoints, Bridge_Texts, Story_Map</li><li>Assign axis-level grades and an overall weighted grade with explicit evidence</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Strict Factual Mode (evidence-only; strict numerical and terminology fidelity)&quot;, &quot;StoryFlow evaluation module (narrative spine, coherence scoring, breakpoints, bridge text generation)&quot;, &quot;Checklist-driven methodology audit engine (AAPOR, weighting, variance estimation, measurement equivalence, reproducibility, uncertainty visualization)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;Evaluate the attached report using the 6-axis framework. Include a full methodology audit (AAPOR, weighting, variance estimation, DEFF, missingness/imputation, scale validity, reproducibility).&quot;, &quot;Run a representative-chapter review and include Story Mode outputs (Narrative_Spine, Breakpoints, Bridge_Texts).&quot;, &quot;Identify where the narrative breaks between tables and interpretations, list Breakpoints, and draft Bridge_Texts in the original tone.&quot;, &quot;Check whether time-series indicators are compar</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Audit survey reports for response rates (AAPOR), sampling, weighting, variance estimation, and DEFF compliance&quot;, &quot;Identify logical gaps between results, interpretation, and recommendations and repair narrative flow&quot;, &quot;Detect risks in time-series or subgroup comparisons due to definition changes or measurement non-equivalence&quot;, &quot;Ensure uncertainty is properly communicated in tables and figures (CIs, error bars, DEFF)&quot;, &quot;Generate a final pre-submission quality evaluation and revision guide&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;All judgments are strictly based on the provided source text and attachments (Strict Factual Mode)&quot;, &quot;No speculation or inference beyond the evidence (zero-inference rule)&quot;, &quot;Does not answer general user questions; only produces evaluation outputs&quot;, &quot;Will not invent, adjust, or retrofit numbers, definitions, or methods absent from the source&quot;, &quot;Marks items as &#x27;insufficient evidence&#x27; when documentation is lacking&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Policy and research report quality assurance owners&quot;, &quot;Survey research practitioners (design, fielding, analysis)&quot;, &quot;Authors and reviewers of public, private, or academic research reports&quot;, &quot;Editors, peer reviewers, and internal audit teams&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

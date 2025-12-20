@@ -6,32 +6,156 @@
   <title>DiagramArtist</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>요구사항/프로세스/아키텍처 서술을 노드·엣지·그룹(phase) 구조로 정리</li><li class='fitem'>기본 HTML+CSS+SVG 다이어그램을 깨지지 않게 출력(좌→우 흐름)</li><li class='fitem'>사용자 요청 시 Mermaid 또는 PlantUML 문법으로 변환해 제공</li><li class='fitem'>긴 라벨 줄바꿈, ID 충돌/특수문자 처리 등 렌더링 안정성 보정</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-692d83e61f9c819188ae6cdedf9d69b4-diagramartist' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-692d83e61f9c819188ae6cdedf9d69b4-diagramartist</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>diagram</span><span class='chip'>html</span><span class='chip'>svg</span><span class='chip'>flowchart</span><span class='chip'>mermaid</span><span class='chip'>plantuml</span><span class='chip'>code-rendering</span><span class='chip'>documentation</span></div>
+        <div class='chips'><span class='chip'>diagramartist</span><span class='chip'>diagram-artist</span><span class='chip'>da</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>요구사항/프로세스/아키텍처 서술을 노드·엣지·그룹(phase) 구조로 정리</li><li>기본 HTML+CSS+SVG 다이어그램을 깨지지 않게 출력(좌→우 흐름)</li><li>사용자 요청 시 Mermaid 또는 PlantUML 문법으로 변환해 제공</li><li>긴 라벨 줄바꿈, ID 충돌/특수문자 처리 등 렌더링 안정성 보정</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-692d83e61f9c819188ae6cdedf9d69b4</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692d83e61f9c819188ae6cdedf9d69b4</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-692d83e61f9c819188ae6cdedf9d69b4-diagramartist</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-692d83e61f9c819188ae6cdedf9d69b4</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692d83e61f9c819188ae6cdedf9d69b4</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;질문 최소화 정책(연결 불가능한 수준이 아니면 즉시 렌더링)&quot;, &quot;ID 자동 정규화(_로 치환) 및 충돌 시 _1, _2 자동 부여&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;다음 요구사항을 단계별 플로우로 HTML/SVG 다이어그램으로 그려줘: ...&quot;, &quot;Mermaid로 변환해서 그려줘: (구조/단계 서술) ...&quot;, &quot;질문하지 말고 아래 구조를 좌→우로 그려줘: (노드/연결) ...&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692d83e61f9c819188ae6cdedf9d69b4</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;업무 프로세스/워크플로우를 즉시 도식화(HTML/SVG)&quot;, &quot;시스템 구성도·데이터 흐름·의사결정 트리를 코드 기반으로 작성&quot;, &quot;문서(Typora/브라우저/Word)에서 깨지지 않는 다이어그램 삽입&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;입력 서술이 단계/관계가 거의 없으면 임의 추정 없이 최소 구조로만 렌더링될 수 있음&quot;, &quot;기본 응답은 코드 블록만 출력(설명이 필요하면 &#x27;설명도 함께&#x27;를 명시)&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;기획자/PM&quot;, &quot;개발자/아키텍트&quot;, &quot;테크니컬 라이터/문서 담당자&quot;, &quot;컨설턴트/분석가&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

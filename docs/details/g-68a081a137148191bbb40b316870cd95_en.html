@@ -6,32 +6,156 @@
   <title>GroupCompare AI</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Data preprocessing &amp; diagnostics (missingness/outliers/skewness/cluster-panel detection) with actionable recommendations</li><li class='fitem'>Automatic test selection &amp; execution for group comparisons (t/Welch/Mann–Whitney, ANOVA/Welch ANOVA, chi-square/exact tests, etc.)</li><li class='fitem'>Covariate adjustment (ANCOVA) and clustered/panel data handling recommendations (cluster-robust SE, mixed-effects models)</li><li class='fitem'>Multiple-testing correction (Holm default; Bonferroni/BH options) with controlled correction scope</li><li class='fitem'>Effect sizes with confidence intervals (Cohen d/Hedges g, η²/ω², risk difference/RR/OR, etc.) and interpretation templates</li><li class='fitem'>Equivalence &amp; non-inferiority testing (TOST with 90% CI) using configurable equivalence margins (Δ)</li><li class='fitem'>Power &amp; sample planning (a priori/post hoc power, MDE) with automatic low-power warnings</li><li class='fitem'>Subgroup analysis &amp; interaction checks (interaction p-values, concise heterogeneity summary; forest-plot recommendations)</li><li class='fitem'>Report generation with summary cards, detailed tables/figures, and appendix (code/logs) in APA statistical reporting style</li><li class='fitem'>Multilingual reporting support (Korean/English and major SEA languages) via i18n resources</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>1.4-i18n-dual-support</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>statistics</span><span class='chip'>ab-testing</span><span class='chip'>equivalence-testing</span><span class='chip'>tost</span><span class='chip'>non-inferiority</span><span class='chip'>multiple-testing</span><span class='chip'>effect-size</span><span class='chip'>power-analysis</span><span class='chip'>apa-reporting</span><span class='chip'>research-assistant</span><span class='chip'>i18n</span></div>
+        <div class='chips'><span class='chip'>groupcompare-ai</span><span class='chip'>GroupCompareAI</span><span class='chip'>group-diff-equivalence-tester</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Data preprocessing &amp; diagnostics (missingness/outliers/skewness/cluster-panel detection) with actionable recommendations</li><li>Automatic test selection &amp; execution for group comparisons (t/Welch/Mann–Whitney, ANOVA/Welch ANOVA, chi-square/exact tests, etc.)</li><li>Covariate adjustment (ANCOVA) and clustered/panel data handling recommendations (cluster-robust SE, mixed-effects models)</li><li>Multiple-testing correction (Holm default; Bonferroni/BH options) with controlled correction scope</li><li>Effect sizes with confidence intervals (Cohen d/Hedges g, η²/ω², risk difference/RR/OR, etc.) and interpretation templates</li><li>Equivalence &amp; non-inferiority testing (TOST with 90% CI) using configurable equivalence margins (Δ)</li><li>Power &amp; sample planning (a priori/post hoc power, MDE) with automatic low-power warnings</li><li>Subgroup analysis &amp; interaction checks (interaction p-values, concise heterogeneity summary; forest-plot recommendations)</li><li>Report generation with summary cards, detailed tables/figures, and appendix (code/logs) in APA statistical reporting style</li><li>Multilingual reporting support (Korean/English and major SEA languages) via i18n resources</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68a081a137148191bbb40b316870cd95</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a081a137148191bbb40b316870cd95</div></div><div class='row'><div class='k'>version</div><div class='v'>1.4-i18n-dual-support</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-68a081a137148191bbb40b316870cd95-groupcompare-ai</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68a081a137148191bbb40b316870cd95</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a081a137148191bbb40b316870cd95</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Default settings: alpha=0.05, CI=95%, TOST CI=90%, power target=0.80, Holm correction by default&quot;, &quot;UI toggles: plain-language vs technical summary, equivalence margin (Δ) on/off, correction method, subgroup analysis, language switch&quot;, &quot;Outputs: summary card (decision/effect size/MDE/recommendations) + detailed tables/figures + appendix (code/logs)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;Compare CTR and CVR between variants A and B in my uploaded data, apply Holm correction, and report effect sizes, 95% CIs, and MDE.&quot;, &quot;Test the mean difference in influencer_credibility between male and female; switch to Welch if variances differ.&quot;, &quot;Run ANOVA across 5 countries with post-hoc tests; propose robust alternatives if normality is severely violated.&quot;, &quot;Check whether A and B are equivalent using TOST (Δ: Cohen d=0.2) and report the decision clearly.&quot;, &quot;Run subgroup analysis by age g</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a081a137148191bbb40b316870cd95</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;End-to-end A/B testing reports (significance + effect size + multiplicity correction) for multiple KPIs&quot;, &quot;Make an equivalence claim (not just ‘non-significant’) via TOST with a justified margin Δ&quot;, &quot;Compute MDE and recommend re-testing when power is insufficient&quot;, &quot;Compare effects across countries/segments and assess interactions&quot;, &quot;Estimate adjusted group differences using ANCOVA (e.g., baseline-controlled outcomes)&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;Equivalence/non-inferiority conclusions are highly sensitive to the chosen margin Δ; unjustified margins can undermine interpretability.&quot;, &quot;Causal interpretation is limited for observational data due to potential confounding; additional design/estimation strategies may be required.&quot;, &quot;Small samples, rare events, or complex clustering may require exact tests or advanced mixed-model specifications beyond simple defaults.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Researchers and data analysts running group comparisons on experiments/surveys/observational data&quot;, &quot;Product and growth teams (A/B testing, multiple metrics, standardized reporting)&quot;, &quot;Academic/policy analysts who need effect sizes, power/MDE, and equivalence claims&quot;, &quot;Consultants/analytics owners who want consistent statistical reporting pipelines&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

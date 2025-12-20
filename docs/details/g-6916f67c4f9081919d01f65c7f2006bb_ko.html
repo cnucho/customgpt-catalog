@@ -6,32 +6,156 @@
   <title>Research Architect – 연구 설계 GPT</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>비정형 아이디어를 구조화된 연구 설계로 변환</li><li class='fitem'>연구 유형(학술, 설문, 프로그램 평가, 데스크 리서치)에 맞는 설계 자동 생성</li><li class='fitem'>개념 모델, 가설, 조사 설계, 로직모델 초안 작성</li><li class='fitem'>Mermaid/GoJS 기반 개념도 시각화</li><li class='fitem'>다음 단계(GPT 워크플로) 제안</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-6916f67c4f9081919d01f65c7f2006bb-research-architect' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6916f67c4f9081919d01f65c7f2006bb-research-architect</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>research-design</span><span class='chip'>academic</span><span class='chip'>evaluation</span><span class='chip'>survey</span><span class='chip'>desktop-research</span><span class='chip'>structured-yaml</span></div>
+        <div class='chips'><span class='chip'>research-architect</span><span class='chip'>resdesign</span><span class='chip'>연구설계GPT</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>비정형 아이디어를 구조화된 연구 설계로 변환</li><li>연구 유형(학술, 설문, 프로그램 평가, 데스크 리서치)에 맞는 설계 자동 생성</li><li>개념 모델, 가설, 조사 설계, 로직모델 초안 작성</li><li>Mermaid/GoJS 기반 개념도 시각화</li><li>다음 단계(GPT 워크플로) 제안</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6916f67c4f9081919d01f65c7f2006bb</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916f67c4f9081919d01f65c7f2006bb</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-6916f67c4f9081919d01f65c7f2006bb-research-architect</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6916f67c4f9081919d01f65c7f2006bb</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916f67c4f9081919d01f65c7f2006bb</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;다국어 지원(영/한 등)&quot;, &quot;구조화된 YAML 파이프라인 출력&quot;, &quot;자동 프로젝트 유형 감지 및 맞춤 설계&quot;, &quot;모듈 기반 설계 엔진 (academic_research, survey_project, program_evaluation, desktop_research)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;‘디지털 리터러시가 대학생의 학업 성취에 미치는 영향’을 연구 설계로 바꿔줘.&quot;, &quot;청년정책 프로그램의 평가 설계를 설계형식(YAML)으로 작성해줘.&quot;, &quot;기후기술 시장 트렌드 데스크 리서치 프로젝트를 설계해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6916f67c4f9081919d01f65c7f2006bb</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;논문 아이디어를 구조화된 연구 설계로 발전시킬 때&quot;, &quot;프로그램 평가나 설문조사 설계를 자동화할 때&quot;, &quot;데스크 리서치의 기본 구조(목표, 범위, 질문, 자료원)를 짤 때&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;통계분석이나 결과 해석은 수행하지 않음&quot;, &quot;경험적 데이터에 기반한 모델 수정은 불가(ResRefiner 등 후속 GPT 필요)&quot;, &quot;문헌검색이나 종합분석은 별도 GPT(LitSearch, SourceFinder 등) 필요&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;대학 연구자 및 대학원생&quot;, &quot;조사 및 평가 담당자&quot;, &quot;리서치 컨설턴트&quot;, &quot;R&amp;D 정책기획자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

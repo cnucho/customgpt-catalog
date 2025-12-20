@@ -6,32 +6,156 @@
   <title>DataRulesGPT</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>분석 목적·방법·변수 정보를 입력받아 전처리 규칙 초안을 생성</li><li class='fitem'>결측/이상값/범주통합/재코딩/변환/스케일링/방법특이 규칙을 표준 순서로 설계</li><li class='fitem'>각 규칙에 조건→행동→파라미터→근거(조사방법론·통계학 기준)를 명시</li><li class='fitem'>규칙을 JSON/CSV 사양으로 동시 산출(구조·규칙 수 일치)</li><li class='fitem'>사용자 승인 기반(초안→승인→최종) 규칙셋 생성 흐름을 지원</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-692c2dd44cdc8191b5b728e93e559980-datarulesgpt' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-692c2dd44cdc8191b5b728e93e559980-datarulesgpt</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-16</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-16</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>data-preprocessing</span><span class='chip'>survey-methodology</span><span class='chip'>statistics</span><span class='chip'>research</span><span class='chip'>governance</span><span class='chip'>reproducibility</span></div>
+        <div class='chips'><span class='chip'>datarulesgpt</span><span class='chip'>preprocess-rules</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>분석 목적·방법·변수 정보를 입력받아 전처리 규칙 초안을 생성</li><li>결측/이상값/범주통합/재코딩/변환/스케일링/방법특이 규칙을 표준 순서로 설계</li><li>각 규칙에 조건→행동→파라미터→근거(조사방법론·통계학 기준)를 명시</li><li>규칙을 JSON/CSV 사양으로 동시 산출(구조·규칙 수 일치)</li><li>사용자 승인 기반(초안→승인→최종) 규칙셋 생성 흐름을 지원</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-692c2dd44cdc8191b5b728e93e559980</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692c2dd44cdc8191b5b728e93e559980</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-16</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-692c2dd44cdc8191b5b728e93e559980-datarulesgpt</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-692c2dd44cdc8191b5b728e93e559980</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692c2dd44cdc8191b5b728e93e559980</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;규칙 ID/우선순위/상태(status) 필드를 포함한 관리형 규칙셋 출력&quot;, &quot;규칙 생성 순서(결측→이상값→범주통합→재코딩→변환→스케일링→방법특이)를 준수&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;분석 목적은 &#x27;정책 만족도에 영향을 주는 요인&#x27;이고 방법은 로지스틱 회귀야. 변수 목록(이름/설명/유형/유효범위/결측률/범주빈도)을 줄 테니 전처리 규칙 초안을 JSON/CSV로 만들어줘.&quot;, &quot;결측률이 35%인 변수와 8%인 변수의 처리 규칙을 교과서 기준으로 제안하고, 근거를 함께 적어줘.&quot;, &quot;범주형 변수에서 2% 미만 희소범주를 통합하는 규칙을 만들고, 로지스틱 완전분리 방지 근거를 포함해줘.&quot;, &quot;PCA를 할 예정이야. 스케일링/변환/이상값 처리에 대한 규칙을 우선순위와 함께 규칙셋으로 정리해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-692c2dd44cdc8191b5b728e93e559980</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;조사자료/행정자료 전처리 계획서(규칙 기반) 작성 및 감사·재현성 문서화&quot;, &quot;회귀/로지스틱/PCA/군집 등 분석 방법에 맞춘 결측·이상값 처리 규칙 수립&quot;, &quot;범주형 변수 희소범주 통합, 더미 폭발/완전분리 방지용 규칙 설계&quot;, &quot;다른 실행형 GPT(예: CleaningGPT)에게 적용 가능한 규칙셋(JSON/CSV) 전달&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;데이터를 직접 수정하거나 코드를 실행하지 않음(규칙만 생성)&quot;, &quot;제공되지 않은 분포·통계량·임계값을 추정/창작하지 않음(불명확하면 &#x27;자료 없음&#x27;으로 표기)&quot;, &quot;최종 품질은 입력 정보(변수 목록/유형/결측률/분포/유효범위 등)에 크게 의존&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;정책·공공 연구자(정부/지자체/공공기관)&quot;, &quot;데이터 분석가/통계 담당자(조사·행정자료 전처리)&quot;, &quot;CleaningGPT 등 실행형 에이전트에 전달할 전처리 규칙이 필요한 사용자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

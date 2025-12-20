@@ -6,32 +6,156 @@
   <title>Table Narrator</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>표의 행·열·다단 헤더 구조를 분석하고 기준축(분모 방향)을 식별한다.</li><li class='fitem'>셀 값 유형(빈도·백분율·점수·지수 등)을 판별하고 단위/범위를 정규화한다.</li><li class='fitem'>합계=100% 여부, 무응답/다중응답 가능성 등을 점검해 보수적으로 해석한다.</li><li class='fitem'>항목별 해석문과 전체 요약문을 생성하며, 비교는 %p 또는 수치 차이로 명확히 표기한다.</li><li class='fitem'>시계열(3시점 이상)인 경우 변화·추세를 요약하고, 2시점은 단순 증감으로 기술한다.</li><li class='fitem'>통계 검정 결과가 주어진 경우(또는 요청 시) 유의성 반영 문장을 생성하되, 없으면 단정 표현을 피한다.</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>statistics</span><span class='chip'>survey</span><span class='chip'>public-policy</span><span class='chip'>experimental-results</span><span class='chip'>table-interpretation</span><span class='chip'>report-writing</span><span class='chip'>korean</span></div>
+        <div class='chips'><span class='chip'>table-narrator</span><span class='chip'>table-interpreter</span><span class='chip'>표해석기</span><span class='chip'>표서술기</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>표의 행·열·다단 헤더 구조를 분석하고 기준축(분모 방향)을 식별한다.</li><li>셀 값 유형(빈도·백분율·점수·지수 등)을 판별하고 단위/범위를 정규화한다.</li><li>합계=100% 여부, 무응답/다중응답 가능성 등을 점검해 보수적으로 해석한다.</li><li>항목별 해석문과 전체 요약문을 생성하며, 비교는 %p 또는 수치 차이로 명확히 표기한다.</li><li>시계열(3시점 이상)인 경우 변화·추세를 요약하고, 2시점은 단순 증감으로 기술한다.</li><li>통계 검정 결과가 주어진 경우(또는 요청 시) 유의성 반영 문장을 생성하되, 없으면 단정 표현을 피한다.</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6892419d09b48191a097dcaf3bde6ced</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6892419d09b48191a097dcaf3bde6ced</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-6892419d09b48191a097dcaf3bde6ced-table-narrator</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-6892419d09b48191a097dcaf3bde6ced</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6892419d09b48191a097dcaf3bde6ced</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;복합 값 셀(예: &#x27;45명/23%&#x27;) 분리·정규화 후 해석&quot;, &quot;패턴 라이브러리 기반 문장화(보고서·논문 톤)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;아래 표를 구조 분석하고(행/열/값 유형/분모 기준), 항목별 해석문과 전체 요약문을 작성해줘: [표 붙여넣기]&quot;, &quot;이 교차표는 행 기준인지 열 기준인지 확인해서, 집단 간 차이를 %p로 비교해줘.&quot;, &quot;합계가 100%가 아닌데 무응답 가능성 문구를 포함해 보고서 문장으로 정리해줘.&quot;, &quot;2019~2024년 시계열 표를 추세 중심으로 해석하되, 단정적 표현은 피해서 써줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-6892419d09b48191a097dcaf3bde6ced</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;설문 결과 빈도표/비율표를 보고서 문장으로 변환&quot;, &quot;교차표에서 집단 간 응답 비율 차이를 %p로 정리&quot;, &quot;만족도/평균점수 표를 항목별로 서술하고 핵심 요약 생성&quot;, &quot;연도별 지표 변화표에서 증감 및 추세 문장 생성&quot;, &quot;합계 불일치, 무응답 가능성, 분모 불명확 등 해석 주의 문구 자동 포함&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;표의 분모(행/열 기준) 정보가 불명확하거나 합계/주석이 없으면, 해석은 보수적으로(추정 최소화) 제시된다.&quot;, &quot;통계 검정(p-value 등) 정보가 없으면 &#x27;유의한 차이&#x27; 같은 단정 표현을 사용하지 않는다.&quot;, &quot;표 밖의 원인·맥락 추론은 최소화하며, 제공된 데이터 범위 내에서만 서술한다.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;정책·행정·연구기관의 조사/통계 담당자&quot;, &quot;학술 연구자(논문 표 해석/결과 서술)&quot;, &quot;데이터 분석가(보고서용 결과 서술)&quot;, &quot;컨설턴트/리서치 회사&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

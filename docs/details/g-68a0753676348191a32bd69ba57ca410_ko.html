@@ -6,32 +6,156 @@
   <title>SurveyTables</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>표(빈도표/교차표)에서 정수 빈도만 추출해 long/pivot 형태로 변환하고 합계/총계 라벨을 제외</li><li class='fitem'>티디(tidy) 데이터 전처리(타입 추론, 결측/이상값 점검 규칙 적용) 후 요약 통계 생성</li><li class='fitem'>교차표(카이제곱/필요 시 Fisher) 및 효과크기(Cramér’s V) 기반 패턴 요약</li><li class='fitem'>표/차트/서술을 동일 메시지로 유지하며 ‘해석 객체’를 근거로 일관된 리포팅</li><li class='fitem'>엑셀 리포트 시트 구성 및 로그(재현성 필드 포함) 산출 가이드</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v2025.08.21</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>survey</span><span class='chip'>crosstab</span><span class='chip'>descriptive-statistics</span><span class='chip'>reporting</span><span class='chip'>reproducibility</span><span class='chip'>excel</span></div>
+        <div class='chips'><span class='chip'>surveytables</span><span class='chip'>survey-tables</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>표(빈도표/교차표)에서 정수 빈도만 추출해 long/pivot 형태로 변환하고 합계/총계 라벨을 제외</li><li>티디(tidy) 데이터 전처리(타입 추론, 결측/이상값 점검 규칙 적용) 후 요약 통계 생성</li><li>교차표(카이제곱/필요 시 Fisher) 및 효과크기(Cramér’s V) 기반 패턴 요약</li><li>표/차트/서술을 동일 메시지로 유지하며 ‘해석 객체’를 근거로 일관된 리포팅</li><li>엑셀 리포트 시트 구성 및 로그(재현성 필드 포함) 산출 가이드</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68a0753676348191a32bd69ba57ca410</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a0753676348191a32bd69ba57ca410</div></div><div class='row'><div class='k'>version</div><div class='v'>v2025.08.21</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-68a0753676348191a32bd69ba57ca410-surveytables</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68a0753676348191a32bd69ba57ca410</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a0753676348191a32bd69ba57ca410</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;합계/총계/전체 자동 제외 및 표 셀에서 정수 빈도만 추출하는 규칙 기반 ingestion&quot;, &quot;결측률 기준 제외/리스트와이즈 삭제, 이상값 탐지 로그 기록 등 품질 점검 규칙&quot;, &quot;표/차트 정책(행% 기본, 총계는 카운트만 표시, 희소범주 기타 병합 옵션) 내장&quot;, &quot;해석 객체(통계·효과크기·패턴·가정점검) 지속 및 포맷 변경 vs 분석 변경 의사결정&quot;, &quot;엑셀 산출(메타/교차표/로그 등) 및 재현성 로그 필드 기록 지원&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;아래 표를 교차표로 정리해줘. 합계/총계는 제외하고, 행% 기준으로 빈도와 비율을 같이 보여줘.&quot;, &quot;성별(열) × 만족도(행) 교차표 만들고 카이제곱 검정과 Cramér’s V까지 요약해줘.&quot;, &quot;이 데이터프레임에서 범주형은 빈도표, 수치형은 평균/표준편차/95% CI로 정리해줘.&quot;, &quot;표/서술의 메시지는 유지한 채 소수점만 1자리로 바꿔줘(분석 재계산 없이).&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a0753676348191a32bd69ba57ca410</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;빈도표/교차표 이미지를 표 데이터로 입력해 합계 제외 후 빈도만 추출하고 교차표 재구성&quot;, &quot;성별/연령 등 집단 변수로 교차표를 만들고 유의성·효과크기·해석 요약을 함께 생성&quot;, &quot;설문 문항들의 범주형 빈도, 수치형 기술통계, 다중응답 요약을 한 번에 산출&quot;, &quot;동일 입력에 대해 동일 출력(시드/로그 포함)을 요구하는 표준 리포팅 파이프라인 운영&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;표 입력 모드에서는 셀의 ‘정수’만 빈도로 간주하며 퍼센트만 있는 셀은 제외될 수 있음&quot;, &quot;합계/총계/전체(Total/TOTAL) 라벨 행·열은 분석에서 제외되며, 포함이 필요하면 별도 지시가 필요&quot;, &quot;기본 규칙은 자동화 중심이어서, 코드북 순서/범주 병합/가중치/층화·집락 설계 등은 명시 지시가 없으면 제한적으로 반영될 수 있음&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;리서치/리서치오퍼레이션(서베이 결과표를 빠르게 정리해야 하는 사용자)&quot;, &quot;데이터 분석가/PM(설문 기반 의사결정용 표·차트를 정형 출력하려는 사용자)&quot;, &quot;정책/학술 연구자(교차표와 효과크기 중심의 해석이 필요한 사용자)&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

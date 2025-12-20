@@ -6,32 +6,156 @@
   <title>Essence Diagram Builder GPT</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Extract core concepts, relations, and flows from text (requirements/policies/explanations) into a simplified semantic structure</li><li class='fitem'>Generate diagrams primarily in Mermaid (and suggest PlantUML/Plotly Sankey alternatives when appropriate)</li><li class='fitem'>Always output a title and a legend (term definitions and relation types) alongside the diagram</li><li class='fitem'>Mark unclear concepts as (assumption) nodes, provide one-sentence definitions, and include brief guidance on what to clarify</li><li class='fitem'>Perform diagram → local-language back-interpretation → Audit against the source, with metrics (coverage/precision/fidelity)</li><li class='fitem'>Support Typora-compatibility mode by automatically downgrading/cleaning diagram expressions for safer rendering</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.1.1</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>semantic-structure</span><span class='chip'>diagram</span><span class='chip'>mermaid</span><span class='chip'>plantuml</span><span class='chip'>typora</span><span class='chip'>audit</span><span class='chip'>knowledge-structuring</span><span class='chip'>documentation</span></div>
+        <div class='chips'><span class='chip'>essence-diagram</span><span class='chip'>diagram-audit</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Extract core concepts, relations, and flows from text (requirements/policies/explanations) into a simplified semantic structure</li><li>Generate diagrams primarily in Mermaid (and suggest PlantUML/Plotly Sankey alternatives when appropriate)</li><li>Always output a title and a legend (term definitions and relation types) alongside the diagram</li><li>Mark unclear concepts as (assumption) nodes, provide one-sentence definitions, and include brief guidance on what to clarify</li><li>Perform diagram → local-language back-interpretation → Audit against the source, with metrics (coverage/precision/fidelity)</li><li>Support Typora-compatibility mode by automatically downgrading/cleaning diagram expressions for safer rendering</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68fc9be3e4b48191b0388dee4c3c6bd6</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68fc9be3e4b48191b0388dee4c3c6bd6</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.1.1</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-68fc9be3e4b48191b0388dee4c3c6bd6-essence-diagram-builder-gpt</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68fc9be3e4b48191b0388dee4c3c6bd6</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68fc9be3e4b48191b0388dee4c3c6bd6</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Suggest splitting into sub-diagrams when density is high&quot;, &quot;Standardize relation types (e.g., facilitates/inhibits/mediates/moderates) in the legend when useful&quot;, &quot;Prefer Mermaid code that can render directly in HTML environments&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;mode: build+audit / compat: typora — Diagram and audit the following text: (paste text)&quot;, &quot;Summarize this document into &lt;=7 core concepts and output a Mermaid LR diagram. Mark unclear terms as (assumption).&quot;, &quot;Decompose this policy paragraph into conditions–exceptions–responsibilities–flow, and add a legend with definitions.&quot;, &quot;If a Plotly Sankey is more suitable, propose it as an alternative (but keep Mermaid as the default).&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68fc9be3e4b48191b0388dee4c3c6bd6</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Convert requirements/policies/meeting notes into concept–relation Mermaid diagrams&quot;, &quot;Design multi-level (split) diagrams when a single view becomes too dense&quot;, &quot;Auto-generate a legend to define domain terms, acronyms, and relation types&quot;, &quot;Produce Typora-safe Mermaid (or downgraded graph) ready to paste into Markdown&quot;, &quot;Validate whether the diagram preserved the source meaning via Audit tables and metrics&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;If the input is ambiguous or lacks definitions, the model may introduce more (assumption) nodes and depend on user-provided clarifications&quot;, &quot;Rendering quality depends on the viewer (e.g., Typora/Markdown engines) and their Mermaid feature support&quot;, &quot;Designed to avoid asserting facts not present in the source, so out-of-context extrapolation is intentionally limited&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Product/Program Managers (PM/PO): need fast diagramming from requirements, specs, or policy text&quot;, &quot;Researchers/Students/Educators: organize conceptual relationships into learning-friendly diagrams&quot;, &quot;Consultants/Analysts: simplify complex narratives into shareable structures&quot;, &quot;Technical writers: standardize explanations/design notes into consistent diagrams with legends&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

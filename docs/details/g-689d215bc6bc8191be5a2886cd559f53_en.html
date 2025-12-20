@@ -6,32 +6,156 @@
   <title>StatResult Parser Pro</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">Key functions</div>
-        <ul class='funcs'><li class='fitem'>Auto-detect and split tables from Excel/CSV/TSV/HTML/Markdown/text outputs (e.g., SPSS console) and some well-structured PDFs</li><li class='fitem'>Assign table_ids (t001, t002, …) and convert each table into a shared JSON schema (dimensions + cells)</li><li class='fitem'>Identify analysis types (e.g., descriptive, crosstab, regression, anova, reliability, hayes, pls) using title/header patterns</li><li class='fitem'>Represent missing/symbol-only cells as null (or explicit strings) and record parsing rules/limitations in notes</li></ul>
+        <div class="h2">Overview</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro</a></div></div>
+          <div class='row'><div class='k'>Version</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>Created</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>Updated</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>statistics</span><span class='chip'>data-extraction</span><span class='chip'>table-parsing</span><span class='chip'>spss</span><span class='chip'>r</span><span class='chip'>python</span><span class='chip'>reproducible-research</span></div>
+        <div class='chips'><span class='chip'>statresult-parser-pro</span><span class='chip'>stat-parser</span><span class='chip'>result-extractor</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">Key functions</div>
+        <ul class='bullets'><li>Auto-detect and split tables from Excel/CSV/TSV/HTML/Markdown/text outputs (e.g., SPSS console) and some well-structured PDFs</li><li>Assign table_ids (t001, t002, …) and convert each table into a shared JSON schema (dimensions + cells)</li><li>Identify analysis types (e.g., descriptive, crosstab, regression, anova, reliability, hayes, pls) using title/header patterns</li><li>Represent missing/symbol-only cells as null (or explicit strings) and record parsing rules/limitations in notes</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>Technical details</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-689d215bc6bc8191be5a2886cd559f53-statresult-parser-pro</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>en</div></div></div>
       </details>
+
+      <details><summary>Other fields</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Heuristic-based analysis type detection (regression/ANOVA/reliability/crosstab/Hayes/PLS, etc.)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;From the attached SPSS output (.txt), detect every table and convert them into the provided JSON schema. Preserve titles/section names when available.&quot;, &quot;Parse all sheets in this Excel file: treat each non-empty cell block separated by blank rows/columns as a separate table and output JSON with t001… ids.&quot;, &quot;Convert the three Markdown tables below into dimensions/cells JSON. Treat &#x27;-&#x27; and &#x27;n/a&#x27; as null and document the rule in notes.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689d215bc6bc8191be5a2886cd559f53</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;Batch-extract SPSS-style output tables (ASCII) such as Descriptives/Correlations/ANOVA/Coefficients/Reliability into JSON&quot;, &quot;Detect multiple table blocks per Excel sheet (separated by empty rows/columns) and enumerate them as t001…&quot;, &quot;Convert HTML/Markdown tables into structured JSON for downstream ETL or database loading&quot;, &quot;Preserve subtype cues for Hayes PROCESS / PLS-style outputs when keywords are present&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;Does not interpret results (no hypothesis decisions, no causal claims, no inferred variable roles); extraction only.&quot;, &quot;PDF parsing is attempted only when table structure is clear; otherwise limitations are documented in notes.&quot;, &quot;Highly complex merged cells/multi-level headers/footnote layouts may reduce label normalization fidelity (original labels are preserved when possible).&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;Researchers/graduate students who need reusable structured outputs from SPSS/R/Python/PLS result tables&quot;, &quot;Analysts moving statistical tables into pipelines (JSON/DB) for automation and reproducibility&quot;, &quot;Users who want automatic table block detection/normalization across multiple sheets/files&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

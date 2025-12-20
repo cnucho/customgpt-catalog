@@ -6,32 +6,156 @@
   <title>ScaleInsight</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>개념 정의 및 차원(construct/dimension) 분해를 통한 측정모델 설계</li><li class='fitem'>기존 문항/척도 맵핑 및 보완(채택·변형·차별화 논리 포함)</li><li class='fitem'>General/Behavioral 두 수준의 문항 자동 설계 및 수준 전환(추상화/구체화)</li><li class='fitem'>스케일/인덱스/KPI 산출을 위한 득점 규칙을 수식 형태로 설계(z-score, 가중합 등)</li><li class='fitem'>타당도(내용·구성·예측) 및 불변성/DIF 포함 검증 로드맵 제시(CFA/IRT 등)</li><li class='fitem'>신뢰도 분석 설계(α, ω, CR, AVE, test-retest) 및 수치 기반 해석 가이드 제공</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-68a2c0e954b8819199e331146bebe081-scaleinsight' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-68a2c0e954b8819199e331146bebe081-scaleinsight</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>scale-development</span><span class='chip'>psychometrics</span><span class='chip'>index</span><span class='chip'>kpi</span><span class='chip'>survey-design</span><span class='chip'>validity-reliability</span><span class='chip'>cfa-irt</span></div>
+        <div class='chips'><span class='chip'>scaleinsight</span><span class='chip'>kpi-index-designer</span><span class='chip'>measurement-design</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>개념 정의 및 차원(construct/dimension) 분해를 통한 측정모델 설계</li><li>기존 문항/척도 맵핑 및 보완(채택·변형·차별화 논리 포함)</li><li>General/Behavioral 두 수준의 문항 자동 설계 및 수준 전환(추상화/구체화)</li><li>스케일/인덱스/KPI 산출을 위한 득점 규칙을 수식 형태로 설계(z-score, 가중합 등)</li><li>타당도(내용·구성·예측) 및 불변성/DIF 포함 검증 로드맵 제시(CFA/IRT 등)</li><li>신뢰도 분석 설계(α, ω, CR, AVE, test-retest) 및 수치 기반 해석 가이드 제공</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68a2c0e954b8819199e331146bebe081</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a2c0e954b8819199e331146bebe081</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-68a2c0e954b8819199e331146bebe081-scaleinsight</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-68a2c0e954b8819199e331146bebe081</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a2c0e954b8819199e331146bebe081</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;문항-차원-척도-버전(General/Behavioral) 표 형태 결과물 제공&quot;, &quot;기존 모델/지수와의 비교표(채택·변형·차별성) 포함&quot;, &quot;득점 규칙을 반드시 수식으로 제시하고, 해석 기준(예: 상/중/하 컷오프)까지 제안&quot;, &quot;검증 기준치 템플릿 제공(예: CFI&gt;.90, RMSEA&lt;.08, α&gt;.70 등)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;‘AI 의존’ 개념을 3~4차원으로 정의하고, General/Behavioral 문항 각 5개씩 설계해줘. 7점 리커트로.&quot;, &quot;고객경험(CX) 지수를 0–100으로 만들고, 득점수식(가중치 포함)과 민감도 분석 방법을 제시해줘.&quot;, &quot;기존 20문항 척도를 10문항 단축형으로 줄이기 위한 기준(IRT/CFA)과 절차를 설계해줘.&quot;, &quot;직무몰입 KPI를 측정지표/목표치/등급기준까지 포함해서 운영안으로 만들어줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-68a2c0e954b8819199e331146bebe081</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;신규 척도 개발: 개념정의 → 차원화 → 문항풀 → 파일럿 검증 계획까지 원스톱 설계&quot;, &quot;기존 척도 개선: 문항 품질 점검, 역문항/편향 이슈 정리, 단축형(short-form) 설계&quot;, &quot;인덱스 구축: 다차원 지표를 표준화/가중합해 0–100 지수로 운영(민감도 분석 포함)&quot;, &quot;KPI 설계: 측정지표+목표치(target)+해석 로직(등급/경보)을 포함한 운영안 수립&quot;, &quot;타당도 검증 계획서 작성: 기준치(CFI, RMSEA 등)와 분석 단계/샘플 설계 정리&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;실제 α, ω, CFA 적합도 등 수치 산출은 응답데이터(파일럿/본조사)가 있어야 확정 가능&quot;, &quot;민감한 개인/조직 데이터는 비식별화·요약 통계 형태로 제공하는 것이 권장됨&quot;, &quot;문헌·기존 척도 비교는 제공된 자료/범위에 의존하며, 필요 시 출처 확인이 요구될 수 있음&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;리서처(학술/정책/평가) 및 설문 도구 개발자&quot;, &quot;데이터/전략/HR/CS/제품팀의 KPI·지표 설계 담당자&quot;, &quot;교육·평가·진단 도구 개발 조직(학교, 기관, 기업)&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

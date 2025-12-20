@@ -6,32 +6,156 @@
   <title>Python Retrieval Assistant (PRA)</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>알려진 URL에서 PDF/CSV/ZIP 등 파일을 내려받는 Colab/로컬용 파이썬 스크립트를 에러 처리 포함으로 생성.</li><li class='fitem'>웹페이지 HTML 표를 CSV로 추출(BeautifulSoup/pandas)하고, 더 안정적이면 API 방식도 선택지로 제안.</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-13</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-13</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>policy</span><span class='chip'>statistics</span><span class='chip'>research-assistant</span></div>
+        <div class='chips'><span class='chip'>파이썬-다운로드</span><span class='chip'>데이터-수집</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>알려진 URL에서 PDF/CSV/ZIP 등 파일을 내려받는 Colab/로컬용 파이썬 스크립트를 에러 처리 포함으로 생성.</li><li>웹페이지 HTML 표를 CSV로 추출(BeautifulSoup/pandas)하고, 더 안정적이면 API 방식도 선택지로 제안.</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>pythonretrievalassistant_pra</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>pythonretrievalassistant_pra</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-13</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-69391968512c8191929a0530d6cc2799-python-retrieval-assistant-pra</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>pythonretrievalassistant_pra</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>pythonretrievalassistant_pra</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;구글 코랩 실행 절차와 로컬로 파일 내려받기(files.download) 헬퍼 스니펫을 함께 제공.&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;이 PDF를 Colab에서 다운로드해 &#x27;report_2025.pdf&#x27;로 저장하는 스크립트를 만들어줘: &lt;URL&gt;&quot;, &quot;이 페이지의 핵심 통계 표를 UTF-8-SIG CSV로 저장해줘(헤더 유지): &lt;URL&gt;&quot;, &quot;요청이 차단돼—헤더/재시도/속도 제한을 추가한 다운로더로 바꿔줘: &lt;URL&gt;&quot;, &quot;이 데이터는 (1) HTML 스크래핑 (2) API(가능하면) 두 방식으로 수집하는 코드를 나란히 제공해줘. 출력은 ./output.csv&quot;, &quot;여러 ZIP 링크가 있는 페이지에서 &#x27;*.zip&#x27;만 모두 내려받아 ./downloads/에 저장하는 스크립트를 만들어줘: &lt;URL&gt;&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>pythonretrievalassistant_pra</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;지정된 보고서/데이터 URL을 Colab 또는 로컬에서 다운로드하고 깔끔한 파일명·로그·재시도 옵션으로 저장.&quot;, &quot;공식 사이트의 표를 CSV로 스크래핑하고(가능 시) 더 안정적인 API 대안까지 함께 제시.&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;광범위한 탐색형 리서치는 하지 않으며, 구체적인 대상(URL/페이지/API)이 필요하고 인증/유료장벽을 우회하지 않는다.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;재현 가능한 데이터/문서 수집 스크립트가 필요한 연구자·분석가.&quot;, &quot;공개 통계·보고서·표 데이터를 모으는 정책/학술/언론 조직.&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

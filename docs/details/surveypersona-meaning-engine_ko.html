@@ -6,32 +6,156 @@
   <title>SurveyPersona Meaning Engine – 퍼소나 의미 해석 엔진</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>대상 집단을 대표하는 다양한 퍼소나를 자동 생성하고 설문 문항을 각 퍼소나 관점에서 해석한다.</li><li class='fitem'>문항 이해 과정에서 드러나는 감정, 숨은 가정, 인지적 부담과 오해 가능성을 찾아낸다.</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-693766b243248191b496489f57d9e13b-surveypersona-meaning-engine' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-693766b243248191b496489f57d9e13b-surveypersona-meaning-engine</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-09</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-09</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>survey</span><span class='chip'>questionnaire</span><span class='chip'>cognitive-testing</span><span class='chip'>persona</span></div>
+        <div class='chips'><span class='chip'>설문-의미-엔진</span><span class='chip'>퍼소나-해석</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>대상 집단을 대표하는 다양한 퍼소나를 자동 생성하고 설문 문항을 각 퍼소나 관점에서 해석한다.</li><li>문항 이해 과정에서 드러나는 감정, 숨은 가정, 인지적 부담과 오해 가능성을 찾아낸다.</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>surveypersona-meaning-engine</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>surveypersona-meaning-engine</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-09</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-693766b243248191b496489f57d9e13b-surveypersona-meaning-engine</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>surveypersona-meaning-engine</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>surveypersona-meaning-engine</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;맥락 정보를 주면 이에 맞는 퍼소나와 감정 상태를 자동으로 설정한다.&quot;, &quot;한 번에 여러 퍼소나의 해석 결과를 병렬로 출력한다.&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;다음 문항을 농촌 고령층, 도시 20대 직장인, 자영업자 퍼소나로 각각 어떻게 해석하는지 보여줘: &#x27;가계 소득 수준에 얼마나 만족하십니까?&#x27;&quot;, &quot;환경세 관련 문항을 여러 퍼소나가 어떻게 이해하는지와 오해 지점을 분석해줘.&quot;, &quot;디지털 금융서비스 이용 빈도 문항에서 고령층이 겪을 수 있는 인지적 어려움을 정리해줘.&quot;, &quot;전기차 구매 의향 문항의 숨은 가정과 취약 집단(저소득, 농촌)의 해석 위험을 찾아줘.&quot;, &quot;정치적 지지 성향이 다른 퍼소나들이 동일한 지지율 문항을 어떻게 다르게 받아들이는지 비교해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>surveypersona-meaning-engine</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;새 설문 문항을 여러 유형의 응답자 퍼소나로 사전 점검할 때.&quot;, &quot;어떤 표현이 애매하거나 인지적 부담을 주는지 찾고 싶을 때.&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;실제 응답자가 아닌 시뮬레이션 퍼소나에 기반하므로 현장 인지면접을 완전히 대체할 수 없다.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;설문 문항 작성자&quot;, &quot;조사 방법론 연구자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

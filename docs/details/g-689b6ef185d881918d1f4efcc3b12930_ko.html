@@ -6,32 +6,156 @@
   <title>문성평 (文成評)</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>보고서 전체 구조 요약 및 문제설정(정책·연구 프레이밍) 분석</li><li class='fitem'>6축 평가 수행: 완성도, 타당성(데이터·논리 정합), 실행 가능성, 스토리 구조 일관성, 문제설정의 명확성·적합성, 방법론 품질</li><li class='fitem'>방법론 품질 정밀 검증: AAPOR RR/CR/COOP/REF, 표본설계, 가중(설계→비응답→후행보정), 분산추정(Taylor/BRR/JK), 설계효과(DEFF), 복제가중, 결측/임퓨테이션 플래그</li><li class='fitem'>측정 품질 점검: 측정동등성, 시계열·집단 비교 가능성, 척도 신뢰도·요인분석·측정불변성 검증 여부 확인</li><li class='fitem'>재현성 검토: 데이터·코드북·질문지·분석 절차 제공 여부 점검</li><li class='fitem'>시각화 점검: 신뢰구간/오차막대/불확실성 표기 여부 진단</li><li class='fitem'>원문 → 수정안 → 사유 구조의 구체적 보완 문구·표현·구성 제안</li><li class='fitem'>Story Mode 출력: Narrative_Spine, Coherence_Score(P1~P5), Breakpoints, Bridge_Texts, Story_Map</li><li class='fitem'>평가 축별 등급 및 가중평균 기반 종합 등급 제안(근거 명시)</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>policy</span><span class='chip'>survey-research</span><span class='chip'>research-methodology</span><span class='chip'>statistics</span><span class='chip'>AAPOR</span><span class='chip'>sampling</span><span class='chip'>weighting</span><span class='chip'>variance-estimation</span><span class='chip'>DEFF</span><span class='chip'>measurement-equivalence</span><span class='chip'>scale-validity</span><span class='chip'>reproducibility</span><span class='chip'>story-flow</span><span class='chip'>report-quality-evaluation</span></div>
+        <div class='chips'><span class='chip'>munseongpyeong</span><span class='chip'>msp-evaluator</span><span class='chip'>report-evaluator-6axis</span><span class='chip'>policy-research-reviewer</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>보고서 전체 구조 요약 및 문제설정(정책·연구 프레이밍) 분석</li><li>6축 평가 수행: 완성도, 타당성(데이터·논리 정합), 실행 가능성, 스토리 구조 일관성, 문제설정의 명확성·적합성, 방법론 품질</li><li>방법론 품질 정밀 검증: AAPOR RR/CR/COOP/REF, 표본설계, 가중(설계→비응답→후행보정), 분산추정(Taylor/BRR/JK), 설계효과(DEFF), 복제가중, 결측/임퓨테이션 플래그</li><li>측정 품질 점검: 측정동등성, 시계열·집단 비교 가능성, 척도 신뢰도·요인분석·측정불변성 검증 여부 확인</li><li>재현성 검토: 데이터·코드북·질문지·분석 절차 제공 여부 점검</li><li>시각화 점검: 신뢰구간/오차막대/불확실성 표기 여부 진단</li><li>원문 → 수정안 → 사유 구조의 구체적 보완 문구·표현·구성 제안</li><li>Story Mode 출력: Narrative_Spine, Coherence_Score(P1~P5), Breakpoints, Bridge_Texts, Story_Map</li><li>평가 축별 등급 및 가중평균 기반 종합 등급 제안(근거 명시)</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-689b6ef185d881918d1f4efcc3b12930-munseongpyeong</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;Strict Factual Mode(원문 근거 기반, 숫자·용어 충실도 엄격 적용)&quot;, &quot;StoryFlow 평가 모듈(서사 척추·일관성 점수·브리지 문장 자동 생성)&quot;, &quot;방법론 체크리스트 엔진(AAPOR·가중·분산추정·측정동등성·재현성·불확실성 시각화)&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;첨부한 보고서를 6축 평가로 진단하라. 방법론 품질은 AAPOR, 가중, 분산추정, DEFF, 결측/임퓨테이션, 척도타당성, 재현성까지 포함하라.&quot;, &quot;대표 장 평가 모드로 수행하고, Story Mode 출력(Narrative_Spine, Breakpoints, Bridge_Texts)을 함께 제시하라.&quot;, &quot;결과 장에서 표-해석 연결이 끊기는 지점을 Breakpoints로 표시하고, 각 지점에 들어갈 Bridge_Texts를 원문 톤으로 작성하라.&quot;, &quot;시계열 비교 지표의 정의 변경 여부를 점검하고, 비교불가 구간 표기 및 브리징/조정 대안을 원문→수정안 형식으로 제시하라.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-689b6ef185d881918d1f4efcc3b12930</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;조사 보고서의 응답률(AAPOR)·표본설계·가중·분산추정·DEFF 적합성 점검&quot;, &quot;결과–해석–정책제안 간 논리적 비약 및 스토리 단절 지점(Breakpoints) 탐지&quot;, &quot;시계열/집단 비교에서 정의 변경·측정동등성 위협 식별 및 비교불가 구간 표기 제안&quot;, &quot;표·그림에서 불확실성(CI, 오차막대, DEFF) 누락 여부 진단 및 수정안 제시&quot;, &quot;제출·공개 전 최종 품질 점검용 6축 종합 평가 및 수정 가이드 생성&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;모든 판단은 원문 및 제공된 보조파일에 근거(Strict Factual Mode)&quot;, &quot;추정·추측·보간 등 Zero-Inference 원칙 적용&quot;, &quot;이용자의 일반 정보 질문에는 응답하지 않으며, 평가 산출물만 제공&quot;, &quot;원문에 없는 수치·정의·방법을 임의로 생성하거나 보정하지 않음&quot;, &quot;근거가 불충분한 항목은 &#x27;근거 부족&#x27;으로 명시&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;정책보고서·연구보고서 품질관리(QA) 및 검수 담당자&quot;, &quot;여론조사·설문조사 설계·분석 실무자&quot;, &quot;공공·민간 리서치 보고서 작성자 및 리뷰어&quot;, &quot;학술논문·기관보고서 편집자, 심사위원, 내부 감사팀&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>

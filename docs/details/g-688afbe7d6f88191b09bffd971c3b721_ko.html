@@ -6,32 +6,156 @@
   <title>정밀 학술번역</title>
   <style>
     :root {
-      --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --border:#e5e7eb;
-      --primary:#111827; --primaryText:#fff;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --primary: #111827;
+      --primaryText: #ffffff;
+      --chip: #f3f4f6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:24px 16px 56px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 6px 22px rgba(17,24,39,0.06)}
-    .topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .leftbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;background:#fff}
-    .btn.primary{background:var(--primary);color:var(--primaryText);border-color:var(--primary);font-weight:700}
-    .btn.disabled{background:#f3f4f6;color:#6b7280;border-color:var(--border);cursor:default}
-    h1{margin:0;font-size:30px;letter-spacing:-0.02em}
-    .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:14px}
-    .notice{margin-top:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:#fff3cd;color:#7a5a00;font-size:13px}
-    .section{margin-top:14px}
-    .h2{margin:0 0 8px;font-size:16px;letter-spacing:-0.01em}
-    ul.funcs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
-    .fitem{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px 12px;line-height:1.55;box-shadow:0 6px 20px rgba(17,24,39,0.04);font-size:14px}
-    details{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:10px 12px}
-    summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;outline:none}
-    summary::-webkit-details-marker{display:none}
-    .kv{margin-top:10px;display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 10px;border-radius:12px;background:#f9fafb;border:1px solid var(--border);overflow-wrap:anywhere}
-    .k{color:var(--muted);font-size:12px}
-    .v{color:var(--text);font-size:13px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 22px rgba(17,24,39,0.06);
+    }
+    .topbar {
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .leftbar {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      font-size: 13px;
+      background: #fff;
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: var(--primaryText);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+    .btn.badge {
+      background: #fff3cd;
+      color: #7a5a00;
+      border-color: var(--border);
+      cursor: default;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff3cd;
+      color: #7a5a00;
+      font-size: 13px;
+    }
+    .section {
+      margin-top: 14px;
+    }
+    .h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .chips {
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .kv {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+    .k { color: var(--muted); font-size: 12px; }
+    .v { color: var(--text); font-size: 13px; }
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      outline: none;
+    }
+    summary::-webkit-details-marker { display:none; }
   </style>
 </head>
 <body>
@@ -50,14 +174,41 @@
       
 
       <div class="section">
-        <div class="h2">핵심 기능</div>
-        <ul class='funcs'><li class='fitem'>문단 단위 자동 분할 후 순차 번역(의미 흐름 유지)</li><li class='fitem'>용어사전(마스터/세션/사용자 정의) 기반 일관 번역</li><li class='fitem'>역번역(back-translation)으로 번역 결과 교차 검증</li><li class='fitem'>직역/의역 차이, 문화적 주의 표현을 포함한 번역 리포트 생성</li><li class='fitem'>원문-번역-역번역 병렬 출력 및 결과 누적 저장(JSON/상태 복구 지향)</li></ul>
+        <div class="h2">요약 정보</div>
+        <div class="kv">
+          <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog</a></div></div>
+          <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-14</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-14</div></div>
+          
+          
+          
+          
+        </div>
+
+        <div class='chips'><span class='chip'>translation</span><span class='chip'>academic-writing</span><span class='chip'>nonfiction</span><span class='chip'>policy-studies</span><span class='chip'>social-sciences</span><span class='chip'>statistics</span><span class='chip'>communication-studies</span><span class='chip'>public-administration</span><span class='chip'>glossary</span><span class='chip'>back-translation</span></div>
+        <div class='chips'><span class='chip'>ScholarTranslator-GPT</span><span class='chip'>PrecisionScholarTranslator-GPT</span><span class='chip'>정밀번역</span><span class='chip'>학술번역GPT</span></div>
+        
       </div>
+
+      <div class="section">
+        <div class="h2">핵심 기능</div>
+        <ul class='bullets'><li>문단 단위 자동 분할 후 순차 번역(의미 흐름 유지)</li><li>용어사전(마스터/세션/사용자 정의) 기반 일관 번역</li><li>역번역(back-translation)으로 번역 결과 교차 검증</li><li>직역/의역 차이, 문화적 주의 표현을 포함한 번역 리포트 생성</li><li>원문-번역-역번역 병렬 출력 및 결과 누적 저장(JSON/상태 복구 지향)</li></ul>
+      </div>
+
+      
+
+      
 
       <details>
         <summary>기술 정보</summary>
-        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-688afbe7d6f88191b09bffd971c3b721</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-688afbe7d6f88191b09bffd971c3b721</div></div><div class='row'><div class='k'>version</div><div class='v'>v1.0.0</div></div><div class='row'><div class='k'>last_updated</div><div class='v'>2025-12-14</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>url</div><div class='v'>https://chatgpt.com/g/g-688afbe7d6f88191b09bffd971c3b721-jeongmil-hagsulbeonyeog</div></div></div>
+        <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>g-688afbe7d6f88191b09bffd971c3b721</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-688afbe7d6f88191b09bffd971c3b721</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
+
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;AI-티 완화 필터 적용&quot;, &quot;서술형 평서체, 짧고 명확한 문장 선호&quot;, &quot;역번역 검증 및 문화적 주의 각주 모드&quot;, &quot;정책학/통계학 중심 마스터 용어사전 내장&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;다음 텍스트를 문단 단위로 번역하되, 원문-번역-역번역을 병렬로 출력하고 용어사전 적용 내역도 보여줘: [텍스트]&quot;, &quot;// 용어사전: &#x27;policy implementation&#x27;은 &#x27;정책 이행&#x27;으로 고정. 이후 본문을 번역해줘: [텍스트]&quot;, &quot;직역과 의역 차이가 큰 부분은 표시하고, 문화적 오해 소지가 있으면 각주로 처리해줘: [텍스트]&quot;, &quot;통계 용어(p-value, confidence interval 등)는 용어사전 기본 번역을 우선 적용해 번역해줘: [텍스트]&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>g-688afbe7d6f88191b09bffd971c3b721</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;정책학/사회과학/통계학 문단 단위 번역 및 용어 표준화&quot;, &quot;논문 초록·서론·방법·결과·논의 섹션의 의미 보존 번역&quot;, &quot;제출용 번역에서 번역-역번역 비교로 오류 가능성 점검&quot;, &quot;용어사전 기반으로 프로젝트 전반의 번역 톤과 표현 통일&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;사용자가 원문을 제공하지 않으면 번역을 수행할 수 없다.&quot;, &quot;문장 자연스러움보다 의미 정확성과 용어 일관성을 우선하므로, 문학적 번역에는 덜 적합하다.&quot;, &quot;전문 분야별 표준 번역은 용어사전 범위에 의존하며, 신규 용어는 사용자 정의 등록이 필요할 수 있다.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;학술 논문·보고서 번역이 필요한 연구자/대학원생&quot;, &quot;정책·행정·사회과학 문서의 정확한 번역이 필요한 실무자&quot;, &quot;용어 일관성과 검증 가능한 번역 기록이 필요한 사용자&quot;]</div></div></div></details>
+
+      
+
     </div>
   </div>
 </body>
