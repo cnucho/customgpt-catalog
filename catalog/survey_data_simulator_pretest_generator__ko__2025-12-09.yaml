@@ -1,7 +1,7 @@
 catalog_entry:
   name: "Survey Data Simulator & Pretest Generator"
   version: "1.0"
-  url:"https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator"
+  url: "https://chatgpt.com/g/g-69379c551e248191b3258c0d6eeead0f-survey-data-simulator-pretest-generator"
   language: "ko"
   description: 
     설문지를 기반으로 자연어 페르소나 응답을 먼저 생성한 뒤 이를 숫자 코드로
