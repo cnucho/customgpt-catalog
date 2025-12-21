@@ -170,7 +170,7 @@
       </div>
 
       <h1>DataPrepCodeGen</h1>
-      <p class='sub'>메타데이터 기반으로 공식통계용 SPSS 데이터 전처리 코드를 생성하는 GPT.</p>
+      <p class='sub'>공식 통계·조사 데이터를 위한 SPSS 전처리 및 R(tidyverse) 데이터 준비 코드를 생성하는 GPT.</p>
       
 
       <div class="section">
@@ -178,8 +178,8 @@
         <div class="kv">
           <div class='row'><div class='k'>URL</div><div class='v'><a href='https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen' target='_blank' rel='noopener noreferrer'>https://chatgpt.com/g/g-69396281e0188191be94814202314ee2-dataprepcodegen</a></div></div>
           <div class='row'><div class='k'>버전</div><div class='v'>v1.0.0</div></div>
-          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-13</div></div>
-          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-13</div></div>
+          <div class='row'><div class='k'>생성일</div><div class='v'>2025-12-11</div></div>
+          <div class='row'><div class='k'>업데이트</div><div class='v'>2025-12-11</div></div>
           
           
           
@@ -187,13 +187,13 @@
         </div>
 
         <div class='chips'><span class='chip'>policy</span><span class='chip'>statistics</span><span class='chip'>research-assistant</span></div>
-        <div class='chips'><span class='chip'>SPSS-전처리</span><span class='chip'>메타데이터-구문</span></div>
+        <div class='chips'><span class='chip'>dataprepcodegen</span><span class='chip'>dataprep-gpt</span></div>
         
       </div>
 
       <div class="section">
         <div class="h2">핵심 기능</div>
-        <ul class='bullets'><li>변수 라벨, 값라벨, 결측, 재코딩, 파생변수, 리쉐이프를 포함한 SPSS 구문을 완전 생성.</li><li>메타데이터 불일치를 자동 감지하고 안전한 기본 가정을 적용해 주석으로 문서화.</li></ul>
+        <ul class='bullets'><li>조사·통계 데이터셋의 변수 메타데이터를 기반으로 SPSS 데이터 전처리 코드를 생성</li><li>SPSS 전처리 코드를 R(tidyverse) 전처리 코드로 변환하거나 병행 제공(통계 분석 코드는 제외)</li><li>변수 라벨, 값 라벨, 결측값 정의, 형식 지정 등 데이터 준비용 구문을 자동 작성</li></ul>
       </div>
 
       
@@ -205,7 +205,7 @@
         <div class="kv"><div class='row'><div class='k'>_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>viz1</div><div class='v'>public</div></div><div class='row'><div class='k'>viz2</div><div class='v'>show_url</div></div><div class='row'><div class='k'>language</div><div class='v'>ko</div></div></div>
       </details>
 
-      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;가정과 메타데이터 이슈를 코드 주석과 함께 자동 기록.&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;이 메타데이터로 VARIABLE LABELS와 VALUE LABELS를 설정하는 SPSS 코드를 만들어줘.&quot;, &quot;연령 변수를 연령대 그룹 변수로 재코딩하되 원변수는 유지해줘.&quot;, &quot;DO IF를 사용해 대상자 플래그와 스킵 플래그를 생성해줘.&quot;, &quot;wide 형태 변수를 long 형태로 리쉐이프하는 SPSS 구문을 만들어줘.&quot;, &quot;문항 묶음으로 지수 변수를 만들고 검증용 명령도 추가해줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;코드북 수준의 메타데이터로부터 전체 SPSS 데이터 준비 스크립트 생성.&quot;, &quot;라벨, 결측, 파생변수, 리쉐이프를 표준 규칙으로 일괄 처리.&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;통계 분석이나 모델링 코드는 생성하지 않음.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;SPSS로 공식통계 조사자료를 전처리하는 분석 담당자&quot;, &quot;재현 가능한 데이터 준비 스크립트가 필요한 연구자&quot;]</div></div></div></details>
+      <details><summary>기타 필드</summary><div class='kv'><div class='row'><div class='k'>additional_features</div><div class='v'>[&quot;메타데이터 스키마(변수 역할, semantic type, 그룹)를 해석하여 타입 변환, 그룹 합산/평균, 인덱스 변수 생성 초안 코드를 제안&quot;, &quot;SPSS와 R 코드에 한국어 주석을 자동으로 포함하여 전처리 절차를 문서화&quot;]</div></div><div class='row'><div class='k'>example_commands</div><div class='v'>[&quot;이 설문조사 메타데이터를 기반으로 SPSS 변수 라벨, 값 라벨, 결측값 정의 코드를 작성해줘.&quot;, &quot;이 SPSS 전처리 코드를 R tidyverse 문법으로 변환해줘. 통계 분석 코드는 포함하지 말고 전처리 부분만 변환해줘.&quot;, &quot;이 변수 목록과 역할(id, weight, strata 등)을 보고 SPSS 전처리 템플릿 코드를 만들어줘.&quot;, &quot;이 코드북을 바탕으로 소득, 연령, 날짜 변수의 형식 지정(FORMATS)과 필요 시 타입 변환 초안 코드를 작성해줘.&quot;, &quot;wide 형식 반복측정 변수를 long 형식으로 변환하는 SPSS VARSTOCASES 구문과 대응되는 R 코드도 함께 만들어줘.&quot;]</div></div><div class='row'><div class='k'>gpt_id</div><div class='v'>dataprepcodegen</div></div><div class='row'><div class='k'>ideal_use_cases</div><div class='v'>[&quot;질문지, 코드북, 메타데이터를 기반으로 한 SPSS 변수·값 라벨링 및 결측값 정의 자동화&quot;, &quot;기존 SPSS 전처리 스크립트를 가독성 높은 형태로 정리하고 문서화&quot;, &quot;SPSS 전처리 구문과 동등한 R(tidyverse) 전처리 코드를 함께 생성하여 이중 유지관리 지원&quot;]</div></div><div class='row'><div class='k'>limitations</div><div class='v'>[&quot;회귀분석, 가설검정 등 통계 분석 코드나 결과 해석은 제공하지 않고, 데이터 준비·전처리 코드에만 초점을 맞춥니다.&quot;, &quot;외부 데이터베이스 접속, 파일 시스템 조작, 운영체제 명령 실행은 지원하지 않습니다.&quot;]</div></div><div class='row'><div class='k'>target_users</div><div class='v'>[&quot;공공 통계·조사 데이터 생산 기관의 통계 담당자&quot;, &quot;설문조사·패널데이터 전처리 실무자&quot;, &quot;SPSS에서 R로 전환하려는 데이터 분석 실무자(전처리 단계)&quot;]</div></div></div></details>
 
       
 
